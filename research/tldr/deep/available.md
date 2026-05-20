@@ -55,14 +55,14 @@ Options:
 ## Architectural Deep Dive
 * **Under the hood:** Computes the "available expressions" data-flow property. An expression `x op y` is available at a point if every path from the entry node to that point evaluates it, and none of its variables are modified after the last evaluation.
 * **Performance:** Traditional compiler data-flow pass.
-* **LLM Cognitive Load:** Useful for verifying compiler-level logic, checking if calculations can be safely hoisted out of loops, or identifying redundant calculations that are repeated unnecessarily.
+* **LLM Cognitive Load:** Useful for verifying compiler-level logic, checking if calculations can be safely hoisted out of loops, or identifying redundant calculations that the developer repeated unnecessarily.
 
 ## Intent & Routing
 * **User/Agent Goal:** Find available expressions at a specific line.
-* **When to choose this over similar tools:** Use for compiler-level logic checks or performance optimizations.
+* **When to choose this over similar tools:** Use for compiler-level logic checks, code cleanup, or performance optimizations (hoisting).
 
 ## Agent Synthesis
 > **How to use `tldr available`:**
-> Use this to identify expressions that have already been evaluated and are available at a specific line.
+> Use this to identify expressions that have already been evaluated and are mathematically available at a specific line.
 > 
 > **Command:** `tldr available <file> <func> <line>`

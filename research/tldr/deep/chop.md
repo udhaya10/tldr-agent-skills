@@ -47,13 +47,13 @@ Options:
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
 ## Architectural Deep Dive
-* **Under the hood:** `chop` finds the intersection of a backward slice from a target line and a forward slice from a source line. This highlights only the nodes in the PDG that lie directly on the path of dependency between the two points.
-* **Performance:** Computes two separate slices and intersects them. O(N) relative to the size of the localized PDG.
-* **LLM Cognitive Load:** When tracking how a variable was modified between its declaration (source) and its usage (target), `chop` completely filters out all unrelated logic, loops, and conditions inside the function, leaving a clean, linear mutation path for the LLM to review.
+* **Under the hood:** `chop` performs a highly specialized graph query: it finds the intersection of a backward slice from a target line and a forward slice from a source line. This isolates the specific nodes in the PDG that lie strictly on the path of dependency between the two points.
+* **Performance:** Computes two separate slices and intersects them. Very fast once the PDG is built.
+* **LLM Cognitive Load:** When tracking how a variable was modified between its declaration (source) and its usage (target), `chop` completely filters out all unrelated logic, loops, and sibling conditions inside the function, leaving a clean, linear mutation path for the LLM to review.
 
 ## Intent & Routing
-* **User/Agent Goal:** Find the intersection of data flow between a source line and a target line.
-* **When to choose this over similar tools:** Use when tracking how a specific variable mutates between two specific points in a function, filtering out all unrelated logic.
+* **User/Agent Goal:** Find the exact intersection of data flow between a source line and a target line.
+* **When to choose this over similar tools:** Use when tracking how a specific variable mutates between two specific points in a function, ignoring everything else.
 
 ## Agent Synthesis
 > **How to use `tldr chop`:**

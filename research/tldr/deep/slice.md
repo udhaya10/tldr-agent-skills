@@ -74,13 +74,13 @@ Options:
 * **Observation 3:** `slice` depends on `pdg` (Program Dependence Graph). If the exact line number passed doesn't contain an AST node, the slice will return empty.
 
 ## Architectural Deep Dive
-* **Under the hood:** `slice` computes Program Dependence Graphs (PDGs) by combining the Control Flow Graph (CFG) and Data Dependence Graph (DDG). It computes transitively closed dependencies from a specific starting node (line & variable) either backward (what influences this line) or forward (what this line influences).
-* **Performance:** Building a complete PDG for a large function is mathematically complex and memory-intensive, but once constructed, slicing queries resolve in milliseconds.
-* **LLM Cognitive Load:** Slicing is the gold standard for tracking down why a variable has an incorrect value. Instead of manually inspecting every line in a 300-line function with complex branching, `tldr slice` isolates the exact 15 lines that mathematically contributed to that state.
+* **Under the hood:** `slice` computes Program Dependence Graphs (PDGs) by mathematically unifying the Control Flow Graph (CFG) and Data Dependence Graph (DDG). It computes transitively closed dependencies from a specific starting node (line & variable) either backward (what influences this line) or forward (what this line influences).
+* **Performance:** Building a complete PDG for a heavily branched function is memory-intensive, but once constructed, slicing queries resolve in milliseconds.
+* **LLM Cognitive Load:** Slicing is the absolute gold standard for tracking down state corruption. Instead of an LLM manually inspecting every line in a 300-line function with complex branching, `tldr slice` filters out all noise and isolates only the exact lines that mathematically contributed to the target variable's state.
 
 ## Intent & Routing
 * **User/Agent Goal:** Trace exactly what lines of code mathematically affect a target line (backward) or what a line affects (forward).
-* **When to choose this over similar tools:** Use when debugging state corruption or tracking variable origins. Always run `tldr extract` first to find the exact line numbers.
+* **When to choose this over similar tools:** Use when debugging complex state corruption or tracking exact variable origins. Always run `tldr extract` first to find the exact line numbers.
 
 ## Agent Synthesis
 > **How to use `tldr slice`:**

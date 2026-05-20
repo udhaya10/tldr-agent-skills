@@ -62,9 +62,9 @@ Options:
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
 ## Architectural Deep Dive
-* **Under the hood:** `reaching-defs` traverses the Data Flow Graph (DFG) to find all definition points (assignments) of a variable that can reach a specific execution point without being killed (re-assigned) along the path.
-* **Performance:** Standard iterative data-flow analysis, very fast within function scopes.
-* **LLM Cognitive Load:** Prevents tracing hallucinations. It answers the question: "Which assignment statement actually populated this variable at line X?" showing the exact lines of code where the active value could have originated.
+* **Under the hood:** `reaching-defs` traverses the Data Flow Graph (DFG) to find all definition points (assignments) of a target variable that can mathematically reach a specific execution point without being "killed" (re-assigned) along the execution path.
+* **Performance:** Standard iterative data-flow analysis. Highly optimized within function scopes.
+* **LLM Cognitive Load:** Prevents tracing hallucinations. It answers the specific question: "Which assignment statement actually populated this variable at line X?" showing the exact lines of code where the active value could have originated, even across complex `if/else` branches.
 
 ## Intent & Routing
 * **User/Agent Goal:** Trace where a variable's value mathematically originated via DFG traversal.

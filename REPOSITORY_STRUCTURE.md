@@ -60,34 +60,25 @@ Keep the body concise (ideally under 200 lines). The body should contain:
 
 ## 4. Implementation Blueprint: The TLDR Suite
 
-Based on our architectural decomposition, the initial structure of this repository should be scaffolded as follows to accommodate the `tldr-code` suite:
+Based on our architectural decomposition and empirical research, the repository is structured with 14 specialized skills to accommodate the full `tldr-code` suite:
 
 ```text
 agentic-utils/
 │
-├── tldr-router/
-│   └── SKILL.md         # Orchestrates the intent and routes to the others
-│
-├── tldr-overview/
-│   └── SKILL.md         # L1 AST: tree, structure, extract, imports
-│
-├── tldr-search/
-│   └── SKILL.md         # Semantic: semantic, search, context, similar, dice
-│
-├── tldr-trace/
-│   └── SKILL.md         # L2 Graph: calls, impact, hubs, whatbreaks
-│
-├── tldr-deep/
-│   └── SKILL.md         # L3-L5 Flow: slice, chop, cfg, dfg
-│
-├── tldr-audit/
-│   └── SKILL.md         # Batch QA: smells, hotspots, taint, vuln, complexity
-│
-├── tldr-fix/
-│   └── SKILL.md         # Autonomous: fix check, bugbot, diagnostics
-│
-└── tldr-ops/
-    └── SKILL.md         # Infrastructure: daemon, warm, change-impact, diff
+├── tldr-router/               # Orchestrator
+├── tldr-overview/             # L1 AST: tree, structure, extract, imports
+├── tldr-search/               # Semantic: semantic, search, context, similar, dice
+├── tldr-trace/                # L2 Graph: calls, impact, hubs, whatbreaks
+├── tldr-deep/                 # L3-L5 Flow: slice, chop, reaching-defs
+├── tldr-audit/                # Batch QA: health, smells, clones
+├── tldr-fix/                  # Autonomous: fix check, bugbot, diagnostics
+├── tldr-ops/                  # Infrastructure: daemon, warm, change-impact, diff
+├── tldr-refactor-history/     # Git Coupling: temporal, hotspots, churn
+├── tldr-refactor-oo/          # Object-Oriented: coupling, inheritance
+├── tldr-formal-methods/       # Safety Proofs: contracts, invariants, resources
+├── tldr-api-stability/        # API Boundaries: api-check, interface
+├── tldr-metrics-raw/          # CI/CD Reporting: loc, halstead, coverage
+└── tldr-security-taint/       # Granular tracing: taint
 ```
 
-By adhering to this flat, modular structure, you can publish this repository once, and users can selectively install `tldr-fix` or `tldr-audit` via `npx skills add` without being forced to download unrelated toolsets.
+By adhering to this flat, modular structure, you can publish this repository once, and users can selectively install `tldr-fix` or `tldr-api-stability` via `npx skills add` without being forced to download unrelated toolsets.

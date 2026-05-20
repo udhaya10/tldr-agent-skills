@@ -47,3 +47,10 @@ agentic-utils/
 2. Add a `SKILL.md` file containing the YAML frontmatter and markdown instructions.
 3. Push to GitHub.
 4. Run `npx skills update -g` locally to fetch the latest changes.
+## TLDR-Code Skills Ecosystem
+
+This repository houses the decomposed agent skills for the `tldr-code` AST engine. The original CLI contains 60+ commands, which have been systematically audited and mapped into 13 highly-specialized agent skills.
+
+For a full breakdown of the research methodology and why certain commands were intentionally hidden from the LLM, please see:
+* [Empirical Research Methodology](research/03_EMPIRICAL_RESEARCH_METHODOLOGY.md)
+* [Omitted Commands Rationale](research/05_OMITTED_COMMANDS_RATIONALE.md)

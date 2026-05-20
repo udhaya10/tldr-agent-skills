@@ -13,25 +13,24 @@ Use this skill at the start of a session to speed up subsequent queries, when re
 ## Supported Commands
 
 ### 1. `tldr daemon`
-Manage the background analysis daemon.
+Manage the background analysis daemon (runs the SQLite cache and PDG engine in memory).
 * **Usage:** `tldr daemon start` / `tldr daemon stop` / `tldr daemon status`
 * **Crucial Rule:** Run `tldr daemon start` at the beginning of a coding session to drastically speed up commands like `impact` and `calls`.
 
 ### 2. `tldr warm`
-Pre-warm the call graph cache.
+Pre-warm the call graph cache into the daemon.
 * **Usage:** `tldr warm <dir>`
-* **Note:** Use this immediately after starting the daemon so graph lookups return instantly.
+* **Crucial Rule:** Use this immediately after starting the daemon so subsequent graph lookups return instantly.
 
 ### 3. `tldr diff`
-View an AST-aware structural diff.
+View an AST-aware structural diff between two files or directories.
 * **Usage:** `tldr diff <FILE_A> <FILE_B>`
-* **Crucial Rule:** You MUST provide two positional arguments. You can compare files or directories depending on the granularity needed.
-* **Note:** Use this instead of `git diff`. It ignores whitespace and formatting, showing only what logical structures (functions/classes) actually changed.
+* **Crucial Rule:** You MUST provide two positional arguments. Use this instead of `git diff`. It ignores whitespace and formatting, showing only what logical structures (functions/classes) actually changed.
 
 ### 4. `tldr change-impact`
-Find which tests are affected by uncommitted code changes.
+Find which tests are affected by uncommitted code changes by tracing the reverse call graph from the modified AST nodes.
 * **Usage:** `tldr change-impact .`
-* **Note:** Use this before pushing a PR to figure out exactly which tests you need to run locally.
+* **Crucial Rule:** Use this before pushing a PR to figure out exactly which tests you need to run locally, saving massive CI time.
 
 ### 5. `tldr todo`
 Act as an internal orchestrator that aggregates Dead Code, Complexity, Cohesion, and Similarity engines into a single, ranked Top-20 refactoring backlog.
@@ -41,7 +40,7 @@ Act as an internal orchestrator that aggregates Dead Code, Complexity, Cohesion,
 ### 6. `tldr stats`
 View CLI telemetry and cache hit rates.
 * **Usage:** `tldr stats`
-* **Note:** This is for debugging the `tldr` CLI itself, NOT for getting codebase statistics.
+* **Crucial Rule:** This is for debugging the `tldr` CLI itself (e.g., checking if the daemon is working), NOT for getting codebase statistics.
 
 ## Methodology Rules
 1. **Always start the daemon.** If you plan to run multiple `tldr` trace commands, run `tldr daemon start` followed by `tldr warm .`.

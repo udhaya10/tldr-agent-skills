@@ -1,6 +1,9 @@
-# Agentic Utils
+# TLDR Agent Skills
 
-A repository for custom agent skills, tools, and workflows designed to enhance Large Language Model (LLM) autonomy.
+A suite of 14 intent-driven agent skills designed to give Large Language Models (LLMs) autonomous mastery over the [parcadei/tldr-code](https://github.com/parcadei/tldr-code) AST engine. 
+
+The `tldr-code` CLI is an incredibly powerful static analysis tool containing 60+ commands. This repository systematically decomposes that raw CLI into modular, Progressive Disclosure skills (like `tldr-search`, `tldr-fix`, and `tldr-audit`) so agents like Claude Code, Cursor, or OpenHands can use them without hallucinating flags or suffering from cognitive overload.
+
 
 ## Skill Installation
 
@@ -9,20 +12,20 @@ This repository is compatible with the [Agent Skills CLI](https://agentskills.io
 ### Install Interactively
 To browse and select which skills to install from this repository:
 ```bash
-npx skills add udhayakumar/agentic-utils -g
+npx skills add udhaya10/tldr-agent-skills -g
 ```
 *(The `-g` flag installs the skills globally for your agent user profile).*
 
 ### Install a Specific Skill
 If you know the exact name of the skill (e.g., `tldr-fix`):
 ```bash
-npx skills add udhayakumar/agentic-utils --skill tldr-fix -g
+npx skills add udhaya10/tldr-agent-skills --skill tldr-fix -g
 ```
 
 ### Install All Skills
 To install every skill in this repository at once, skipping prompts:
 ```bash
-npx skills add udhayakumar/agentic-utils --all -g
+npx skills add udhaya10/tldr-agent-skills --all -g
 ```
 
 ---
@@ -32,7 +35,7 @@ npx skills add udhayakumar/agentic-utils --all -g
 To maintain compatibility with the Agent Skills CLI, this repository follows the standard `SKILL.md` structure. Each skill lives in its own isolated directory:
 
 ```text
-agentic-utils/
+tldr-agent-skills/
 ├── README.md
 ├── skill-name-1/
 │   ├── SKILL.md          # Required: The prompt and instructions

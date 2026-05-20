@@ -13,28 +13,31 @@ Use this skill when you know *what* a piece of code does conceptually but don't 
 ## Supported Commands
 
 ### 1. `tldr semantic`
-Natural language search using local embeddings.
+Natural language search using FastEmbed embeddings.
 * **Usage:** `tldr semantic "<natural language query>" <dir>`
+* **Crucial Rule:** Use when you don't know exact variable names. Ex: `tldr semantic "user billing logic" .`
 
 ### 2. `tldr search`
-Enriched BM25 keyword search that returns function-level context cards (including call graph data).
+Enriched BM25 keyword/regex search.
 * **Usage:** `tldr search "<keyword>" <dir>`
-* **Flags:** Use `--regex` to treat the query as a regular expression. Use `--no-callgraph` if it is too slow.
+* **Crucial Rule:** Use `--regex` for pattern matching. Use `--no-callgraph` if the query times out due to traversing massive caller trees.
 
 ### 3. `tldr similar`
-Finds code structurally/semantically similar to a specific file or function.
+Finds functions mathematically similar to a source target via AST/Dice comparison.
 * **Usage:** `tldr similar <file> --function <func_name>`
 
 ### 4. `tldr context`
-Builds an LLM-optimized context payload by crawling the call graph from an entry point.
+Crawls the AST downward to build a complete LLM-optimized context tree around an entry point.
 * **Usage:** `tldr context <file>:<function>`
-* **Crucial Rule:** The input MUST be formatted as `file:function` or it will fail.
+* **Crucial Rule:** The input MUST be formatted precisely as `file:function` or it will fail.
+* **Warning:** This only crawls *downward* (callees). To find callers, use `tldr-trace/impact`.
 
 ### 5. `tldr dice`
-Compares the similarity between two specific code fragments.
+Compare the exact structural overlap (Dice coefficient) between two specific functions.
 * **Usage:** `tldr dice <file1:func1> <file2:func2>`
+* **Crucial Rule:** Useful to verify if two messy legacy functions are safe to merge.
 
 ## Methodology Rules
 1. **Prefer `tldr semantic`** for abstract concepts (e.g., "where are payments processed?").
 2. **Prefer `tldr search`** for exact variable names, constants, or regex patterns.
-3. **Always run `tldr context file:func`** before attempting complex refactors on an entry point to ensure you have the full mental model of the surrounding graph.
+3. **Always run `tldr context file:func`** before attempting complex refactors on an entry point to ensure you have the full mental model of the surrounding downward graph.

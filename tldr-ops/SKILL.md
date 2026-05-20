@@ -34,9 +34,9 @@ Find which tests are affected by uncommitted code changes.
 * **Note:** Use this before pushing a PR to figure out exactly which tests you need to run locally.
 
 ### 5. `tldr todo`
-Generate an actionable refactoring backlog.
+Act as an internal orchestrator that aggregates Dead Code, Complexity, Cohesion, and Similarity engines into a single, ranked Top-20 refactoring backlog.
 * **Usage:** `tldr todo <dir> --quick`
-* **Crucial Rule:** Use `--quick` to get the top 20 functions that need cleanup without running slow structural clone detection.
+* **Crucial Rule:** This saves you from running and merging multiple tools manually. ALWAYS use `--quick` to get the top 20 functions instantly by skipping the slow cross-file clone detection engine.
 
 ### 6. `tldr stats`
 View CLI telemetry and cache hit rates.

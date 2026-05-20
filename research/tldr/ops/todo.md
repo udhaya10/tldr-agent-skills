@@ -60,12 +60,12 @@ Options:
 * **Observation 3:** Similar to `health`, the `--quick` flag skips the cross-file similarity analysis, significantly speeding up the command.
 
 ## Intent & Routing
-* **User/Agent Goal:** Generate an actionable refactoring backlog.
-* **When to choose this over similar tools:** Use `--quick` to get the top 20 functions that need cleanup without running slow clone detection.
+* **User/Agent Goal:** Act as an internal orchestrator that aggregates Dead Code, Complexity, Cohesion, and Similarity engines into a unified, ranked refactoring backlog.
+* **When to choose this over similar tools:** Use this to get a prioritized "Top 20" list of what to fix *without* having to manually run and merge the output of `dead`, `complexity`, and `smells`. Use `--quick` to skip the slow cross-file similarity analysis.
 
 ## Agent Synthesis
-> **How to use `tldr todo` (Refactoring List):**
-> Use this command to get an actionable, prioritized list of the top 20 functions/files that need refactoring in the project (due to dead code, complexity, or low cohesion).
+> **How to use `tldr todo` (Prioritized Orchestrator):**
+> Use this command to offload the heavy lifting of finding refactoring targets to the Rust binary. It orchestrates multiple engines and returns the Top 20 worst offenders in the codebase.
 > 1. Provide the `<PATH>` argument (e.g., `.`).
 > 2. Append `--quick` to skip slow cross-file similarity checks.
 > 

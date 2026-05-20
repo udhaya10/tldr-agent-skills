@@ -65,15 +65,18 @@ Options:
 * **Observation 2:** The `-k` flag defaults to 10 results.
 * **Observation 3:** By default, it hits the daemon cache.
 
+## Architectural Deep Dive
+* **Under the hood:** `search` uses an enriched BM25 text index (or Regex) coupled tightly with the AST and Call Graph engines. Instead of returning raw lines of text, it maps the match back to its enclosing AST node and constructs a "context card" containing the function's signature, callers, and callees.
+* **Performance:** Text indexing is fast, but if the match is a highly ubiquitous token (like `id`), building the call graph for thousands of matches can timeout.
+* **LLM Cognitive Load:** Raw `grep` returns stripped lines, forcing the LLM to run `cat` to see what function the line belongs to. `tldr search` gives the LLM the exact surrounding structural block and usage context immediately, eliminating the need for follow-up reads.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find exact keywords, variables, or regex patterns with structural context.
-* **When to choose this over similar tools:** Use instead of `grep` because this returns LLM-ready context cards (callers/callees) instead of raw text lines.
+* **User/Agent Goal:** Enriched BM25 keyword/regex search that returns AST context cards.
+* **When to choose this over similar tools:** Use instead of `grep` for exact keywords, variables, or regex patterns. Use `--no-callgraph` if it times out.
 
 ## Agent Synthesis
-> **How to use `tldr search` (Semantic/Code Search):**
-> Use this command to find where a specific concept, error message, or feature is implemented in the codebase when you don't know the exact file or function name.
-> 1. Use natural language or code terms for the `<QUERY>` argument.
-> 2. Always append `--no-callgraph` to save compute time and tokens unless you explicitly need caller/callee edges in the search results.
-> 3. If you know exactly what you are looking for, use `--regex` instead of the default BM25 ranking.
+> **How to use `tldr search`:**
+> Use this for exact text or regex searches. It returns function-level context instead of raw lines.
+> * **Crucial Rule:** Use `--regex` for pattern matching. Use `--no-callgraph` if the query times out due to traversing massive caller trees.
 > 
-> **Command:** `tldr search "your natural language query" . --no-callgraph -k 5`
+> **Command:** `tldr search "<keyword>" <dir>`

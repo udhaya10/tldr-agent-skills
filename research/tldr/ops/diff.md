@@ -78,14 +78,18 @@ Options:
 * **Observation 2:** Granularity levels `L1` through `L5 (class)` **MUST** be run on individual files.
 * **Observation 3:** The `--semantic-only` flag is incredibly useful because it completely ignores formatting changes, comments, and whitespace, drastically reducing token count when analyzing changes.
 
+## Architectural Deep Dive
+* **Under the hood:** `diff` generates the AST for FILE_A and FILE_B, aligns the nodes using structural hashing, and computes the delta. It completely ignores whitespace, formatting, and comment changes.
+* **Performance:** Fast, isolated to two files.
+* **LLM Cognitive Load:** Standard `git diff` is line-based. If a developer runs a formatter (like `black` or `prettier`), `git diff` shows the entire file as changed, destroying the LLM's context window. `tldr diff` shows only the logical code that was actually mutated, saving massive tokens.
+
 ## Intent & Routing
-* **User/Agent Goal:** View an AST-aware structural diff.
-* **When to choose this over similar tools:** Use instead of `git diff` to see what logical structures changed rather than raw lines.
+* **User/Agent Goal:** View an AST-aware structural diff between two files or directories.
+* **When to choose this over similar tools:** Use instead of `git diff` to ignore formatting noise and see logical changes.
 
 ## Agent Synthesis
-> **How to use `tldr diff` (AST-Aware Diffs):**
-> Use this instead of standard `git diff` to see structural changes without the noise of formatting or whitespace.
-> 1. By default, it diffs at the `function` level.
-> 2. You MUST use `--semantic-only` to ignore whitespace/comment changes.
-> 3. To compare files: `tldr diff <FILE_A> <FILE_B> -g function --semantic-only`
-> 4. To compare directories (architecture/module level): `tldr diff <DIR_A> <DIR_B> -g module`
+> **How to use `tldr diff`:**
+> Use this to review logical code changes without formatting noise.
+> * **Crucial Rule:** You MUST provide two positional arguments.
+> 
+> **Command:** `tldr diff <FILE_A> <FILE_B>`

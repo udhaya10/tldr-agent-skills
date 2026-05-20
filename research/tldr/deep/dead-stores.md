@@ -43,9 +43,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Performs liveness analysis. A variable is "live" at a point if there is a path from that point to a read of the variable. If a variable is assigned a value but is not live immediately after, it is a dead store.
+* **Performance:** Iterative backward data-flow analysis, highly optimized.
+* **LLM Cognitive Load:** A dead store is often a symptom of a silent logic bug (e.g., computing a value and writing it to a variable, but accidentally using a different variable or leaving the calculation unused). This command exposes these structural bugs instantly.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find variables that are assigned but never read.
-* **When to choose this over similar tools:** Use for cleanup and identifying logic errors.
+* **User/Agent Goal:** Perform liveness analysis to find variables that are assigned but never subsequently read.
+* **When to choose this over similar tools:** Use to clean up code and identify silent logic errors where computed values are discarded.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr dead-stores`:**
+> Use this to find variables that are assigned values but are never read afterwards on any execution path.
+> 
+> **Command:** `tldr dead-stores <file>`

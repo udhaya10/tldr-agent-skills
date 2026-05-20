@@ -45,9 +45,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `contracts` uses AST extraction combined with heuristics to find runtime assertions, explicit `require`/`ensure` blocks, and structured docstring parameter constraints.
+* **Performance:** AST parser, very fast.
+* **LLM Cognitive Load:** Before an LLM rewrites a critical function, it extracts the contracts to ensure it doesn't accidentally remove a hidden mathematical boundary condition in the new implementation.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'contracts' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Extract preconditions, postconditions, and assertions from the AST.
+* **When to choose this over similar tools:** Use to explicitly identify undocumented assumptions in legacy code before rewriting it.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr contracts`:**
+> Use this to extract mathematical boundaries and assertions from a function.
+> 
+> **Command:** `tldr contracts <dir>`

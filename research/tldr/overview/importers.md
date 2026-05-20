@@ -47,25 +47,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
-## Intent & Routing
-* **User/Agent Goal:** Find all files in the project that import a specific module.
-* **When to choose this over similar tools:** Use to trace reverse-dependencies at the file/module level.
-
-## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
-## Empirical Probes
-* **Command Executed:** Checked `tldr importers --help` and source file.
-* **Observation:** The inverse of `deps`. Given a module, what else uses it?
-
-## Source Code Reality
-* **Observation 1:** It accepts the `<MODULE>` name (e.g., `requests` or `utils.db`).
-* **Observation 2:** Has a default limit of 50.
+## Architectural Deep Dive
+* **Under the hood:** Performs a reverse AST search across the entire project workspace, building an index of all files that declare an import matching the target module.
+* **Performance:** Cached via the daemon if running. Without daemon, requires parsing imports of the whole project.
+* **LLM Cognitive Load:** Provides an immediate blast-radius check at the file level. The `--limit` flag is crucial because tracing a highly-imported utility module (like `logger`) will return thousands of files, destroying the context window.
 
 ## Intent & Routing
-* **User/Agent Goal:** Find all files in the project that import a specific module.
-* **When to choose this over similar tools:** Use to trace reverse-dependencies at the file/module level.
+* **User/Agent Goal:** List inbound dependencies (who imports this file).
+* **When to choose this over similar tools:** Use to trace reverse-dependencies at the file/module level before deleting or renaming a file.
 
 ## Agent Synthesis
-> **How to use `tldr importers` (Reverse Dependency Search):**
-> 1. Use this when you want to modify a module and need to find every file that imports it.
-> **Command:** `tldr importers <MODULE>`
+> **How to use `tldr importers`:**
+> Use this to find all files in the project that import a specific module.
+> * **Crucial Rule:** Use `--limit <N>` (e.g., 20) to restrict output size on highly-imported utility modules.
+> 
+> **Command:** `tldr importers <module> --limit 20`

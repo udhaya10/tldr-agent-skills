@@ -59,9 +59,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Strips comments and whitespace using the AST, calculating the difference between physical lines (raw 
+) and logical lines (actual executable statements).
+* **Performance:** Very fast.
+* **LLM Cognitive Load:** Useful only for CI gating or high-level reporting. Irrelevant for code refactoring logic.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'loc' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Calculate physical and logical Lines of Code.
+* **When to choose this over similar tools:** Use ONLY when asked to generate statistical reports.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr loc`:**
+> Use this to get physical and logical Lines of Code.
+> 
+> **Command:** `tldr loc <dir>`

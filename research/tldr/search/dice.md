@@ -53,9 +53,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `dice` computes the Sørensen–Dice coefficient between two specific AST nodes (functions). It tokenizes the functions into n-grams and calculates the exact mathematical overlap percentage.
+* **Performance:** Instantaneous O(1) comparison since it only targets two predefined functions.
+* **LLM Cognitive Load:** When an agent is asked to DRY up (merge) two messy legacy functions, it can use this to mathematically verify how much actual structural overlap exists before attempting a risky merge operation.
+
 ## Intent & Routing
-* **User/Agent Goal:** Compare the structural similarity between two specific functions.
+* **User/Agent Goal:** Compare the exact structural overlap (Dice coefficient) between two specific functions.
 * **When to choose this over similar tools:** Use to verify if two functions are safe to merge during refactoring.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr dice`:**
+> Use this to mathematically compare how similar two specific functions are.
+> * **Crucial Rule:** Useful to verify if two messy legacy functions are safe to merge.
+> 
+> **Command:** `tldr dice <file1:func1> <file2:func2>`

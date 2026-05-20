@@ -46,15 +46,18 @@ Options:
 * **Observation 3:** By default, it runs underlying "L1 commodity tools" (like `clippy`, `cargo-audit`, `ruff`, etc.) in addition to the AST graph checks. You can skip the slow commodity tools by passing `--no-tools`.
 * **Observation 4:** By default, it will exit with a non-zero code if it finds bugs. If running in a script where you just want to parse the JSON and not fail the pipeline, use `--no-fail`.
 
+## Architectural Deep Dive
+* **Under the hood:** `bugbot` reads the `git status` to find modified files. It parses the AST of only the modified blocks, injects them into an LLM context window alongside the function's static types, and asks the LLM to find regressions.
+* **Performance:** Because it isolates analysis to the git delta rather than the whole file, it is extremely fast and token-efficient.
+* **LLM Cognitive Load:** Serves as an automated peer reviewer. Instead of the agent manually diffing the code and reading it back, `bugbot` acts as a parallel daemon verifying the agent's staged work before a commit.
+
 ## Intent & Routing
-* **User/Agent Goal:** Analyze uncommitted/staged changes for bugs before committing.
-* **When to choose this over similar tools:** Use `tldr bugbot check . --staged` as a pre-commit check.
+* **User/Agent Goal:** Analyze uncommitted or staged changes for bugs before committing.
+* **When to choose this over similar tools:** Use as a pre-commit check to ensure your changes are safe.
 
 ## Agent Synthesis
-> **How to use `tldr bugbot check` (Pre-Commit Analysis):**
-> Use this command to automatically analyze the blast radius, dead code, and logic bugs introduced by your current uncommitted changes.
-> 1. To check what you are about to commit: `tldr bugbot check . --staged`
-> 2. To check your entire working directory against HEAD: `tldr bugbot check .`
-> 3. If you want a fast response and don't want to wait for linters/clippy, append `--no-tools`.
+> **How to use `tldr bugbot check`:**
+> Use this as a pre-commit check to find bugs in staged changes.
+> * **Crucial Rule:** It isolates analysis only to the modified AST nodes.
 > 
-> **Command:** `tldr bugbot check . --no-tools`
+> **Command:** `tldr bugbot check . --staged`

@@ -57,15 +57,18 @@ Options:
 * **Observation 2:** The `--file` flag restricts the autonomous agent to only applying fixes to a single source file, preventing it from wildly modifying the whole project.
 * **Observation 3:** By default, it will loop 5 times (`--max-attempts 5`) before giving up.
 
+## Architectural Deep Dive
+* **Under the hood:** `fix check` is an autonomous state machine. It takes a failing test command, runs it, pipes the stack trace into `fix diagnose`, generates an AST patch, applies it via `fix apply`, and loops the test command again until it passes or hits a retry limit.
+* **Performance:** Limited by test execution speed and LLM generation time.
+* **LLM Cognitive Load:** This is a meta-agent tool. It allows the primary agent to delegate a localized test failure to an autonomous loop, freeing up the primary agent's context window while the loop grinds out the syntax fix.
+
 ## Intent & Routing
-* **User/Agent Goal:** Automatically repair failing tests by looping edit-compile-test.
-* **When to choose this over similar tools:** Use to autonomously fix bugs. MUST pass the exact test command via `--test-cmd`.
+* **User/Agent Goal:** Automatically repair failing tests by looping an edit-compile-test cycle.
+* **When to choose this over similar tools:** Use when a specific, isolated test is failing and you have an exact command to run it.
 
 ## Agent Synthesis
-> **How to use `tldr fix check` (Autonomous Repair):**
-> Use this command to autonomously fix a failing test or compiler error in a specific file.
-> 1. You MUST provide the specific source file you want it to modify via `--file`.
-> 2. You MUST provide the exact bash command that reproduces the error via `--test-cmd`.
-> 3. The CLI will execute the test, read the stderr, write the code fix, and re-run the test in a loop up to 5 times until it passes.
+> **How to use `tldr fix check`:**
+> Use this to autonomously fix code until a specific test suite passes.
+> * **Crucial Rule:** You MUST provide the exact test command via the `--test-cmd` flag.
 > 
-> **Command:** `tldr fix check --file src/app.py --test-cmd "pytest tests/test_app.py"`
+> **Command:** `tldr fix check . --test-cmd "<YOUR_TEST_COMMAND>"`

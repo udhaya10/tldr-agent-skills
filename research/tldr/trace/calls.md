@@ -66,15 +66,18 @@ Options:
 * **Observation 2:** If you do not provide a language via `--lang`, and the directory is empty, it correctly returns an empty JSON object instead of hallucinating "Python" and throwing parsing errors.
 * **Observation 3:** This command generates an overwhelming amount of data (L2 Graph). Agents should almost NEVER use this command raw. They should use `--max-items 0` and route the output to a file if they need the raw graph.
 
+## Architectural Deep Dive
+* **Under the hood:** `calls` extracts the global forward call graph of a directory. It identifies every function call across every file and maps caller-callee relations project-wide.
+* **Performance:** Computing the global call graph is intensive; daemon start is highly recommended.
+* **LLM Cognitive Load:** Do not use this to trace individual functions. This command is strictly for global architectural dumps or visualizing project complexity from a birds-eye view.
+
 ## Intent & Routing
-* **User/Agent Goal:** Dump the full cross-file forward call graph for an entire project/directory.
-* **When to choose this over similar tools:** Use ONLY when you need the global call graph. Do NOT use this to trace a specific function. For function-specific traces, use `impact`, `references`, or `context`.
+* **User/Agent Goal:** Dump the full cross-file forward call graph for an entire project.
+* **When to choose this over similar tools:** Use strictly for global architectural analysis. For specific functions, use `impact` or `context`.
 
 ## Agent Synthesis
-> **How to use `tldr calls` (Project Call Graph):**
-> Use this to extract the full L2 cross-file call graph for the entire project.
-> 1. You CANNOT pass a function name to this command. It takes a directory.
-> 2. **WARNING:** The output is massive. Do not print it to stdout unless absolutely necessary.
-> 3. Usually, you should use `tldr impact` or `tldr references` if you want to find specific edges for a specific function.
+> **How to use `tldr calls`:**
+> Use this to dump the global call graph of a directory.
+> * **Crucial Rule:** Do NOT use this to trace a specific function (use `impact`, `references`, or `context`). This is strictly for global architectural dumps.
 > 
-> **Command:** `tldr calls . --max-items 100`
+> **Command:** `tldr calls <dir>`

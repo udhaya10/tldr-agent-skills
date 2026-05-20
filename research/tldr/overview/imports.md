@@ -40,9 +40,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Parses the AST for `Import` and `ImportFrom` nodes (or their equivalents in other languages), resolving aliases and relative paths into absolute module references.
+* **Performance:** Single-file AST parse, extremely fast.
+* **LLM Cognitive Load:** Gives the LLM an immediate map of outbound dependencies (what this file relies on) without needing to parse the top of the file manually.
+
 ## Intent & Routing
-* **User/Agent Goal:** List all external and internal imports used by a specific file.
-* **When to choose this over similar tools:** Use when you need to know a file's immediate dependencies.
+* **User/Agent Goal:** List outbound dependencies (what this file imports).
+* **When to choose this over similar tools:** Use when you need to know a file's immediate dependencies to understand its external state requirements.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr imports`:**
+> Use this to see what external and internal modules a specific file relies on.
+> 
+> **Command:** `tldr imports <file>`

@@ -46,9 +46,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `chop` finds the intersection of a backward slice from a target line and a forward slice from a source line. This highlights only the nodes in the PDG that lie directly on the path of dependency between the two points.
+* **Performance:** Computes two separate slices and intersects them. O(N) relative to the size of the localized PDG.
+* **LLM Cognitive Load:** When tracking how a variable was modified between its declaration (source) and its usage (target), `chop` completely filters out all unrelated logic, loops, and conditions inside the function, leaving a clean, linear mutation path for the LLM to review.
+
 ## Intent & Routing
 * **User/Agent Goal:** Find the intersection of data flow between a source line and a target line.
-* **When to choose this over similar tools:** Use when tracking how a variable mutates between two specific points.
+* **When to choose this over similar tools:** Use when tracking how a specific variable mutates between two specific points in a function, filtering out all unrelated logic.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr chop`:**
+> Use this to isolate the exact lines that modified a variable between a starting source line and an ending target line.
+> 
+> **Command:** `tldr chop <file> <func> <source_line> <target_line>`

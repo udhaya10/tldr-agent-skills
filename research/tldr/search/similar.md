@@ -69,9 +69,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `similar` compares AST structural nodes (ignoring variable names) or uses vector embeddings to find functions that are mathematically or semantically analogous to a source target.
+* **Performance:** Cross-file structural comparison is computationally heavy on large repositories.
+* **LLM Cognitive Load:** Allows the LLM to quickly locate duplicated logic (copy-paste refactoring targets) or see how a specific pattern was implemented elsewhere without having to read the whole project.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find functions that share structural or semantic logic.
+* **User/Agent Goal:** Find functions structurally/mathematically similar to a source target.
 * **When to choose this over similar tools:** Use to find duplicated code or learn how a pattern is implemented elsewhere.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr similar`:**
+> Use this to find code blocks that share structural or semantic logic with your target function.
+> 
+> **Command:** `tldr similar <file> --function <func_name>`

@@ -61,9 +61,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `reaching-defs` traverses the Data Flow Graph (DFG) to find all definition points (assignments) of a variable that can reach a specific execution point without being killed (re-assigned) along the path.
+* **Performance:** Standard iterative data-flow analysis, very fast within function scopes.
+* **LLM Cognitive Load:** Prevents tracing hallucinations. It answers the question: "Which assignment statement actually populated this variable at line X?" showing the exact lines of code where the active value could have originated.
+
 ## Intent & Routing
-* **User/Agent Goal:** Trace where a variable's value originated.
-* **When to choose this over similar tools:** Use when a variable has the wrong value and you need to find the assignment.
+* **User/Agent Goal:** Trace where a variable's value mathematically originated via DFG traversal.
+* **When to choose this over similar tools:** Use when a variable has the wrong value at runtime and you need to find the exact assignment that reached this line.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr reaching-defs`:**
+> Use this to trace the active definitions/assignments of a variable that reach a specific line.
+> 
+> **Command:** `tldr reaching-defs <file> <func> <line>`

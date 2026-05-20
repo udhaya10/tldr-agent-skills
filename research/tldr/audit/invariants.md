@@ -50,9 +50,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `invariants` uses Data Flow analysis and Symbolic Execution to detect values that do not change inside a loop or state machine execution path.
+* **Performance:** Computationally heavy; requires symbolic execution engine.
+* **LLM Cognitive Load:** Essential for algorithm refactoring. If an LLM changes a sort algorithm, it uses this to mathematically prove the state remains consistent.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'invariants' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Detect loop invariants and state machine guarantees.
+* **When to choose this over similar tools:** Use when refactoring complex algorithms to prove state consistency.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr invariants`:**
+> Use this to detect loop invariants via Data Flow Graph analysis.
+> 
+> **Command:** `tldr invariants <dir>`

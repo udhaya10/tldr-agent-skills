@@ -74,9 +74,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Parses the AST into Operators (keywords, arithmetic, function calls) and Operands (variables, literals). Calculates Halstead Volume, Difficulty, and Effort based on the unique vs total count of each.
+* **Performance:** Fast AST traversal.
+* **LLM Cognitive Load:** Mathematical abstraction. The LLM is explicitly warned *not* to use this for direct refactoring, as a "Difficulty score of 50" provides no actionable steps compared to structural smells.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'halstead' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Calculate Halstead complexity metrics.
+* **When to choose this over similar tools:** Use ONLY for automated audits or mathematical CI metrics.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr halstead`:**
+> Use this to get mathematical complexity metrics per function.
+> * **Crucial Rule:** Do not attempt to fix code based on a Difficulty score. Use `tldr-audit/smells` instead.
+> 
+> **Command:** `tldr halstead <dir>`

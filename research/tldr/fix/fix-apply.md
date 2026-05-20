@@ -57,9 +57,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `fix apply` takes a unified diff or search-and-replace block, locates the target AST nodes, verifies the surrounding code hasn't shifted, and safely mutates the file on disk.
+* **Performance:** Instantaneous AST mutation.
+* **LLM Cognitive Load:** Safer than native `sed` or `patch` which rely on brittle line numbers. By anchoring to AST nodes, the patch applies correctly even if the file was formatted or lines shifted slightly.
+
 ## Intent & Routing
-* **User/Agent Goal:** Apply an LLM-generated fix to a file.
-* **When to choose this over similar tools:** Use to orchestrate file patching.
+* **User/Agent Goal:** Apply an LLM-generated patch to a file safely via AST anchoring.
+* **When to choose this over similar tools:** Use to apply generated patches safely.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr fix apply`:**
+> Use this to apply an LLM patch safely to a file.
+> 
+> **Command:** `tldr fix apply <file_path> <patch_file>`

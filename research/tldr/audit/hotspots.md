@@ -77,9 +77,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `hotspots` aggregates Git churn data (frequency of commits) with codebase complexity metrics. It effectively maps complexity (debt) to activity (cost) to find files that are both bad and frequently modified.
+* **Performance:** Requires running the git history parser and the complexity AST engine concurrently.
+* **LLM Cognitive Load:** Gives the LLM an ROI (Return on Investment) map for refactoring. The LLM shouldn't waste tokens fixing terrible code that hasn't been touched in 4 years. It should focus entirely on hotspots.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'hotspots' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Identify code hotspots by correlating Git commits with complexity.
+* **When to choose this over similar tools:** Use to prioritize what to refactor based on actual developer activity.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr hotspots`:**
+> Use this to identify the most error-prone files in a codebase.
+> * **Crucial Rule:** Hotspots represent the highest ROI for refactoring.
+> 
+> **Command:** `tldr hotspots <dir>`

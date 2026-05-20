@@ -67,9 +67,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `semantic` uses local vector embeddings (via FastEmbed) to translate the codebase into high-dimensional vectors. It then performs a cosine similarity search against the natural language query.
+* **Performance:** The first run requires generating the embedding index (which can take a moment), but subsequent searches are instantaneous.
+* **LLM Cognitive Load:** Bridges the "vocabulary gap". If an LLM is looking for "billing logic" but the codebase uses `TransactionProcessor`, `grep` will fail. Semantic search translates the concept into the correct file instantly, saving massive exploration tokens.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find code based on concepts or natural language queries (e.g., 'billing logic').
-* **When to choose this over similar tools:** Use when you don't know the exact variable names or keywords. Use `search` for exact matches.
+* **User/Agent Goal:** Natural language search using FastEmbed embeddings.
+* **When to choose this over similar tools:** Use when you don't know exact variable names. Ex: `tldr semantic "user billing logic" .`
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr semantic`:**
+> Use this to search the codebase using concepts or natural language rather than exact code syntax.
+> * **Crucial Rule:** Use when you don't know exact variable names.
+> 
+> **Command:** `tldr semantic "<natural language query>" <dir>`

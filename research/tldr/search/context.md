@@ -70,14 +70,19 @@ Options:
 * **Observation 2:** The positional `[PATH]` argument (which defaults to `.`) takes precedence over the deprecated `--project` flag.
 * **Observation 3:** By default, it does *not* include docstrings. You have to explicitly ask for them to enrich the LLM context.
 
+## Architectural Deep Dive
+* **Under the hood:** `context` performs a localized, downward AST and Call Graph traversal starting from the specified `file:function` entry point. It recursively fetches and inlines the actual bodies of the functions called by the entry point.
+* **Performance:** Highly targeted; it only loads the specific downward subgraph, making it extremely fast.
+* **LLM Cognitive Load:** This is the ultimate "mental model" builder. Instead of the LLM manually extracting a function, seeing it calls `calc_tax()`, and then extracting `calc_tax()`, `context` dumps the entire downward execution chain into a single, cohesive prompt payload.
+
 ## Intent & Routing
-* **User/Agent Goal:** Extract a specific function and the exact bodies of everything it calls (downward tree).
-* **When to choose this over similar tools:** Use this BEFORE modifying a major function to ensure you understand everything it calls. WARNING: This only shows CALLEES (downward). To find CALLERS (who calls this), you must use `tldr impact` or `tldr references`.
+* **User/Agent Goal:** Crawls the AST downward to build a complete LLM-optimized context tree around an entry point.
+* **When to choose this over similar tools:** Use this BEFORE modifying a major function to ensure you understand everything it calls. WARNING: This only shows CALLEES (downward).
 
 ## Agent Synthesis
-> **How to use `tldr context` (LLM Context Builder):**
-> Use this to gather the signatures and basic call patterns of an entry function and its immediate descendants.
-> 1. Use the `<file>:<function>` shorthand format for the entry argument to ensure you target the exact function.
-> 2. Always append the `--include-docstrings` flag so you get the actual meaning of the functions, not just their names.
+> **How to use `tldr context`:**
+> Use this to build a complete LLM-ready call tree (downward) around a specific entry point.
+> * **Crucial Rule:** The input MUST be formatted precisely as `file:function` or it will fail.
+> * **Warning:** This only crawls *downward* (callees). To find callers, use `tldr-trace/impact`.
 > 
-> **Command:** `tldr context <FILE>:<FUNCTION_NAME> . --depth 3 --include-docstrings`
+> **Command:** `tldr context <file>:<function>`

@@ -40,9 +40,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `taint` is the manual inspection tool for the Data Flow Graph security engine. It prints the exact block-by-block control flow traversal from the untrusted source parameter to the sensitive sink.
+* **Performance:** Intensive block-level tracing.
+* **LLM Cognitive Load:** Allows the LLM to see *exactly* where a taint flow breaks down. If a vulnerability is flagged, the LLM uses `--verbose` to see which specific variable on which line needs to be passed through an escape function to remediate the vulnerability.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'taint' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Analyze taint flows manually to trace untrusted data.
+* **When to choose this over similar tools:** Use when `tldr vuln` reports a vulnerability, and you need to manually inspect the exact flow path.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr taint`:**
+> Use this to manually trace untrusted data flows through a specific function.
+> * **Crucial Rule:** Use `--verbose` to see the exact tainted variables per control-flow block.
+> 
+> **Command:** `tldr taint <file> <function> --verbose`

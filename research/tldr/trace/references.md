@@ -83,16 +83,17 @@ Options:
 * **Observation 2:** The `--limit` defaults to 20. If you are searching for a highly ubiquitous symbol, you may need to bump this.
 * **Observation 3:** You can filter by `kind`. E.g., `--kinds call` will filter out the `import` statements.
 
+## Architectural Deep Dive
+* **Under the hood:** `references` queries the symbol table and index to locate all references to a variable, class, or method, distinguishing between raw variable reads/writes and function invocations.
+* **Performance:** Extremely fast symbol lookup compared to line-by-line grep.
+* **LLM Cognitive Load:** Traditional `grep` matches comments, variable names inside strings, and irrelevant files. `references` guarantees that only actual syntactic uses of the symbol are returned, ensuring 100% precision.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find all usages of a specific symbol.
-* **When to choose this over similar tools:** Use when renaming or modifying a variable/function to find all call sites.
+* **User/Agent Goal:** Find all usages of a specific symbol (variable, function, class) across the codebase.
+* **When to choose this over similar tools:** Use instead of `grep` to find exact usages of a symbol across all files.
 
 ## Agent Synthesis
-> **How to use `tldr references` (Find All Usages):**
-> Use this command to find every place a function, variable, or class is imported or called across the codebase.
-> 1. You MUST pass a directory (e.g., `.`), not a file.
-> 2. The target `<SYMBOL>` is just the name (e.g., `get_db_connection`).
-> 3. It will return the `kind` of usage (e.g., `call` or `import`), which helps you trace how data flows across files.
-> 4. If you expect more than 20 results, pass `--limit 100`.
+> **How to use `tldr references`:**
+> Use this to locate all usages of a specific class, variable, or method.
 > 
-> **Command:** `tldr references <SYMBOL> . --limit 50`
+> **Command:** `tldr references --symbol <name> <dir>`

@@ -59,14 +59,18 @@ Options:
 * **Observation 2:** The `--max-items` flag defaults to 20, which is perfectly safe for LLM context windows.
 * **Observation 3:** Similar to `health`, the `--quick` flag skips the cross-file similarity analysis, significantly speeding up the command.
 
+## Architectural Deep Dive
+* **Under the hood:** `todo` is an orchestrator. It queries the Dead Code engine, the Complexity engine, the Cohesion engine (LCOM4), and the Smells engine. It then normalizes their scores, weights them by severity, and outputs a ranked priority queue of refactoring tasks.
+* **Performance:** Heavy, as it runs multiple engines. The `--quick` flag skips cross-file clone detection to speed it up.
+* **LLM Cognitive Load:** It saves the agent from having to manually run 5 different audit tools, parse 5 different outputs, and mentally synthesize which issue is the most critical. It returns a single, unified backlog.
+
 ## Intent & Routing
-* **User/Agent Goal:** Act as an internal orchestrator that aggregates Dead Code, Complexity, Cohesion, and Similarity engines into a unified, ranked refactoring backlog.
-* **When to choose this over similar tools:** Use this to get a prioritized "Top 20" list of what to fix *without* having to manually run and merge the output of `dead`, `complexity`, and `smells`. Use `--quick` to skip the slow cross-file similarity analysis.
+* **User/Agent Goal:** Aggregate internal engines into a single, ranked refactoring backlog.
+* **When to choose this over similar tools:** Use this to instantly generate a top-20 to-do list for refactoring without manually correlating metrics.
 
 ## Agent Synthesis
-> **How to use `tldr todo` (Prioritized Orchestrator):**
-> Use this command to offload the heavy lifting of finding refactoring targets to the Rust binary. It orchestrates multiple engines and returns the Top 20 worst offenders in the codebase.
-> 1. Provide the `<PATH>` argument (e.g., `.`).
-> 2. Append `--quick` to skip slow cross-file similarity checks.
+> **How to use `tldr todo`:**
+> Use this to get a prioritized list of refactoring tasks.
+> * **Crucial Rule:** ALWAYS use `--quick` to get the top 20 functions instantly by skipping the slow cross-file clone detection engine.
 > 
-> **Command:** `tldr todo . --quick`
+> **Command:** `tldr todo <dir> --quick`

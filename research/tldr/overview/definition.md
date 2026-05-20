@@ -65,9 +65,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Acts as a lightweight LSP (Language Server Protocol). It uses the AST to index symbol declarations (classes, structs, functions, globals) and resolves a query string to its exact file and byte range.
+* **Performance:** AST indexing is highly optimized compared to regex search.
+* **LLM Cognitive Load:** Replaces brute-force `grep`. `grep "class User"` might return 50 usages and the definition; `definition` returns *only* the definition, saving the agent from sifting through noise.
+
 ## Intent & Routing
-* **User/Agent Goal:** Jump to the file and line where a symbol is defined.
-* **When to choose this over similar tools:** Use instead of `search` when you know the exact symbol name and need its definition, not references.
+* **User/Agent Goal:** Find the absolute file and line number where a symbol is defined.
+* **When to choose this over similar tools:** Use instead of `grep` or `search` to accurately locate struct/class/function definitions, ignoring references/calls.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr definition`:**
+> Use this to jump straight to the file and line where a symbol (function, class, variable) is defined.
+> 
+> **Command:** `tldr definition --symbol <name>`

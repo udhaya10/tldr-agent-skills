@@ -61,15 +61,18 @@ Options:
 * **Observation 1:** It accepts a comma-separated list of `--entry-points`. This is critical for library developers; without an entry point, public exports might be flagged as dead just because they aren't used internally.
 * **Observation 2:** You can append `--call-graph`. Instead of simple reference counting, this builds the entire L2 graph from the entry points and finds unreachable nodes. This is slower but much more accurate for finding "islands" of dead code (where A calls B, and B calls A, but nothing calls A or B).
 
+## Architectural Deep Dive
+* **Under the hood:** `dead` analyzes the project-wide call graph and imports index to find entry points (like `main` or HTTP handlers) and runs reachability algorithms to find nodes that are completely disconnected from any entry point.
+* **Performance:** Requires global graph construction.
+* **LLM Cognitive Load:** Outstanding cleanup tool. The `--call-graph` flag is vital because without it, the tool only detects orphaned files. With it, the engine detects "circular islands of dead code" (e.g., function A calls function B, but neither is ever called by active code).
+
 ## Intent & Routing
-* **User/Agent Goal:** Find unreachable functions and classes.
-* **When to choose this over similar tools:** Use with `--call-graph` to find circular islands of dead code.
+* **User/Agent Goal:** Identify unreachable functions and classes.
+* **When to choose this over similar tools:** Use the `--call-graph` flag to detect circular dead code islands.
 
 ## Agent Synthesis
-> **How to use `tldr dead` (Dead Code Detection):**
-> Use this command to find unreachable functions, methods, and classes that can be safely deleted.
-> 1. By default, it uses fast reference counting.
-> 2. If you are analyzing a library, provide `--entry-points main,export_func`.
-> 3. For the most accurate results (finding circular dead islands), append `--call-graph`.
+> **How to use `tldr dead`:**
+> Use this to find unused functions and classes.
+> * **Crucial Rule:** Always use the `--call-graph` flag to detect circular islands of dead code.
 > 
-> **Command:** `tldr dead . --call-graph`
+> **Command:** `tldr dead <dir> --call-graph`

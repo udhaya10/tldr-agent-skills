@@ -76,9 +76,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `temporal` runs association rule mining (like the Apriori algorithm) over the `git log`. It finds sets of files that are frequently committed together, independent of their code imports.
+* **Performance:** Git log parsing is fast, but deep history mining can take a few seconds.
+* **LLM Cognitive Load:** Exposes invisible architectural coupling. If an LLM is told to refactor a microservice, `temporal` shows if that service is secretly coupled to another service's database schema via simultaneous commits.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'temporal' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Mine temporal constraints (files that frequently change together in the same commit).
+* **When to choose this over similar tools:** Use to find hidden dependencies across microservices or modules that share no code imports.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr temporal`:**
+> Use this to find hidden dependencies where files are frequently committed together.
+> * **Crucial Rule:** High temporal coupling without direct imports usually indicates a shared, hidden architectural dependency.
+> 
+> **Command:** `tldr temporal <dir>`

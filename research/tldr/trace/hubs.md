@@ -64,12 +64,17 @@ Options:
 * **Observation 1:** The `--algorithm` flag defaults to `all` (running in/out degree, pagerank, and betweenness). For large codebases, `betweenness` is extremely slow.
 * **Observation 2:** If it hangs, agents should switch to `--algorithm indegree`.
 
+## Architectural Deep Dive
+* **Under the hood:** `hubs` calculates centrality metrics (like Indegree or PageRank) across the project-wide call graph. It identifies nodes (functions/classes) with disproportionately high incoming references.
+* **Performance:** Requires building the global call graph first.
+* **LLM Cognitive Load:** Helps an agent immediately locate "god functions" or critical dependencies. A bug in a hub function has massive cascading effects, so the agent must proceed with extreme caution if modifying them.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find the most depended-upon 'god functions' in the codebase.
-* **When to choose this over similar tools:** Use with `--algorithm indegree` on large repos to identify architectural bottlenecks.
+* **User/Agent Goal:** Find the most depended-upon "god functions" in the codebase.
+* **When to choose this over similar tools:** Use to locate critical architectural hubs and high-risk refactoring targets.
 
 ## Agent Synthesis
-> **How to use `tldr hubs` (Centrality Analysis):**
-> 1. Use this to find the "god functions" or most heavily depended-upon nodes in the code.
-> 2. On large repositories, ALWAYS restrict it via `--algorithm indegree` to prevent timeouts.
-> **Command:** `tldr hubs . --algorithm indegree`
+> **How to use `tldr hubs`:**
+> Use this to find highly coupled "god functions" that are critical to the system.
+> 
+> **Command:** `tldr hubs <dir> --algorithm indegree`

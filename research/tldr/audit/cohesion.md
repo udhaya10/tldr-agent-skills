@@ -53,9 +53,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Calculates LCOM4 (Lack of Cohesion of Methods). It models a class as a graph where methods and fields are nodes. An edge exists if a method accesses a field or calls another method. It counts the number of disconnected components in the graph.
+* **Performance:** Fast intra-class structural graph analysis.
+* **LLM Cognitive Load:** If LCOM4 > 1, the class has multiple completely independent sets of methods/fields that do not interact. This proves the class violates the Single Responsibility Principle and tells the LLM exactly which methods to split into a new class.
+
 ## Intent & Routing
 * **User/Agent Goal:** Analyze class cohesion (LCOM4).
-* **When to choose this over similar tools:** Use to identify classes that should be split into smaller classes.
+* **When to choose this over similar tools:** Use to prove a class violates Single Responsibility and identify exactly how to split it.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr cohesion`:**
+> Use this to identify classes that lack single-responsibility and should be split.
+> 
+> **Command:** `tldr cohesion <dir>`

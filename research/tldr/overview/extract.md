@@ -58,14 +58,18 @@ Options:
 * **Observation 2:** It has strict path traversal protections. You cannot trick it into reading files outside the project boundary.
 * **Observation 3:** Hits the daemon cache first for near-instant retrieval.
 
+## Architectural Deep Dive
+* **Under the hood:** `extract` uses Tree-sitter to query specific AST node boundaries (functions, classes) and slices the exact byte ranges from the source file. It also captures associated preceding docstrings/comments.
+* **Performance:** File is parsed instantly. No regex parsing vulnerabilities.
+* **LLM Cognitive Load:** Instead of reading a 2,000-line file to fix a 10-line function, the agent extracts exactly the 10 lines. This is the single most important command for preserving context window limits during edits.
+
 ## Intent & Routing
-* **User/Agent Goal:** Read the exact body of a specific function or class.
+* **User/Agent Goal:** Extract the exact AST nodes and line numbers of a file.
 * **When to choose this over similar tools:** Use instead of `cat` or `grep` to read code precisely without context window bloat.
 
 ## Agent Synthesis
-> **How to use `tldr extract` (File Intelligence):**
-> Use this when you have found a file of interest and need to extract its imports, constants, classes, and function signatures. 
-> 1. You MUST run this command before attempting to use line-specific commands (like `slice` or `chop`) so you don't guess line numbers. The output will give you exact `line` and `line_end` bounds.
-> 2. It also generates an intra-file `call_graph`, which tells you how the functions *within* the file depend on each other.
+> **How to use `tldr extract`:**
+> Use this to read the exact body of a specific file and get the precise line numbers for downstream commands.
+> * **Crucial Rule:** `extract` takes ONLY a file path. To find a specific function, run it on the file first to get the line numbers for downstream tracing tools (like `slice`).
 > 
-> **Command:** `tldr extract <FILE_PATH>`
+> **Command:** `tldr extract <file>`

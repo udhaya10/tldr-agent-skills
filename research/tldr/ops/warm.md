@@ -58,14 +58,18 @@ Options:
 * **Observation 1:** `warm` is an async command that builds the massive L2 graph and pushes it into the daemon memory.
 * **Observation 2:** You can pass `--background` to have it spin off a background process without waiting for the daemon IPC socket to respond, bypassing the 30s timeout trap.
 
+## Architectural Deep Dive
+* **Under the hood:** `warm` forces the background daemon to eagerly traverse the entire repository, parse all ASTs, resolve all imports, and build the global Call Graph, caching the results into RAM/SQLite.
+* **Performance:** A one-time heavy hit that guarantees O(1) latency for all subsequent commands.
+* **LLM Cognitive Load:** Prevents the LLM from waiting for the cache to build lazily on its first query.
+
 ## Intent & Routing
-* **User/Agent Goal:** Pre-warm the call graph cache.
-* **When to choose this over similar tools:** Use after starting the daemon so `impact` and `calls` return instantly.
+* **User/Agent Goal:** Pre-warm the call graph cache into the daemon.
+* **When to choose this over similar tools:** Use immediately after starting the daemon so subsequent lookups return instantly.
 
 ## Agent Synthesis
-> **How to use `tldr warm` (Cache Pre-Heating):**
-> Use this command immediately after starting the daemon to pre-compute the project's call graphs.
-> 1. You MUST run this so future queries (like `impact` or `search`) don't cold-boot and timeout.
-> 2. Always use the `--background` flag so your shell isn't blocked by the 30-second IPC timeout while it indexes large repositories.
+> **How to use `tldr warm`:**
+> Use this to populate the daemon cache.
+> * **Crucial Rule:** Run `tldr warm <dir>` immediately after starting the daemon.
 > 
-> **Command:** `tldr warm . --background`
+> **Command:** `tldr warm <dir>`

@@ -80,14 +80,17 @@ Options:
 * **Observation 2:** The `--detail` flag allows you to selectively drill down into one specific sub-analyzer if you see a red flag in the summary.
 * **Observation 3:** Empty directories handle gracefully, returning a stub report instead of crashing.
 
+## Architectural Deep Dive
+* **Under the hood:** `health` is an aggregator. It spawns the Complexity, Cohesion, and Smells engines concurrently and merges their findings into a single, weighted score for each file, producing a high-level dashboard.
+* **Performance:** Spawns multiple engines, so it takes some time on large repos.
+* **LLM Cognitive Load:** Gives the LLM an immediate prioritization list. Instead of guessing which file to refactor or reading through 50 files, the LLM runs this and gets the top 5 most problematic files sorted by objective mathematical debt.
+
 ## Intent & Routing
 * **User/Agent Goal:** Get a high-level codebase health dashboard (hotspots, complexity, smells).
-* **When to choose this over similar tools:** Use as the first step in an audit before drilling down into specific tools.
+* **When to choose this over similar tools:** Run this first during an audit to find which files need deeper inspection before running specific metric tools.
 
 ## Agent Synthesis
-> **How to use `tldr health` (Project Health Dashboard):**
-> Use this command to get a 10,000-foot view of the project's technical debt, complexity, and cohesion issues.
-> 1. Use the `--quick` and `--summary` flags first. If you don't use `--summary`, the output will be too large and will break your token limit.
-> 2. If the summary shows a high `dead_count`, follow up by running `tldr dead`. If it shows high `low_cohesion_count`, follow up by running `tldr cohesion`.
+> **How to use `tldr health`:**
+> Use this command to get a high-level dashboard of the most problematic files in the repository.
 > 
-> **Command:** `tldr health <DIR_PATH> --quick --summary`
+> **Command:** `tldr health <dir>`

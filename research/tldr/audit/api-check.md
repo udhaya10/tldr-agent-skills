@@ -50,9 +50,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Extracts the public API AST nodes (exported functions, classes, interfaces) of the current tree and diffs it against the extracted AST of a specified git branch or tag, reporting any signature modifications.
+* **Performance:** Double AST extraction and comparison.
+* **LLM Cognitive Load:** Before committing a refactor to a public library, the LLM uses this to mathematically prove it didn't break backward compatibility.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'api-check' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Check API backward compatibility between branches by diffing public AST nodes.
+* **When to choose this over similar tools:** Use before committing to ensure you haven't accidentally removed or modified a public function signature.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr api-check`:**
+> Use this to verify backward compatibility of an API against a previous branch.
+> 
+> **Command:** `tldr api-check <dir> --against <BRANCH_OR_TAG>`

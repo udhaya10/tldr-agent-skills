@@ -74,9 +74,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Computes Cognitive Complexity (SonarSource). Unlike cyclomatic complexity, it penalizes deep nesting, `else` chains, and boolean logic that is hard for a *human* to read, while not penalizing flat `switch` statements.
+* **Performance:** Single pass over the AST with state tracking for nesting depth.
+* **LLM Cognitive Load:** This metric correlates directly with LLM comprehension. If a function has a high cognitive complexity score, the LLM itself will likely struggle to modify it safely without making a mistake. It is a direct signal to refactor before modifying.
+
 ## Intent & Routing
-* **User/Agent Goal:** Calculate cognitive complexity.
-* **When to choose this over similar tools:** Use to identify code that is too hard for humans to read.
+* **User/Agent Goal:** Analyze function readability (Cognitive Complexity).
+* **When to choose this over similar tools:** Use to find functions that are too hard for humans (and LLMs) to read and understand.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr cognitive`:**
+> Use this to find functions that are structurally unreadable due to deep nesting.
+> 
+> **Command:** `tldr cognitive <dir>`

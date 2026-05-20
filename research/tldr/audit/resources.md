@@ -67,9 +67,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Performs static analysis on the Control Flow Graph to trace resource allocations (`open`, `malloc`, `socket`) ensuring that all possible execution paths (including exceptions) hit a corresponding `close`/`free` node.
+* **Performance:** Moderate; requires CFG traversal.
+* **LLM Cognitive Load:** Prevents the LLM from introducing silent memory leaks during massive rewrites by verifying RAII or context manager coverage.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'resources' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Perform static analysis on resource acquisition and release.
+* **When to choose this over similar tools:** Use during major rewrites to ensure every allocation path has a guaranteed deallocation path.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr resources`:**
+> Use this to verify memory, file, and socket closures.
+> 
+> **Command:** `tldr resources <dir>`

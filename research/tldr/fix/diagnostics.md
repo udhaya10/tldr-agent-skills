@@ -105,15 +105,18 @@ Options:
 * **Observation 2:** You can filter out noisy output using `--severity error` (which hides warnings, hints, and info).
 * **Observation 3:** There is a hardcoded `--timeout 60` seconds per tool. This prevents a frozen `eslint` process from hanging the entire agent loop indefinitely.
 
+## Architectural Deep Dive
+* **Under the hood:** `diagnostics` is a multiplexer. It shells out to native language tooling (`pyright` for Python, `tsc` for TypeScript, `cargo check` for Rust), captures their wildly different stdout formats, and normalizes them into a unified JSON/text structure mapped to precise AST line numbers.
+* **Performance:** Bound by the execution speed of the underlying native tools.
+* **LLM Cognitive Load:** Eliminates parser hallucination. An LLM struggles to parse raw `tsc` errors mixed with formatting noise. This tool strips the noise and guarantees the agent receives only real `error` severity issues mapped to exact lines.
+
 ## Intent & Routing
-* **User/Agent Goal:** Run native typecheckers and linters (pyright, ruff, tsc) uniformly.
-* **When to choose this over similar tools:** Use `--severity error` to filter out formatting noise and focus on real bugs.
+* **User/Agent Goal:** Run native typecheckers and linters uniformly and parse outputs.
+* **When to choose this over similar tools:** Use to verify code correctness using native compilers without dealing with complex stdout parsing.
 
 ## Agent Synthesis
-> **How to use `tldr diagnostics` (Run Linters/Typecheckers):**
-> Use this command to run all available standard linters and type checkers (like ruff, mypy, eslint) and get a unified, token-efficient JSON output.
-> 1. You can run it on a specific file or the entire directory.
-> 2. Always use the `--severity error` flag if you only want to see critical build/type failures instead of formatting warnings.
-> 3. If you want to skip type checking and only run linters, use `--no-typecheck`.
+> **How to use `tldr diagnostics`:**
+> Use this to run native typecheckers/linters and get normalized output.
+> * **Crucial Rule:** Always use `--severity error` to filter out formatting noise.
 > 
-> **Command:** `tldr diagnostics . --severity error`
+> **Command:** `tldr diagnostics <dir> --severity error`

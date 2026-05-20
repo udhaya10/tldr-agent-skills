@@ -64,9 +64,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Computes Afferent coupling (Ca - who depends on me) and Efferent coupling (Ce - who I depend on) from the global Call/Import graph. It then computes Instability: I = Ce / (Ca + Ce).
+* **Performance:** Requires a global dependency graph.
+* **LLM Cognitive Load:** Allows the LLM to mathematically classify a class as "Fragile" (high Ce) or "Rigid" (high Ca), directly guiding whether it needs an Interface abstraction.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'coupling' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Calculate module/class coupling metrics.
+* **When to choose this over similar tools:** Use to untangle tight object coupling and decide where to place interfaces.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr coupling`:**
+> Use this to calculate Afferent, Efferent, and Instability metrics.
+> * **Crucial Rule:** Highly unstable classes should be abstracted behind interfaces.
+> 
+> **Command:** `tldr coupling <dir>`

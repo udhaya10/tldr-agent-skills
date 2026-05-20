@@ -100,12 +100,17 @@ Options:
 * **Observation 2:** Supports `--normalize identifiers` which ignores differences in variable names when detecting clones.
 * **Observation 3:** By default ignores clones within the same file. Must use `--include-within-file` to detect those.
 
+## Architectural Deep Dive
+* **Under the hood:** `clones` parses files into ASTs, normalizes variable/function names (removing textual identifiers), hashes the structural node sequences, and detects Type-1 (exact match) and Type-2/Type-3 (structural match with different variables/types) code clones.
+* **Performance:** AST hashing and cross-comparison is O(N^2) on the number of functions.
+* **LLM Cognitive Load:** Finds copy-pasted code even if the developer changed all the variable names. This gives the LLM the exact targets to abstract into a shared utility function.
+
 ## Intent & Routing
 * **User/Agent Goal:** Detect duplicated logic (AST structural clones).
-* **When to choose this over similar tools:** Use to find copy-pasted code. Ignores variable name changes by default.
+* **When to choose this over similar tools:** Use to find DRY violations where code was copy-pasted and modified slightly.
 
 ## Agent Synthesis
-> **How to use `tldr clones` (Clone Detection):**
-> 1. Use this to find duplicated logic across the codebase.
-> 2. Use `--normalize all` (the default) to ignore superficial differences like variable names and literals.
-> **Command:** `tldr clones .`
+> **How to use `tldr clones`:**
+> Use this to detect copy-pasted structural logic, even if variable names were changed.
+> 
+> **Command:** `tldr clones <dir>`

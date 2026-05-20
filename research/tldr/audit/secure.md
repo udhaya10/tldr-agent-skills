@@ -60,15 +60,18 @@ Options:
 * **Observation 1:** Passing `--quick` restricts it to only run `taint`, `resources`, and `bounds`, skipping the behavioral and mutability checks.
 * **Observation 2:** Like `health`, you can drill down into a specific analysis using the `--detail` flag.
 
+## Architectural Deep Dive
+* **Under the hood:** `secure` is an aggregated security dashboard that checks for misconfigurations, hardcoded secrets (via regex/entropy), missing bounds checks, and unsafe function usage (e.g., `eval()`, `strcpy()`), alongside basic taint flows.
+* **Performance:** The `--quick` flag disables deep taint tracking, acting like a fast linter.
+* **LLM Cognitive Load:** Provides a broad overview of basic security hygiene across the project without getting bogged down in complex cross-file data flows.
+
 ## Intent & Routing
 * **User/Agent Goal:** Get an aggregated security dashboard.
-* **When to choose this over similar tools:** Use `--quick` on large repos. Aggregates vulnerabilities, resource leaks, and bounds checks.
+* **When to choose this over similar tools:** Use `--quick` on large repos to get a fast security check, but use `vuln` if you need detailed taint traces.
 
 ## Agent Synthesis
-> **How to use `tldr secure` (Security Dashboard):**
-> Use this command to get a high-level overview of a project's security posture before drilling down.
-> 1. It aggregates `vuln`, `resources`, `contracts`, and mutability checks.
-> 2. Always use `--quick` on large codebases to save compute time.
-> 3. If the summary shows a high `leak_count`, you should follow up by running `tldr resources`. If it shows high `taint_count`, run `tldr vuln`.
+> **How to use `tldr secure`:**
+> Use this for a broad security hygiene overview.
+> * **Crucial Rule:** Use `--quick` on large repos to skip expensive deeper flow checks.
 > 
-> **Command:** `tldr secure . --quick`
+> **Command:** `tldr secure <dir> --quick`

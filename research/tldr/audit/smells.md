@@ -99,15 +99,18 @@ Options:
 * **Observation 1:** Smells in test files are skipped by default. However, if you explicitly pass a test file via `--files`, it automatically enables `include_tests=true`.
 * **Observation 2:** The `--files` flag requires exact paths, no globs.
 
+## Architectural Deep Dive
+* **Under the hood:** `smells` uses structural pattern matching against the AST. It looks for well-defined anti-patterns: God Classes (high method count + high complexity), Long Parameter Lists, Feature Envy (methods using more data from other classes than their own), and deep nesting.
+* **Performance:** The `--deep` flag enables cross-file architectural smell detection (like Feature Envy), which requires the full Call Graph and Data Flow Graph.
+* **LLM Cognitive Load:** Translates abstract code problems into concrete refactoring targets (e.g., "Extract Class", "Introduce Parameter Object").
+
 ## Intent & Routing
-* **User/Agent Goal:** Detect code smells like god classes, long parameter lists, and nested logic.
-* **When to choose this over similar tools:** MUST use `--deep` to enable the most critical architectural smell detectors.
+* **User/Agent Goal:** Detect architectural code smells.
+* **When to choose this over similar tools:** Use to find specific structural anti-patterns to refactor. ALWAYS use the `--deep` flag.
 
 ## Agent Synthesis
-> **How to use `tldr smells` (Code Quality Audit):**
-> Use this to identify technical debt, code clones, tight coupling, and structural issues in a file or project.
-> 1. Always use the `--deep` flag. Without it, you will miss the most important architectural smells (like coupling and clones).
-> 2. Always use the `--suggest` flag to get LLM-ready remediation advice.
-> 3. If scanning a specific file, pass it directly as the `[PATH]` argument.
+> **How to use `tldr smells`:**
+> Use this to detect architectural anti-patterns like God Classes, Long Parameter Lists, or deep nesting.
+> * **Crucial Rule:** ALWAYS use the `--deep` flag to enable critical architectural detectors.
 > 
-> **Command:** `tldr smells <FILE_OR_DIR> --deep --suggest`
+> **Command:** `tldr smells <dir> --deep`

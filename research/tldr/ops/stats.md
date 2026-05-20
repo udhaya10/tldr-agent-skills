@@ -41,14 +41,18 @@ Options:
 * **Observation 1:** The daemon records telemetry locally. 
 * **Observation 2:** This is purely an operational tool to measure the performance of the TLDR CLI engine.
 
+## Architectural Deep Dive
+* **Under the hood:** `stats` queries the IPC socket of the background daemon to retrieve internal SQLite cache hit rates, AST node counts, and memory usage.
+* **Performance:** Instant.
+* **LLM Cognitive Load:** This is exclusively for debugging the toolchain. If a command is timing out, the agent runs `stats` to see if the daemon is actually running or if the cache is cold.
+
 ## Intent & Routing
 * **User/Agent Goal:** View CLI telemetry and cache hit rates.
-* **When to choose this over similar tools:** Use to debug the tldr tool performance, not codebase statistics.
+* **When to choose this over similar tools:** Use ONLY to debug the `tldr` CLI itself, not for codebase metrics.
 
 ## Agent Synthesis
-> **How to use `tldr stats` (CLI Telemetry):**
-> Use this command to see token savings, query latency, and daemon cache hit-rates.
-> 1. You must have the daemon running (`tldr daemon start`) for it to record data.
-> 2. This does NOT give you statistics about the code (use `tldr loc` or `tldr health` for that).
+> **How to use `tldr stats`:**
+> Use this to verify if the background daemon is running and caching properly.
+> * **Crucial Rule:** This is for debugging the `tldr` CLI itself, NOT for getting codebase statistics.
 > 
 > **Command:** `tldr stats`

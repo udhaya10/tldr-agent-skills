@@ -40,9 +40,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Calculates McCabe's Cyclomatic Complexity by counting the number of linearly independent paths (nodes - edges + 2) in a function's Control Flow Graph. It counts `if`, `while`, `for`, `case`, etc.
+* **Performance:** Single pass over the AST.
+* **LLM Cognitive Load:** A function with complexity > 10 has too many branches to be fully tested easily. The LLM uses this to identify which functions desperately need unit tests or need to be split up to reduce testing permutations.
+
 ## Intent & Routing
-* **User/Agent Goal:** Calculate cyclomatic complexity.
-* **When to choose this over similar tools:** Use to identify functions that are too branch-heavy.
+* **User/Agent Goal:** Analyze function complexity (Cyclomatic).
+* **When to choose this over similar tools:** Use to find branch-heavy functions that need more unit tests.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr complexity`:**
+> Use this to identify branch-heavy functions that require more testing or splitting.
+> 
+> **Command:** `tldr complexity <dir>`

@@ -56,26 +56,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
-## Intent & Routing
-* **User/Agent Goal:** Map the dependency graph of modules or hunt down circular imports.
-* **When to choose this over similar tools:** Use the `--show-cycles` flag specifically when debugging 'ImportError: cannot import name' issues.
-
-## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
-## Empirical Probes
-* **Command Executed:** Checked `tldr deps --help` and source file.
-* **Observation:** Module dependency analyzer. Similar to `structure` but focuses on import graphs.
-
-## Source Code Reality
-* **Observation 1:** Has an incredibly useful `--show-cycles` flag that filters the entire graph down to just the circular dependencies.
-* **Observation 2:** Skips third-party libraries unless you explicitly pass `--include-external`.
+## Architectural Deep Dive
+* **Under the hood:** Scans the entire project's imports to construct a Directed Graph of modules. It runs cycle detection algorithms (like Tarjan's) to find strongly connected components (circular imports).
+* **Performance:** Relies heavily on the daemon cache for large projects.
+* **LLM Cognitive Load:** Visualizes architecture without reading files. The `--show-cycles` flag allows the LLM to instantly diagnose `ImportError: cannot import name` bugs without having to manually trace the import chain.
 
 ## Intent & Routing
-* **User/Agent Goal:** Map the dependency graph of modules or hunt down circular imports.
-* **When to choose this over similar tools:** Use the `--show-cycles` flag specifically when debugging 'ImportError: cannot import name' issues.
+* **User/Agent Goal:** Extract the high-level module dependency graph and detect circular imports.
+* **When to choose this over similar tools:** Use the `--show-cycles` flag specifically when debugging circular dependency crashes.
 
 ## Agent Synthesis
-> **How to use `tldr deps` (Dependency Graph):**
-> 1. Use this to map out how modules depend on each other.
-> 2. The most powerful agentic use-case is appending `--show-cycles` to hunt down circular import errors.
+> **How to use `tldr deps`:**
+> Use this to map the dependency graph of modules or hunt down circular imports.
+> * **Crucial Rule:** Use `--show-cycles` specifically to debug circular import crashes.
+> 
 > **Command:** `tldr deps . --show-cycles`

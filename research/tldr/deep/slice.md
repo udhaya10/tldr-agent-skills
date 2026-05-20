@@ -73,14 +73,18 @@ Options:
 * **Observation 2:** The command hits the daemon first for caching.
 * **Observation 3:** `slice` depends on `pdg` (Program Dependence Graph). If the exact line number passed doesn't contain an AST node, the slice will return empty.
 
+## Architectural Deep Dive
+* **Under the hood:** `slice` computes Program Dependence Graphs (PDGs) by combining the Control Flow Graph (CFG) and Data Dependence Graph (DDG). It computes transitively closed dependencies from a specific starting node (line & variable) either backward (what influences this line) or forward (what this line influences).
+* **Performance:** Building a complete PDG for a large function is mathematically complex and memory-intensive, but once constructed, slicing queries resolve in milliseconds.
+* **LLM Cognitive Load:** Slicing is the gold standard for tracking down why a variable has an incorrect value. Instead of manually inspecting every line in a 300-line function with complex branching, `tldr slice` isolates the exact 15 lines that mathematically contributed to that state.
+
 ## Intent & Routing
-* **User/Agent Goal:** Trace exactly what lines of code mathematically affect a target line (backward slice).
-* **When to choose this over similar tools:** Use for deep debugging of state corruption instead of guessing from `context`.
+* **User/Agent Goal:** Trace exactly what lines of code mathematically affect a target line (backward) or what a line affects (forward).
+* **When to choose this over similar tools:** Use when debugging state corruption or tracking variable origins. Always run `tldr extract` first to find the exact line numbers.
 
 ## Agent Synthesis
-> **How to use `tldr slice` (Hard Debugging):**
-> Use this to trace state corruption or figure out exactly what code influences a specific line, ignoring unrelated code.
-> 1. You MUST extract the exact file path, function name, and line number first (e.g., using `tldr extract`).
-> 2. Pass those exact positional arguments. Do NOT guess the line number.
+> **How to use `tldr slice`:**
+> Use this to trace the exact mathematical dependency chain (backward or forward) of a line inside a function.
+> * **Crucial Rule:** You MUST pass the exact file path, function name, and line number. Do not guess the line number; find it first using `tldr extract`.
 > 
-> **Command:** `tldr slice <FILE_PATH> <FUNCTION> <LINE>`
+> **Command:** `tldr slice <file_path> <function> <line_number>`

@@ -68,15 +68,18 @@ Options:
 * **Observation 1:** `impact` **MUST** be run on a directory (like `.`). Passing a file throws a hard error.
 * **Observation 2:** The command hits the daemon first. If the daemon isn't running or the project isn't warm, it does a cold graph build which can miss dynamic edges.
 
+## Architectural Deep Dive
+* **Under the hood:** `impact` traverses the internal call graph in *reverse* (upward) starting from a target function. It identifies all caller functions across the entire repository that directly or transitively invoke the target.
+* **Performance:** Relies on the daemon cache for near O(1) traversal. Without the daemon, it must compute the project-wide call graph, which can be expensive.
+* **LLM Cognitive Load:** Essential for blast radius analysis. When an agent wants to modify a function's return type or arguments, it runs `impact` to see exactly which other functions will break, letting it plan the refactoring path.
+
 ## Intent & Routing
 * **User/Agent Goal:** View the reverse call graph (who calls this function).
-* **When to choose this over similar tools:** Use to assess blast radius before changing or deleting a function.
+* **When to choose this over similar tools:** Use this to analyze the upward blast radius before changing a function's signature.
 
 ## Agent Synthesis
-> **How to use `tldr impact` (Blast Radius):**
-> Use this to find all reverse-dependencies (who calls a function).
-> 1. You MUST run this on a directory (e.g., `.`), never a file. 
-> 2. The target `<FUNCTION>` is just the name of the function, no parentheses.
-> 3. If the function is not found, you MUST ensure the cache is warm by running `tldr daemon start && tldr warm .` before running impact again.
+> **How to use `tldr impact`:**
+> Use this to trace the upward call tree of a function to see all of its caller functions.
+> * **Crucial Rule:** The function name is a POSITIONAL argument, not a flag.
 > 
-> **Command:** `tldr impact <FUNCTION_NAME> . --depth 5`
+> **Command:** `tldr impact <func_name> <dir>`

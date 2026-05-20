@@ -55,9 +55,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Parses `git log --stat` to count raw line additions/deletions and file modifications over time.
+* **Performance:** I/O bound to git history.
+* **LLM Cognitive Load:** High churn files are usually "God objects" that violate the Open/Closed Principle. This tells the LLM exactly which files need to be split up.
+
 ## Intent & Routing
-* **User/Agent Goal:** Analyze git churn.
-* **When to choose this over similar tools:** Use to find files that change too frequently.
+* **User/Agent Goal:** Analyze raw Git churn.
+* **When to choose this over similar tools:** Use to find configuration or god objects that change too frequently.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr churn`:**
+> Use this to analyze the frequency of file modifications.
+> 
+> **Command:** `tldr churn <dir>`

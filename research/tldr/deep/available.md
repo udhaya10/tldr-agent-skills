@@ -52,9 +52,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Computes the "available expressions" data-flow property. An expression `x op y` is available at a point if every path from the entry node to that point evaluates it, and none of its variables are modified after the last evaluation.
+* **Performance:** Traditional compiler data-flow pass.
+* **LLM Cognitive Load:** Useful for verifying compiler-level logic, checking if calculations can be safely hoisted out of loops, or identifying redundant calculations that are repeated unnecessarily.
+
 ## Intent & Routing
-* **User/Agent Goal:** Find available expressions.
-* **When to choose this over similar tools:** Use for compiler-level optimization analysis.
+* **User/Agent Goal:** Find available expressions at a specific line.
+* **When to choose this over similar tools:** Use for compiler-level logic checks or performance optimizations.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr available`:**
+> Use this to identify expressions that have already been evaluated and are available at a specific line.
+> 
+> **Command:** `tldr available <file> <func> <line>`

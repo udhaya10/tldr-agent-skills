@@ -70,15 +70,18 @@ Options:
 * **Observation 2:** By default, it auto-detects if your `<TARGET>` argument is a file path, a module name, or a function name. However, if the name is ambiguous (e.g., a function named exactly the same as a file without an extension), it will guess.
 * **Observation 3:** You can explicitly force the type using `--type function`, `--type file`, or `--type module`. 
 
+## Architectural Deep Dive
+* **Under the hood:** `whatbreaks` is a cross-engine orchestrator. It queries the call graph to find callers of a target function, and concurrently queries the AST index to locate all external modules importing the target file. It merges these two graphs into a single impact map.
+* **Performance:** Highly optimized; leverages daemon cache.
+* **LLM Cognitive Load:** Solves the multi-engine coordination problem. It gives the LLM a unified map of both callers and importers so the LLM doesn't have to run separate tools and mentally join the datasets.
+
 ## Intent & Routing
-* **User/Agent Goal:** Identify everything that will break if a target is changed.
-* **When to choose this over similar tools:** Smart router that combines impact, importers, and change-impact. Always force `--type`.
+* **User/Agent Goal:** Find callers and importers affected by a change.
+* **When to choose this over similar tools:** Use this immediately before modifying a public API to verify global downstream effects.
 
 ## Agent Synthesis
-> **How to use `tldr whatbreaks` (Blast Radius Orchestrator):**
-> Use this command when you are about to delete or heavily modify a target and need to know everything that will break.
-> 1. You MUST run this on a directory (e.g., `.`).
-> 2. It accepts any target (a function name, a file path, or a module).
-> 3. Always force the type via the `--type` flag (e.g., `--type function`) so it doesn't auto-detect incorrectly on ambiguous names.
+> **How to use `tldr whatbreaks`:**
+> Use this before changing any public API. It checks both callers and importers.
+> * **Crucial Rule:** Always force the `--type` flag (`callers` or `importers`).
 > 
-> **Command:** `tldr whatbreaks <TARGET> . --type function`
+> **Command:** `tldr whatbreaks <file> <function> --type callers`

@@ -55,9 +55,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `debt` calculates technical debt using standard industry models (e.g., SonarQube's SQALE model). It assigns a time-to-fix (in minutes/hours) for every smell, complexity violation, and duplication found.
+* **Performance:** Runs all audit engines and aggregates the time values.
+* **LLM Cognitive Load:** Translates abstract code quality into tangible effort (time). Useful for the LLM to report back to users on the feasibility of a refactor ("This will take roughly 4 hours of effort based on the debt score").
+
 ## Intent & Routing
 * **User/Agent Goal:** Calculate technical debt in minutes/hours.
-* **When to choose this over similar tools:** Use for project planning and refactor prioritization.
+* **When to choose this over similar tools:** Use when you need to quantify refactoring effort in terms of time.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr debt`:**
+> Use this to calculate a time-estimate (minutes/hours) of the codebase's technical debt.
+> 
+> **Command:** `tldr debt <dir>`

@@ -62,14 +62,17 @@ Options:
 * **Observation 1:** Unlike `impact`, which requires a directory, `explain` **MUST** be given an exact file path and function name. 
 * **Observation 2:** The caller/callee depth defaults to 2. This is usually enough for immediate context without hallucinating massive dependency trees.
 
+## Architectural Deep Dive
+* **Under the hood:** `explain` combines AST extraction with a local LLM or heuristic engine to generate a natural language summary of a function or file's purpose.
+* **Performance:** Bypasses manual reading.
+* **LLM Cognitive Load:** Offloads the summarization task. Instead of the agent spending tokens to read the file and summarize it in its own context, the CLI does the work and feeds the agent a dense, token-efficient summary.
+
 ## Intent & Routing
-* **User/Agent Goal:** Generate a natural language summary of what a function or file does.
-* **When to choose this over similar tools:** Use when exploring unfamiliar code quickly.
+* **User/Agent Goal:** Generate an AI/heuristic natural language summary of a complex function or file.
+* **When to choose this over similar tools:** Use when exploring unfamiliar code quickly to grasp its high-level purpose before diving into logic.
 
 ## Agent Synthesis
-> **How to use `tldr explain` (Complete Function Profile):**
-> Use this command when you want everything about a single function in one shot: its signature, what files call it, what external functions it calls, its cyclomatic complexity, and whether it has side effects (purity).
-> 1. You MUST provide the exact file path and the exact function name.
-> 2. This is significantly faster and more token-efficient than running `extract`, `impact`, and `complexity` separately.
+> **How to use `tldr explain`:**
+> Use this to get a quick natural language summary of what a file or function does without having to read its code.
 > 
-> **Command:** `tldr explain <FILE> <FUNCTION>`
+> **Command:** `tldr explain <file> [function]`

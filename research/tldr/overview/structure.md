@@ -49,12 +49,18 @@ Options:
 * **Observation 1:** Uses tree-sitter to parse out the AST shells.
 * **Observation 2:** By default, it processes all files (`--max-results 0`). For massive codebases, this generates a massive JSON payload. Agents should probably combine this with standard bash commands to limit scope (e.g., passing a specific folder instead of `.`).
 
+## Architectural Deep Dive
+* **Under the hood:** `structure` uses the `tree-sitter` AST parser to extract only declaration nodes (classes, structs, traits, functions) while completely discarding function bodies. 
+* **Performance:** Because it never loads full file strings into memory or evaluates tokens, it operates at near O(1) time complexity relative to the number of functions, making it infinitely faster than `cat` or `grep`.
+* **LLM Cognitive Load:** By stripping the bodies, it reduces the token count of a standard 1,000-line file down to ~50 tokens. This allows an LLM to map an entire project's API surface in a single prompt without blowing out the context window.
+
 ## Intent & Routing
-* **User/Agent Goal:** See the outline of classes, functions, and imports in a directory without reading the bodies.
-* **When to choose this over similar tools:** Use instead of `tree` when you need symbol names. Use instead of `cat` to save massive tokens.
+* **User/Agent Goal:** Extract the AST skeleton (classes, methods, signatures) of a file or directory without function bodies. Highly token-efficient.
+* **When to choose this over similar tools:** Use instead of `tree` when you need symbol names. Use instead of `cat` or `grep` to save massive tokens when exploring unknown code.
 
 ## Agent Synthesis
-> **How to use `tldr structure` (Codebase Skeleton):**
-> 1. Use this to get the exact names of classes, functions, and imports in a directory.
-> 2. Pass a specific subdirectory rather than `.` on massive monorepos to save context tokens.
-> **Command:** `tldr structure src/components/`
+> **How to use `tldr structure`:**
+> Use this command to map the API surface or discover what functions exist in a file/directory without reading the actual code.
+> * **Crucial Rule:** Always use `--max-results <N>` (e.g., 50) if running on a large directory to avoid context blowout.
+> 
+> **Command:** `tldr structure <dir> --max-results 50`

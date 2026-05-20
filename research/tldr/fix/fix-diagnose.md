@@ -55,15 +55,18 @@ Options:
 * **Observation 2:** It REQUIRES the `--source` file argument so it knows which file's AST to parse to figure out *why* the error happened.
 * **Observation 3:** There is an undocumented superpower: `--api-surface`. If you run `tldr surface` first and pass the result here, it will automatically suggest the correct property name if you have a typo (like TS2339).
 
+## Architectural Deep Dive
+* **Under the hood:** `fix diagnose` parses raw compiler/test stack traces from stdin. It extracts file paths and line numbers from the trace, automatically looks up the corresponding AST nodes in the local filesystem, and prompts the LLM to explain the root cause combining both the error string and the actual code.
+* **Performance:** Fast, single LLM call.
+* **LLM Cognitive Load:** Completely eliminates the manual "read error -> find file -> extract line -> read code" loop for the agent. It does all of this locally and returns a synthesized explanation.
+
 ## Intent & Routing
 * **User/Agent Goal:** Explain cryptic compiler or test errors via AST inspection.
-* **When to choose this over similar tools:** Use by piping the error text (e.g., `pytest 2>&1 | tldr fix diagnose --stdin`).
+* **When to choose this over similar tools:** Use when tests or compilers fail and you need a root-cause explanation.
 
 ## Agent Synthesis
-> **How to use `tldr fix diagnose` (Error Decoder):**
-> Use this when a script or compiler fails, and you need to understand exactly what AST node caused the error.
-> 1. Pipe the failing command's stderr into this command using `--stdin`.
-> 2. You MUST provide the `--source` file that you suspect is causing the error.
-> 3. It will return a structured diagnosis explaining the error and suggesting a fix.
+> **How to use `tldr fix diagnose`:**
+> Use this to explain compiler or test errors.
+> * **Crucial Rule:** Pipe failing output directly into this command.
 > 
-> **Command:** `pytest tests/test_app.py 2>&1 | tldr fix diagnose --source src/app.py --stdin`
+> **Command:** `<YOUR_COMMAND> 2>&1 | tldr fix diagnose --stdin`

@@ -55,9 +55,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** `patterns` runs a graph-matching algorithm against the AST/CFG to detect the structural fingerprints of Gang of Four (GoF) design patterns (e.g., a private constructor + static instance variable = Singleton).
+* **Performance:** Complex graph-matching.
+* **LLM Cognitive Load:** Rapidly maps the architectural intent of legacy code. If it detects an Observer pattern, the LLM immediately understands the event-driven nature of the file without reading it.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'patterns' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Detect Gang of Four design patterns via structural AST matching.
+* **When to choose this over similar tools:** Use to rapidly document legacy code architecture.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr patterns`:**
+> Use this to detect implemented design patterns (Singleton, Factory, Observer).
+> 
+> **Command:** `tldr patterns <dir>`

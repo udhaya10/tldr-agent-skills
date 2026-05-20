@@ -42,9 +42,17 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Maps imperative AST structures into formal specification languages like TLA+ or Alloy for model checking.
+* **Performance:** Abstract syntax translation.
+* **LLM Cognitive Load:** For mission-critical systems, an LLM can use this to generate a TLA+ spec to check for race conditions that standard unit tests cannot mathematically catch.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'specs' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Generate formal specifications from code.
+* **When to choose this over similar tools:** Use when auditing concurrent or mission-critical state machines.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr specs`:**
+> Use this to translate code into logical predicates or formal specs.
+> 
+> **Command:** `tldr specs <file>`

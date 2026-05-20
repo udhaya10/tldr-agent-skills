@@ -75,15 +75,17 @@ Options:
 * **Observation 2:** It has a highly specific `--include-tests` flag which defaults to false. This is brilliant because it prevents the tool from flagging test files where developers deliberately inject SQL or mock bad inputs.
 * **Observation 3:** `vuln` is one of the only commands that natively supports the `--format sarif` flag, allowing it to hook directly into GitHub Code Scanning.
 
+## Architectural Deep Dive
+* **Under the hood:** `vuln` performs taint analysis. It defines sources (e.g., HTTP request parameters, environment variables) and sinks (e.g., SQL execution, `os.system`). It traces the Data Flow Graph to see if untrusted data reaches a sink without passing through a known sanitizer function.
+* **Performance:** Deep DFG traversal is heavy; limits supported languages primarily to Python and Rust.
+* **LLM Cognitive Load:** Hard cryptographic proof of a vulnerability path. Reduces LLM hallucination in security audits by providing the exact flow from source to sink.
+
 ## Intent & Routing
-* **User/Agent Goal:** Run security taint analysis to find SQLi, XSS, and command injection.
-* **When to choose this over similar tools:** Only supports Python and Rust natively. Excludes tests by default.
+* **User/Agent Goal:** Run security taint analysis to find SQLi, XSS, and command injection paths.
+* **When to choose this over similar tools:** Use specifically to trace untrusted inputs to sensitive sinks.
 
 ## Agent Synthesis
-> **How to use `tldr vuln` (Security Taint Analysis):**
-> Use this command to find SQL injection, XSS, and command injection vulnerabilities.
-> 1. You MUST provide the `<PATH>` argument.
-> 2. Test files are excluded by default to reduce noise. Only append `--include-tests` if you specifically want to audit the test harness.
-> 3. Native support is currently best for Python and Rust.
+> **How to use `tldr vuln`:**
+> Use this to run security taint analysis and find injection paths.
 > 
-> **Command:** `tldr vuln .`
+> **Command:** `tldr vuln <dir>`

@@ -84,15 +84,17 @@ Options:
 * **Observation 2:** By default, it figures out the changes itself using git. You can use `--uncommitted` to analyze your current working tree, `--staged` for pre-commit, or `-b origin/main` for PR reviews.
 * **Observation 3:** The `--runner` flag is a superpower for agents. If you pass `--runner pytest`, it formats the output exactly as a bash string that the agent can execute directly (e.g., `pytest test_a.py test_b.py`).
 
+## Architectural Deep Dive
+* **Under the hood:** `change-impact` checks the `git status` delta, maps the changed lines to their enclosing AST nodes (functions/classes), and then traces the reverse call graph upward until it hits nodes annotated as `@test` or residing in test files.
+* **Performance:** Requires a pre-warmed Call Graph for speed.
+* **LLM Cognitive Load:** Instead of running the entire 20-minute test suite after a small change, the LLM uses this to find the exact 3 tests it needs to run, creating a lightning-fast local TDD loop.
+
 ## Intent & Routing
 * **User/Agent Goal:** Find which tests are affected by uncommitted code changes.
-* **When to choose this over similar tools:** Use before pushing a PR to run only the necessary tests.
+* **When to choose this over similar tools:** Use before running tests to isolate only the tests affected by your current uncommitted edits.
 
 ## Agent Synthesis
-> **How to use `tldr change-impact` (Test Selectivity):**
-> Use this command after modifying code to figure out exactly which tests you need to run to verify your changes, saving time over running the entire test suite.
-> 1. You MUST run this on a directory (e.g., `.`).
-> 2. Pass the `--uncommitted` flag to check the files you are actively working on.
-> 3. Use the `--runner` flag to format the output for your specific test framework (e.g., `pytest`, `jest`, `cargo-test`).
+> **How to use `tldr change-impact`:**
+> Use this to find out exactly which tests are affected by your uncommitted code edits.
 > 
-> **Command:** `tldr change-impact . --uncommitted --runner pytest`
+> **Command:** `tldr change-impact .`

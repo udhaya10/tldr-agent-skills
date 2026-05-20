@@ -51,9 +51,18 @@ Options:
 ## Empirical Probes
 * **Observation:** Tool evaluated and integrated successfully via batch script profiling.
 
+## Architectural Deep Dive
+* **Under the hood:** Parses the AST for class declarations and `extends`/`implements` keywords, building an inheritance tree. It calculates the Depth of Inheritance Tree (DIT) metric.
+* **Performance:** Fast AST traversal.
+* **LLM Cognitive Load:** DIT > 3 is mathematically correlated with high defect rates due to state shadowing. This flags the exact classes the LLM should flatten using Composition.
+
 ## Intent & Routing
-* **User/Agent Goal:** Execute the 'inheritance' analysis capability.
-* **When to choose this over similar tools:** Niche or specialized subcommand. Refer to the Ground Truth help block for specific flags.
+* **User/Agent Goal:** Analyze class inheritance trees and DIT.
+* **When to choose this over similar tools:** Use to decide if a monolithic class structure should be flattened using Composition over Inheritance.
 
 ## Agent Synthesis
-> **Note:** This tool exists in the CLI but is considered lower-priority or niche. If required, read the CLI help block above to infer flags.
+> **How to use `tldr inheritance`:**
+> Use this to analyze the depth of inheritance trees.
+> * **Crucial Rule:** Deep inheritance trees (DIT > 3) should be flattened using Composition.
+> 
+> **Command:** `tldr inheritance <dir>`

@@ -1,0 +1,223 @@
+{
+  "hubs": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": 1.0,
+      "betweenness": null,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.3146791999125588,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "screener.py",
+        "name": "normalize_text",
+        "line": 1390,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "screener.py",
+      "name": "normalize_text",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0,
+      "pagerank": 0.33974623566886064,
+      "betweenness": null,
+      "callers_count": 27,
+      "callees_count": 0,
+      "composite_score": 0.1044482085515796,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "youtube_panel.py",
+        "name": "_normalize_text",
+        "line": 96,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "youtube_panel.py",
+      "name": "_normalize_text",
+      "in_degree": 0.017597551644988524,
+      "out_degree": 0.0,
+      "pagerank": 0.2375108971284982,
+      "betweenness": null,
+      "callers_count": 23,
+      "callees_count": 0,
+      "composite_score": 0.07414509619563826,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "api.py",
+        "name": "open_db_connection",
+        "line": 158,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "api.py",
+      "name": "open_db_connection",
+      "in_degree": 0.02218821729150727,
+      "out_degree": 0.0,
+      "pagerank": 0.22747564252877472,
+      "betweenness": null,
+      "callers_count": 29,
+      "callees_count": 0,
+      "composite_score": 0.07291740404090252,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "upsert_amfi_member",
+        "line": 841,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "upsert_amfi_member",
+      "in_degree": 0.017597551644988524,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": 0.2313953448794356,
+      "betweenness": null,
+      "callers_count": 23,
+      "callees_count": 1,
+      "composite_score": 0.07267104946057983,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "nse_earnings.py",
+        "name": "normalize_text",
+        "line": 100,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "nse_earnings.py",
+      "name": "normalize_text",
+      "in_degree": 0.014537107880642693,
+      "out_degree": 0.0,
+      "pagerank": 0.23594742312416245,
+      "betweenness": null,
+      "callers_count": 19,
+      "callees_count": 0,
+      "composite_score": 0.0726053737071331,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "utc_now_iso",
+        "line": 416,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "utc_now_iso",
+      "in_degree": 0.001530221882172915,
+      "out_degree": 0.0,
+      "pagerank": 0.22157496024959233,
+      "betweenness": null,
+      "callers_count": 2,
+      "callees_count": 0,
+      "composite_score": 0.06385363931494528,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "watchlist_formulas.py",
+        "name": "FormulaParser.current",
+        "line": 379,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "watchlist_formulas.py",
+      "name": "FormulaParser.current",
+      "in_degree": 0.006885998469778117,
+      "out_degree": 0.0,
+      "pagerank": 0.16872041951911568,
+      "betweenness": null,
+      "callers_count": 9,
+      "callees_count": 0,
+      "composite_score": 0.050665119316096664,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "watchlist_formulas.py",
+        "name": "FormulaValidationError",
+        "line": 0,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "watchlist_formulas.py",
+      "name": "FormulaValidationError",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0,
+      "pagerank": 0.14216491044364357,
+      "betweenness": null,
+      "callers_count": 27,
+      "callees_count": 0,
+      "composite_score": 0.047996401344374724,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "watchlist_formulas.py",
+        "name": "_to_optional_float",
+        "line": 899,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "watchlist_formulas.py",
+      "name": "_to_optional_float",
+      "in_degree": 0.013771996939556235,
+      "out_degree": 0.0,
+      "pagerank": 0.1444698916856658,
+      "betweenness": null,
+      "callers_count": 18,
+      "callees_count": 0,
+      "composite_score": 0.04619568224574603,
+      "risk_level": "low"
+    }
+  ],
+  "total_nodes": 1308,
+  "hub_count": 10,
+  "measures_used": [
+    "pagerank"
+  ],
+  "pagerank_info": {
+    "iterations_used": 24,
+    "converged": true
+  }
+}

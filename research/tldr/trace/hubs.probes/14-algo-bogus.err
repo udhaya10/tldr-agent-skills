@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--algorithm <ALGORITHM>'
+  [possible values: all, indegree, outdegree, pagerank, betweenness]
+
+For more information, try '--help'.
+exit=2

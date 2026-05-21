@@ -1,0 +1,14 @@
+Hub Detection (10 hubs / 13 nodes)
+
+ #   Risk      Function                            File         Score   In  Out
+ 1   LOW       _to_finite_float                    yahoo.py     0.263    3    0
+ 2   LOW       Provider.__init__                   base.py      0.234    2    0
+ 3   LOW       DhanProvider._load_mappings         dhan.py      0.215    3    0
+ 4   LOW       YahooProvider.__init__              yahoo.py     0.148    1    1
+ 5   LOW       DhanProvider._get_client            dhan.py      0.146    2    0
+ 6   LOW       DhanProvider.fetch_historical_data  dhan.py      0.098    0    2
+ 7   LOW       DhanProvider.fetch_intraday_chart   dhan.py      0.098    0    2
+ 8   LOW       get_yahoo_provider                  __init__.py  0.077    0    1
+ 9   LOW       DhanProvider.__init__               dhan.py      0.077    0    1
+ 10  LOW       DhanProvider.fetch_metadata         dhan.py      0.077    0    1
+

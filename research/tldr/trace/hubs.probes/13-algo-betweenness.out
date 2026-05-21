@@ -1,0 +1,219 @@
+{
+  "hubs": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": 0.0,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.025344299923488904,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "nse_results.py",
+        "name": "query_nse_results",
+        "line": 2058,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "nse_results.py",
+      "name": "query_nse_results",
+      "in_degree": 0.0007651109410864575,
+      "out_degree": 0.029074215761285386,
+      "pagerank": null,
+      "betweenness": 0.00004979665389919517,
+      "callers_count": 1,
+      "callees_count": 38,
+      "composite_score": 0.009343463339703399,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "clean_nippon_scheme_name",
+        "line": 1486,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "clean_nippon_scheme_name",
+      "in_degree": 0.022953328232593728,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": null,
+      "betweenness": 1.4646074676233872e-6,
+      "callers_count": 30,
+      "callees_count": 1,
+      "composite_score": 0.0074125614695754165,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "api.py",
+        "name": "open_db_connection",
+        "line": 158,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "api.py",
+      "name": "open_db_connection",
+      "in_degree": 0.02218821729150727,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": 0.0,
+      "callers_count": 29,
+      "callees_count": 0,
+      "composite_score": 0.006933817903596021,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "ensure_amfi_schema",
+        "line": 702,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "ensure_amfi_schema",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": null,
+      "betweenness": 0.000015817760650332585,
+      "callers_count": 27,
+      "callees_count": 1,
+      "composite_score": 0.006700652394750378,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "ingest_portfolio_files",
+        "line": 6386,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "ingest_portfolio_files",
+      "in_degree": 0.016832440703902066,
+      "out_degree": 0.0038255547054322878,
+      "pagerank": null,
+      "betweenness": 0.00017761225016656073,
+      "callers_count": 22,
+      "callees_count": 5,
+      "composite_score": 0.006522228159229445,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "screener.py",
+        "name": "normalize_text",
+        "line": 1390,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "screener.py",
+      "name": "normalize_text",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": 0.0,
+      "callers_count": 27,
+      "callees_count": 0,
+      "composite_score": 0.006455623565416985,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "watchlist_formulas.py",
+        "name": "FormulaValidationError",
+        "line": 0,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "watchlist_formulas.py",
+      "name": "FormulaValidationError",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": 0.0,
+      "callers_count": 27,
+      "callees_count": 0,
+      "composite_score": 0.006455623565416985,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "market_breadth.py",
+        "name": "_build_market_breadth_payload",
+        "line": 666,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "market_breadth.py",
+      "name": "_build_market_breadth_payload",
+      "in_degree": 0.001530221882172915,
+      "out_degree": 0.018362662586074982,
+      "pagerank": null,
+      "betweenness": 0.000028511025369735272,
+      "callers_count": 2,
+      "callees_count": 24,
+      "composite_score": 0.006227218030841119,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "extract_report_month_from_text",
+        "line": 1232,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "extract_report_month_from_text",
+      "in_degree": 0.018362662586074982,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": null,
+      "betweenness": 8.787644805740324e-7,
+      "callers_count": 24,
+      "callees_count": 1,
+      "composite_score": 0.005977758763918165,
+      "risk_level": "low"
+    }
+  ],
+  "total_nodes": 1308,
+  "hub_count": 10,
+  "measures_used": [
+    "betweenness"
+  ]
+}

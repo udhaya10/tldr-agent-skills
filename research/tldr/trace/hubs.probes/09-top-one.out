@@ -1,0 +1,129 @@
+{
+  "hubs": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": 1.0,
+      "betweenness": 0.0,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.22027543993879115,
+      "risk_level": "low"
+    }
+  ],
+  "total_nodes": 1308,
+  "hub_count": 1,
+  "measures_used": [
+    "in_degree",
+    "out_degree",
+    "pagerank",
+    "betweenness"
+  ],
+  "by_in_degree": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": 1.0,
+      "betweenness": 0.0,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.22027543993879115,
+      "risk_level": "low"
+    }
+  ],
+  "by_out_degree": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": 1.0,
+      "betweenness": 0.0,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.22027543993879115,
+      "risk_level": "low"
+    }
+  ],
+  "by_pagerank": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": 1.0,
+      "betweenness": 0.0,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.22027543993879115,
+      "risk_level": "low"
+    }
+  ],
+  "by_betweenness": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": 1.0,
+      "betweenness": 0.0,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.22027543993879115,
+      "risk_level": "low"
+    }
+  ],
+  "pagerank_info": {
+    "iterations_used": 24,
+    "converged": true
+  }
+}

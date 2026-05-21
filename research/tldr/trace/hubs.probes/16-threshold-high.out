@@ -1,0 +1,15 @@
+{
+  "hubs": [],
+  "total_nodes": 1308,
+  "hub_count": 0,
+  "measures_used": [
+    "in_degree",
+    "out_degree",
+    "pagerank",
+    "betweenness"
+  ],
+  "pagerank_info": {
+    "iterations_used": 24,
+    "converged": true
+  }
+}

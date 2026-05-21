@@ -1,0 +1,2 @@
+Error: hubs requires a directory; got file 'backend/providers/base.py'. Pass the project root or omit the argument to use the current directory.
+exit=1

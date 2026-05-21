@@ -1,0 +1,8 @@
+error: unexpected argument '-0' found
+
+  tip: to pass '-0' as a value, use '-- -0'
+
+Usage: tldr hubs [OPTIONS] [PATH]
+
+For more information, try '--help'.
+exit=2

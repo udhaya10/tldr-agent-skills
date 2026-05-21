@@ -1,0 +1,25 @@
+digraph hubs {
+    rankdir=LR;
+    node [shape=box, fontname="Helvetica"];
+
+    "yahoo.py:_to_finite_float" [label="_to_finite_float (score=0.263)"];
+    "base.py:Provider.__init__" [label="Provider.__init__ (score=0.234)"];
+    "dhan.py:DhanProvider._load_mappings" [label="DhanProvider._load_mappings (score=0.215)"];
+    "yahoo.py:YahooProvider.__init__" [label="YahooProvider.__init__ (score=0.148)"];
+    "dhan.py:DhanProvider._get_client" [label="DhanProvider._get_client (score=0.146)"];
+    "dhan.py:DhanProvider.fetch_historical_data" [label="DhanProvider.fetch_historical_data (score=0.098)"];
+    "dhan.py:DhanProvider.fetch_intraday_chart" [label="DhanProvider.fetch_intraday_chart (score=0.098)"];
+    "__init__.py:get_yahoo_provider" [label="get_yahoo_provider (score=0.077)"];
+    "dhan.py:DhanProvider.__init__" [label="DhanProvider.__init__ (score=0.077)"];
+    "dhan.py:DhanProvider.fetch_metadata" [label="DhanProvider.fetch_metadata (score=0.077)"];
+    "yahoo.py:_to_finite_float" -> "base.py:Provider.__init__" [style=invis];
+    "base.py:Provider.__init__" -> "dhan.py:DhanProvider._load_mappings" [style=invis];
+    "dhan.py:DhanProvider._load_mappings" -> "yahoo.py:YahooProvider.__init__" [style=invis];
+    "yahoo.py:YahooProvider.__init__" -> "dhan.py:DhanProvider._get_client" [style=invis];
+    "dhan.py:DhanProvider._get_client" -> "dhan.py:DhanProvider.fetch_historical_data" [style=invis];
+    "dhan.py:DhanProvider.fetch_historical_data" -> "dhan.py:DhanProvider.fetch_intraday_chart" [style=invis];
+    "dhan.py:DhanProvider.fetch_intraday_chart" -> "__init__.py:get_yahoo_provider" [style=invis];
+    "__init__.py:get_yahoo_provider" -> "dhan.py:DhanProvider.__init__" [style=invis];
+    "dhan.py:DhanProvider.__init__" -> "dhan.py:DhanProvider.fetch_metadata" [style=invis];
+}
+

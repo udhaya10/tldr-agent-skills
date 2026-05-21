@@ -1,0 +1,219 @@
+{
+  "hubs": [
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "normalize_text",
+        "line": 420,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "normalize_text",
+      "in_degree": 0.0811017597551645,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 106,
+      "callees_count": 0,
+      "composite_score": 0.04055087987758225,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "nse_results.py",
+        "name": "query_nse_results",
+        "line": 2058,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "nse_results.py",
+      "name": "query_nse_results",
+      "in_degree": 0.0007651109410864575,
+      "out_degree": 0.029074215761285386,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 1,
+      "callees_count": 38,
+      "composite_score": 0.014919663351185922,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "clean_nippon_scheme_name",
+        "line": 1486,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "clean_nippon_scheme_name",
+      "in_degree": 0.022953328232593728,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 30,
+      "callees_count": 1,
+      "composite_score": 0.011859219586840093,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "api.py",
+        "name": "open_db_connection",
+        "line": 158,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "api.py",
+      "name": "open_db_connection",
+      "in_degree": 0.02218821729150727,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 29,
+      "callees_count": 0,
+      "composite_score": 0.011094108645753635,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "ensure_amfi_schema",
+        "line": 702,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "ensure_amfi_schema",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 27,
+      "callees_count": 1,
+      "composite_score": 0.010711553175210406,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "ingest_portfolio_files",
+        "line": 6386,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "ingest_portfolio_files",
+      "in_degree": 0.016832440703902066,
+      "out_degree": 0.0038255547054322878,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 22,
+      "callees_count": 5,
+      "composite_score": 0.010328997704667177,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "screener.py",
+        "name": "normalize_text",
+        "line": 1390,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "screener.py",
+      "name": "normalize_text",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 27,
+      "callees_count": 0,
+      "composite_score": 0.010328997704667177,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "watchlist_formulas.py",
+        "name": "FormulaValidationError",
+        "line": 0,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "watchlist_formulas.py",
+      "name": "FormulaValidationError",
+      "in_degree": 0.020657995409334353,
+      "out_degree": 0.0,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 27,
+      "callees_count": 0,
+      "composite_score": 0.010328997704667177,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "market_breadth.py",
+        "name": "_build_market_breadth_payload",
+        "line": 666,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "market_breadth.py",
+      "name": "_build_market_breadth_payload",
+      "in_degree": 0.001530221882172915,
+      "out_degree": 0.018362662586074982,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 2,
+      "callees_count": 24,
+      "composite_score": 0.00994644223412395,
+      "risk_level": "low"
+    },
+    {
+      "function_ref": {
+        "file": "amfi_portfolios.py",
+        "name": "extract_report_month_from_text",
+        "line": 1232,
+        "is_public": false,
+        "is_test": false,
+        "is_trait_method": false,
+        "has_decorator": false
+      },
+      "file": "amfi_portfolios.py",
+      "name": "extract_report_month_from_text",
+      "in_degree": 0.018362662586074982,
+      "out_degree": 0.0007651109410864575,
+      "pagerank": null,
+      "betweenness": null,
+      "callers_count": 24,
+      "callees_count": 1,
+      "composite_score": 0.00956388676358072,
+      "risk_level": "low"
+    }
+  ],
+  "total_nodes": 1308,
+  "hub_count": 10,
+  "measures_used": [
+    "in_degree"
+  ]
+}

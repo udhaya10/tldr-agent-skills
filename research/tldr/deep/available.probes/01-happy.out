@@ -1,0 +1,77 @@
+{
+  "avail_in": {
+    "1": [],
+    "7": [],
+    "4": [],
+    "6": [],
+    "0": [],
+    "2": [],
+    "3": [],
+    "5": []
+  },
+  "avail_out": {
+    "1": [],
+    "4": [],
+    "7": [],
+    "2": [],
+    "0": [],
+    "3": [],
+    "6": [],
+    "5": []
+  },
+  "all_exprs": [],
+  "entry_block": 0,
+  "uncertain_exprs": [
+    {
+      "expr": "yf.download(",
+      "line": 52,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "pd.to_datetime(df.index, utc=True)",
+      "line": 65,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "pd.to_datetime(df.index)",
+      "line": 67,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "[col.lower() for col in df.columns]",
+      "line": 74,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.download(",
+      "line": 112,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "df.tail(period_bars)",
+      "line": 133,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "[col.lower() for col in df.columns]",
+      "line": 136,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.Ticker(symbol)",
+      "line": 166,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.Ticker(symbol)",
+      "line": 197,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.Ticker(symbol)",
+      "line": 223,
+      "reason": "contains method access - purity unknown"
+    }
+  ],
+  "confidence": "low"
+}

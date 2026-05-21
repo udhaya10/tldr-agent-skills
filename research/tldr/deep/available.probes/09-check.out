@@ -1,0 +1,5 @@
+{
+  "expression": "float(value)",
+  "available_in_blocks": [],
+  "is_redundant": false
+}

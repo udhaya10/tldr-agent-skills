@@ -1,0 +1,313 @@
+{
+  "avail_in": {
+    "12": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "17": [],
+    "2": [],
+    "3": [],
+    "0": [],
+    "6": [],
+    "8": [],
+    "18": [],
+    "13": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "5": [],
+    "1": [],
+    "9": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "7": [],
+    "11": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "14": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "4": [],
+    "20": [],
+    "15": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      },
+      {
+        "text": "col in df.columns",
+        "operands": [
+          "col",
+          "df.columns"
+        ],
+        "line": 78
+      }
+    ],
+    "19": [],
+    "16": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      },
+      {
+        "text": "col in df.columns",
+        "operands": [
+          "col",
+          "df.columns"
+        ],
+        "line": 78
+      }
+    ],
+    "10": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ]
+  },
+  "avail_out": {
+    "20": [],
+    "13": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "9": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      },
+      {
+        "text": "col in df.columns",
+        "operands": [
+          "col",
+          "df.columns"
+        ],
+        "line": 78
+      }
+    ],
+    "15": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      },
+      {
+        "text": "col in df.columns",
+        "operands": [
+          "col",
+          "df.columns"
+        ],
+        "line": 78
+      }
+    ],
+    "17": [],
+    "10": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "8": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "19": [],
+    "4": [],
+    "1": [],
+    "11": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "5": [],
+    "18": [],
+    "14": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "3": [],
+    "0": [],
+    "6": [],
+    "12": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      }
+    ],
+    "2": [],
+    "16": [
+      {
+        "text": "\"Date\" == df.index.name",
+        "operands": [
+          "\"Date\"",
+          "df.index.name"
+        ],
+        "line": 64
+      },
+      {
+        "text": "col in df.columns",
+        "operands": [
+          "col",
+          "df.columns"
+        ],
+        "line": 78
+      }
+    ],
+    "7": []
+  },
+  "all_exprs": [
+    {
+      "text": "\"Date\" == df.index.name",
+      "operands": [
+        "\"Date\"",
+        "df.index.name"
+      ],
+      "line": 64
+    },
+    {
+      "text": "col in df.columns",
+      "operands": [
+        "col",
+        "df.columns"
+      ],
+      "line": 78
+    }
+  ],
+  "entry_block": 0,
+  "uncertain_exprs": [
+    {
+      "expr": "yf.download(",
+      "line": 52,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "pd.to_datetime(df.index, utc=True)",
+      "line": 65,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "pd.to_datetime(df.index)",
+      "line": 67,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "[col.lower() for col in df.columns]",
+      "line": 74,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.download(",
+      "line": 112,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "df.tail(period_bars)",
+      "line": 133,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "[col.lower() for col in df.columns]",
+      "line": 136,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.Ticker(symbol)",
+      "line": 166,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.Ticker(symbol)",
+      "line": 197,
+      "reason": "contains method access - purity unknown"
+    },
+    {
+      "expr": "yf.Ticker(symbol)",
+      "line": 223,
+      "reason": "contains method access - purity unknown"
+    }
+  ],
+  "confidence": "low"
+}

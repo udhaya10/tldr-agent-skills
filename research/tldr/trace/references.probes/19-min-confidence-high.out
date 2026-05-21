@@ -1,0 +1,224 @@
+{
+  "symbol": "_to_finite_float",
+  "definition": {
+    "file": "backend/precomputed_indicators.py",
+    "line": 32,
+    "column": 5,
+    "kind": "function",
+    "signature": "def _to_finite_float(value: Any) -> float | None:"
+  },
+  "definitions": [
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 32,
+      "column": 5,
+      "kind": "function",
+      "signature": "def _to_finite_float(value: Any) -> float | None:"
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "column": 5,
+      "kind": "function",
+      "signature": "def _to_finite_float(value: Any) -> Optional[float]:"
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 24,
+      "column": 5,
+      "kind": "function",
+      "signature": "def _to_finite_float(value: Any) -> float | None:"
+    }
+  ],
+  "references": [
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 32,
+      "column": 5,
+      "kind": "definition",
+      "context": "def _to_finite_float(value: Any) -> float | None:",
+      "confidence": 1.0,
+      "end_column": 21
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 437,
+      "column": 14,
+      "kind": "call",
+      "context": "    opens = [_to_finite_float(value) for value in symbol_frame[\"open\"].tolist()]",
+      "confidence": 1.0,
+      "end_column": 30
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 438,
+      "column": 14,
+      "kind": "call",
+      "context": "    highs = [_to_finite_float(value) for value in symbol_frame[\"high\"].tolist()]",
+      "confidence": 1.0,
+      "end_column": 30
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 439,
+      "column": 13,
+      "kind": "call",
+      "context": "    lows = [_to_finite_float(value) for value in symbol_frame[\"low\"].tolist()]",
+      "confidence": 1.0,
+      "end_column": 29
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 440,
+      "column": 15,
+      "kind": "call",
+      "context": "    closes = [_to_finite_float(value) for value in symbol_frame[\"close\"].tolist()]",
+      "confidence": 1.0,
+      "end_column": 31
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 441,
+      "column": 16,
+      "kind": "call",
+      "context": "    volumes = [_to_finite_float(value) for value in symbol_frame[\"volume\"].tolist()]",
+      "confidence": 1.0,
+      "end_column": 32
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "column": 5,
+      "kind": "definition",
+      "context": "def _to_finite_float(value: Any) -> Optional[float]:",
+      "confidence": 1.0,
+      "end_column": 21
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 169,
+      "column": 25,
+      "kind": "call",
+      "context": "                price = _to_finite_float(fast_info.get(\"lastPrice\"))",
+      "confidence": 1.0,
+      "end_column": 41
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 170,
+      "column": 23,
+      "kind": "call",
+      "context": "                bid = _to_finite_float(fast_info.get(\"bid\"))",
+      "confidence": 1.0,
+      "end_column": 39
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 171,
+      "column": 23,
+      "kind": "call",
+      "context": "                ask = _to_finite_float(fast_info.get(\"ask\"))",
+      "confidence": 1.0,
+      "end_column": 39
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 201,
+      "column": 26,
+      "kind": "call",
+      "context": "            market_cap = _to_finite_float(fast_info.get(\"marketCap\"))",
+      "confidence": 1.0,
+      "end_column": 42
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 206,
+      "column": 22,
+      "kind": "call",
+      "context": "            shares = _to_finite_float(fast_info.get(\"shares\"))",
+      "confidence": 1.0,
+      "end_column": 38
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 207,
+      "column": 26,
+      "kind": "call",
+      "context": "            last_price = _to_finite_float(fast_info.get(\"lastPrice\"))",
+      "confidence": 1.0,
+      "end_column": 42
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 213,
+      "column": 20,
+      "kind": "call",
+      "context": "            return _to_finite_float(info.get(\"marketCap\") or info.get(\"currentMarketCap\"))",
+      "confidence": 1.0,
+      "end_column": 36
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 228,
+      "column": 31,
+      "kind": "call",
+      "context": "                \"market_cap\": _to_finite_float(",
+      "confidence": 1.0,
+      "end_column": 47
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 231,
+      "column": 39,
+      "kind": "call",
+      "context": "                \"shares_outstanding\": _to_finite_float(fast_info.get(\"shares\")),",
+      "confidence": 1.0,
+      "end_column": 55
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 24,
+      "column": 5,
+      "kind": "definition",
+      "context": "def _to_finite_float(value: Any) -> float | None:",
+      "confidence": 1.0,
+      "end_column": 21
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 91,
+      "column": 23,
+      "kind": "call",
+      "context": "        open_number = _to_finite_float(open_value)",
+      "confidence": 1.0,
+      "end_column": 39
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 92,
+      "column": 23,
+      "kind": "call",
+      "context": "        high_number = _to_finite_float(high_value)",
+      "confidence": 1.0,
+      "end_column": 39
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 93,
+      "column": 22,
+      "kind": "call",
+      "context": "        low_number = _to_finite_float(low_value)",
+      "confidence": 1.0,
+      "end_column": 38
+    }
+  ],
+  "total_references": 20,
+  "shown_references": 20,
+  "search_scope": "file",
+  "stats": {
+    "files_searched": 56,
+    "candidates_found": 22,
+    "verified_references": 22,
+    "search_time_ms": 170
+  }
+}

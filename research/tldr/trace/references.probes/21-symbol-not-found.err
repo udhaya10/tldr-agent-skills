@@ -1,0 +1,7 @@
+
+No references found for 'no_such_symbol_anywhere'. Searched 56 files.
+Suggestions:
+  - Check the symbol spelling
+  - Try a different search scope with --scope workspace
+  - Verify the path contains relevant source files
+exit=0

@@ -1,0 +1,61 @@
+{
+  "symbol": "pandas",
+  "definitions": [],
+  "references": [
+    {
+      "file": "backend/updater.py",
+      "line": 8,
+      "column": 8,
+      "kind": "import",
+      "context": "import pandas as pd",
+      "confidence": 1.0,
+      "end_column": 14
+    },
+    {
+      "file": "backend/markets_overview.py",
+      "line": 8,
+      "column": 8,
+      "kind": "import",
+      "context": "import pandas as pd",
+      "confidence": 1.0,
+      "end_column": 14
+    },
+    {
+      "file": "backend/rrg.py",
+      "line": 10,
+      "column": 8,
+      "kind": "import",
+      "context": "import pandas as pd",
+      "confidence": 1.0,
+      "end_column": 14
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 8,
+      "column": 8,
+      "kind": "import",
+      "context": "import pandas as pd",
+      "confidence": 1.0,
+      "end_column": 14
+    },
+    {
+      "file": "backend/stage_analysis_panel.py",
+      "line": 9,
+      "column": 8,
+      "kind": "import",
+      "context": "import pandas as pd",
+      "confidence": 1.0,
+      "end_column": 14
+    }
+  ],
+  "total_references": 21,
+  "shown_references": 5,
+  "truncated": true,
+  "search_scope": "workspace",
+  "stats": {
+    "files_searched": 56,
+    "candidates_found": 21,
+    "verified_references": 21,
+    "search_time_ms": 207
+  }
+}

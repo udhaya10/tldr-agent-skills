@@ -1,0 +1,2 @@
+Error: Path not found: '/no/such/dir'. Please provide a valid file or directory.
+exit=1

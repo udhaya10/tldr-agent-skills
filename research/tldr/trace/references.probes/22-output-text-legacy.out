@@ -1,0 +1,74 @@
+References to: _to_finite_float (function)
+
+Definitions:
+  precomputed_indicators.py:32:5 [function]
+    def _to_finite_float(value: Any) -> float | None:
+  providers/yahoo.py:18:5 [function]
+    def _to_finite_float(value: Any) -> Optional[float]:
+  stage_analysis.py:24:5 [function]
+    def _to_finite_float(value: Any) -> float | None:
+
+References (22 found in 172ms):
+  stage_analysis.py:24:5 [definition]
+    def _to_finite_float(value: Any) -> float | None:
+
+  stage_analysis.py:91:23 [call]
+    open_number = _to_finite_float(open_value)
+
+  stage_analysis.py:92:23 [call]
+    high_number = _to_finite_float(high_value)
+
+  stage_analysis.py:93:22 [call]
+    low_number = _to_finite_float(low_value)
+
+  stage_analysis.py:94:24 [call]
+    close_number = _to_finite_float(close_value)
+
+  stage_analysis.py:95:25 [call]
+    volume_number = _to_finite_float(volume_value) or 0.0
+
+  providers/yahoo.py:18:5 [definition]
+    def _to_finite_float(value: Any) -> Optional[float]:
+
+  providers/yahoo.py:169:25 [call]
+    price = _to_finite_float(fast_info.get("lastPrice"))
+
+  providers/yahoo.py:170:23 [call]
+    bid = _to_finite_float(fast_info.get("bid"))
+
+  providers/yahoo.py:171:23 [call]
+    ask = _to_finite_float(fast_info.get("ask"))
+
+  providers/yahoo.py:201:26 [call]
+    market_cap = _to_finite_float(fast_info.get("marketCap"))
+
+  providers/yahoo.py:206:22 [call]
+    shares = _to_finite_float(fast_info.get("shares"))
+
+  providers/yahoo.py:207:26 [call]
+    last_price = _to_finite_float(fast_info.get("lastPrice"))
+
+  providers/yahoo.py:213:20 [call]
+    return _to_finite_float(info.get("marketCap") or info.get("currentMarketCap"))
+
+  providers/yahoo.py:228:31 [call]
+    "market_cap": _to_finite_float(
+
+  providers/yahoo.py:231:39 [call]
+    "shares_outstanding": _to_finite_float(fast_info.get("shares")),
+
+  precomputed_indicators.py:32:5 [definition]
+    def _to_finite_float(value: Any) -> float | None:
+
+  precomputed_indicators.py:437:14 [call]
+    opens = [_to_finite_float(value) for value in symbol_frame["open"].tolist()]
+
+  precomputed_indicators.py:438:14 [call]
+    highs = [_to_finite_float(value) for value in symbol_frame["high"].tolist()]
+
+  precomputed_indicators.py:439:13 [call]
+    lows = [_to_finite_float(value) for value in symbol_frame["low"].tolist()]
+
+Search: 56 files, 22 candidates -> 22 verified
+Scope: file
+

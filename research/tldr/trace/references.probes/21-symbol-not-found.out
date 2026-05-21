@@ -1,0 +1,14 @@
+{
+  "symbol": "no_such_symbol_anywhere",
+  "definitions": [],
+  "references": [],
+  "total_references": 0,
+  "shown_references": 0,
+  "search_scope": "workspace",
+  "stats": {
+    "files_searched": 56,
+    "candidates_found": 0,
+    "verified_references": 0,
+    "search_time_ms": 169
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "symbol": "symbol",
+  "definitions": [],
+  "references": [
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 40,
+      "column": 9,
+      "kind": "read",
+      "context": "        symbol: str,",
+      "confidence": 1.0,
+      "end_column": 15
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 53,
+      "column": 17,
+      "kind": "read",
+      "context": "                symbol,",
+      "confidence": 1.0,
+      "end_column": 23
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 89,
+      "column": 9,
+      "kind": "read",
+      "context": "        symbol: str,",
+      "confidence": 1.0,
+      "end_column": 15
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 113,
+      "column": 17,
+      "kind": "read",
+      "context": "                symbol,",
+      "confidence": 1.0,
+      "end_column": 23
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 157,
+      "column": 25,
+      "kind": "other",
+      "context": "        Returns dict of symbol → {price, bid, ask, volume, timestamp}",
+      "confidence": 0.5,
+      "end_column": 31
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 164,
+      "column": 13,
+      "kind": "write",
+      "context": "        for symbol in symbols:",
+      "confidence": 1.0,
+      "end_column": 19
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 166,
+      "column": 40,
+      "kind": "read",
+      "context": "                ticker_obj = yf.Ticker(symbol)",
+      "confidence": 1.0,
+      "end_column": 46
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 175,
+      "column": 28,
+      "kind": "read",
+      "context": "                    result[symbol] = {",
+      "confidence": 1.0,
+      "end_column": 34
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 184,
+      "column": 24,
+      "kind": "read",
+      "context": "                result[symbol] = {",
+      "confidence": 1.0,
+      "end_column": 30
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 190,
+      "column": 32,
+      "kind": "read",
+      "context": "    def fetch_market_cap(self, symbol: str) -> Optional[float]:",
+      "confidence": 1.0,
+      "end_column": 38
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 197,
+      "column": 36,
+      "kind": "read",
+      "context": "            ticker_obj = yf.Ticker(symbol)",
+      "confidence": 1.0,
+      "end_column": 42
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 218,
+      "column": 30,
+      "kind": "read",
+      "context": "    def fetch_metadata(self, symbol: str) -> Dict[str, Any]:",
+      "confidence": 1.0,
+      "end_column": 36
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 220,
+      "column": 30,
+      "kind": "other",
+      "context": "        Fetch metadata for a symbol.",
+      "confidence": 0.5,
+      "end_column": 36
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 223,
+      "column": 36,
+      "kind": "read",
+      "context": "            ticker_obj = yf.Ticker(symbol)",
+      "confidence": 1.0,
+      "end_column": 42
+    }
+  ],
+  "total_references": 14,
+  "shown_references": 14,
+  "search_scope": "local",
+  "stats": {
+    "files_searched": 1,
+    "candidates_found": 18,
+    "verified_references": 14,
+    "search_time_ms": 2
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "symbol": "Provider",
+  "definition": {
+    "file": "backend/providers/base.py",
+    "line": 155,
+    "column": 7,
+    "kind": "class",
+    "signature": "class Provider("
+  },
+  "definitions": [
+    {
+      "file": "backend/providers/base.py",
+      "line": 155,
+      "column": 7,
+      "kind": "class",
+      "signature": "class Provider("
+    }
+  ],
+  "references": [
+    {
+      "file": "backend/providers/dhan.py",
+      "line": 14,
+      "column": 36,
+      "kind": "import",
+      "context": "from backend.providers.base import Provider",
+      "confidence": 1.0,
+      "end_column": 44
+    },
+    {
+      "file": "backend/providers/dhan.py",
+      "line": 17,
+      "column": 20,
+      "kind": "read",
+      "context": "class DhanProvider(Provider):",
+      "confidence": 1.0,
+      "end_column": 28
+    },
+    {
+      "file": "backend/providers/base.py",
+      "line": 155,
+      "column": 7,
+      "kind": "definition",
+      "context": "class Provider(",
+      "confidence": 1.0,
+      "end_column": 15
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 15,
+      "column": 36,
+      "kind": "import",
+      "context": "from backend.providers.base import Provider",
+      "confidence": 1.0,
+      "end_column": 44
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 28,
+      "column": 21,
+      "kind": "read",
+      "context": "class YahooProvider(Provider):",
+      "confidence": 1.0,
+      "end_column": 29
+    },
+    {
+      "file": "backend/api_status.py",
+      "line": 47,
+      "column": 24,
+      "kind": "other",
+      "context": "        logger.error(f\"Provider status error: {error}\")",
+      "confidence": 0.5,
+      "end_column": 32
+    },
+    {
+      "file": "backend/providers/__init__.py",
+      "line": 2,
+      "column": 1,
+      "kind": "other",
+      "context": "Provider abstraction layer for multi-source data integration.",
+      "confidence": 0.5,
+      "end_column": 9
+    }
+  ],
+  "total_references": 7,
+  "shown_references": 7,
+  "search_scope": "workspace",
+  "stats": {
+    "files_searched": 56,
+    "candidates_found": 7,
+    "verified_references": 7,
+    "search_time_ms": 167
+  }
+}

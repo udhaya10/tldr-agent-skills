@@ -1,0 +1,43 @@
+{
+  "symbol": "_to_finite_float",
+  "definition": {
+    "file": "backend/precomputed_indicators.py",
+    "line": 32,
+    "column": 5,
+    "kind": "function",
+    "signature": "def _to_finite_float(value: Any) -> float | None:"
+  },
+  "definitions": [
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 32,
+      "column": 5,
+      "kind": "function",
+      "signature": "def _to_finite_float(value: Any) -> float | None:"
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "column": 5,
+      "kind": "function",
+      "signature": "def _to_finite_float(value: Any) -> Optional[float]:"
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 24,
+      "column": 5,
+      "kind": "function",
+      "signature": "def _to_finite_float(value: Any) -> float | None:"
+    }
+  ],
+  "references": [],
+  "total_references": 0,
+  "shown_references": 0,
+  "search_scope": "file",
+  "stats": {
+    "files_searched": 56,
+    "candidates_found": 22,
+    "verified_references": 22,
+    "search_time_ms": 171
+  }
+}

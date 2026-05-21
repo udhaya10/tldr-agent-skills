@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "files_analyzed": 4,
+    "files_skipped": 0,
+    "files_partial": 0,
+    "duration_ms": 4,
+    "language_distribution": {
+      "files_by_language": {
+        "python": 4
+      },
+      "patterns_by_language": {
+        "python": 1
+      }
+    },
+    "patterns_before_filter": 6,
+    "patterns_after_filter": 1,
+    "confidence_threshold": 1.0
+  },
+  "import_patterns": {
+    "grouping_style": "ungrouped",
+    "absolute_vs_relative": "absolute",
+    "star_imports": "none",
+    "alias_conventions": [
+      {
+        "module": "yfinance",
+        "alias": "yf",
+        "count": 1
+      },
+      {
+        "module": "pandas",
+        "alias": "pd",
+        "count": 1
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "category": "imports",
+      "rule": "Prefer absolute imports over relative imports",
+      "confidence": 1.0,
+      "priority": 2
+    }
+  ],
+  "conflicts": [
+    "Inconsistent import grouping: no clear ordering pattern detected"
+  ]
+}

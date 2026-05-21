@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "files_analyzed": 56,
+    "files_skipped": 0,
+    "files_partial": 0,
+    "duration_ms": 370,
+    "language_distribution": {
+      "files_by_language": {
+        "python": 56
+      },
+      "patterns_by_language": {
+        "python": 7
+      }
+    },
+    "patterns_before_filter": 9,
+    "patterns_after_filter": 7,
+    "confidence_threshold": 0.5
+  },
+  "error_handling": {
+    "confidence": 0.7,
+    "patterns": [
+      "try_catch",
+      "custom_errors"
+    ],
+    "exception_types": [
+      "DhanAPIError",
+      "DhanAuthError",
+      "FormulaValidationError",
+      "SecurityMasterError"
+    ],
+    "evidence": [
+      {
+        "file": "backend/providers/dhan.py",
+        "line": 38,
+        "snippet": "        try:\n            cursor = conn.cursor()\n            cursor.execute(\"\"\""
+      },
+      {
+        "file": "backend/providers/dhan.py",
+        "line": 80,
+        "snippet": "        try:\n            dhan = self._get_client()\n            response = dhan.historical_daily_data("
+      },
+      {
+        "file": "backend/providers/dhan.py",
+        "line": 163,
+        "snippet": "        try:\n            dhan = self._get_client()\n            response = dhan.intraday_minute_data("
+      }
+    ]
+  },
+  "naming": {
+    "functions": "snake_case",
+    "classes": "pascal_case",
+    "constants": "upper_snake_case",
+    "private_prefix": "_",
+    "consistency_score": 0.9942196531791909
+  },
+  "resource_management": {
+    "confidence": 0.6000000000000001,
+    "patterns": [
+      "context_manager",
+      "explicit_close"
+    ],
+    "evidence": [
+      {
+        "file": "backend/scripts/apply_classification_theme_workbook.py",
+        "line": 90,
+        "snippet": "    with ACTIVE_CSV_PATH.open(\"w\", newline=\"\", encoding=\"utf-8\") as file_handle:\n        writer = csv.DictWriter(file_handle, fieldnames=ACTIVE_CSV_COLUMNS)\n        writer.writeheader()"
+      },
+      {
+        "file": "backend/scripts/generate_nse_only_financials.py",
+        "line": 602,
+        "snippet": "        with pdfplumber.open(io.BytesIO(content)) as pdf:\n            explicit_candidates: list[int] = []\n            fallback_candidates: list[int] = []"
+      },
+      {
+        "file": "backend/amfi_portfolios.py",
+        "line": 3567,
+        "snippet": "    with zipfile.ZipFile(archive) as zipped_archive:\n        selected_member_name = None\n        for member_name in zipped_archive.namelist():"
+      }
+    ]
+  },
+  "validation": {
+    "confidence": 0.7,
+    "frameworks": [
+      "pydantic"
+    ],
+    "patterns": [
+      "schema_validation",
+      "type_checking"
+    ],
+    "evidence": [
+      {
+        "file": "backend/api.py",
+        "line": 192,
+        "snippet": "class StockMetadataUpdatePayload(BaseModel):\n    field: str\n    value: str | list[str] | None"
+      },
+      {
+        "file": "backend/api.py",
+        "line": 197,
+        "snippet": "class RankingQueryPayload(BaseModel):\n    metric: str\n    symbols: list[str] | None = None"
+      },
+      {
+        "file": "backend/api.py",
+        "line": 206,
+        "snippet": "class BubbleUniverseQueryPayload(BaseModel):\n    x_metric: str\n    y_metric: str"
+      }
+    ]
+  },
+  "import_patterns": {
+    "grouping_style": "ungrouped",
+    "absolute_vs_relative": "absolute",
+    "star_imports": "none",
+    "alias_conventions": [
+      {
+        "module": "router",
+        "alias": "status_router",
+        "count": 1
+      },
+      {
+        "module": "yfinance",
+        "alias": "yf",
+        "count": 1
+      },
+      {
+        "module": "xml.etree.ElementTree",
+        "alias": "ET",
+        "count": 1
+      },
+      {
+        "module": "PROFILES",
+        "alias": "MANUAL_ABOUT_PROFILE_DATA",
+        "count": 1
+      },
+      {
+        "module": "ElementTree",
+        "alias": "ET",
+        "count": 1
+      },
+      {
+        "module": "dhanhq",
+        "alias": "DhanHQ",
+        "count": 1
+      },
+      {
+        "module": "ensure_schema",
+        "alias": "ensure_screener_schema,",
+        "count": 1
+      },
+      {
+        "module": "DB_PATH",
+        "alias": "_DEFAULT_DB_PATH",
+        "count": 1
+      },
+      {
+        "module": "time",
+        "alias": "daytime,",
+        "count": 1
+      },
+      {
+        "module": "numpy",
+        "alias": "np",
+        "count": 1
+      },
+      {
+        "module": "make_profile",
+        "alias": "make_manual_about_profile",
+        "count": 1
+      },
+      {
+        "module": "pandas",
+        "alias": "pd",
+        "count": 1
+      }
+    ]
+  },
+  "type_coverage": {
+    "coverage_overall": 0.8962943215142629,
+    "coverage_functions": 0.8962943215142629,
+    "coverage_variables": 0.0,
+    "typevar_usage": false,
+    "generic_patterns": [
+      "Tuple",
+      "List",
+      "Optional",
+      "Dict"
+    ]
+  },
+  "api_conventions": {
+    "confidence": 0.5,
+    "framework": "fastapi",
+    "patterns": [
+      "rest_crud"
+    ],
+    "evidence": [
+      {
+        "file": "backend/api.py",
+        "line": 1573,
+        "snippet": "    @app.get(\"/api/stocks\")\n    def get_stocks(stageConfirmationMode: str | None = None):\n        return get_latest_stocks_for_confirmation_mode(stageConfirmationMode)"
+      },
+      {
+        "file": "backend/api.py",
+        "line": 1577,
+        "snippet": "    @app.get(\"/api/overview/markets\")\n    def get_overview_markets():\n        try:"
+      },
+      {
+        "file": "backend/api.py",
+        "line": 1585,
+        "snippet": "    @app.get(\"/api/overview/stock-cards\")\n    def get_overview_stock_cards():\n        try:"
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "category": "naming",
+      "rule": "Function names: snake_case, Class names: PascalCase, Constants: UPPER_SNAKE_CASE",
+      "confidence": 0.9942196531791909,
+      "priority": 1
+    },
+    {
+      "category": "resource_management",
+      "rule": "Use 'with' statements (context managers) for resource management",
+      "confidence": 0.6000000000000001,
+      "priority": 1
+    },
+    {
+      "category": "validation",
+      "rule": "Use pydantic for input validation",
+      "confidence": 0.7,
+      "priority": 1
+    },
+    {
+      "category": "types",
+      "rule": "Add type annotations to function parameters and return values",
+      "confidence": 0.8962943215142629,
+      "priority": 1
+    },
+    {
+      "category": "api",
+      "rule": "Follow fastapi patterns for API endpoints",
+      "confidence": 0.5,
+      "priority": 1
+    },
+    {
+      "category": "api",
+      "rule": "Follow REST conventions: GET for read, POST for create, PUT for update, DELETE for delete",
+      "confidence": 0.5,
+      "priority": 1
+    },
+    {
+      "category": "error_handling",
+      "rule": "Wrap error-prone operations in try/catch blocks with specific exception handling",
+      "confidence": 0.7,
+      "priority": 2
+    },
+    {
+      "category": "error_handling",
+      "rule": "Use existing custom error types: DhanAPIError, DhanAuthError, FormulaValidationError, SecurityMasterError",
+      "confidence": 0.7,
+      "priority": 2
+    },
+    {
+      "category": "naming",
+      "rule": "Use '_' prefix for private members",
+      "confidence": 0.9942196531791909,
+      "priority": 2
+    },
+    {
+      "category": "imports",
+      "rule": "Prefer absolute imports over relative imports",
+      "confidence": 1.0,
+      "priority": 2
+    }
+  ],
+  "conflicts": [
+    "Inconsistent import grouping: no clear ordering pattern detected"
+  ]
+}

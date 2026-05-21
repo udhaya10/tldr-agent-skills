@@ -1,0 +1,43 @@
+# Pattern Analysis Report
+
+## Summary
+- Files analyzed: 4
+- Files skipped: 0
+- Duration: 4ms
+- Patterns found: 3
+
+### Languages
+- python: 4 files
+
+## Naming Conventions
+- Consistency: 87%
+- Functions: snake_case
+- Classes: PascalCase
+- Constants: Mixed
+- Private prefix: '_'
+
+## Import Patterns
+- Grouping: Ungrouped
+- Style: Absolute
+- Star imports: None
+- Aliases:
+  - pandas -> pd
+  - yfinance -> yf
+
+## Type Coverage
+- Overall: 93%
+- Functions: 93%
+- Variables: 0%
+- TypeVar usage: false
+- Generic patterns: Optional, Dict, List, Tuple
+
+## LLM Constraints
+- [naming] Function names: snake_case, Class names: PascalCase, Constants: mixed
+- [types] Add type annotations to function parameters and return values
+- [naming] Use '_' prefix for private members
+- [imports] Prefer absolute imports over relative imports
+
+## Conflicts Detected
+- Inconsistent import grouping: no clear ordering pattern detected
+
+

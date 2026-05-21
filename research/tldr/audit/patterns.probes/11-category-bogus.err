@@ -1,0 +1,4 @@
+error: invalid value 'wat' for '--category <CATEGORY>': Unknown pattern category: wat
+
+For more information, try '--help'.
+exit=2

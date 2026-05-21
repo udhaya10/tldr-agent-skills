@@ -1,0 +1,1 @@
+tldr hotspots -f dot

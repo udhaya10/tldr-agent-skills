@@ -1,0 +1,29 @@
+Hotspots Analysis (152 files, 365 days)
+Total commits: 1178, Concentration: 21.1%
+Mode: file-level, Algorithm: v2
+
+Hotspots (high churn + high complexity):
+   #  Score  Churn  Cmplx  Commits   Cog  Priority  File
+   1   0.87   0.72   0.98       43   281  Critical  backend/api.py
+   2   0.87   0.94   0.73        9    48  Critical  backend/market_data.py
+   3   0.85   0.93   0.94        5   153  Critical  webui/src/features/stocks/components/AdvancedFormulaEditorDialog.jsx
+   4   0.81   0.85   0.92        7   121  Critical  webui/src/features/stocks/components/WatchlistColumnManager.jsx
+   5   0.81   0.93   0.83       15    77  Critical  webui/src/features/stocks/components/WatchlistDropdown.jsx
+   6   0.78   0.78   0.91        8   120  Critical  webui/src/features/stocks/components/RankedUniversePanel.jsx
+   7   0.76   0.75   0.90       41   113  Critical  webui/src/features/chart/components/ChartPanel.jsx
+   8   0.76   0.65   1.00       45   790  Critical  webui/src/features/stocks/components/AllStocksPanel.jsx
+   9   0.76   0.79   0.86        5    81  Critical  webui/src/features/stocks/components/FinancialStatementCard.jsx
+  10   0.76   0.69   0.95       12   157  Critical  webui/src/features/stocks/components/FilteredWatchlistEditorDialog.jsx
+  11   0.75   0.66   0.96        7   171  Critical  webui/src/features/stocks/components/FormulaColumnEditorDialog.jsx
+  12   0.75   0.92   0.70       21    44  Critical  webui/src/features/stocks/components/WatchlistHeader.jsx
+  13   0.74   0.73   0.88        4    99  Critical  webui/src/features/stocks/components/RRGPanel.jsx
+  14   0.74   0.71   0.88        7   109      High  webui/src/features/stocks/components/ResultsPanel.jsx
+  15   0.73   0.86   0.71       20    47      High  webui/src/features/chart/components/ChartToolbar.jsx
+  16   0.72   0.74   0.80       23    67      High  webui/src/features/stocks/components/WatchlistRow.jsx
+  17   0.71   0.57   0.75       13    50      High  backend/updater.py
+  18   0.70   0.79   0.71       17    47      High  webui/src/features/stocks/components/WatchlistSection.jsx
+  19   0.68   0.61   0.84       49    79      High  webui/src/features/chart/components/ChartView.jsx
+  20   0.68   0.56   0.89        7   110      High  webui/src/features/stocks/components/DataPanel.jsx
+
+Summary: Changes are well distributed across the codebase.
+

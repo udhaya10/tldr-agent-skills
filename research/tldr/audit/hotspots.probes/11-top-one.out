@@ -1,0 +1,44 @@
+{
+  "hotspots": [
+    {
+      "file": "backend/api.py",
+      "churn_score": 0.71900826446281,
+      "complexity_score": 0.9834710743801653,
+      "hotspot_score": 0.87311618862421,
+      "commit_count": 43,
+      "lines_changed": 3524,
+      "complexity": 281,
+      "recommendation": "Critical: High churn + high complexity + fragmented knowledge. Prioritize refactoring.",
+      "relative_churn": 1.1351622357735638,
+      "knowledge_fragmentation": 0.2325581395348837,
+      "current_loc": 2436,
+      "author_count": 2,
+      "algorithm_version": 2
+    }
+  ],
+  "summary": {
+    "total_files_analyzed": 152,
+    "total_commits": 1178,
+    "time_window_days": 365,
+    "hotspot_concentration": 21.137521222410864,
+    "recommendation": "Changes are well distributed across the codebase.",
+    "total_bot_commits_filtered": 0,
+    "avg_knowledge_fragmentation": 0.015972999021988725
+  },
+  "metadata": {
+    "path": ".",
+    "days": 365,
+    "by_function": false,
+    "min_commits": 3,
+    "is_shallow": false,
+    "bot_commits_filtered": 0,
+    "recency_halflife": 90,
+    "scoring_weights": {
+      "churn": 0.4117647058823529,
+      "complexity": 0.4117647058823529,
+      "knowledge_fragmentation": 0.17647058823529413,
+      "temporal_coupling": 0.0
+    },
+    "algorithm_version": 2
+  }
+}

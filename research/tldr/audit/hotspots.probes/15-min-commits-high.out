@@ -1,0 +1,24 @@
+{
+  "hotspots": [],
+  "summary": {
+    "total_files_analyzed": 0,
+    "total_commits": 0,
+    "time_window_days": 365,
+    "hotspot_concentration": 0.0,
+    "recommendation": "No files meet the minimum commit threshold.",
+    "total_bot_commits_filtered": 0
+  },
+  "metadata": {
+    "path": ".",
+    "days": 365,
+    "by_function": false,
+    "min_commits": 999,
+    "is_shallow": false,
+    "bot_commits_filtered": 0,
+    "recency_halflife": 90,
+    "algorithm_version": 2
+  },
+  "warnings": [
+    "No files found with 999 or more commits."
+  ]
+}

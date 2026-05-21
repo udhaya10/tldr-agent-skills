@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "file_path": "backend/relative_strength.py",
+      "function_name": "<lambda:204:27>",
+      "class_name": null,
+      "score": 0.7663526381920389,
+      "line_start": 204,
+      "line_end": 204,
+      "snippet": "lambda row: row[1]"
+    },
+    {
+      "file_path": "backend/api.py",
+      "function_name": "<lambda:1150:41>",
+      "class_name": null,
+      "score": 0.7259517209234699,
+      "line_start": 1150,
+      "line_end": 1150,
+      "snippet": "lambda value: value.lower()"
+    },
+    {
+      "file_path": "backend/importer.py",
+      "function_name": "main",
+      "class_name": null,
+      "score": 0.7022017259938544,
+      "line_start": 407,
+      "line_end": 408,
+      "snippet": "def main():\n    run_import()"
+    },
+    {
+      "file_path": "backend/nse_listings.py",
+      "function_name": "<lambda:691:55>",
+      "class_name": null,
+      "score": 0.6956881950836952,
+      "line_start": 691,
+      "line_end": 691,
+      "snippet": "lambda row: row.get(\"symbol\") or \"\""
+    },
+    {
+      "file_path": "backend/nse_listings.py",
+      "function_name": "<lambda:692:48>",
+      "class_name": null,
+      "score": 0.6956881950836952,
+      "line_start": 692,
+      "line_end": 692,
+      "snippet": "lambda row: row.get(\"symbol\") or \"\""
+    },
+    {
+      "file_path": "backend/rankings.py",
+      "function_name": "<lambda:931:18>",
+      "class_name": null,
+      "score": 0.6773042784732134,
+      "line_start": 931,
+      "line_end": 931,
+      "snippet": "lambda row: row[\"value\"]"
+    },
+    {
+      "file_path": "backend/rankings.py",
+      "function_name": "<lambda:1143:18>",
+      "class_name": null,
+      "score": 0.6423180689254141,
+      "line_start": 1143,
+      "line_end": 1143,
+      "snippet": "lambda row: row[\"size_value\"]"
+    },
+    {
+      "file_path": "backend/api.py",
+      "function_name": "<lambda:297:49>",
+      "class_name": null,
+      "score": 0.6375516644553174,
+      "line_start": 297,
+      "line_end": 297,
+      "snippet": "lambda: [\"en\", \"en-IN\", \"en-GB\", \"en-US\"]"
+    },
+    {
+      "file_path": "backend/api.py",
+      "function_name": "open_db_connection",
+      "class_name": null,
+      "score": 0.6313818383567703,
+      "line_start": 158,
+      "line_end": 159,
+      "snippet": "def open_db_connection():\n    return open_sqlite_connection()"
+    },
+    {
+      "file_path": "backend/amfi_portfolios.py",
+      "function_name": "sync_latest_portfolio_files",
+      "class_name": null,
+      "score": 0.628435557188074,
+      "line_start": 7101,
+      "line_end": 7354,
+      "snippet": "def sync_latest_portfolio_files(\n    conn: sqlite3.Connection,\n    *,\n    hdfc_months_per_scheme: int = 2,\n    hdfc_scheme_limit: int | None = None,"
+    }
+  ],
+  "total_results": 10,
+  "query": "database connection",
+  "model": "arctic-m",
+  "total_chunks": 1397,
+  "matches_above_threshold": 10,
+  "latency_ms": 7,
+  "cache_hit": false
+}

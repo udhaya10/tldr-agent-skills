@@ -1,0 +1,6 @@
+error: the argument '--regex' cannot be used with '--hybrid <HYBRID>'
+
+Usage: tldr search --regex <QUERY> <PATH>
+
+For more information, try '--help'.
+exit=2

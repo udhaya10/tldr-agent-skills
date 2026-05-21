@@ -1,0 +1,7 @@
+{
+  "query": "database",
+  "results": [],
+  "total_results": 0,
+  "total_files_searched": 627,
+  "search_mode": "bm25+structure+callgraph"
+}

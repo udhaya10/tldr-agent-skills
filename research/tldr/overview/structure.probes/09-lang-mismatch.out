@@ -1,0 +1,13 @@
+{
+  "root": "backend/db.py",
+  "language": "rust",
+  "files": [
+    {
+      "path": "db.py",
+      "classes": [],
+      "method_infos": [],
+      "imports": [],
+      "definitions": []
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "file_path": "backend/api.py",
+  "language": "python",
+  "imports": [
+    {
+      "module": "json",
+      "is_from": false
+    },
+    {
+      "module": "io",
+      "is_from": false
+    },
+    {
+      "module": "os",
+      "is_from": false
+    },
+    {
+      "module": "sqlite3",
+      "is_from": false
+    },
+    {
+      "module": "bisect",
+      "names": [
+        "bisect_left"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "contextlib",
+      "names": [
+        "asynccontextmanager"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "datetime",
+      "names": [
+        "datetime",
+        "timedelta",
+        "timezone"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "threading",
+      "names": [
+        "Lock",
+        "Thread"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "pandas",
+      "is_from": false,
+      "alias": "pd"
+    },
+    {
+      "module": "fastapi",
+      "names": [
+        "FastAPI",
+        "HTTPException"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.config",
+      "names": [
+        "logger"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.api_status",
+      "names": [
+        "router"
+      ],
+      "is_from": true,
+      "alias": "status_router"
+    },
+    {
+      "module": "fastapi.middleware.cors",
+      "names": [
+        "CORSMiddleware"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "fastapi.responses",
+      "names": [
+        "StreamingResponse"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "pydantic",
+      "names": [
+        "BaseModel",
+        "Field"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.announcements",
+      "names": [
+        "backfill_company_announcements",
+        "ensure_announcement_schema",
+        "get_announcement_status",
+        "list_company_announcements",
+        "refresh_company_announcements",
+        "reset_interrupted_announcement_backfill",
+        "reset_interrupted_announcement_refresh"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.announcement_scheduler",
+      "names": [
+        "start_announcement_scheduler"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.amfi_portfolios",
+      "names": [
+        "ensure_amfi_schema",
+        "query_mutual_fund_buying_watchlist",
+        "query_mutual_fund_scheme_catalog",
+        "query_mutual_fund_scheme_holdings",
+        "query_stock_mutual_fund_holdings"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.blocked_symbols",
+      "names": [
+        "BLOCKED_STOCK_SYMBOL_SET",
+        "is_blocked_stock_symbol"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.classification",
+      "names": [
+        "append_theme_columns",
+        "ensure_classification_theme_schema",
+        "get_theme_options",
+        "update_stock_themes"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.db",
+      "names": [
+        "open_sqlite_connection",
+        "ensure_provider_ohlcv_table",
+        "ensure_dhan_symbol_map_table"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.dhan_historical",
+      "names": [
+        "trigger_dhan_auto_backfill_if_needed"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.dhan_client",
+      "names": [
+        "get_dhan_client",
+        "DhanAuthError",
+        "reset_dhan_client"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.dhan_security_master",
+      "names": [
+        "get_security_master",
+        "SecurityMasterError"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.dhan_security_master_scheduler",
+      "names": [
+        "start_security_master_scheduler"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.concalls",
+      "names": [
+        "build_concall_zip_file",
+        "build_content_disposition",
+        "fetch_concall_download_file",
+        "get_concall_download_items",
+        "get_stock_concall_payload"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.financial_results_scheduler",
+      "names": [
+        "start_financial_results_scheduler"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.financial_results_sync",
+      "names": [
+        "ensure_financial_results_sync_schema",
+        "reset_interrupted_financial_results_sync"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.market_breadth",
+      "names": [
+        "get_market_breadth_payload",
+        "refresh_market_breadth_snapshots"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.markets_overview",
+      "names": [
+        "get_markets_overview_payload"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.overview_stock_cards",
+      "names": [
+        "get_overview_stock_cards_payload"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.nse_earnings",
+      "names": [
+        "ensure_earnings_schema",
+        "infer_result_season_fiscal_period",
+        "query_earnings_calendar_watchlist_group"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.nse_results",
+      "names": [
+        "ensure_nse_results_schema",
+        "get_nse_results_refresh_status",
+        "open_nse_results_connection",
+        "query_nse_results",
+        "refresh_nse_results_cache",
+        "reset_interrupted_nse_results_refresh"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.nse_indas_financials",
+      "names": [
+        "get_nse_indas_financial_payload"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.nse_results_scheduler",
+      "names": [
+        "start_nse_results_scheduler"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.nse_index_history",
+      "names": [
+        "PRIVATE_TEST_NIFTY500_SYMBOL",
+        "backfill_private_test_nifty500",
+        "ensure_private_test_index_rows",
+        "ensure_private_test_index_schema",
+        "ensure_private_test_nifty500_row",
+        "load_private_test_index_history_state",
+        "start_private_test_index_backfill_worker"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.nse_listings",
+      "names": [
+        "ensure_listing_schema"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.notifications",
+      "names": [
+        "ensure_notifications_schema",
+        "get_notification",
+        "list_notifications",
+        "mark_all_notifications_read",
+        "mark_notification_read"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.precomputed_indicators",
+      "names": [
+        "build_indicator_payload_from_row",
+        "ensure_daily_indicator_snapshot_table",
+        "merge_indicator_snapshots_into_history_dataframe",
+        "refresh_daily_indicator_snapshots"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.rankings",
+      "names": [
+        "METRIC_DEFINITIONS",
+        "STAGE_SNAPSHOT_COLUMNS_BY_MODE",
+        "determine_snapshot_refresh_symbols",
+        "ensure_metric_snapshot_table",
+        "load_metric_snapshot_dataframe",
+        "query_bubble_universe",
+        "query_ranked_universe",
+        "refresh_metric_snapshots"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.relative_strength",
+      "names": [
+        "ensure_relative_strength_snapshot_table",
+        "get_relative_strength_snapshot_dataframe"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.rrg",
+      "names": [
+        "get_rrg_payload"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.screener",
+      "names": [
+        "get_financial_payload",
+        "get_ratio_catalog",
+        "get_stock_about_profile"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.stage_analysis",
+      "names": [
+        "normalize_stage_analysis_confirmation_mode"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.stage_analysis_panel",
+      "names": [
+        "ensure_stage_analysis_panel_snapshot_table",
+        "get_stage_analysis_panel_payload",
+        "refresh_stage_analysis_panel_snapshots"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.youtube_panel",
+      "names": [
+        "CouldNotRetrieveTranscript",
+        "NoTranscriptFound",
+        "TranscriptsDisabled",
+        "query_stock_youtube_videos",
+        "query_youtube_video_transcript"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.watchlist_formulas",
+      "names": [
+        "FormulaValidationError",
+        "evaluate_formula_columns",
+        "validate_formula"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.dhan_live",
+      "names": [
+        "start_live_poller"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.dhan_live",
+      "names": [
+        "stop_live_poller"
+      ],
+
+... [3708 lines truncated, full output regeneratable via probe.sh] ...
+
+        "get_latest_stocks_for_confirmation_mode",
+        "create_app"
+      ],
+      "history_frames.append": [
+        "enrich_dataframe_with_earnings_volume_metrics"
+      ],
+      "reset_interrupted_nse_results_refresh": [
+        "lifespan"
+      ],
+      "reset_interrupted_financial_results_sync": [
+        "lifespan"
+      ],
+      "pd.notna": [
+        "enrich_dataframe_with_earnings_volume_metrics",
+        "first_valid_value",
+        "last_valid_value"
+      ],
+      "uvicorn.run": [
+        "main"
+      ],
+      "column.model_dump": [
+        "create_app"
+      ],
+      "dataframe.loc[\n            dataframe[\"earnings_date\"].notna()\n            & dataframe[\"earnings_date\"].astype(str).str.strip().ne(\"\"),\n            \"symbol\",\n        ]\n        .dropna()\n        .astype(str)\n        .str.upper()\n        .drop_duplicates()\n        .tolist": [
+        "enrich_dataframe_with_earnings_volume_metrics"
+      ],
+      "_LATEST_STOCKS_CACHE_LOCK.locked": [
+        "get_latest_stocks_for_confirmation_mode"
+      ],
+      "conn.execute(\n        \"\"\"\n        SELECT 1\n        FROM sqlite_master\n        WHERE type = 'table'\n          AND name = ?\n        LIMIT 1\n        \"\"\",\n        (table_name,),\n    ).fetchone": [
+        "history_metadata_table_exists"
+      ],
+      "ensure_daily_indicator_snapshot_table": [
+        "lifespan"
+      ],
+      "pd.isna": [
+        "is_blank_dataframe_value",
+        "to_optional_float",
+        "slice_history_dataframe_by_range"
+      ],
+      "refresh_company_announcements": [
+        "create_app"
+      ],
+      "to_optional_float": [
+        "resolve_earnings_hv_label",
+        "enrich_dataframe_with_earnings_volume_metrics"
+      ]
+    }
+  }
+}

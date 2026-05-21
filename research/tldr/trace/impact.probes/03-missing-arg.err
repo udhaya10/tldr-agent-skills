@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <FUNCTION>
+
+Usage: tldr impact <FUNCTION> [PATH]
+
+For more information, try '--help'.
+exit=2

@@ -1,0 +1,9 @@
+error: the following required arguments were not provided:
+  <FILE>
+  <FUNCTION>
+  <LINE>
+
+Usage: tldr slice <FILE> <FUNCTION> <LINE>
+
+For more information, try '--help'.
+exit=2

@@ -1,0 +1,21 @@
+{
+  "wrapper": "health",
+  "path": "backend/db.py",
+  "language": "python",
+  "quick_mode": true,
+  "total_elapsed_ms": 4.516916999999999,
+  "summary": {
+    "files_analyzed": 1,
+    "functions_analyzed": 9,
+    "classes_analyzed": 0,
+    "avg_cyclomatic": 2.111111111111111,
+    "hotspot_count": 0,
+    "low_cohesion_count": 0,
+    "dead_count": 0,
+    "dead_percentage": 0.0,
+    "packages_in_pain_zone": 0,
+    "tight_coupling_pairs": 0,
+    "similar_pairs": 0
+  },
+  "errors": []
+}

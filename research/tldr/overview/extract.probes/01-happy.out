@@ -1,0 +1,260 @@
+{
+  "file_path": "backend/db.py",
+  "language": "python",
+  "imports": [
+    {
+      "module": "sqlite3",
+      "is_from": false
+    },
+    {
+      "module": "time",
+      "is_from": false
+    },
+    {
+      "module": "datetime",
+      "names": [
+        "datetime"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "backend.config",
+      "names": [
+        "DB_PATH"
+      ],
+      "is_from": true
+    }
+  ],
+  "functions": [
+    {
+      "name": "configure_sqlite_connection",
+      "params": [
+        "conn",
+        "busy_timeout_ms",
+        "row_factory"
+      ],
+      "is_method": false,
+      "is_async": false,
+      "line": 12,
+      "line_end": 18
+    },
+    {
+      "name": "open_sqlite_connection",
+      "params": [
+        "db_path",
+        "busy_timeout_ms",
+        "row_factory"
+      ],
+      "is_method": false,
+      "is_async": false,
+      "line": 21,
+      "line_end": 27
+    },
+    {
+      "name": "is_sqlite_lock_error",
+      "params": [
+        "error"
+      ],
+      "is_method": false,
+      "is_async": false,
+      "line": 30,
+      "line_end": 36
+    },
+    {
+      "name": "sleep_before_sqlite_lock_retry",
+      "params": [
+        "attempt",
+        "label"
+      ],
+      "is_method": false,
+      "is_async": false,
+      "line": 39,
+      "line_end": 45
+    },
+    {
+      "name": "get_db_connection",
+      "params": [],
+      "is_method": false,
+      "is_async": false,
+      "line": 48,
+      "line_end": 53
+    },
+    {
+      "name": "ensure_provider_ohlcv_table",
+      "params": [
+        "conn"
+      ],
+      "docstring": "\n    Create provider_ohlcv table if it doesn't exist.\n\n    This is a shadow table for parallel provider data ingestion.\n    Allows Dhan and other providers to write data independently\n    without affecting the canonical stock_data table.\n\n    Schema:\n    - provider: Data source name ('yahoo', 'dhan', etc.)\n    - symbol: Stock ticker\n    - interval: Candle interval ('daily', '1m', '5m', '15m', etc.)\n    - time: ISO 8601 UTC timestamp\n    - OHLCV: Open, High, Low, Close, Volume\n    - marketcap: Optional market cap snapshot\n    - fetched_at: When this data was fetched\n    ",
+      "is_method": false,
+      "is_async": false,
+      "line": 56,
+      "line_end": 101
+    },
+    {
+      "name": "ensure_dhan_symbol_map_table",
+      "params": [
+        "conn"
+      ],
+      "docstring": "\n    Create dhan_symbol_map table if it doesn't exist.\n\n    Maps Yahoo ticker symbols to Dhan security IDs.\n    Tracks mapping freshness and validation status.\n    ",
+      "is_method": false,
+      "is_async": false,
+      "line": 104,
+      "line_end": 136
+    },
+    {
+      "name": "get_dhan_security_id",
+      "params": [
+        "conn",
+        "yahoo_symbol"
+      ],
+      "docstring": "\n    Get Dhan security_id for a Yahoo symbol.\n\n    Returns:\n        int: security_id if found\n        None: if symbol not mapped or inactive\n    ",
+      "is_method": false,
+      "is_async": false,
+      "line": 139,
+      "line_end": 153
+    },
+    {
+      "name": "get_yahoo_symbol_from_security_id",
+      "params": [
+        "conn",
+        "security_id"
+      ],
+      "docstring": "\n    Get Yahoo symbol for a Dhan security_id.\n\n    Returns:\n        str: yahoo_symbol if found\n        None: if security_id not mapped\n    ",
+      "is_method": false,
+      "is_async": false,
+      "line": 156,
+      "line_end": 170
+    }
+  ],
+  "classes": [],
+  "constants": [
+    {
+      "name": "SQLITE_BUSY_TIMEOUT_MS",
+      "default_value": "120000",
+      "is_static": true,
+      "is_constant": true,
+      "line": 7,
+      "line_end": 7
+    },
+    {
+      "name": "SQLITE_LOCK_RETRY_ATTEMPTS",
+      "default_value": "5",
+      "is_static": true,
+      "is_constant": true,
+      "line": 8,
+      "line_end": 8
+    },
+    {
+      "name": "SQLITE_LOCK_RETRY_DELAY_SECONDS",
+      "default_value": "30",
+      "is_static": true,
+      "is_constant": true,
+      "line": 9,
+      "line_end": 9
+    }
+  ],
+  "call_graph": {
+    "calls": {
+      "get_dhan_security_id": [
+        "conn.cursor",
+        "cursor.execute",
+        "cursor.fetchone"
+      ],
+      "configure_sqlite_connection": [
+        "conn.execute",
+        "int"
+      ],
+      "open_sqlite_connection": [
+        "configure_sqlite_connection",
+        "sqlite3.connect"
+      ],
+      "ensure_provider_ohlcv_table": [
+        "conn.commit",
+        "conn.cursor",
+        "cursor.execute"
+      ],
+      "get_yahoo_symbol_from_security_id": [
+        "conn.cursor",
+        "cursor.execute",
+        "cursor.fetchone"
+      ],
+      "is_sqlite_lock_error": [
+        "isinstance",
+        "str",
+        "str(error).lower"
+      ],
+      "sleep_before_sqlite_lock_retry": [
+        "datetime.now",
+        "print",
+        "time.sleep"
+      ],
+      "ensure_dhan_symbol_map_table": [
+        "conn.commit",
+        "conn.cursor",
+        "cursor.execute"
+      ],
+      "get_db_connection": [
+        "datetime.now",
+        "open_sqlite_connection",
+        "print"
+      ]
+    },
+    "called_by": {
+      "configure_sqlite_connection": [
+        "open_sqlite_connection"
+      ],
+      "cursor.execute": [
+        "ensure_provider_ohlcv_table",
+        "ensure_dhan_symbol_map_table",
+        "get_dhan_security_id",
+        "get_yahoo_symbol_from_security_id"
+      ],
+      "str": [
+        "is_sqlite_lock_error"
+      ],
+      "int": [
+        "configure_sqlite_connection"
+      ],
+      "conn.execute": [
+        "configure_sqlite_connection"
+      ],
+      "time.sleep": [
+        "sleep_before_sqlite_lock_retry"
+      ],
+      "isinstance": [
+        "is_sqlite_lock_error"
+      ],
+      "datetime.now": [
+        "sleep_before_sqlite_lock_retry",
+        "get_db_connection"
+      ],
+      "cursor.fetchone": [
+        "get_dhan_security_id",
+        "get_yahoo_symbol_from_security_id"
+      ],
+      "sqlite3.connect": [
+        "open_sqlite_connection"
+      ],
+      "open_sqlite_connection": [
+        "get_db_connection"
+      ],
+      "conn.commit": [
+        "ensure_provider_ohlcv_table",
+        "ensure_dhan_symbol_map_table"
+      ],
+      "conn.cursor": [
+        "ensure_provider_ohlcv_table",
+        "ensure_dhan_symbol_map_table",
+        "get_dhan_security_id",
+        "get_yahoo_symbol_from_security_id"
+      ],
+      "print": [
+        "sleep_before_sqlite_lock_retry",
+        "get_db_connection"
+      ],
+      "str(error).lower": [
+        "is_sqlite_lock_error"
+      ]
+    }
+  }
+}

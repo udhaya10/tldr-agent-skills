@@ -1,0 +1,7 @@
+Program Slice (backward from line 49)
+Function: backend/db.py::get_db_connection
+
+Slice contains 1 lines:
+
+>    49 |     try:  <-- criterion
+

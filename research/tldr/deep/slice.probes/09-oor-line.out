@@ -1,0 +1,10 @@
+{
+  "file": "backend/db.py",
+  "function": "get_db_connection",
+  "criterion_line": 9999,
+  "direction": "backward",
+  "variable": null,
+  "lines": [],
+  "line_count": 0,
+  "explanation": "Analysis could not be completed: line 9999 is outside function 'get_db_connection' (lines 48-53)"
+}

@@ -1,0 +1,453 @@
+{
+  "root": "backend",
+  "language": "python",
+  "files": [
+    {
+      "path": "providers/__init__.py",
+      "classes": [],
+      "method_infos": [],
+      "imports": [
+        {
+          "module": "backend.providers.base",
+          "names": [
+            "HistoricalDataProvider",
+            "IntradayChartProvider",
+            "MetadataProvider",
+            "QuoteProvider"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "backend.providers.yahoo",
+          "names": [
+            "YahooProvider"
+          ],
+          "is_from": true
+        }
+      ],
+      "definitions": [
+        {
+          "name": "get_yahoo_provider",
+          "kind": "function",
+          "line_start": 26,
+          "line_end": 31,
+          "signature": "def get_yahoo_provider() -> YahooProvider:"
+        }
+      ]
+    },
+    {
+      "path": "providers/base.py",
+      "classes": [
+        "HistoricalDataProvider",
+        "IntradayChartProvider",
+        "QuoteProvider",
+        "MetadataProvider",
+        "Provider"
+      ],
+      "method_infos": [
+        {
+          "name": "fetch_historical_data",
+          "signature": "def fetch_historical_data(",
+          "line": 19,
+          "line_end": 43
+        },
+        {
+          "name": "fetch_intraday_chart",
+          "signature": "def fetch_intraday_chart(",
+          "line": 50,
+          "line_end": 74
+        },
+        {
+          "name": "fetch_quotes",
+          "signature": "def fetch_quotes(",
+          "line": 81,
+          "line_end": 110
+        },
+        {
+          "name": "fetch_market_cap",
+          "signature": "def fetch_market_cap(self, symbol: str) -> Optional[float]:",
+          "line": 117,
+          "line_end": 130
+        },
+        {
+          "name": "fetch_metadata",
+          "signature": "def fetch_metadata(self, symbol: str) -> Dict[str, Any]:",
+          "line": 133,
+          "line_end": 152
+        },
+        {
+          "name": "__init__",
+          "signature": "def __init__(self, name: str):",
+          "line": 169,
+          "line_end": 176
+        },
+        {
+          "name": "__repr__",
+          "signature": "def __repr__(self) -> str:",
+          "line": 178,
+          "line_end": 179
+        }
+      ],
+      "imports": [
+        {
+          "module": "abc",
+          "names": [
+            "ABC",
+            "abstractmethod"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "datetime",
+          "names": [
+            "date"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "typing",
+          "names": [
+            "Any",
+            "Dict",
+            "List",
+            "Optional"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "pandas",
+          "is_from": false,
+          "alias": "pd"
+        }
+      ],
+      "definitions": [
+        {
+          "name": "HistoricalDataProvider",
+          "kind": "class",
+          "line_start": 15,
+          "line_end": 43,
+          "signature": "class HistoricalDataProvider(ABC):"
+        },
+        {
+          "name": "fetch_historical_data",
+          "kind": "method",
+          "line_start": 19,
+          "line_end": 43,
+          "signature": "def fetch_historical_data("
+        },
+        {
+          "name": "IntradayChartProvider",
+          "kind": "class",
+          "line_start": 46,
+          "line_end": 74,
+          "signature": "class IntradayChartProvider(ABC):"
+        },
+        {
+          "name": "fetch_intraday_chart",
+          "kind": "method",
+          "line_start": 50,
+          "line_end": 74,
+          "signature": "def fetch_intraday_chart("
+        },
+        {
+          "name": "QuoteProvider",
+          "kind": "class",
+          "line_start": 77,
+          "line_end": 110,
+          "signature": "class QuoteProvider(ABC):"
+        },
+        {
+          "name": "fetch_quotes",
+          "kind": "method",
+          "line_start": 81,
+          "line_end": 110,
+          "signature": "def fetch_quotes("
+        },
+        {
+          "name": "MetadataProvider",
+          "kind": "class",
+          "line_start": 113,
+          "line_end": 152,
+          "signature": "class MetadataProvider(ABC):"
+        },
+        {
+          "name": "fetch_market_cap",
+          "kind": "method",
+          "line_start": 117,
+          "line_end": 130,
+          "signature": "def fetch_market_cap(self, symbol: str) -> Optional[float]:"
+        },
+        {
+          "name": "fetch_metadata",
+          "kind": "method",
+          "line_start": 133,
+          "line_end": 152,
+          "signature": "def fetch_metadata(self, symbol: str) -> Dict[str, Any]:"
+        },
+        {
+          "name": "Provider",
+          "kind": "class",
+          "line_start": 155,
+          "line_end": 179,
+          "signature": "class Provider("
+        },
+        {
+          "name": "__init__",
+          "kind": "method",
+          "line_start": 169,
+          "line_end": 176,
+          "signature": "def __init__(self, name: str):"
+        },
+        {
+          "name": "__repr__",
+          "kind": "method",
+          "line_start": 178,
+          "line_end": 179,
+          "signature": "def __repr__(self) -> str:"
+        }
+      ]
+    },
+    {
+      "path": "providers/dhan.py",
+      "classes": [
+        "DhanProvider"
+      ],
+      "method_infos": [
+        {
+          "name": "__init__",
+          "signature": "def __init__(self):",
+          "line": 20,
+          "line_end": 23
+        },
+        {
+          "name": "_get_client",
+          "signature": "def _get_client(self):",
+          "line": 25,
+          "line_end": 29
+        },
+        {
+          "name": "_load_mappings",
+          "signature": "def _load_mappings(self) -> Dict[str, Tuple[int, str, str]]:",
+          "line": 31,
+          "line_end": 47
+        },
+        {
+          "name": "fetch_historical_data",
+          "signature": "def fetch_historical_data(",
+          "line": 49,
+          "line_end": 124
+        },
+        {
+          "name": "fetch_intraday_chart",
+          "signature": "def fetch_intraday_chart(",
+          "line": 126,
+          "line_end": 205
+        },
+        {
+          "name": "fetch_quotes",
+          "signature": "def fetch_quotes(",
+          "line": 207,
+          "line_end": 213
+        },
+        {
+          "name": "fetch_market_cap",
+          "signature": "def fetch_market_cap(self, symbol: str) -> Optional[float]:",
+          "line": 215,
+          "line_end": 217
+        },
+        {
+          "name": "fetch_metadata",
+          "signature": "def fetch_metadata(self, symbol: str) -> Dict[str, Any]:",
+          "line": 219,
+          "line_end": 230
+        }
+      ],
+      "imports": [
+        {
+          "module": "datetime",
+          "names": [
+            "date"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "typing",
+          "names": [
+            "Any",
+            "Dict",
+            "List",
+            "Optional",
+            "Tuple"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "pandas",
+          "is_from": false,
+          "alias": "pd"
+        },
+        {
+          "module": "backend.providers.base",
+          "names": [
+            "Provider"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "backend.dhan_client",
+          "names": [
+            "get_dhan_client"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "backend.db",
+          "names": [
+            "open_sqlite_connection"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "backend.config",
+          "names": [
+            "DB_PATH"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "backend.dhan_client",
+          "names": [
+            "DhanAuthError"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "datetime",
+          "names": [
+            "date",
+            "timedelta"
+          ],
+          "is_from": true
+        },
+        {
+          "module": "backend.dhan_client",
+          "names": [
+            "DhanAuthError"
+          ],
+          "is_from": true
+        }
+      ],
+      "definitions": [
+        {
+          "name": "DhanProvider",
+          "kind": "class",
+          "line_start": 17,
+          "line_end": 230,
+          "signature": "class DhanProvider(Provider):"
+        },
+        {
+          "name": "__init__",
+          "kind": "method",
+          "line_start": 20,
+          "line_end": 23,
+          "signature": "def __init__(self):"
+        },
+        {
+          "name": "_get_client",
+          "kind": "method",
+          "line_start": 25,
+          "line_end": 29,
+          "signature": "def _get_client(self):"
+        },
+        {
+          "name": "_load_mappings",
+          "kind": "method",
+          "line_start": 31,
+          "line_end": 47,
+          "signature": "def _load_mappings(self) -> Dict[str, Tuple[int, str, str]]:"
+        },
+        {
+          "name": "fetch_historical_data",
+          "kind": "method",
+          "line_start": 49,
+          "line_end": 124,
+          "signature": "def fetch_historical_data("
+        },
+        {
+          "name": "fetch_intraday_chart",
+          "kind": "method",
+          "line_start": 126,
+          "line_end": 205,
+          "signature": "def fetch_intraday_chart("
+        },
+        {
+          "name": "fetch_quotes",
+          "kind": "method",
+          "line_start": 207,
+          "line_end": 213,
+          "signature": "def fetch_quotes("
+        },
+        {
+          "name": "fetch_market_cap",
+          "kind": "method",
+          "line_start": 215,
+          "line_end": 217,
+          "signature": "def fetch_market_cap(self, symbol: str) -> Optional[float]:"
+        },
+        {
+          "name": "fetch_metadata",
+          "kind": "method",
+          "line_start": 219,
+
+... [106 lines truncated, full output regeneratable via probe.sh] ...
+
+          "line_start": 35,
+          "line_end": 36,
+          "signature": "def __init__(self):"
+        },
+        {
+          "name": "fetch_historical_data",
+          "kind": "method",
+          "line_start": 38,
+          "line_end": 85,
+          "signature": "def fetch_historical_data("
+        },
+        {
+          "name": "fetch_intraday_chart",
+          "kind": "method",
+          "line_start": 87,
+          "line_end": 147,
+          "signature": "def fetch_intraday_chart("
+        },
+        {
+          "name": "fetch_quotes",
+          "kind": "method",
+          "line_start": 149,
+          "line_end": 188,
+          "signature": "def fetch_quotes("
+        },
+        {
+          "name": "fetch_market_cap",
+          "kind": "method",
+          "line_start": 190,
+          "line_end": 216,
+          "signature": "def fetch_market_cap(self, symbol: str) -> Optional[float]:"
+        },
+        {
+          "name": "fetch_metadata",
+          "kind": "method",
+          "line_start": 218,
+          "line_end": 239,
+          "signature": "def fetch_metadata(self, symbol: str) -> Dict[str, Any]:"
+        }
+      ]
+    },
+    {
+      "path": "scripts/__init__.py",
+      "classes": [],
+      "method_infos": [],
+      "imports": [],
+      "definitions": []
+    }
+  ]
+}

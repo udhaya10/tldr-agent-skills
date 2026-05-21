@@ -1,0 +1,6 @@
+Error: Function not found: get_db_connection in backend/api.py
+
+Did you mean:
+  - get_db_connection
+  - open_db_connection
+exit=20

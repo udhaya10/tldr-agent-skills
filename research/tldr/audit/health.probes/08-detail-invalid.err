@@ -1,0 +1,4 @@
+error: invalid value 'bogus' for '--detail <DETAIL>': Invalid detail value 'bogus'. Valid values: complexity, cohesion, dead_code, martin, coupling, similarity, all
+
+For more information, try '--help'.
+exit=2

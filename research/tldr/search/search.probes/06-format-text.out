@@ -1,0 +1,96 @@
+query: "database"
+10 results from 56 files (bm25+structure+callgraph)
+
+1. fn apply_rows_to_database (scripts/apply_classification_theme_workbook.py:122-197) [6.19]
+   def apply_rows_to_database(rows: list[dict[str, Any]]) -> dict[str, Any]:
+   Called by: main
+   Calls: backup_database
+   ---
+       backup_path = backup_database()
+       conn = open_sqlite_connection()
+       try:
+           ensure_classification_theme_schema(conn)
+
+2. fn backup_database (scripts/apply_classification_theme_workbook.py:112-119) [6.19]
+   def backup_database() -> Path | None:
+   Called by: apply_rows_to_database
+   ---
+       db_path = Path(DB_PATH)
+       if not db_path.exists():
+           return None
+       timestamp = datetime.now().strftime("%Y-%m-%d-%H%M%S")
+
+3. fn setup_database (importer.py:185-235) [5.64]
+   def setup_database(conn):
+   Called by: run_import
+   Calls: ensure_schema
+   ---
+       try:
+           cursor = conn.cursor()
+   
+           cursor.execute(
+
+4. fn is_sqlite_lock_error (db.py:30-36) [2.99]
+   def is_sqlite_lock_error(error):
+   ---
+       message = str(error).lower()
+       return isinstance(error, sqlite3.OperationalError) and (
+           "database is locked" in message
+           or "database table is locked" in message
+
+5. fn _build_empty_situational_awareness (overview_stock_cards.py:536-541) [2.30]
+   def _build_empty_situational_awareness(as_of: str | None = None) -> dict[str, Any]:
+   Called by: _build_situational_awareness_payload, get_overview_stock_cards_payload
+   ---
+       return {
+           "source": "Local stock database",
+           "asOf": as_of,
+           "cards": [],
+
+6. fn _theme_membership_table_exists (classification.py:105-120) [1.97]
+   def _theme_membership_table_exists(conn: sqlite3.Connection) -> bool:
+   Called by: load_stock_theme_dataframe
+   ---
+       try:
+           return conn.execute(
+               """
+               SELECT 1
+
+7. fn get_latest_stocks_for_confirmation_mode (api.py:1389-1442) [1.83]
+   def get_latest_stocks_for_confirmation_mode(stage_confirmation_mode: str | None = None):
+   Called by: get_latest_stocks, get_stocks, prewarm_latest_stocks_cache
+   Calls: open_db_connection, query_latest_stocks_dataframe, resolve_stage_snapshot_column
+   ---
+       cache_key = resolve_stage_snapshot_column(stage_confirmation_mode)
+       conn = None
+       try:
+           _LATEST_STOCKS_CACHE_LOCK.acquire()
+
+8. fn _relative_strength_snapshot_table_exists (relative_strength.py:83-99) [1.72]
+   def _relative_strength_snapshot_table_exists(conn: sqlite3.Connection) -> bool:
+   Called by: load_relative_strength_snapshot_dataframe
+   ---
+       try:
+           return conn.execute(
+               """
+               SELECT 1
+
+9. fn _build_empty_market_breadth_payload (market_breadth.py:614-663) [1.68]
+   def _build_empty_market_breadth_payload(as_of: str | None = None) -> dict[str, Any]:
+   Called by: _build_market_breadth_payload, get_market_breadth_payload
+   Calls: _build_ma_bucket, _build_stage_bucket, _serialize_ma_snapshot, _serialize_metric_summary, _serialize_stage_snapshot
+   ---
+       return {
+           "asOf": as_of,
+           "rangePreset": MARKET_BREADTH_RANGE_PRESET,
+           "universe": {
+
+10. fn _notifications_table_exists (notifications.py:54-69) [1.67]
+   def _notifications_table_exists(conn: sqlite3.Connection) -> bool:
+   Called by: get_notification, list_notifications
+   ---
+       try:
+           return conn.execute(
+               """
+               SELECT 1
+

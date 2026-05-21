@@ -1,0 +1,7 @@
+{
+  "query": "zzzqqqxxxnotapresent",
+  "results": [],
+  "total_results": 0,
+  "total_files_searched": 56,
+  "search_mode": "bm25+structure+callgraph"
+}

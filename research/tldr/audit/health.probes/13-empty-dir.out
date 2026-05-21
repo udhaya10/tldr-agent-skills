@@ -1,0 +1,11 @@
+{
+  "wrapper": "health",
+  "root": "/tmp/tldr-health-empty",
+  "language": null,
+  "quick_mode": false,
+  "summary": null,
+  "details": {},
+  "warnings": [
+    "Empty directory: no source files to analyze"
+  ]
+}

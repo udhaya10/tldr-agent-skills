@@ -1,0 +1,2 @@
+Error: --detail=coupling requires full mode. Remove --quick flag to analyze coupling.
+exit=1

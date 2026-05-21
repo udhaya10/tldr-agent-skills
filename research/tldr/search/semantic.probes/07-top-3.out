@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__init__",
+      "class_name": "Provider",
+      "score": 0.5116838468335358,
+      "line_start": 169,
+      "line_end": 176,
+      "snippet": "def __init__(self, name: str):\n        \"\"\"\n        Initialize provider.\n\n        Args:"
+    },
+    {
+      "file_path": "backend/providers/yahoo.py",
+      "function_name": "__init__",
+      "class_name": "YahooProvider",
+      "score": 0.5111434370332515,
+      "line_start": 35,
+      "line_end": 36,
+      "snippet": "def __init__(self):\n        super().__init__(name=\"Yahoo\")"
+    }
+  ],
+  "total_results": 2,
+  "query": "database",
+  "model": "arctic-m",
+  "total_chunks": 22,
+  "matches_above_threshold": 2,
+  "latency_ms": 250,
+  "cache_hit": false
+}

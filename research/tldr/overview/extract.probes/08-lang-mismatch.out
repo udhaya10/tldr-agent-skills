@@ -1,0 +1,11 @@
+{
+  "file_path": "backend/db.py",
+  "language": "rust",
+  "imports": [],
+  "functions": [],
+  "classes": [],
+  "call_graph": {
+    "calls": {},
+    "called_by": {}
+  }
+}

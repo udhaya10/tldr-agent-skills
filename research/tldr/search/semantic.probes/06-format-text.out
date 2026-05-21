@@ -1,0 +1,20 @@
+Semantic search: "database"
+Model: ArcticM | Threshold: 0.50 | Searched: 22 chunks
+
+Results (2 matches):
+
+1. backend/providers/base.py:Provider::__init__ (score: 0.51)
+   Lines 169-176
+   def __init__(self, name: str):
+        """
+        Initialize provider.
+
+        Args:
+
+2. backend/providers/yahoo.py:YahooProvider::__init__ (score: 0.51)
+   Lines 35-36
+   def __init__(self):
+        super().__init__(name="Yahoo")
+
+Search completed in 249ms
+

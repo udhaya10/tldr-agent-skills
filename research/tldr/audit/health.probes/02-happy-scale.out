@@ -1,0 +1,22 @@
+{
+  "wrapper": "health",
+  "path": "backend",
+  "language": "python",
+  "quick_mode": true,
+  "total_elapsed_ms": 9735.460083,
+  "summary": {
+    "files_analyzed": 56,
+    "functions_analyzed": 1286,
+    "classes_analyzed": 68,
+    "avg_cyclomatic": 7.848627450980392,
+    "hotspot_count": 255,
+    "avg_lcom4": 1.0588235294117647,
+    "low_cohesion_count": 7,
+    "dead_count": 8,
+    "dead_percentage": 0.62,
+    "packages_in_pain_zone": 0,
+    "tight_coupling_pairs": 0,
+    "similar_pairs": 0
+  },
+  "errors": []
+}

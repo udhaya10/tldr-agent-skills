@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <QUERY>
+
+Usage: tldr semantic <QUERY> [PATH]
+
+For more information, try '--help'.
+exit=2

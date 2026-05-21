@@ -1,0 +1,8 @@
+Health Report: backend/providers
+==================================================
+Complexity:  avg CC=4.1, hotspots=1 (CC>10)
+Cohesion:    7 classes, avg LCOM4=2.1, 2 low-cohesion
+Dead Code:   none detected
+
+Elapsed: 31ms
+

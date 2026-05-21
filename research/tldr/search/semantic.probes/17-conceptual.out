@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "file_path": "backend/providers/yahoo.py",
+      "function_name": "__init__",
+      "class_name": "YahooProvider",
+      "score": 0.5722286786684067,
+      "line_start": 35,
+      "line_end": 36,
+      "snippet": "def __init__(self):\n        super().__init__(name=\"Yahoo\")"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_market_cap",
+      "class_name": "MetadataProvider",
+      "score": 0.5646425959103206,
+      "line_start": 117,
+      "line_end": 130,
+      "snippet": "def fetch_market_cap(self, symbol: str) -> Optional[float]:\n        \"\"\"\n        Fetch market cap for a symbol.\n\n        Args:"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__init__",
+      "class_name": "Provider",
+      "score": 0.5509912109961911,
+      "line_start": 169,
+      "line_end": 176,
+      "snippet": "def __init__(self, name: str):\n        \"\"\"\n        Initialize provider.\n\n        Args:"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "_get_client",
+      "class_name": "DhanProvider",
+      "score": 0.5424052749016879,
+      "line_start": 25,
+      "line_end": 29,
+      "snippet": "def _get_client(self):\n        if self._client is None:\n            from backend.dhan_client import get_dhan_client\n            self._client = get_dhan_client()\n        return self._client"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_metadata",
+      "class_name": "MetadataProvider",
+      "score": 0.5347091669092359,
+      "line_start": 133,
+      "line_end": 152,
+      "snippet": "def fetch_metadata(self, symbol: str) -> Dict[str, Any]:\n        \"\"\"\n        Fetch metadata for a symbol.\n\n        Args:"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_market_cap",
+      "class_name": "DhanProvider",
+      "score": 0.5286898954160529,
+      "line_start": 215,
+      "line_end": 217,
+      "snippet": "def fetch_market_cap(self, symbol: str) -> Optional[float]:\n        \"\"\"Dhan does not provide market cap via historical API.\"\"\"\n        return None"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_quotes",
+      "class_name": "QuoteProvider",
+      "score": 0.5271222064116425,
+      "line_start": 81,
+      "line_end": 110,
+      "snippet": "def fetch_quotes(\n        self,\n        symbols: List[str],\n        fields: Optional[List[str]] = None,\n    ) -> Dict[str, Dict[str, Any]]:"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__repr__",
+      "class_name": "Provider",
+      "score": 0.5248935198636937,
+      "line_start": 178,
+      "line_end": 179,
+      "snippet": "def __repr__(self) -> str:\n        return f\"<{self.__class__.__name__}(name={self.name!r})>\""
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_quotes",
+      "class_name": "DhanProvider",
+      "score": 0.5031598909361925,
+      "line_start": 207,
+      "line_end": 213,
+      "snippet": "def fetch_quotes(\n        self,\n        symbols: List[str],\n        fields: Optional[List[str]] = None,\n    ) -> Dict[str, Dict[str, Any]]:"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "HistoricalDataProvider",
+      "score": 0.501572787513339,
+      "line_start": 19,
+      "line_end": 43,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    }
+  ],
+  "total_results": 10,
+  "query": "lookup external trading symbol for an asset",
+  "model": "arctic-m",
+  "total_chunks": 22,
+  "matches_above_threshold": 10,
+  "latency_ms": 250,
+  "cache_hit": false
+}

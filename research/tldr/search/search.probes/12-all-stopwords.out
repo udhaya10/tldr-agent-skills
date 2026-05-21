@@ -1,0 +1,204 @@
+{
+  "query": "def",
+  "results": [
+    {
+      "name": "build_baroda_header_map",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        4321,
+        4343
+      ],
+      "signature": "def build_baroda_header_map(worksheet, header_row: int) -> dict[str, int]:",
+      "callers": [
+        "parse_baroda_monthly_xlsx_v1",
+        "parse_oldbridge_monthly_xlsx_v1"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_baroda_header_map(worksheet, header_row: int) -> dict[str, int]:\n    header_map = {}\n    for index, cell in enumerate(worksheet[header_row], start=1):\n        value = (normalize_text(cell.value) or \"\").lower().replace(\"\\n\", \" \")\n        if \"name of the instrument\" in value:"
+    },
+    {
+      "name": "build_hdfc_header_map",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        3605,
+        3627
+      ],
+      "signature": "def build_hdfc_header_map(worksheet, header_row: int) -> dict[str, int]:",
+      "callers": [
+        "parse_hdfc_monthly_xlsx_v1"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_hdfc_header_map(worksheet, header_row: int) -> dict[str, int]:\n    header_map = {}\n    for index, cell in enumerate(worksheet[header_row], start=1):\n        value = (normalize_text(cell.value) or \"\").lower()\n        if value == \"isin\":"
+    },
+    {
+      "name": "build_nippon_header_map",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        3885,
+        3908
+      ],
+      "signature": "def build_nippon_header_map(rows: list[list[object]], header_row: int) -> dict[str, int]:",
+      "callers": [
+        "parse_nippon_monthly_xlsx_v1"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_nippon_header_map(rows: list[list[object]], header_row: int) -> dict[str, int]:\n    header_map = {}\n    header_values = rows[header_row] if header_row < len(rows) else []\n    for index, cell_value in enumerate(header_values, start=1):\n        value = (normalize_text(cell_value) or \"\").lower()"
+    },
+    {
+      "name": "build_quantum_header_map",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        4448,
+        4470
+      ],
+      "signature": "def build_quantum_header_map(worksheet, header_row: int) -> dict[str, int]:",
+      "callers": [
+        "parse_quantum_monthly_xlsx_v1"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_quantum_header_map(worksheet, header_row: int) -> dict[str, int]:\n    header_map = {}\n    for index, cell in enumerate(worksheet[header_row], start=1):\n        value = (normalize_text(cell.value) or \"\").lower().replace(\"\\n\", \" \")\n        if \"name of instrument\" in value:"
+    },
+    {
+      "name": "build_recent_sbi_file_metas",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        3467,
+        3524
+      ],
+      "signature": "def build_recent_sbi_file_metas(",
+      "callers": [
+        "sync_sbi_monthly_portfolios"
+      ],
+      "callees": [
+        "fetch_sbi_months_for_fund",
+        "fetch_sbi_portfolio_file_url",
+        "normalize_text",
+        "sort_month_names_desc"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_recent_sbi_file_metas(\n    session: requests.Session,\n    *,\n    fund_row: dict,\n    target_year: int,"
+    },
+    {
+      "name": "build_sbi_header_map",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        3755,
+        3777
+      ],
+      "signature": "def build_sbi_header_map(worksheet, header_row: int) -> dict[str, int]:",
+      "callers": [
+        "parse_sbi_monthly_xlsx_v1"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_sbi_header_map(worksheet, header_row: int) -> dict[str, int]:\n    header_map = {}\n    for index, cell in enumerate(worksheet[header_row], start=1):\n        value = (normalize_text(cell.value) or \"\").lower()\n        if \"name of the instrument\" in value:"
+    },
+    {
+      "name": "build_snapshot_file_meta",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        6191,
+        6207
+      ],
+      "signature": "def build_snapshot_file_meta(snapshot_row: sqlite3.Row | dict) -> dict:",
+      "callers": [
+        "reparse_existing_portfolio_snapshots"
+      ],
+      "callees": [
+        "extract_sheet_name_from_snapshot_file_url",
+        "get_snapshot_row_value",
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def build_snapshot_file_meta(snapshot_row: sqlite3.Row | dict) -> dict:\n    workbook_sheet_name = extract_sheet_name_from_snapshot_file_url(get_snapshot_row_value(snapshot_row, \"file_url\"))\n    if not workbook_sheet_name:\n        workbook_sheet_name = normalize_text(get_snapshot_row_value(snapshot_row, \"scheme_code\"))\n"
+    },
+    {
+      "name": "classify_ppfas_security_kind",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        4036,
+        4063
+      ],
+      "signature": "def classify_ppfas_security_kind(",
+      "callers": [
+        "parse_ppfas_monthly_xls_v1"
+      ],
+      "callees": [
+        "normalize_holding_label"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def classify_ppfas_security_kind(\n    section_name: str | None,\n    sub_section_name: str | None,\n    security_name: str | None,\n    industry_or_rating: str | None,"
+    },
+    {
+      "name": "clean_angel_scheme_name",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        1324,
+        1338
+      ],
+      "signature": "def clean_angel_scheme_name(file_name: str | None) -> str | None:",
+      "callers": [
+        "discover_angel_monthly_files"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def clean_angel_scheme_name(file_name: str | None) -> str | None:\n    normalized_value = normalize_text(file_name)\n    if not normalized_value:\n        return None\n"
+    },
+    {
+      "name": "clean_hdfc_scheme_name",
+      "kind": "function",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        1311,
+        1321
+      ],
+      "signature": "def clean_hdfc_scheme_name(title: str | None, url: str) -> str:",
+      "callers": [
+        "discover_hdfc_monthly_files"
+      ],
+      "callees": [
+        "normalize_text"
+      ],
+      "score": 200.0,
+      "matched_terms": [],
+      "preview": "def clean_hdfc_scheme_name(title: str | None, url: str) -> str:\n    base = normalize_text(title) or Path(unquote(urlparse(url).path)).stem\n    base = re.sub(r\"\\.xlsx?$\", \"\", base, flags=re.IGNORECASE)\n    base = re.sub(r\"^Monthly\\s+\", \"\", base, flags=re.IGNORECASE)\n    base = re.sub("
+    }
+  ],
+  "total_results": 10,
+  "total_files_searched": 56,
+  "search_mode": "literal-fallback+structure+callgraph"
+}

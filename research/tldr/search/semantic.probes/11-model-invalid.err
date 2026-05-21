@@ -1,0 +1,2 @@
+Error: Invalid model 'bogus-model'. Options: arctic-xs, arctic-s, arctic-m, arctic-m-long, arctic-l
+exit=1

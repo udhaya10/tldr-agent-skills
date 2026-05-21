@@ -1,0 +1,10 @@
+{
+  "results": [],
+  "total_results": 0,
+  "query": "database",
+  "model": "arctic-m",
+  "total_chunks": 22,
+  "matches_above_threshold": 0,
+  "latency_ms": 249,
+  "cache_hit": false
+}

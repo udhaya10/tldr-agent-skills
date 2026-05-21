@@ -1,0 +1,141 @@
+{
+  "targets": {
+    "backend/db.py:get_db_connection": {
+      "function": "get_db_connection",
+      "file": "backend/db.py",
+      "caller_count": 8,
+      "callers": [
+        {
+          "function": "run_import",
+          "file": "backend/importer.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "main",
+              "file": "backend/importer.py",
+              "caller_count": 0,
+              "callers": [],
+              "truncated": false,
+              "note": "Entry point - no callers found"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "function": "main",
+          "file": "backfill_nse_history.py",
+          "caller_count": 0,
+          "callers": [],
+          "truncated": false,
+          "note": "Entry point - no callers found"
+        },
+        {
+          "function": "query_mutual_fund_buying_watchlist",
+          "file": "backend/amfi_portfolios.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "get_mutual_fund_buying_watchlist",
+              "file": "backend/api.py",
+              "caller_count": 0,
+              "callers": [],
+              "truncated": false,
+              "note": "Entry point - no callers found"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "function": "_run_update",
+          "file": "backend/updater.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "run_update",
+              "file": "backend/updater.py",
+              "caller_count": 0,
+              "callers": [],
+              "truncated": false,
+              "note": "Entry point - no callers found"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "function": "query_mutual_fund_scheme_catalog",
+          "file": "backend/amfi_portfolios.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "get_mutual_fund_scheme_catalog",
+              "file": "backend/api.py",
+              "caller_count": 0,
+              "callers": [],
+              "truncated": false,
+              "note": "Entry point - no callers found"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "function": "query_stock_mutual_fund_holdings",
+          "file": "backend/amfi_portfolios.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "get_stock_mutual_fund_holdings",
+              "file": "backend/api.py",
+              "caller_count": 0,
+              "callers": [],
+              "truncated": false,
+              "note": "Entry point - no callers found"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "function": "release_db_and_pause",
+          "file": "backend/updater.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "_run_update",
+              "file": "backend/updater.py",
+              "caller_count": 1,
+              "callers": [
+                {
+                  "function": "run_update",
+                  "file": "backend/updater.py",
+                  "caller_count": 0,
+                  "callers": [],
+                  "truncated": false,
+                  "note": "Entry point - no callers found"
+                }
+              ],
+              "truncated": false
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "function": "query_mutual_fund_scheme_holdings",
+          "file": "backend/amfi_portfolios.py",
+          "caller_count": 1,
+          "callers": [
+            {
+              "function": "get_mutual_fund_scheme_holdings",
+              "file": "backend/api.py",
+              "caller_count": 0,
+              "callers": [],
+              "truncated": false,
+              "note": "Entry point - no callers found"
+            }
+          ],
+          "truncated": false
+        }
+      ],
+      "truncated": false
+    }
+  },
+  "total_targets": 1
+}

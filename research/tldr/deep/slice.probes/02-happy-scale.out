@@ -1,0 +1,400 @@
+{
+  "file": "backend/scripts/apply_classification_theme_workbook.py",
+  "function": "apply_rows_to_database",
+  "criterion_line": 130,
+  "direction": "backward",
+  "variable": null,
+  "lines": [
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140
+  ],
+  "slice_lines": [
+    {
+      "line": 122,
+      "code": "def apply_rows_to_database(rows: list[dict[str, Any]]) -> dict[str, Any]:",
+      "definitions": [
+        "conn",
+        "rows",
+        "backup_path"
+      ],
+      "uses": [
+        "backup_database",
+        "open_sqlite_connection"
+      ]
+    },
+    {
+      "line": 123,
+      "code": "    backup_path = backup_database()",
+      "definitions": [
+        "conn",
+        "rows",
+        "backup_path"
+      ],
+      "uses": [
+        "backup_database",
+        "open_sqlite_connection"
+      ]
+    },
+    {
+      "line": 124,
+      "code": "    conn = open_sqlite_connection()",
+      "definitions": [
+        "conn",
+        "rows",
+        "backup_path"
+      ],
+      "uses": [
+        "backup_database",
+        "open_sqlite_connection"
+      ]
+    },
+    {
+      "line": 125,
+      "code": "    try:",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ],
+      "dep_type": "data",
+      "dep_label": "conn"
+    },
+    {
+      "line": 126,
+      "code": "        ensure_classification_theme_schema(conn)",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 127,
+      "code": "        existing_symbols = {",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 128,
+      "code": "            str(row[0]).upper()",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 129,
+      "code": "            for row in conn.execute(\"SELECT symbol FROM stocks\").fetchall()",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 130,
+      "code": "            if row[0]",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 131,
+      "code": "        }",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 132,
+      "code": "        existing_nse_codes = {",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 133,
+      "code": "            str(row[0]).upper(): str(row[1]).upper()",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 134,
+      "code": "            for row in conn.execute(\"SELECT nse_code, symbol FROM stocks WHERE nse_code IS NOT NULL AND TRIM(nse_code) != ''\").fetchall()",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 135,
+      "code": "            if row[0] and row[1]",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 136,
+      "code": "        }",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 137,
+      "code": "",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 138,
+      "code": "        update_records = []",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 139,
+      "code": "        theme_rows = []",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    },
+    {
+      "line": 140,
+      "code": "        unmatched_rows = []",
+      "definitions": [
+        "unmatched_rows",
+        "existing_nse_codes",
+        "existing_symbols",
+        "theme_rows",
+        "update_records"
+      ],
+      "uses": [
+        "conn",
+        "ensure_classification_theme_schema",
+        "execute",
+        "fetchall",
+        "str",
+        "row",
+        "upper"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from_line": 122,
+      "to_line": 125,
+      "dep_type": "data",
+      "label": "conn"
+    }
+  ],
+  "line_count": 19
+}

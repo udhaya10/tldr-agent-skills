@@ -1,0 +1,52 @@
+backend/db.py (python)
+
+Imports (4)
+  from backend.config: DB_PATH
+  from datetime: datetime
+  
+  import sqlite3, time
+Functions (9)
+  configure_sqlite_connection(conn, busy_timeout_ms, row_factory)  L12
+  open_sqlite_connection(db_path, busy_timeout_ms, row_factory)  L21
+  is_sqlite_lock_error(error)  L30
+  sleep_before_sqlite_lock_retry(attempt, label)  L39
+  get_db_connection()  L48
+  ensure_provider_ohlcv_table(conn)  L56
+    "
+    Create provider_ohlcv table if it doesn't exist.
+
+  ..."
+  ensure_dhan_symbol_map_table(conn)  L104
+    "
+    Create dhan_symbol_map table if it doesn't exist.
+
+ ..."
+  get_dhan_security_id(conn, yahoo_symbol)  L139
+    "
+    Get Dhan security_id for a Yahoo symbol.
+
+    Return..."
+  get_yahoo_symbol_from_security_id(conn, security_id)  L156
+    "
+    Get Yahoo symbol for a Dhan security_id.
+
+    Return..."
+
+Constants (3)
+  SQLITE_BUSY_TIMEOUT_MS = 120000  L7
+  SQLITE_LOCK_RETRY_ATTEMPTS = 5  L8
+  SQLITE_LOCK_RETRY_DELAY_SECONDS = 30  L9
+
+Call Graph (25 edges)
+  configure_sqlite_connection -> conn.execute
+  configure_sqlite_connection -> int
+  ensure_dhan_symbol_map_table -> conn.commit
+  ensure_dhan_symbol_map_table -> conn.cursor
+  ensure_dhan_symbol_map_table -> cursor.execute
+  ensure_provider_ohlcv_table -> conn.commit
+  ensure_provider_ohlcv_table -> conn.cursor
+  ensure_provider_ohlcv_table -> cursor.execute
+  get_db_connection -> datetime.now
+  get_db_connection -> open_sqlite_connection
+  ... and 15 more edges
+

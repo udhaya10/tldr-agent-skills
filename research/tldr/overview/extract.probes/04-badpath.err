@@ -1,0 +1,2 @@
+Error: Path not found: /no/such/file/definitely/missing.py
+exit=2

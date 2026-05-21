@@ -1,0 +1,16 @@
+backend/db.py (1 files)
+Language: Python
+
+db.py
+  Functions:
+    - def configure_sqlite_connection(conn, *, busy_timeout_ms=SQLITE_BUSY_TIMEOUT_MS, row_factory=None): (L:12)
+    - def open_sqlite_connection(db_path=DB_PATH, *, busy_timeout_ms=SQLITE_BUSY_TIMEOUT_MS, row_factory=None): (L:21)
+    - def is_sqlite_lock_error(error): (L:30)
+    - def sleep_before_sqlite_lock_retry(attempt, *, label="SQLite write"): (L:39)
+    - def get_db_connection(): (L:48)
+    - def ensure_provider_ohlcv_table(conn): (L:56)
+    - def ensure_dhan_symbol_map_table(conn): (L:104)
+    - def get_dhan_security_id(conn, yahoo_symbol: str): (L:139)
+    - def get_yahoo_symbol_from_security_id(conn, security_id: int): (L:156)
+
+

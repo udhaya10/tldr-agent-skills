@@ -1,0 +1,220 @@
+{
+  "query": "ensure_.*_table",
+  "results": [
+    {
+      "name": "lifespan",
+      "kind": "function",
+      "file": "api.py",
+      "line_range": [
+        1446,
+        1558
+      ],
+      "signature": "async def lifespan(app: FastAPI):",
+      "callers": [
+        "create_app"
+      ],
+      "callees": [
+        "SecurityMaster.get_statistics",
+        "clear_latest_stocks_cache",
+        "open_db_connection",
+        "prewarm_latest_stocks_cache",
+        "should_prewarm_latest_stocks_cache",
+        "should_start_api_background_jobs"
+      ],
+      "score": 12.0,
+      "matched_terms": [],
+      "preview": "async def lifespan(app: FastAPI):\n    \"\"\"\n    FastAPI lifespan context manager.\n    \n    Handles startup initialization and graceful shutdown."
+    },
+    {
+      "name": "_run_update",
+      "kind": "function",
+      "file": "updater.py",
+      "line_range": [
+        300,
+        586
+      ],
+      "signature": "def _run_update():",
+      "callers": [
+        "run_update"
+      ],
+      "callees": [
+        "build_amc_connector_failure_payload",
+        "ensure_ohlcv_storage_schema",
+        "load_update_tickers",
+        "release_db_and_pause",
+        "write_log"
+      ],
+      "score": 8.0,
+      "matched_terms": [],
+      "preview": "def _run_update():\n    print(f\"[{datetime.now()}] Starting daily stock data update...\")\n    conn = get_db_connection()\n    if not conn:\n        return"
+    },
+    {
+      "name": "_load_market_breadth_snapshot",
+      "kind": "function",
+      "file": "market_breadth.py",
+      "line_range": [
+        499,
+        517
+      ],
+      "signature": "def _load_market_breadth_snapshot(conn, latest_timestamp_iso: str, range_preset: str) -> dict[str, Any] | None:",
+      "callers": [
+        "get_market_breadth_payload"
+      ],
+      "callees": [
+        "ensure_market_breadth_snapshot_table"
+      ],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def _load_market_breadth_snapshot(conn, latest_timestamp_iso: str, range_preset: str) -> dict[str, Any] | None:\n    ensure_market_breadth_snapshot_table(conn)\n    row = conn.execute(\n        f\"\"\"\n        SELECT payload_json"
+    },
+    {
+      "name": "_store_market_breadth_snapshot",
+      "kind": "function",
+      "file": "market_breadth.py",
+      "line_range": [
+        520,
+        535
+      ],
+      "signature": "def _store_market_breadth_snapshot(conn, latest_timestamp_iso: str, range_preset: str, payload: dict[str, Any]) -> None:",
+      "callers": [
+        "get_market_breadth_payload",
+        "refresh_market_breadth_snapshots"
+      ],
+      "callees": [
+        "ensure_market_breadth_snapshot_table"
+      ],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def _store_market_breadth_snapshot(conn, latest_timestamp_iso: str, range_preset: str, payload: dict[str, Any]) -> None:\n    ensure_market_breadth_snapshot_table(conn)\n    conn.execute(\n        f\"\"\"\n        INSERT OR REPLACE INTO {MARKET_BREADTH_SNAPSHOT_TABLE_NAME}"
+    },
+    {
+      "name": "ensure_market_breadth_snapshot_table",
+      "kind": "function",
+      "file": "market_breadth.py",
+      "line_range": [
+        484,
+        496
+      ],
+      "signature": "def ensure_market_breadth_snapshot_table(conn) -> None:",
+      "callers": [
+        "_load_market_breadth_snapshot",
+        "_store_market_breadth_snapshot",
+        "refresh_market_breadth_snapshots"
+      ],
+      "callees": [],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def ensure_market_breadth_snapshot_table(conn) -> None:\n    conn.execute(\n        f\"\"\"\n        CREATE TABLE IF NOT EXISTS {MARKET_BREADTH_SNAPSHOT_TABLE_NAME} (\n            latest_timestamp TEXT NOT NULL,"
+    },
+    {
+      "name": "refresh_market_breadth_snapshots",
+      "kind": "function",
+      "file": "market_breadth.py",
+      "line_range": [
+        1103,
+        1124
+      ],
+      "signature": "def refresh_market_breadth_snapshots(conn) -> dict[str, Any]:",
+      "callers": [],
+      "callees": [
+        "_build_market_breadth_payload",
+        "_query_latest_stock_timestamp",
+        "_store_market_breadth_snapshot",
+        "ensure_market_breadth_snapshot_table"
+      ],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def refresh_market_breadth_snapshots(conn) -> dict[str, Any]:\n    latest_timestamp_iso = _query_latest_stock_timestamp(conn)\n    ensure_market_breadth_snapshot_table(conn)\n    if not latest_timestamp_iso:\n        return {\"latestTimestamp\": None, \"refreshedRanges\": []}"
+    },
+    {
+      "name": "_get_latest_snapshot_times",
+      "kind": "function",
+      "file": "precomputed_indicators.py",
+      "line_range": [
+        383,
+        404
+      ],
+      "signature": "def _get_latest_snapshot_times(conn: sqlite3.Connection, symbols: list[str]) -> dict[str, str]:",
+      "callers": [
+        "refresh_daily_indicator_snapshots"
+      ],
+      "callees": [
+        "_chunked",
+        "ensure_daily_indicator_snapshot_table"
+      ],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def _get_latest_snapshot_times(conn: sqlite3.Connection, symbols: list[str]) -> dict[str, str]:\n    if not symbols:\n        return {}\n\n    ensure_daily_indicator_snapshot_table(conn)"
+    },
+    {
+      "name": "_load_indicator_dataframe_for_symbol",
+      "kind": "function",
+      "file": "precomputed_indicators.py",
+      "line_range": [
+        613,
+        642
+      ],
+      "signature": "def _load_indicator_dataframe_for_symbol(",
+      "callers": [
+        "merge_indicator_snapshots_into_history_dataframe"
+      ],
+      "callees": [
+        "_empty_indicator_dataframe",
+        "_snapshot_table_exists",
+        "ensure_daily_indicator_snapshot_table"
+      ],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def _load_indicator_dataframe_for_symbol(\n    conn: sqlite3.Connection,\n    symbol: str,\n    *,\n    ensure_schema_if_missing: bool = True,"
+    },
+    {
+      "name": "ensure_daily_indicator_snapshot_table",
+      "kind": "function",
+      "file": "precomputed_indicators.py",
+      "line_range": [
+        294,
+        330
+      ],
+      "signature": "def ensure_daily_indicator_snapshot_table(conn: sqlite3.Connection) -> None:",
+      "callers": [
+        "_get_latest_snapshot_times",
+        "_load_indicator_dataframe_for_symbol",
+        "refresh_daily_indicator_snapshots"
+      ],
+      "callees": [],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def ensure_daily_indicator_snapshot_table(conn: sqlite3.Connection) -> None:\n    conn.execute(\n        f\"\"\"\n        CREATE TABLE IF NOT EXISTS {DAILY_INDICATOR_SNAPSHOT_TABLE_NAME} (\n            symbol TEXT NOT NULL,"
+    },
+    {
+      "name": "refresh_daily_indicator_snapshots",
+      "kind": "function",
+      "file": "precomputed_indicators.py",
+      "line_range": [
+        552,
+        610
+      ],
+      "signature": "def refresh_daily_indicator_snapshots(",
+      "callers": [
+        "merge_indicator_snapshots_into_history_dataframe"
+      ],
+      "callees": [
+        "_chunked",
+        "_compute_symbol_snapshot_rows",
+        "_get_latest_snapshot_times",
+        "_get_latest_stock_times",
+        "_list_stock_symbols",
+        "_load_history_for_symbols",
+        "_normalize_symbols",
+        "_upsert_snapshot_rows",
+        "ensure_daily_indicator_snapshot_table"
+      ],
+      "score": 4.0,
+      "matched_terms": [],
+      "preview": "def refresh_daily_indicator_snapshots(\n    conn: sqlite3.Connection,\n    symbols: list[str] | tuple[str, ...] | None = None,\n    *,\n    force: bool = False,"
+    }
+  ],
+  "total_results": 10,
+  "total_files_searched": 56,
+  "search_mode": "regex+structure+callgraph"
+}

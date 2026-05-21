@@ -1,0 +1,298 @@
+{
+  "name": "backend",
+  "type": "dir",
+  "children": [
+    {
+      "name": "providers",
+      "type": "dir",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "providers/__init__.py"
+        },
+        {
+          "name": "base.py",
+          "type": "file",
+          "path": "providers/base.py"
+        },
+        {
+          "name": "dhan.py",
+          "type": "file",
+          "path": "providers/dhan.py"
+        },
+        {
+          "name": "yahoo.py",
+          "type": "file",
+          "path": "providers/yahoo.py"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "scripts/__init__.py"
+        },
+        {
+          "name": "apply_classification_theme_workbook.py",
+          "type": "file",
+          "path": "scripts/apply_classification_theme_workbook.py"
+        },
+        {
+          "name": "generate_avalon_indas_financials.py",
+          "type": "file",
+          "path": "scripts/generate_avalon_indas_financials.py"
+        },
+        {
+          "name": "generate_nse_only_financials.py",
+          "type": "file",
+          "path": "scripts/generate_nse_only_financials.py"
+        }
+      ]
+    },
+    {
+      "name": "__init__.py",
+      "type": "file",
+      "path": "__init__.py"
+    },
+    {
+      "name": "amfi_portfolios.py",
+      "type": "file",
+      "path": "amfi_portfolios.py"
+    },
+    {
+      "name": "announcement_scheduler.py",
+      "type": "file",
+      "path": "announcement_scheduler.py"
+    },
+    {
+      "name": "announcements.py",
+      "type": "file",
+      "path": "announcements.py"
+    },
+    {
+      "name": "api.py",
+      "type": "file",
+      "path": "api.py"
+    },
+    {
+      "name": "api_status.py",
+      "type": "file",
+      "path": "api_status.py"
+    },
+    {
+      "name": "blocked_symbols.py",
+      "type": "file",
+      "path": "blocked_symbols.py"
+    },
+    {
+      "name": "classification.py",
+      "type": "file",
+      "path": "classification.py"
+    },
+    {
+      "name": "concalls.py",
+      "type": "file",
+      "path": "concalls.py"
+    },
+    {
+      "name": "config.py",
+      "type": "file",
+      "path": "config.py"
+    },
+    {
+      "name": "db.py",
+      "type": "file",
+      "path": "db.py"
+    },
+    {
+      "name": "dhan_client.py",
+      "type": "file",
+      "path": "dhan_client.py"
+    },
+    {
+      "name": "dhan_historical.py",
+      "type": "file",
+      "path": "dhan_historical.py"
+    },
+    {
+      "name": "dhan_live.py",
+      "type": "file",
+      "path": "dhan_live.py"
+    },
+    {
+      "name": "dhan_security_master.py",
+      "type": "file",
+      "path": "dhan_security_master.py"
+    },
+    {
+      "name": "dhan_security_master_scheduler.py",
+      "type": "file",
+      "path": "dhan_security_master_scheduler.py"
+    },
+    {
+      "name": "financial_results_scheduler.py",
+      "type": "file",
+      "path": "financial_results_scheduler.py"
+    },
+    {
+      "name": "financial_results_sync.py",
+      "type": "file",
+      "path": "financial_results_sync.py"
+    },
+    {
+      "name": "importer.py",
+      "type": "file",
+      "path": "importer.py"
+    },
+    {
+      "name": "market_breadth.py",
+      "type": "file",
+      "path": "market_breadth.py"
+    },
+    {
+      "name": "market_data.py",
+      "type": "file",
+      "path": "market_data.py"
+    },
+    {
+      "name": "markets_overview.py",
+      "type": "file",
+      "path": "markets_overview.py"
+    },
+    {
+      "name": "notifications.py",
+      "type": "file",
+      "path": "notifications.py"
+    },
+    {
+      "name": "nse_earnings.py",
+      "type": "file",
+      "path": "nse_earnings.py"
+    },
+    {
+      "name": "nse_history.py",
+      "type": "file",
+      "path": "nse_history.py"
+    },
+    {
+      "name": "nse_indas_financials.py",
+      "type": "file",
+      "path": "nse_indas_financials.py"
+    },
+    {
+      "name": "nse_index_history.py",
+      "type": "file",
+      "path": "nse_index_history.py"
+    },
+    {
+      "name": "nse_listings.py",
+      "type": "file",
+      "path": "nse_listings.py"
+    },
+    {
+      "name": "nse_price_bands.py",
+      "type": "file",
+      "path": "nse_price_bands.py"
+    },
+    {
+      "name": "nse_results.py",
+      "type": "file",
+      "path": "nse_results.py"
+    },
+    {
+      "name": "nse_results_scheduler.py",
+      "type": "file",
+      "path": "nse_results_scheduler.py"
+    },
+    {
+      "name": "overview_stock_cards.py",
+      "type": "file",
+      "path": "overview_stock_cards.py"
+    },
+    {
+      "name": "precomputed_indicators.py",
+      "type": "file",
+      "path": "precomputed_indicators.py"
+    },
+    {
+      "name": "rankings.py",
+      "type": "file",
+      "path": "rankings.py"
+    },
+    {
+      "name": "relative_strength.py",
+      "type": "file",
+      "path": "relative_strength.py"
+    },
+    {
+      "name": "rmv.py",
+      "type": "file",
+      "path": "rmv.py"
+    },
+    {
+      "name": "rrg.py",
+      "type": "file",
+      "path": "rrg.py"
+    },
+    {
+      "name": "scheduler.py",
+      "type": "file",
+      "path": "scheduler.py"
+    },
+    {
+      "name": "screener.py",
+      "type": "file",
+      "path": "screener.py"
+    },
+    {
+      "name": "stage_analysis.py",
+      "type": "file",
+      "path": "stage_analysis.py"
+    },
+    {
+      "name": "stage_analysis_panel.py",
+      "type": "file",
+      "path": "stage_analysis_panel.py"
+    },
+    {
+      "name": "symbol_mapper.py",
+      "type": "file",
+      "path": "symbol_mapper.py"
+    },
+    {
+      "name": "tc2000_formulas.py",
+      "type": "file",
+      "path": "tc2000_formulas.py"
+    },
+    {
+      "name": "test_tc2000_formulas.py",
+      "type": "file",
+      "path": "test_tc2000_formulas.py"
+    },
+    {
+      "name": "test_watchlist_formulas_earn.py",
+      "type": "file",
+      "path": "test_watchlist_formulas_earn.py"
+    },
+    {
+      "name": "updater.py",
+      "type": "file",
+      "path": "updater.py"
+    },
+    {
+      "name": "watchlist_formulas.py",
+      "type": "file",
+      "path": "watchlist_formulas.py"
+    },
+    {
+      "name": "youtube_panel.py",
+      "type": "file",
+      "path": "youtube_panel.py"
+    }
+  ]
+}

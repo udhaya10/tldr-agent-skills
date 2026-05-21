@@ -1,0 +1,14 @@
+digraph impact {
+    rankdir=RL;
+    node [shape=box, fontname="Helvetica"];
+    edge [fontname="Helvetica", fontsize=10];
+
+    "backend/importer.py:run_import" -> "db.py:get_db_connection";
+    "backend/amfi_portfolios.py:query_mutual_fund_buying_watchlist" -> "db.py:get_db_connection";
+    "backend/amfi_portfolios.py:query_stock_mutual_fund_holdings" -> "db.py:get_db_connection";
+    "backend/amfi_portfolios.py:query_mutual_fund_scheme_catalog" -> "db.py:get_db_connection";
+    "backend/amfi_portfolios.py:query_mutual_fund_scheme_holdings" -> "db.py:get_db_connection";
+    "backend/updater.py:release_db_and_pause" -> "db.py:get_db_connection";
+    "backend/updater.py:_run_update" -> "db.py:get_db_connection";
+}
+

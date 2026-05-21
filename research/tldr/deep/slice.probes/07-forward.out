@@ -1,0 +1,17 @@
+{
+  "file": "backend/db.py",
+  "function": "get_db_connection",
+  "criterion_line": 49,
+  "direction": "forward",
+  "variable": null,
+  "lines": [
+    49
+  ],
+  "slice_lines": [
+    {
+      "line": 49,
+      "code": "    try:"
+    }
+  ],
+  "line_count": 1
+}

@@ -1,0 +1,2 @@
+Error: --detail=similarity requires full mode. Remove --quick flag to analyze similarity.
+exit=1

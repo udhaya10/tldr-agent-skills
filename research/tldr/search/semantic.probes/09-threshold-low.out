@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__init__",
+      "class_name": "Provider",
+      "score": 0.5116838468335358,
+      "line_start": 169,
+      "line_end": 176,
+      "snippet": "def __init__(self, name: str):\n        \"\"\"\n        Initialize provider.\n\n        Args:"
+    },
+    {
+      "file_path": "backend/providers/yahoo.py",
+      "function_name": "__init__",
+      "class_name": "YahooProvider",
+      "score": 0.5111434370332515,
+      "line_start": 35,
+      "line_end": 36,
+      "snippet": "def __init__(self):\n        super().__init__(name=\"Yahoo\")"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "_get_client",
+      "class_name": "DhanProvider",
+      "score": 0.48006072302469277,
+      "line_start": 25,
+      "line_end": 29,
+      "snippet": "def _get_client(self):\n        if self._client is None:\n            from backend.dhan_client import get_dhan_client\n            self._client = get_dhan_client()\n        return self._client"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "__init__",
+      "class_name": "DhanProvider",
+      "score": 0.4499339307524658,
+      "line_start": 20,
+      "line_end": 23,
+      "snippet": "def __init__(self):\n        super().__init__(name=\"Dhan\")\n        self._client = None\n        self._mappings: Optional[Dict[str, Tuple[int, str, str]]] = None"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_quotes",
+      "class_name": "DhanProvider",
+      "score": 0.42416949285014083,
+      "line_start": 207,
+      "line_end": 213,
+      "snippet": "def fetch_quotes(\n        self,\n        symbols: List[str],\n        fields: Optional[List[str]] = None,\n    ) -> Dict[str, Dict[str, Any]]:"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__repr__",
+      "class_name": "Provider",
+      "score": 0.421130438951827,
+      "line_start": 178,
+      "line_end": 179,
+      "snippet": "def __repr__(self) -> str:\n        return f\"<{self.__class__.__name__}(name={self.name!r})>\""
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_quotes",
+      "class_name": "QuoteProvider",
+      "score": 0.38594562760746853,
+      "line_start": 81,
+      "line_end": 110,
+      "snippet": "def fetch_quotes(\n        self,\n        symbols: List[str],\n        fields: Optional[List[str]] = None,\n    ) -> Dict[str, Dict[str, Any]]:"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_market_cap",
+      "class_name": "DhanProvider",
+      "score": 0.367328956562903,
+      "line_start": 215,
+      "line_end": 217,
+      "snippet": "def fetch_market_cap(self, symbol: str) -> Optional[float]:\n        \"\"\"Dhan does not provide market cap via historical API.\"\"\"\n        return None"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_metadata",
+      "class_name": "DhanProvider",
+      "score": 0.36254425228107784,
+      "line_start": 219,
+      "line_end": 230,
+      "snippet": "def fetch_metadata(self, symbol: str) -> Dict[str, Any]:\n        \"\"\"Return mapping metadata from dhan_symbol_map.\"\"\"\n        mappings = self._load_mappings()\n        info = mappings.get(symbol)\n        if info is None:"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_market_cap",
+      "class_name": "MetadataProvider",
+      "score": 0.3545332993230391,
+      "line_start": 117,
+      "line_end": 130,
+      "snippet": "def fetch_market_cap(self, symbol: str) -> Optional[float]:\n        \"\"\"\n        Fetch market cap for a symbol.\n\n        Args:"
+    }
+  ],
+  "total_results": 10,
+  "query": "database",
+  "model": "arctic-m",
+  "total_chunks": 22,
+  "matches_above_threshold": 10,
+  "latency_ms": 249,
+  "cache_hit": false
+}

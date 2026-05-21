@@ -1,0 +1,197 @@
+{
+  "query": "database connection",
+  "results": [
+    {
+      "name": "configure_sqlite_connection",
+      "kind": "function",
+      "file": "db.py",
+      "line_range": [
+        12,
+        18
+      ],
+      "signature": "def configure_sqlite_connection(conn, *, busy_timeout_ms=SQLITE_BUSY_TIMEOUT_MS, row_factory=None):",
+      "callers": [
+        "open_sqlite_connection"
+      ],
+      "callees": [],
+      "score": 0.023746383799421407,
+      "matched_terms": [
+        "database",
+        "connection"
+      ],
+      "preview": "def configure_sqlite_connection(conn, *, busy_timeout_ms=SQLITE_BUSY_TIMEOUT_MS, row_factory=None):\n    if row_factory is not None:\n        conn.row_factory = row_factory\n    conn.execute(f\"PRAGMA busy_timeout = {int(busy_timeout_ms)}\")\n    conn.execute(\"PRAGMA journal_mode = WAL\")"
+    },
+    {
+      "name": "ensure_classification_theme_schema",
+      "kind": "function",
+      "file": "classification.py",
+      "line_range": [
+        59,
+        98
+      ],
+      "signature": "def ensure_classification_theme_schema(conn: sqlite3.Connection) -> None:",
+      "callers": [
+        "get_theme_options",
+        "load_stock_theme_dataframe",
+        "replace_stock_theme_memberships"
+      ],
+      "callees": [],
+      "score": 0.021954113924050632,
+      "matched_terms": [
+        "database",
+        "connection"
+      ],
+      "preview": "def ensure_classification_theme_schema(conn: sqlite3.Connection) -> None:\n    conn.execute(\n        \"\"\"\n        CREATE TABLE IF NOT EXISTS themes (\n            name TEXT PRIMARY KEY,"
+    },
+    {
+      "name": "load_stock_metadata_dataframe",
+      "kind": "function",
+      "file": "rankings.py",
+      "line_range": [
+        353,
+        378
+      ],
+      "signature": "def load_stock_metadata_dataframe(conn: sqlite3.Connection, symbols: list[str] | None) -> pd.DataFrame:",
+      "callers": [
+        "query_bubble_universe",
+        "query_ranked_universe"
+      ],
+      "callees": [
+        "chunked_values"
+      ],
+      "score": 0.019831633479035132,
+      "matched_terms": [
+        "database",
+        "connection"
+      ],
+      "preview": "def load_stock_metadata_dataframe(conn: sqlite3.Connection, symbols: list[str] | None) -> pd.DataFrame:\n    query = \"\"\"\n    SELECT symbol, name, nse_code, tradingview_symbol, sector, industry, basic_industry\n    FROM stocks\n    \"\"\""
+    },
+    {
+      "name": "_snapshot_table_exists",
+      "kind": "function",
+      "file": "precomputed_indicators.py",
+      "line_range": [
+        99,
+        115
+      ],
+      "signature": "def _snapshot_table_exists(conn: sqlite3.Connection) -> bool:",
+      "callers": [
+        "_load_indicator_dataframe_for_symbol"
+      ],
+      "callees": [],
+      "score": 0.01885956585026264,
+      "matched_terms": [
+        "database",
+        "connection"
+      ],
+      "preview": "def _snapshot_table_exists(conn: sqlite3.Connection) -> bool:\n    try:\n        return conn.execute(\n            \"\"\"\n            SELECT 1"
+    },
+    {
+      "name": "_load_mappings",
+      "kind": "method",
+      "file": "providers/dhan.py",
+      "line_range": [
+        31,
+        47
+      ],
+      "signature": "def _load_mappings(self) -> Dict[str, Tuple[int, str, str]]:",
+      "callers": [],
+      "callees": [],
+      "score": 0.016551383399209488,
+      "matched_terms": [
+        "connection"
+      ],
+      "preview": "def _load_mappings(self) -> Dict[str, Tuple[int, str, str]]:\n        \"\"\"Load all yahoo_symbol → (security_id, exchange_segment, instrument_type) from DB.\"\"\"\n        if self._mappings is not None:\n            return self._mappings\n        from backend.db import open_sqlite_connection"
+    },
+    {
+      "name": "importer",
+      "kind": "module",
+      "file": "importer.py",
+      "line_range": [
+        7,
+        9
+      ],
+      "signature": "from backend.config import CSV_PATH",
+      "callers": [],
+      "callees": [],
+      "score": 0.004544466188301804,
+      "matched_terms": [
+        "database",
+        "connection"
+      ],
+      "preview": "from backend.config import CSV_PATH\nfrom backend.db import get_db_connection\nfrom backend.dhan_client import DhanAuthError"
+    },
+    {
+      "name": "amfi_portfolios",
+      "kind": "module",
+      "file": "amfi_portfolios.py",
+      "line_range": [
+        24,
+        26
+      ],
+      "signature": "from backend.config import PROJECT_ROOT",
+      "callers": [],
+      "callees": [],
+      "score": 0.0043145291770035595,
+      "matched_terms": [
+        "database",
+        "connection"
+      ],
+      "preview": "from backend.config import PROJECT_ROOT\nfrom backend.db import get_db_connection\n"
+    },
+    {
+      "name": "dhan_historical",
+      "kind": "module",
+      "file": "dhan_historical.py",
+      "line_range": [
+        16,
+        18
+      ],
+      "signature": "from backend.db import ensure_provider_ohlcv_table, open_sqlite_connection",
+      "callers": [],
+      "callees": [],
+      "score": 0.003910955914447839,
+      "matched_terms": [
+        "connection"
+      ],
+      "preview": "\nfrom backend.db import ensure_provider_ohlcv_table, open_sqlite_connection\nfrom backend.config import DB_PATH as _DEFAULT_DB_PATH"
+    },
+    {
+      "name": "nse_index_history",
+      "kind": "module",
+      "file": "nse_index_history.py",
+      "line_range": [
+        10,
+        12
+      ],
+      "signature": "from backend.db import open_sqlite_connection",
+      "callers": [],
+      "callees": [],
+      "score": 0.003611222982950732,
+      "matched_terms": [
+        "connection"
+      ],
+      "preview": "\nfrom backend.db import open_sqlite_connection\nfrom backend.market_data import insert_records"
+    },
+    {
+      "name": "nse_results",
+      "kind": "module",
+      "file": "nse_results.py",
+      "line_range": [
+        16,
+        18
+      ],
+      "signature": "from backend.classification import load_stock_theme_map",
+      "callers": [],
+      "callees": [],
+      "score": 0.0032692307692307695,
+      "matched_terms": [
+        "connection"
+      ],
+      "preview": "from backend.classification import load_stock_theme_map\nfrom backend.db import open_sqlite_connection\n"
+    }
+  ],
+  "total_results": 10,
+  "total_files_searched": 56,
+  "search_mode": "hybrid(bm25+regex)+structure+callgraph"
+}

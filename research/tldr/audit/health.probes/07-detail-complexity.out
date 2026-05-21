@@ -1,0 +1,216 @@
+{
+  "functions_analyzed": 23,
+  "avg_cyclomatic": 4.105263157894737,
+  "max_cyclomatic": 12,
+  "hotspot_count": 1,
+  "hotspots": [
+    {
+      "name": "DhanProvider.fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "cyclomatic": 12,
+      "cognitive": 12,
+      "loc": 80,
+      "rank": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "DhanProvider.fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "cyclomatic": 12,
+      "cognitive": 12,
+      "loc": 80,
+      "rank": 1,
+      "is_hotspot": true
+    },
+    {
+      "name": "YahooProvider.fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 190,
+      "cyclomatic": 10,
+      "cognitive": 9,
+      "loc": 27,
+      "rank": 2,
+      "is_hotspot": false
+    },
+    {
+      "name": "YahooProvider.fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 218,
+      "cyclomatic": 10,
+      "cognitive": 5,
+      "loc": 22,
+      "rank": 3,
+      "is_hotspot": false
+    },
+    {
+      "name": "DhanProvider.fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "line": 49,
+      "cyclomatic": 8,
+      "cognitive": 9,
+      "loc": 76,
+      "rank": 4,
+      "is_hotspot": false
+    },
+    {
+      "name": "YahooProvider.fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "line": 87,
+      "cyclomatic": 8,
+      "cognitive": 14,
+      "loc": 61,
+      "rank": 5,
+      "is_hotspot": false
+    },
+    {
+      "name": "YahooProvider.fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 149,
+      "cyclomatic": 7,
+      "cognitive": 9,
+      "loc": 40,
+      "rank": 6,
+      "is_hotspot": false
+    },
+    {
+      "name": "YahooProvider.fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "cyclomatic": 5,
+      "cognitive": 9,
+      "loc": 48,
+      "rank": 7,
+      "is_hotspot": false
+    },
+    {
+      "name": "_to_finite_float",
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "cyclomatic": 3,
+      "cognitive": 3,
+      "loc": 8,
+      "rank": 8,
+      "is_hotspot": false
+    },
+    {
+      "name": "DhanProvider._get_client",
+      "file": "backend/providers/dhan.py",
+      "line": 25,
+      "cyclomatic": 2,
+      "cognitive": 1,
+      "loc": 5,
+      "rank": 9,
+      "is_hotspot": false
+    },
+    {
+      "name": "DhanProvider._load_mappings",
+      "file": "backend/providers/dhan.py",
+      "line": 31,
+      "cyclomatic": 2,
+      "cognitive": 1,
+      "loc": 17,
+      "rank": 10,
+      "is_hotspot": false
+    },
+    {
+      "name": "DhanProvider.fetch_metadata",
+      "file": "backend/providers/dhan.py",
+      "line": 219,
+      "cyclomatic": 2,
+      "cognitive": 1,
+      "loc": 12,
+      "rank": 11,
+      "is_hotspot": false
+    },
+    {
+      "name": "get_yahoo_provider",
+      "file": "backend/providers/__init__.py",
+      "line": 26,
+      "cyclomatic": 2,
+      "cognitive": 1,
+      "loc": 6,
+      "rank": 12,
+      "is_hotspot": false
+    },
+    {
+      "name": "DhanProvider.fetch_quotes",
+      "file": "backend/providers/dhan.py",
+      "line": 207,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 7,
+      "rank": 13,
+      "is_hotspot": false
+    },
+    {
+      "name": "DhanProvider.fetch_market_cap",
+      "file": "backend/providers/dhan.py",
+      "line": 215,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 3,
+      "rank": 14,
+      "is_hotspot": false
+    },
+    {
+      "name": "HistoricalDataProvider.fetch_historical_data",
+      "file": "backend/providers/base.py",
+      "line": 19,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 25,
+      "rank": 15,
+      "is_hotspot": false
+    },
+    {
+      "name": "IntradayChartProvider.fetch_intraday_chart",
+      "file": "backend/providers/base.py",
+      "line": 50,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 25,
+      "rank": 16,
+      "is_hotspot": false
+    },
+    {
+      "name": "QuoteProvider.fetch_quotes",
+      "file": "backend/providers/base.py",
+      "line": 81,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 30,
+      "rank": 17,
+      "is_hotspot": false
+    },
+    {
+      "name": "MetadataProvider.fetch_market_cap",
+      "file": "backend/providers/base.py",
+      "line": 117,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 14,
+      "rank": 18,
+      "is_hotspot": false
+    },
+    {
+      "name": "MetadataProvider.fetch_metadata",
+      "file": "backend/providers/base.py",
+      "line": 133,
+      "cyclomatic": 1,
+      "cognitive": 0,
+      "loc": 20,
+      "rank": 19,
+      "is_hotspot": false
+    }
+  ],
+  "summary": {
+    "total_functions": 23,
+    "avg_cyclomatic": 4.105263157894737,
+    "max_cyclomatic": 12,
+    "hotspot_count": 1,
+    "total_loc": 526
+  }
+}

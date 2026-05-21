@@ -1,0 +1,69 @@
+{
+  "query": "database",
+  "results": [
+    {
+      "name": "apply_rows_to_database",
+      "kind": "function",
+      "file": "scripts/apply_classification_theme_workbook.py",
+      "line_range": [
+        122,
+        197
+      ],
+      "signature": "def apply_rows_to_database(rows: list[dict[str, Any]]) -> dict[str, Any]:",
+      "callers": [
+        "main"
+      ],
+      "callees": [
+        "backup_database"
+      ],
+      "score": 6.186507997241498,
+      "matched_terms": [
+        "database"
+      ],
+      "preview": "def apply_rows_to_database(rows: list[dict[str, Any]]) -> dict[str, Any]:\n    backup_path = backup_database()\n    conn = open_sqlite_connection()\n    try:\n        ensure_classification_theme_schema(conn)"
+    },
+    {
+      "name": "backup_database",
+      "kind": "function",
+      "file": "scripts/apply_classification_theme_workbook.py",
+      "line_range": [
+        112,
+        119
+      ],
+      "signature": "def backup_database() -> Path | None:",
+      "callers": [
+        "apply_rows_to_database"
+      ],
+      "callees": [],
+      "score": 6.186507997241498,
+      "matched_terms": [
+        "database"
+      ],
+      "preview": "def backup_database() -> Path | None:\n    db_path = Path(DB_PATH)\n    if not db_path.exists():\n        return None\n    timestamp = datetime.now().strftime(\"%Y-%m-%d-%H%M%S\")"
+    },
+    {
+      "name": "setup_database",
+      "kind": "function",
+      "file": "importer.py",
+      "line_range": [
+        185,
+        235
+      ],
+      "signature": "def setup_database(conn):",
+      "callers": [
+        "run_import"
+      ],
+      "callees": [
+        "ensure_schema"
+      ],
+      "score": 5.6390137509200775,
+      "matched_terms": [
+        "database"
+      ],
+      "preview": "def setup_database(conn):\n    try:\n        cursor = conn.cursor()\n\n        cursor.execute("
+    }
+  ],
+  "total_results": 3,
+  "total_files_searched": 56,
+  "search_mode": "bm25+structure+callgraph"
+}

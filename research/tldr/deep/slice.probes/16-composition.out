@@ -1,0 +1,50 @@
+{
+  "file": "backend/db.py",
+  "function": "is_sqlite_lock_error",
+  "criterion_line": 30,
+  "direction": "backward",
+  "variable": null,
+  "lines": [
+    30,
+    31
+  ],
+  "slice_lines": [
+    {
+      "line": 30,
+      "code": "def is_sqlite_lock_error(error):",
+      "definitions": [
+        "error",
+        "message"
+      ],
+      "uses": [
+        "str",
+        "error",
+        "lower"
+      ],
+      "dep_type": "data",
+      "dep_label": "error"
+    },
+    {
+      "line": 31,
+      "code": "    message = str(error).lower()",
+      "definitions": [
+        "error",
+        "message"
+      ],
+      "uses": [
+        "str",
+        "error",
+        "lower"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from_line": 30,
+      "to_line": 30,
+      "dep_type": "data",
+      "label": "error"
+    }
+  ],
+  "line_count": 2
+}

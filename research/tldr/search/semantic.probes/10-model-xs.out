@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "DhanProvider",
+      "score": 0.7338955181858825,
+      "line_start": 49,
+      "line_end": 124,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "DhanProvider",
+      "score": 0.7224621092135738,
+      "line_start": 126,
+      "line_end": 205,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    },
+    {
+      "file_path": "backend/providers/yahoo.py",
+      "function_name": "__init__",
+      "class_name": "YahooProvider",
+      "score": 0.7213699854646674,
+      "line_start": 35,
+      "line_end": 36,
+      "snippet": "def __init__(self):\n        super().__init__(name=\"Yahoo\")"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__init__",
+      "class_name": "Provider",
+      "score": 0.7210700767623741,
+      "line_start": 169,
+      "line_end": 176,
+      "snippet": "def __init__(self, name: str):\n        \"\"\"\n        Initialize provider.\n\n        Args:"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "fetch_market_cap",
+      "class_name": "DhanProvider",
+      "score": 0.7090663118872845,
+      "line_start": 215,
+      "line_end": 217,
+      "snippet": "def fetch_market_cap(self, symbol: str) -> Optional[float]:\n        \"\"\"Dhan does not provide market cap via historical API.\"\"\"\n        return None"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "HistoricalDataProvider",
+      "score": 0.708661746919212,
+      "line_start": 19,
+      "line_end": 43,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "backend/providers/base.py",
+      "function_name": "__repr__",
+      "class_name": "Provider",
+      "score": 0.7025122234563812,
+      "line_start": 178,
+      "line_end": 179,
+      "snippet": "def __repr__(self) -> str:\n        return f\"<{self.__class__.__name__}(name={self.name!r})>\""
+    },
+    {
+      "file_path": "backend/providers/yahoo.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "YahooProvider",
+      "score": 0.6947230828252926,
+      "line_start": 38,
+      "line_end": 85,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "backend/providers/dhan.py",
+      "function_name": "__init__",
+      "class_name": "DhanProvider",
+      "score": 0.693950419613334,
+      "line_start": 20,
+      "line_end": 23,
+      "snippet": "def __init__(self):\n        super().__init__(name=\"Dhan\")\n        self._client = None\n        self._mappings: Optional[Dict[str, Tuple[int, str, str]]] = None"
+    },
+    {
+      "file_path": "backend/providers/yahoo.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "YahooProvider",
+      "score": 0.6937719940939533,
+      "line_start": 87,
+      "line_end": 147,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    }
+  ],
+  "total_results": 10,
+  "query": "database",
+  "model": "arctic-x-s",
+  "total_chunks": 22,
+  "matches_above_threshold": 10,
+  "latency_ms": 1,
+  "cache_hit": false
+}

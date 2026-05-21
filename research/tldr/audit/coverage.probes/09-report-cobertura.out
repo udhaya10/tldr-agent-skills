@@ -1,0 +1,10 @@
+{
+  "format": "cobertura",
+  "summary": {
+    "line_coverage": 50.0,
+    "branch_coverage": 50.0,
+    "total_lines": 6,
+    "covered_lines": 3,
+    "threshold_met": false
+  }
+}

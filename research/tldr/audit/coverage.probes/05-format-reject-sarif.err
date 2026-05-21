@@ -1,0 +1,2 @@
+Error: --format sarif not supported by coverage. Use --format json. SARIF is only emitted by: vuln, clones.
+exit=1

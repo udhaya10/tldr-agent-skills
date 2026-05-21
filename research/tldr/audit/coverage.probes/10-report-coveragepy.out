@@ -1,0 +1,9 @@
+{
+  "format": "coveragepy",
+  "summary": {
+    "line_coverage": 62.5,
+    "total_lines": 8,
+    "covered_lines": 5,
+    "threshold_met": false
+  }
+}

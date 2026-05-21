@@ -1,0 +1,2 @@
+Error: Parse error in /var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/empty.lcov.XXXXXX.KcyRt7sHVu: Coverage report is empty. Provide a non-empty Cobertura XML, LCOV, or coverage.py JSON file, or pass `--report-format <fmt>` explicitly.
+exit=10

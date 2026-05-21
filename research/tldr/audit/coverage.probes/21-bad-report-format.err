@@ -1,0 +1,7 @@
+error: invalid value 'wat' for '--report-format <REPORT_FORMAT>'
+  [possible values: cobertura, lcov, coveragepy, auto]
+
+  tip: a similar value exists: 'auto'
+
+For more information, try '--help'.
+exit=2

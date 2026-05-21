@@ -1,0 +1,73 @@
+{
+  "format": "lcov",
+  "summary": {
+    "line_coverage": 50.0,
+    "branch_coverage": 50.0,
+    "function_coverage": 50.0,
+    "total_lines": 10,
+    "covered_lines": 5,
+    "total_branches": 2,
+    "covered_branches": 1,
+    "total_functions": 4,
+    "covered_functions": 2,
+    "threshold_met": false
+  },
+  "files": [
+    {
+      "path": "src/empty.py",
+      "line_coverage": 0.0,
+      "total_lines": 2,
+      "covered_lines": 0,
+      "uncovered_lines": [
+        2,
+        1
+      ],
+      "functions": [
+        {
+          "name": "never_called",
+          "line": 1,
+          "hits": 0
+        }
+      ]
+    },
+    {
+      "path": "src/main.py",
+      "line_coverage": 50.0,
+      "branch_coverage": 50.0,
+      "total_lines": 6,
+      "covered_lines": 3,
+      "total_branches": 2,
+      "covered_branches": 1,
+      "uncovered_lines": [
+        7,
+        6,
+        5
+      ],
+      "functions": [
+        {
+          "name": "greet",
+          "line": 1,
+          "hits": 3
+        },
+        {
+          "name": "calculate",
+          "line": 5,
+          "hits": 0
+        }
+      ]
+    },
+    {
+      "path": "src/utils.py",
+      "line_coverage": 100.0,
+      "total_lines": 2,
+      "covered_lines": 2,
+      "functions": [
+        {
+          "name": "helper",
+          "line": 1,
+          "hits": 5
+        }
+      ]
+    }
+  ]
+}

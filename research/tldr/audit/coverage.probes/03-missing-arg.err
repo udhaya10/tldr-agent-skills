@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <REPORT>
+
+Usage: tldr coverage <REPORT>
+
+For more information, try '--help'.
+exit=2

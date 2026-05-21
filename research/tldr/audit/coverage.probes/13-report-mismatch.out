@@ -1,0 +1,9 @@
+{
+  "format": "cobertura",
+  "summary": {
+    "line_coverage": 0.0,
+    "total_lines": 0,
+    "covered_lines": 0,
+    "threshold_met": false
+  }
+}

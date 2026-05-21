@@ -1,0 +1,2 @@
+Error: invalid argument: unresolved at backend/providers/yahoo.py:1:0 — symbol '' not found in scope
+exit=1

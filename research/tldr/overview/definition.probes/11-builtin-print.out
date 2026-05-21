@@ -1,0 +1,8 @@
+{
+  "symbol": {
+    "name": "print",
+    "kind": "function",
+    "is_builtin": true,
+    "module": "builtins"
+  }
+}

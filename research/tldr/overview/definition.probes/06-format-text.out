@@ -1,0 +1,10 @@
+=== Definition Result ===
+
+Symbol: symbol
+Kind: Parameter
+
+Definition Location:
+  File: backend/providers/yahoo.py
+  Line: 40
+  Column: 8
+

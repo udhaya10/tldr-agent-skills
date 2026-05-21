@@ -1,0 +1,2 @@
+Error: invalid argument: unresolved at backend/providers/yahoo.py:12:0 — symbol 'pandas' not found in scope
+exit=1

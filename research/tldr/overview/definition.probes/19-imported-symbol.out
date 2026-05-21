@@ -1,0 +1,17 @@
+{
+  "symbol": {
+    "name": "Provider",
+    "kind": "class",
+    "location": {
+      "file": "./backend/providers/base.py",
+      "line": 155,
+      "column": 6
+    },
+    "is_builtin": false
+  },
+  "definition": {
+    "file": "./backend/providers/base.py",
+    "line": 155,
+    "column": 6
+  }
+}

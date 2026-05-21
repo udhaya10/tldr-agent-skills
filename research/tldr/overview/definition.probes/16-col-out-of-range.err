@@ -1,0 +1,2 @@
+Error: definition not found for backend/providers/yahoo.py:40:9999: invalid argument: column 9999 out of range on line 40 (line has 20 bytes)
+exit=1

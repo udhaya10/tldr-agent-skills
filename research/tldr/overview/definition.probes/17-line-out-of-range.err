@@ -1,0 +1,2 @@
+Error: definition not found for backend/providers/yahoo.py:999999:0: invalid argument: line 999999 out of range (file has 239 lines)
+exit=1

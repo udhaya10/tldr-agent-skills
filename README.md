@@ -1,59 +1,95 @@
 # TLDR Agent Skills
 
-A suite of 14 intent-driven agent skills designed to give Large Language Models (LLMs) autonomous mastery over the [parcadei/tldr-code](https://github.com/parcadei/tldr-code) AST engine. 
+A suite of **14 intent-driven agent skills** designed to give Large Language Models (LLMs) autonomous mastery over the [parcadei/tldr-code](https://github.com/parcadei/tldr-code) AST engine.
 
-The `tldr-code` CLI is an incredibly powerful static analysis tool containing 60+ commands. This repository systematically decomposes that raw CLI into modular, Progressive Disclosure skills (like `tldr-search`, `tldr-fix`, and `tldr-audit`) so agents like Claude Code, Cursor, or OpenHands can use them without hallucinating flags or suffering from cognitive overload.
+The `tldr-code` CLI is an incredibly powerful static analysis tool containing **60+ commands**. This repository systematically decomposes that raw CLI into modular, Progressive Disclosure skills (like `tldr-search`, `tldr-fix`, and `tldr-audit`) so agents like Claude Code, Cursor, or OpenHands can use them without hallucinating flags or suffering from cognitive overload.
 
+---
 
-## Skill Installation
+## Quick Install
 
-This repository is compatible with the [Agent Skills CLI](https://agentskills.io/). You can install skills directly from this GitHub repository into your local agent environment (like Claude Code, Cursor, or Amp) without needing to clone it manually.
-
-### Install Interactively
-To browse and select which skills to install from this repository:
-```bash
-npx skills add udhaya10/tldr-agent-skills -g
-```
-*(The `-g` flag installs the skills globally for your agent user profile).*
-
-### Install a Specific Skill
-If you know the exact name of the skill (e.g., `tldr-fix`):
-```bash
-npx skills add udhaya10/tldr-agent-skills --skill tldr-fix -g
-```
-
-### Install All Skills
-To install every skill in this repository at once, skipping prompts:
 ```bash
 npx skills add udhaya10/tldr-agent-skills --all -g
 ```
+
+Or browse and select individual skills:
+```bash
+npx skills add udhaya10/tldr-agent-skills -g
+```
+
+---
+
+## The 14 Skills
+
+| Skill | Purpose | Key Commands |
+|-------|---------|--------------|
+| **tldr-router** | Orchestrator - routes intent to appropriate skill | Intent analysis, skill selection |
+| **tldr-overview** | Token-efficient codebase discovery | tree, structure, extract, explain, imports, importers, deps, definition |
+| **tldr-search** | Semantic code search | semantic, search, context, similar, dice |
+| **tldr-trace** | Call graph and impact analysis | calls, impact, hubs, whatbreaks, dead, references |
+| **tldr-deep** | Deep code slicing and data flow | slice, chop, reaching-defs, available, dead-stores |
+| **tldr-audit** | Quality, security, complexity analysis | health, smells, vuln, secure, clones, debt, complexity, cohesion |
+| **tldr-fix** | Autonomous bug repair | bugbot, diagnostics, fix check/apply/diagnose |
+| **tldr-ops** | Infrastructure and caching | daemon, warm, change-impact, diff, stats, todo |
+| **tldr-refactor-history** | Git history refactoring | temporal, churn, hotspots |
+| **tldr-refactor-oo** | Object-oriented analysis | coupling, inheritance |
+| **tldr-formal-methods** | Formal verification | contracts, invariants, resources, specs |
+| **tldr-api-stability** | API boundary checking | api-check, interface, patterns |
+| **tldr-metrics-raw** | Code metrics | loc, halstead, coverage |
+| **tldr-security-taint** | Security taint analysis | taint (SQLi, XSS, command injection) |
+
+**Total: 47 CLI commands** mapped into 14 skills.
 
 ---
 
 ## Directory Structure
 
-To maintain compatibility with the Agent Skills CLI, this repository follows the standard `SKILL.md` structure. Each skill lives in its own isolated directory:
-
-```text
+```
 tldr-agent-skills/
 ├── README.md
-├── skill-name-1/
-│   ├── SKILL.md          # Required: The prompt and instructions
-│   └── scripts/          # Optional: Executable bash/python scripts
-└── skill-name-2/
-    └── SKILL.md
+├── REPOSITORY_STRUCTURE.md
+├── LICENSE
+├── research/                     # 66 research dossiers for all CLI commands
+│   └── tldr/
+│       ├── overview/            # tree, structure, extract, explain, deps, etc.
+│       ├── search/             # semantic, search, context, similar, dice
+│       ├── trace/              # calls, impact, hubs, whatbreaks
+│       ├── deep/               # slice, chop, reaching-defs
+│       ├── audit/              # health, smells, clones, complexity
+│       ├── fix/                # bugbot, diagnostics, fix check
+│       └── ops/                # daemon, warm, diff
+├── tldr-router/                # SKILL.md - Orchestrator
+├── tldr-overview/              # SKILL.md - Codebase discovery
+├── tldr-search/               # SKILL.md - Semantic search
+├── tldr-trace/                # SKILL.md - Call graph tracing
+├── tldr-deep/                 # SKILL.md - Deep analysis
+├── tldr-audit/                # SKILL.md - Quality audit
+├── tldr-fix/                  # SKILL.md - Autonomous repair
+├── tldr-ops/                  # SKILL.md - Infrastructure
+├── tldr-refactor-history/     # SKILL.md - History refactoring
+├── tldr-refactor-oo/          # SKILL.md - OOP analysis
+├── tldr-formal-methods/       # SKILL.md - Formal verification
+├── tldr-api-stability/        # SKILL.md - API stability
+├── tldr-metrics-raw/          # SKILL.md - Code metrics
+└── tldr-security-taint/       # SKILL.md - Security analysis
 ```
 
-## Developing New Skills
+Each `tldr-*/SKILL.md` contains:
+- YAML frontmatter (`name`, `description`, `allowed-tools`)
+- When to use the skill
+- Supported commands with usage examples
+- Crucial rules to prevent hallucinations
 
-1. Create a new folder for your skill.
-2. Add a `SKILL.md` file containing the YAML frontmatter and markdown instructions.
-3. Push to GitHub.
-4. Run `npx skills update -g` locally to fetch the latest changes.
-## TLDR-Code Skills Ecosystem
+---
 
-This repository houses the decomposed agent skills for the `tldr-code` AST engine. The original CLI contains 60+ commands, which have been systematically audited and mapped into 13 highly-specialized agent skills.
+## Research Documentation
 
-For a full breakdown of the research methodology and why certain commands were intentionally hidden from the LLM, please see:
-* [Empirical Research Methodology](research/03_EMPIRICAL_RESEARCH_METHODOLOGY.md)
-* [Omitted Commands Rationale](research/05_OMITTED_COMMANDS_RATIONALE.md)
+- [Empirical Research Methodology](research/03_EMPIRICAL_RESEARCH_METHODOLOGY.md) - How commands were selected
+- [Omitted Commands Rationale](research/05_OMITTED_COMMANDS_RATIONALE.md) - 19 commands intentionally hidden
+
+---
+
+## Requirements
+
+- [tldr-code CLI](https://github.com/parcadei/tldr-code) must be installed
+- Node.js (for `npx skills` CLI)

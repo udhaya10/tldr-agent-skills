@@ -1,0 +1,44 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "all_exports": [
+    "YahooProvider"
+  ],
+  "functions": [],
+  "classes": [
+    {
+      "name": "YahooProvider",
+      "lineno": 28,
+      "bases": [
+        "Provider"
+      ],
+      "methods": [
+        {
+          "name": "fetch_historical_data",
+          "signature": "(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame",
+          "is_async": false
+        },
+        {
+          "name": "fetch_intraday_chart",
+          "signature": "(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame",
+          "is_async": false
+        },
+        {
+          "name": "fetch_quotes",
+          "signature": "(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]",
+          "is_async": false
+        },
+        {
+          "name": "fetch_market_cap",
+          "signature": "(self, symbol: str) -> Optional[float]",
+          "is_async": false
+        },
+        {
+          "name": "fetch_metadata",
+          "signature": "(self, symbol: str) -> Dict[str, Any]",
+          "is_async": false
+        }
+      ],
+      "private_method_count": 1
+    }
+  ]
+}

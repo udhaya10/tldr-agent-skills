@@ -1,0 +1,72 @@
+File: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/__init__.py
+
+Exports:
+  HistoricalDataProvider
+  IntradayChartProvider
+  MetadataProvider
+  QuoteProvider
+  YahooProvider
+  get_yahoo_provider
+
+Functions:
+  def get_yahoo_provider() -> YahooProvider  [line 26]
+      "Get or create singleton YahooProvider instance."
+
+Summary: 1 functions, 0 classes, 0 public methods
+
+File: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py
+
+Exports:
+  HistoricalDataProvider
+  IntradayChartProvider
+  MetadataProvider
+  Provider
+  QuoteProvider
+
+Classes:
+  class HistoricalDataProvider(ABC)  [line 15]
+    def fetch_historical_data(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame
+  class IntradayChartProvider(ABC)  [line 46]
+    def fetch_intraday_chart(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame
+  class QuoteProvider(ABC)  [line 77]
+    def fetch_quotes(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]
+  class MetadataProvider(ABC)  [line 113]
+    def fetch_market_cap(self, symbol: str) -> Optional[float]
+    def fetch_metadata(self, symbol: str) -> Dict[str, Any]
+  class Provider(HistoricalDataProvider, IntradayChartProvider, QuoteProvider, MetadataProvider, ABC)  [line 155]
+    (2 private methods)
+
+Summary: 0 functions, 5 classes, 5 public methods
+
+File: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py
+
+Exports:
+  DhanProvider
+
+Classes:
+  class DhanProvider(Provider)  [line 17]
+    def fetch_historical_data(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame
+    def fetch_intraday_chart(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame
+    def fetch_quotes(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]
+    def fetch_market_cap(self, symbol: str) -> Optional[float]
+    def fetch_metadata(self, symbol: str) -> Dict[str, Any]
+    (3 private methods)
+
+Summary: 0 functions, 1 classes, 5 public methods
+
+File: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py
+
+Exports:
+  YahooProvider
+
+Classes:
+  class YahooProvider(Provider)  [line 28]
+    def fetch_historical_data(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame
+    def fetch_intraday_chart(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame
+    def fetch_quotes(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]
+    def fetch_market_cap(self, symbol: str) -> Optional[float]
+    def fetch_metadata(self, symbol: str) -> Dict[str, Any]
+    (1 private methods)
+
+Summary: 0 functions, 1 classes, 5 public methods
+

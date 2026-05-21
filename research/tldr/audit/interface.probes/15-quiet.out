@@ -1,0 +1,202 @@
+[
+  {
+    "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/__init__.py",
+    "all_exports": [
+      "HistoricalDataProvider",
+      "IntradayChartProvider",
+      "MetadataProvider",
+      "QuoteProvider",
+      "YahooProvider",
+      "get_yahoo_provider"
+    ],
+    "functions": [
+      {
+        "name": "get_yahoo_provider",
+        "signature": "() -> YahooProvider",
+        "docstring": "Get or create singleton YahooProvider instance.",
+        "lineno": 26,
+        "is_async": false
+      }
+    ],
+    "classes": []
+  },
+  {
+    "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+    "all_exports": [
+      "HistoricalDataProvider",
+      "IntradayChartProvider",
+      "MetadataProvider",
+      "Provider",
+      "QuoteProvider"
+    ],
+    "functions": [],
+    "classes": [
+      {
+        "name": "HistoricalDataProvider",
+        "lineno": 15,
+        "bases": [
+          "ABC"
+        ],
+        "methods": [
+          {
+            "name": "fetch_historical_data",
+            "signature": "(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame",
+            "is_async": false
+          }
+        ],
+        "private_method_count": 0
+      },
+      {
+        "name": "IntradayChartProvider",
+        "lineno": 46,
+        "bases": [
+          "ABC"
+        ],
+        "methods": [
+          {
+            "name": "fetch_intraday_chart",
+            "signature": "(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame",
+            "is_async": false
+          }
+        ],
+        "private_method_count": 0
+      },
+      {
+        "name": "QuoteProvider",
+        "lineno": 77,
+        "bases": [
+          "ABC"
+        ],
+        "methods": [
+          {
+            "name": "fetch_quotes",
+            "signature": "(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]",
+            "is_async": false
+          }
+        ],
+        "private_method_count": 0
+      },
+      {
+        "name": "MetadataProvider",
+        "lineno": 113,
+        "bases": [
+          "ABC"
+        ],
+        "methods": [
+          {
+            "name": "fetch_market_cap",
+            "signature": "(self, symbol: str) -> Optional[float]",
+            "is_async": false
+          },
+          {
+            "name": "fetch_metadata",
+            "signature": "(self, symbol: str) -> Dict[str, Any]",
+            "is_async": false
+          }
+        ],
+        "private_method_count": 0
+      },
+      {
+        "name": "Provider",
+        "lineno": 155,
+        "bases": [
+          "HistoricalDataProvider",
+          "IntradayChartProvider",
+          "QuoteProvider",
+          "MetadataProvider",
+          "ABC"
+        ],
+        "methods": [],
+        "private_method_count": 2
+      }
+    ]
+  },
+  {
+    "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+    "all_exports": [
+      "DhanProvider"
+    ],
+    "functions": [],
+    "classes": [
+      {
+        "name": "DhanProvider",
+        "lineno": 17,
+        "bases": [
+          "Provider"
+        ],
+        "methods": [
+          {
+            "name": "fetch_historical_data",
+            "signature": "(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame",
+            "is_async": false
+          },
+          {
+            "name": "fetch_intraday_chart",
+            "signature": "(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame",
+            "is_async": false
+          },
+          {
+            "name": "fetch_quotes",
+            "signature": "(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]",
+            "is_async": false
+          },
+          {
+            "name": "fetch_market_cap",
+            "signature": "(self, symbol: str) -> Optional[float]",
+            "is_async": false
+          },
+          {
+            "name": "fetch_metadata",
+            "signature": "(self, symbol: str) -> Dict[str, Any]",
+            "is_async": false
+          }
+        ],
+        "private_method_count": 3
+      }
+    ]
+  },
+  {
+    "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+    "all_exports": [
+      "YahooProvider"
+    ],
+    "functions": [],
+    "classes": [
+      {
+        "name": "YahooProvider",
+        "lineno": 28,
+        "bases": [
+          "Provider"
+        ],
+        "methods": [
+          {
+            "name": "fetch_historical_data",
+            "signature": "(self, symbol: str, start_date: date, end_date: date) -> pd.DataFrame",
+            "is_async": false
+          },
+          {
+            "name": "fetch_intraday_chart",
+            "signature": "(self, symbol: str, interval: str, period_bars: int) -> pd.DataFrame",
+            "is_async": false
+          },
+          {
+            "name": "fetch_quotes",
+            "signature": "(self, symbols: List[str], fields: Optional[List[str]] = None) -> Dict[str, Dict[str, Any]]",
+            "is_async": false
+          },
+          {
+            "name": "fetch_market_cap",
+            "signature": "(self, symbol: str) -> Optional[float]",
+            "is_async": false
+          },
+          {
+            "name": "fetch_metadata",
+            "signature": "(self, symbol: str) -> Dict[str, Any]",
+            "is_async": false
+          }
+        ],
+        "private_method_count": 1
+      }
+    ]
+  }
+]

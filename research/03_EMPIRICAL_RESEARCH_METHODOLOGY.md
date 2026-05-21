@@ -1,5 +1,7 @@
 # Research Journal 03: Empirical Auditing Methodology
 
+> **⚠️ Superseded by operational protocol.** This journal defines the *principle* ("Zero Trust in Documentation"). For the *operational rulebook* — exact dossier structure, mandatory probe matrix, capture conventions, and compliance checklist — see [`04_PROBE_PROTOCOL.md`](./04_PROBE_PROTOCOL.md). Journal 03 remains as the philosophy backing Journal 04's enforcement.
+
 ## Context and Core Decision
 
 During the transition from capturing the CLI ground truth (Journal 02) to deeper behavioral analysis, a critical architectural decision was made by Udhayakumar: **We are abandoning the official repository documentation entirely.**

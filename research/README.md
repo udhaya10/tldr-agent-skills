@@ -96,8 +96,17 @@ The commands are grouped logically by the agent skill they will eventually power
 
 ## Audit Workflow
 
-For each file above, the audit process is:
-1. Parse the official [tldr-code documentation](https://github.com/parcadei/tldr-code/tree/main/docs/commands).
-2. Read the actual Rust implementation (e.g., `crates/tldr-cli/src/commands/`).
-3. Note any discrepancies between documented flags and actual implemented flags.
-4. Finalize the command syntax for use in the agent `SKILL.md` files.
+The canonical operational rulebook is [`04_PROBE_PROTOCOL.md`](./04_PROBE_PROTOCOL.md). Every dossier must follow that protocol. Quick summary:
+
+1. **Pin the environment** — `tldr --version`, target repo + commit, daemon state, OS, date.
+2. **Capture `--help` verbatim** — the Ground Truth section.
+3. **Run the Probe Matrix** — mandatory P01–P05 (happy small, happy scale, missing arg, bad path, format rejection) plus conditional rows per Journal 04 §4.3. Use the canonical [`_TEMPLATES/probe.sh`](./_TEMPLATES/probe.sh) so probes are regeneratable.
+4. **Document the Output Shape** — explicit JSON contract: top-level keys, nested structures, empty case, error case, typical size.
+5. **Read the Rust source** — cite `crates/<crate>/src/<file>.rs:LNNN`. Look for arg validators, hardcoded limits, daemon-route shortcuts, fallback paths, format validators.
+6. **Write Architectural Deep Dive + Intent & Routing** — explain the engine and routing logic.
+7. **Distill the Agent Synthesis** — must reflect every flag exercised, every recovery hint from failure probes, every composition prerequisite.
+8. **Verify with `bash _TEMPLATES/audit.sh <dossier-path>`** — mechanical check of the structural compliance items.
+
+Historical journals 01, 02, 03 record how this protocol evolved. Journal 03 establishes the *principle* ("Zero Trust in Documentation"); Journal 04 is the enforceable rulebook.
+
+Templates live in [`_TEMPLATES/`](./_TEMPLATES/) — `dossier.md` (the scaffold to copy), `probe.sh` (regeneratable probe script), `audit.sh` (mechanical compliance check).

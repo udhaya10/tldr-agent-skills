@@ -1,0 +1,19 @@
+{
+  "wrapper": "secure",
+  "root": "/var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/tmp.MOHipZjRM3",
+  "findings": [],
+  "summary": {
+    "taint_count": 0,
+    "taint_critical": 0,
+    "leak_count": 0,
+    "bounds_warnings": 0,
+    "behavioral_count": 0,
+    "missing_contracts": 0,
+    "mutable_params": 0,
+    "unsafe_blocks": 0,
+    "raw_pointer_ops": 0,
+    "unwrap_calls": 0,
+    "todo_markers": 0
+  },
+  "total_elapsed_ms": 1.059917
+}

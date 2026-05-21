@@ -1,0 +1,398 @@
+{
+  "wrapper": "secure",
+  "root": "backend",
+  "findings": [
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/amfi_portfolios.py",
+      "line": 703
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/amfi_portfolios.py",
+      "line": 804
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/amfi_portfolios.py",
+      "line": 5949
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/amfi_portfolios.py",
+      "line": 6235
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'connect' opened without context manager - may leak",
+      "file": "backend/db.py",
+      "line": 22
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/db.py",
+      "line": 73
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/db.py",
+      "line": 111
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/db.py",
+      "line": 147
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/db.py",
+      "line": 164
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_historical.py",
+      "line": 37
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_historical.py",
+      "line": 146
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/importer.py",
+      "line": 99
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/importer.py",
+      "line": 121
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/importer.py",
+      "line": 160
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/importer.py",
+      "line": 187
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/importer.py",
+      "line": 308
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'connect' opened without context manager - may leak",
+      "file": "backend/test_watchlist_formulas_earn.py",
+      "line": 96
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/providers/dhan.py",
+      "line": 39
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_index_history.py",
+      "line": 112
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/screener.py",
+      "line": 1435
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'open' opened without context manager - may leak",
+      "file": "backend/updater.py",
+      "line": 108
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/updater.py",
+      "line": 180
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/updater.py",
+      "line": 213
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_live.py",
+      "line": 68
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_history.py",
+      "line": 21
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_history.py",
+      "line": 149
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_history.py",
+      "line": 342
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_earnings.py",
+      "line": 135
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_earnings.py",
+      "line": 465
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_earnings.py",
+      "line": 1155
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_earnings.py",
+      "line": 1186
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/market_data.py",
+      "line": 35
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/market_data.py",
+      "line": 118
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_listings.py",
+      "line": 184
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_listings.py",
+      "line": 277
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_listings.py",
+      "line": 311
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_listings.py",
+      "line": 364
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/notifications.py",
+      "line": 20
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/notifications.py",
+      "line": 378
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/notifications.py",
+      "line": 586
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/scheduler.py",
+      "line": 28
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/scheduler.py",
+      "line": 47
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_price_bands.py",
+      "line": 24
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_price_bands.py",
+      "line": 51
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/nse_price_bands.py",
+      "line": 153
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/symbol_mapper.py",
+      "line": 123
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/symbol_mapper.py",
+      "line": 167
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/symbol_mapper.py",
+      "line": 211
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_security_master.py",
+      "line": 128
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_security_master.py",
+      "line": 177
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_security_master.py",
+      "line": 202
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_security_master.py",
+      "line": 227
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'cursor' opened without context manager - may leak",
+      "file": "backend/dhan_security_master.py",
+      "line": 249
+    },
+    {
+      "category": "resource_leak",
+      "severity": "high",
+      "description": "Resource 'connect' opened without context manager - may leak",
+      "file": "backend/test_tc2000_formulas.py",
+      "line": 79
+    }
+  ],
+  "summary": {
+    "taint_count": 0,
+    "taint_critical": 0,
+    "leak_count": 54,
+    "bounds_warnings": 0,
+    "behavioral_count": 0,
+    "missing_contracts": 0,
+    "mutable_params": 0,
+    "unsafe_blocks": 0,
+    "raw_pointer_ops": 0,
+    "unwrap_calls": 0,
+    "todo_markers": 0
+  },
+  "total_elapsed_ms": 27474.765417
+}

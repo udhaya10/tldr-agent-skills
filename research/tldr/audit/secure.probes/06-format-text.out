@@ -1,0 +1,25 @@
+============================================================
+SECURE - Security Analysis Dashboard
+============================================================
+
+Path: backend/providers
+
+Severity | Category       | Description
+------------------------------------------------------------
+    high | resource_leak  | Resource 'cursor' opened without context manager - may leak
+         |                | backend/providers/dhan.py:39
+
+Summary:
+  Taint issues:      0 (0 critical)
+  Resource leaks:    1
+  Bounds warnings:   0
+  Behavioral:        0
+  Missing contracts: 0
+  Mutable params:    0
+  Unsafe blocks:     0
+  Raw pointer ops:   0
+  Unwrap calls:      0
+  Todo markers:      0
+
+Elapsed: 85.87ms
+

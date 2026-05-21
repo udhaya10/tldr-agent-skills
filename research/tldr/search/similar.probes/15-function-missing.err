@@ -1,0 +1,5 @@
+Building index for 22 chunks...
+All chunks cached - skipping embedder initialization
+Index built in 615.798375ms
+Error: Chunk not found: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py::HistoricalDataProvider
+exit=54

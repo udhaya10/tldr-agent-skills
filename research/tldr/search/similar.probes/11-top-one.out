@@ -1,0 +1,14 @@
+{
+  "source_file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+  "source_chunks": 7,
+  "model": "arctic-m",
+  "similar_files": [
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "total_score": 5.875745420336127,
+      "matched_chunks": 7,
+      "avg_score": 0.839392202905161
+    }
+  ],
+  "total_compared_chunks": 105
+}

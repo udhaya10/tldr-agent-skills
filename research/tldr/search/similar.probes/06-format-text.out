@@ -1,0 +1,8 @@
+Finding files similar to: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py (7 source chunks)
+Model: ArcticM | Compared: 105 chunks
+
+Similar files (2 found):
+
+1. /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py (total: 5.88, avg: 0.84, chunks: 7)
+2. /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py (total: 5.87, avg: 0.84, chunks: 7)
+

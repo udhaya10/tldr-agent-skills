@@ -1,0 +1,20 @@
+{
+  "source_file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+  "source_chunks": 7,
+  "model": "arctic-x-s",
+  "similar_files": [
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "total_score": 6.324357848747684,
+      "matched_chunks": 7,
+      "avg_score": 0.9034796926782406
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "total_score": 6.284094058652279,
+      "matched_chunks": 7,
+      "avg_score": 0.8977277226646113
+    }
+  ],
+  "total_compared_chunks": 105
+}

@@ -1,0 +1,5 @@
+Building index for 22 chunks...
+All chunks cached - skipping embedder initialization
+Index built in 611.599333ms
+Error: no indexed chunks found for source file: /no/such/file.py
+exit=1

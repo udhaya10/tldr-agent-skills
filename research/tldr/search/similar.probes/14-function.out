@@ -1,0 +1,62 @@
+{
+  "source": {
+    "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+    "function_name": "fetch_historical_data",
+    "class_name": "YahooProvider",
+    "line_start": 38,
+    "line_end": 85,
+    "content": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,\n    ) -> pd.DataFrame:\n        \"\"\"\n        Fetch historical daily OHLCV data from Yahoo Finance.\n\n        Matches existing behavior from market_data.py:\n        - Uses auto_adjust=False (unadjusted prices)\n        - Returns UTC-normalized timestamps\n        \"\"\"\n        try:\n            df = yf.download(\n                symbol,\n                start=start_date,\n                end=end_date,\n                auto_adjust=False,\n                progress=False,\n            )\n\n            if df.empty:\n                return pd.DataFrame()\n\n            # Normalize to UTC and ensure required columns\n            if df.index.name == \"Date\":\n                df.index = pd.to_datetime(df.index, utc=True)\n            else:\n                df.index = pd.to_datetime(df.index)\n                if df.index.tzinfo is None:\n                    df.index = df.index.tz_localize(\"UTC\")\n\n            df.index.name = \"time\"\n\n            # Rename columns to lowercase\n            df.columns = [col.lower() for col in df.columns]\n\n            # Keep only OHLCV\n            required = [\"open\", \"high\", \"low\", \"close\", \"volume\"]\n            available = [col for col in required if col in df.columns]\n            df = df[available]\n\n            return df\n\n        except Exception as error:\n            print(f\"Error fetching historical data for {symbol}: {error}\")\n            return pd.DataFrame()",
+    "content_hash": "070a8c9627295d61df98af67155fa002",
+    "language": "python"
+  },
+  "similar": [
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "DhanProvider",
+      "score": 0.8698948865262299,
+      "line_start": 49,
+      "line_end": 124,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "HistoricalDataProvider",
+      "score": 0.8674662628372036,
+      "line_start": 19,
+      "line_end": 43,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "YahooProvider",
+      "score": 0.8174207884020078,
+      "line_start": 87,
+      "line_end": 147,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "IntradayChartProvider",
+      "score": 0.7589735880204247,
+      "line_start": 50,
+      "line_end": 74,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "function_name": "fetch_quotes",
+      "class_name": "YahooProvider",
+      "score": 0.7366024604808641,
+      "line_start": 149,
+      "line_end": 188,
+      "snippet": "def fetch_quotes(\n        self,\n        symbols: List[str],\n        fields: Optional[List[str]] = None,\n    ) -> Dict[str, Dict[str, Any]]:"
+    }
+  ],
+  "model": "arctic-m",
+  "total_compared": 21,
+  "exclude_self": true
+}

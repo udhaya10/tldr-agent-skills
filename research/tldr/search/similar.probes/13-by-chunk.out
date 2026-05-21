@@ -1,0 +1,62 @@
+{
+  "source": {
+    "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+    "function_name": "fetch_historical_data",
+    "class_name": "HistoricalDataProvider",
+    "line_start": 19,
+    "line_end": 43,
+    "content": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,\n    ) -> pd.DataFrame:\n        \"\"\"\n        Fetch historical daily OHLCV data.\n\n        Args:\n            symbol: Ticker/security identifier (e.g., 'RELIANCE')\n            start_date: Inclusive start date\n            end_date: Inclusive end date\n\n        Returns:\n            DataFrame with columns: [time, open, high, low, close, volume]\n            - time: ISO 8601 UTC timestamps (index)\n            - open, high, low, close: OHLC prices (float)\n            - volume: Trading volume (int)\n\n        Raises:\n            ValueError: If symbol not found or invalid date range\n            Exception: On network/API errors\n        \"\"\"\n        pass",
+    "content_hash": "c5debe5427a47567f14acae244015d91",
+    "language": "python"
+  },
+  "similar": [
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "DhanProvider",
+      "score": 0.8813976254358787,
+      "line_start": 49,
+      "line_end": 124,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "IntradayChartProvider",
+      "score": 0.8791073492891511,
+      "line_start": 50,
+      "line_end": 74,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "function_name": "fetch_historical_data",
+      "class_name": "YahooProvider",
+      "score": 0.8674662628372036,
+      "line_start": 38,
+      "line_end": 85,
+      "snippet": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "DhanProvider",
+      "score": 0.7732879595887542,
+      "line_start": 126,
+      "line_end": 205,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    },
+    {
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "function_name": "fetch_intraday_chart",
+      "class_name": "YahooProvider",
+      "score": 0.7441869276497168,
+      "line_start": 87,
+      "line_end": 147,
+      "snippet": "def fetch_intraday_chart(\n        self,\n        symbol: str,\n        interval: str,\n        period_bars: int,"
+    }
+  ],
+  "model": "arctic-m",
+  "total_compared": 21,
+  "exclude_self": true
+}

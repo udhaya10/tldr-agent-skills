@@ -1,0 +1,5 @@
+Building index for 22 chunks...
+All chunks cached - skipping embedder initialization
+Index built in 608.296791ms
+Error: no indexed chunks found for source file: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py
+exit=1

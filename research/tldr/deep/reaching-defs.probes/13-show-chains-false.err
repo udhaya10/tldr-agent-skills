@@ -1,0 +1,6 @@
+error: unexpected value 'false' for '--show-chains' found; no more were expected
+
+Usage: tldr reaching-defs <FILE|FUNCTION|--lang <LANG>|--var <VAR>|--line <LINE>|--show-chains|--show-uninitialized|--show-in-out|--chains-only|--params <PARAMS>>
+
+For more information, try '--help'.
+exit=2

@@ -1,0 +1,25 @@
+Reaching Definitions for: _to_finite_float in backend/providers/yahoo.py
+
+Def-Use Chains:
+    numeric_value@21 -> used at: line 25, line 25
+    value@18 -> used at: line 21
+
+Use-Def Chains:
+    float@21 <- defined at: (no reaching definition)
+    value@21 <- defined at: line 18
+    numeric_value@25 <- defined at: line 21
+    math@25 <- defined at: (no reaching definition)
+    isfinite@25 <- defined at: (no reaching definition)
+    numeric_value@25 <- defined at: line 21
+
+Potentially Uninitialized:
+    float at line 21 (error): no definition of this variable exists
+    math at line 25 (error): no definition of this variable exists
+    isfinite at line 25 (error): no definition of this variable exists
+
+---
+Definitions: 2
+Uses: 6
+Blocks: 8
+Uninitialized: 3
+

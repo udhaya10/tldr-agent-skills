@@ -1,0 +1,453 @@
+{
+  "function": "fetch_historical_data",
+  "file": "backend/providers/yahoo.py",
+  "blocks": [
+    {
+      "id": 0,
+      "lines": [
+        38,
+        50
+      ],
+      "gen": [
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        }
+      ],
+      "kill": [],
+      "in": [],
+      "out": [
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lines": [
+        51,
+        58
+      ],
+      "gen": [
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        }
+      ],
+      "kill": [
+        {
+          "var": "df",
+          "line": 65,
+          "column": 16,
+          "block": 10
+        },
+        {
+          "var": "df",
+          "line": 67,
+          "column": 16,
+          "block": 11
+        },
+        {
+          "var": "df",
+          "line": 69,
+          "column": 20,
+          "block": 9
+        },
+        {
+          "var": "df",
+          "line": 74,
+          "column": 12,
+          "block": 9
+        },
+        {
+          "var": "df",
+          "line": 79,
+          "column": 12,
+          "block": 9
+        }
+      ],
+      "in": [
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        }
+      ],
+      "out": [
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lines": [
+        85,
+        85
+      ],
+      "gen": [],
+      "kill": [],
+      "in": [
+        {
+          "var": "required",
+          "line": 77,
+          "column": 12,
+          "block": 9
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 79,
+          "column": 12,
+          "block": 9
+        },
+        {
+          "var": "available",
+          "line": 78,
+          "column": 12,
+          "block": 9
+        }
+      ],
+      "out": [
+        {
+          "var": "required",
+          "line": 77,
+          "column": 12,
+          "block": 9
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 79,
+          "column": 12,
+          "block": 9
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        },
+        {
+          "var": "available",
+          "line": 78,
+          "column": 12,
+          "block": 9
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lines": [
+        60,
+        60
+      ],
+      "gen": [],
+      "kill": [],
+      "in": [
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        }
+      ],
+      "out": [
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lines": [
+        61,
+        63
+      ],
+      "gen": [],
+      "kill": [],
+      "in": [
+        {
+          "var": "df",
+          "line": 52,
+          "column": 12,
+          "block": 1
+        },
+        {
+          "var": "self",
+          "line": 39,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "start_date",
+          "line": 41,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "end_date",
+          "line": 42,
+          "column": 8,
+          "block": 0
+        },
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        }
+      ],
+      "out": [
+        {
+          "var": "symbol",
+          "line": 40,
+          "column": 8,
+          "block": 0
+        },
+        {
+
+... [2489 lines truncated, full output regeneratable via probe.sh] ...
+
+    {
+      "var": "columns",
+      "line": 78,
+      "column": 62,
+      "block": 9,
+      "reason": "no definition of this variable exists",
+      "severity": "definite"
+    },
+    {
+      "var": "print",
+      "line": 84,
+      "column": 12,
+      "block": 17,
+      "reason": "no definition of this variable exists",
+      "severity": "definite"
+    },
+    {
+      "var": "error",
+      "line": 84,
+      "column": 66,
+      "block": 17,
+      "reason": "no definition of this variable exists",
+      "severity": "definite"
+    },
+    {
+      "var": "pd",
+      "line": 85,
+      "column": 19,
+      "block": 2,
+      "reason": "no definition of this variable exists",
+      "severity": "definite"
+    },
+    {
+      "var": "DataFrame",
+      "line": 85,
+      "column": 22,
+      "block": 2,
+      "reason": "no definition of this variable exists",
+      "severity": "definite"
+    }
+  ],
+  "stats": {
+    "definitions": 12,
+    "uses": 50,
+    "blocks": 21,
+    "iterations": 0,
+    "uninitialized_count": 34
+  },
+  "confidence": "high"
+}

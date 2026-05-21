@@ -1,0 +1,3 @@
+Analyzing what breaks if 'fetch_historical_data' changes...
+Target type: function (Target 'fetch_historical_data' does not match file or module patterns (defaulting to function))
+exit=0

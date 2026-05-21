@@ -1,0 +1,34 @@
+{
+  "wrapper": "whatbreaks",
+  "path": "backend",
+  "target": "fetch_historical_data",
+  "target_type": "file",
+  "detection_reason": "Forced via --type flag to File",
+  "sub_results": {
+    "change-impact": {
+      "success": true,
+      "data": {
+        "changed_files": [],
+        "affected_tests": [],
+        "affected_functions": 0
+      },
+      "elapsed_ms": 4021.4170830000003
+    },
+    "importers": {
+      "success": true,
+      "data": {
+        "module": "fetch_historical_data",
+        "importers": [],
+        "count": 0
+      },
+      "elapsed_ms": 149.058209
+    }
+  },
+  "summary": {
+    "direct_caller_count": 0,
+    "transitive_caller_count": 0,
+    "importer_count": 0,
+    "affected_test_count": 0
+  },
+  "total_elapsed_ms": 8182.220582999999
+}

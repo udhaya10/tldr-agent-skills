@@ -1,0 +1,21 @@
+{
+  "wrapper": "whatbreaks",
+  "path": "backend",
+  "target": "no_such_function_anywhere",
+  "target_type": "function",
+  "detection_reason": "Target 'no_such_function_anywhere' does not match file or module patterns (defaulting to function)",
+  "sub_results": {
+    "impact": {
+      "success": false,
+      "error": "Function not found: no_such_function_anywhere",
+      "elapsed_ms": 131.834167
+    }
+  },
+  "summary": {
+    "direct_caller_count": 0,
+    "transitive_caller_count": 0,
+    "importer_count": 0,
+    "affected_test_count": 0
+  },
+  "total_elapsed_ms": 4162.652583
+}

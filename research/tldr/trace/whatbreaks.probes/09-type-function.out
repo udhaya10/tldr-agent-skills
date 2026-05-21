@@ -1,0 +1,21 @@
+{
+  "wrapper": "whatbreaks",
+  "path": "backend",
+  "target": "backend/providers/base.py",
+  "target_type": "function",
+  "detection_reason": "Forced via --type flag to Function",
+  "sub_results": {
+    "impact": {
+      "success": false,
+      "error": "Function not found: backend/providers/base.py",
+      "elapsed_ms": 132.21712499999998
+    }
+  },
+  "summary": {
+    "direct_caller_count": 0,
+    "transitive_caller_count": 0,
+    "importer_count": 0,
+    "affected_test_count": 0
+  },
+  "total_elapsed_ms": 4149.356375
+}

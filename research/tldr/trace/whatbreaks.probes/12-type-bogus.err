@@ -1,0 +1,5 @@
+error: invalid value 'widget' for '--type <TARGET_TYPE>'
+  [possible values: function, file, module]
+
+For more information, try '--help'.
+exit=2

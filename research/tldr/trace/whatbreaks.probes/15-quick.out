@@ -1,0 +1,48 @@
+{
+  "wrapper": "whatbreaks",
+  "path": "backend",
+  "target": "backend/providers/base.py",
+  "target_type": "file",
+  "detection_reason": "Path 'backend/providers/base.py' contains path separator",
+  "sub_results": {
+    "change-impact": {
+      "success": true,
+      "warnings": [
+        "Skipped due to --quick flag"
+      ],
+      "elapsed_ms": 0.0
+    },
+    "importers": {
+      "success": true,
+      "data": {
+        "module": "backend.providers.base",
+        "importers": [
+          {
+            "file": "backend/providers/__init__.py",
+            "line": 14,
+            "import_statement": "from backend.providers.base import ("
+          },
+          {
+            "file": "backend/providers/dhan.py",
+            "line": 14,
+            "import_statement": "from backend.providers.base import Provider"
+          },
+          {
+            "file": "backend/providers/yahoo.py",
+            "line": 15,
+            "import_statement": "from backend.providers.base import Provider"
+          }
+        ],
+        "count": 3
+      },
+      "elapsed_ms": 151.548417
+    }
+  },
+  "summary": {
+    "direct_caller_count": 0,
+    "transitive_caller_count": 0,
+    "importer_count": 3,
+    "affected_test_count": 0
+  },
+  "total_elapsed_ms": 4183.744875
+}

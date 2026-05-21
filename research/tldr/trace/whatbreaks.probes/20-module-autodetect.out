@@ -1,0 +1,21 @@
+{
+  "wrapper": "whatbreaks",
+  "path": "backend",
+  "target": "backend.providers.base",
+  "target_type": "function",
+  "detection_reason": "Target 'backend.providers.base' contains '.' but first part 'backend' is not a directory (qualified function name)",
+  "sub_results": {
+    "impact": {
+      "success": false,
+      "error": "Function not found: backend.providers.base",
+      "elapsed_ms": 130.875708
+    }
+  },
+  "summary": {
+    "direct_caller_count": 0,
+    "transitive_caller_count": 0,
+    "importer_count": 0,
+    "affected_test_count": 0
+  },
+  "total_elapsed_ms": 4163.6909590000005
+}

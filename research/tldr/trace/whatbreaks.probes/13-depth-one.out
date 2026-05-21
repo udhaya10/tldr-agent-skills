@@ -1,0 +1,113 @@
+{
+  "wrapper": "whatbreaks",
+  "path": "backend",
+  "target": "fetch_historical_data",
+  "target_type": "function",
+  "detection_reason": "Target 'fetch_historical_data' does not match file or module patterns (defaulting to function)",
+  "sub_results": {
+    "impact": {
+      "success": true,
+      "data": {
+        "targets": 3,
+        "direct_callers": 7,
+        "transitive_callers": 10,
+        "affected_test_count": 0,
+        "report": {
+          "targets": {
+            "backend/providers/yahoo.py:fetch_historical_data": {
+              "function": "fetch_historical_data",
+              "file": "backend/providers/yahoo.py",
+              "caller_count": 2,
+              "callers": [
+                {
+                  "function": "fetch_and_store_ticker_data",
+                  "file": "backend/market_data.py",
+                  "caller_count": 0,
+                  "callers": [],
+                  "truncated": false,
+                  "note": "Discovered via references at line 212 (call graph missing edge)"
+                },
+                {
+                  "function": "fetch_and_store_dhan_historical",
+                  "file": "backend/dhan_historical.py",
+                  "caller_count": 0,
+                  "callers": [],
+                  "truncated": false,
+                  "note": "Discovered via references at line 93 (call graph missing edge)"
+                }
+              ],
+              "truncated": false,
+              "note": "Defined in this file but no resolved callers in call graph (FuncIndex alias collision suppressed cross-file resolution)"
+            },
+            "providers/dhan.py:DhanProvider.fetch_historical_data": {
+              "function": "DhanProvider.fetch_historical_data",
+              "file": "providers/dhan.py",
+              "caller_count": 3,
+              "callers": [
+                {
+                  "function": "fetch_and_store_dhan_historical",
+                  "file": "dhan_historical.py",
+                  "caller_count": 2,
+                  "callers": [],
+                  "truncated": true,
+                  "note": "Truncated at depth limit (2 callers)"
+                },
+                {
+                  "function": "_fetch_one",
+                  "file": "market_data.py",
+                  "caller_count": 1,
+                  "callers": [],
+                  "truncated": true,
+                  "note": "Truncated at depth limit (1 callers)"
+                },
+                {
+                  "function": "fetch_and_store_ticker_data",
+                  "file": "backend/market_data.py",
+                  "caller_count": 0,
+                  "callers": [],
+                  "truncated": false,
+                  "note": "Discovered via references at line 212 (call graph missing edge)"
+                }
+              ],
+              "truncated": false
+            },
+            "backend/providers/base.py:fetch_historical_data": {
+              "function": "fetch_historical_data",
+              "file": "backend/providers/base.py",
+              "caller_count": 2,
+              "callers": [
+                {
+                  "function": "fetch_and_store_ticker_data",
+                  "file": "backend/market_data.py",
+                  "caller_count": 0,
+                  "callers": [],
+                  "truncated": false,
+                  "note": "Discovered via references at line 212 (call graph missing edge)"
+                },
+                {
+                  "function": "fetch_and_store_dhan_historical",
+                  "file": "backend/dhan_historical.py",
+                  "caller_count": 0,
+                  "callers": [],
+                  "truncated": false,
+                  "note": "Discovered via references at line 93 (call graph missing edge)"
+                }
+              ],
+              "truncated": false,
+              "note": "Defined in this file but no resolved callers in call graph (FuncIndex alias collision suppressed cross-file resolution)"
+            }
+          },
+          "total_targets": 3
+        }
+      },
+      "elapsed_ms": 304.295333
+    }
+  },
+  "summary": {
+    "direct_caller_count": 7,
+    "transitive_caller_count": 10,
+    "importer_count": 0,
+    "affected_test_count": 0
+  },
+  "total_elapsed_ms": 4351.514125
+}

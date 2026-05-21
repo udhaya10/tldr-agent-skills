@@ -1,0 +1,499 @@
+{
+  "summary": {
+    "total_files": 56,
+    "total_lines": 45406,
+    "code_lines": 21438,
+    "comment_lines": 18438,
+    "blank_lines": 5530,
+    "code_percent": 47.21402457824957,
+    "comment_percent": 40.606968242082544,
+    "blank_percent": 12.179007179667884
+  },
+  "by_language": {
+    "python": {
+      "language": "python",
+      "files": 56,
+      "code_lines": 21438,
+      "comment_lines": 18438,
+      "blank_lines": 5530,
+      "total_lines": 45406
+    }
+  },
+  "by_file": [
+    {
+      "path": "amfi_portfolios.py",
+      "language": "python",
+      "code_lines": 5461,
+      "comment_lines": 1732,
+      "blank_lines": 1088,
+      "total_lines": 8281
+    },
+    {
+      "path": "nse_indas_financials.py",
+      "language": "python",
+      "code_lines": 34,
+      "comment_lines": 0,
+      "blank_lines": 12,
+      "total_lines": 46
+    },
+    {
+      "path": "db.py",
+      "language": "python",
+      "code_lines": 94,
+      "comment_lines": 49,
+      "blank_lines": 27,
+      "total_lines": 170
+    },
+    {
+      "path": "dhan_historical.py",
+      "language": "python",
+      "code_lines": 143,
+      "comment_lines": 111,
+      "blank_lines": 47,
+      "total_lines": 301
+    },
+    {
+      "path": "config.py",
+      "language": "python",
+      "code_lines": 20,
+      "comment_lines": 4,
+      "blank_lines": 8,
+      "total_lines": 32
+    },
+    {
+      "path": "importer.py",
+      "language": "python",
+      "code_lines": 216,
+      "comment_lines": 132,
+      "blank_lines": 60,
+      "total_lines": 408
+    },
+    {
+      "path": "classification.py",
+      "language": "python",
+      "code_lines": 158,
+      "comment_lines": 159,
+      "blank_lines": 45,
+      "total_lines": 362
+    },
+    {
+      "path": "test_watchlist_formulas_earn.py",
+      "language": "python",
+      "code_lines": 95,
+      "comment_lines": 7,
+      "blank_lines": 19,
+      "total_lines": 121
+    },
+    {
+      "path": "rankings.py",
+      "language": "python",
+      "code_lines": 337,
+      "comment_lines": 689,
+      "blank_lines": 154,
+      "total_lines": 1180
+    },
+    {
+      "path": "providers/dhan.py",
+      "language": "python",
+      "code_lines": 59,
+      "comment_lines": 136,
+      "blank_lines": 35,
+      "total_lines": 230
+    },
+    {
+      "path": "providers/yahoo.py",
+      "language": "python",
+      "code_lines": 146,
+      "comment_lines": 46,
+      "blank_lines": 47,
+      "total_lines": 239
+    },
+    {
+      "path": "providers/__init__.py",
+      "language": "python",
+      "code_lines": 21,
+      "comment_lines": 12,
+      "blank_lines": 8,
+      "total_lines": 41
+    },
+    {
+      "path": "providers/base.py",
+      "language": "python",
+      "code_lines": 48,
+      "comment_lines": 94,
+      "blank_lines": 37,
+      "total_lines": 179
+    },
+    {
+      "path": "nse_index_history.py",
+      "language": "python",
+      "code_lines": 536,
+      "comment_lines": 51,
+      "blank_lines": 112,
+      "total_lines": 699
+    },
+    {
+      "path": "screener.py",
+      "language": "python",
+      "code_lines": 1534,
+      "comment_lines": 4825,
+      "blank_lines": 318,
+      "total_lines": 6677
+    },
+    {
+      "path": "precomputed_indicators.py",
+      "language": "python",
+      "code_lines": 294,
+      "comment_lines": 373,
+      "blank_lines": 98,
+      "total_lines": 765
+    },
+    {
+      "path": "tc2000_formulas.py",
+      "language": "python",
+      "code_lines": 25,
+      "comment_lines": 889,
+      "blank_lines": 146,
+      "total_lines": 1060
+    },
+    {
+      "path": "nse_results.py",
+      "language": "python",
+      "code_lines": 1304,
+      "comment_lines": 710,
+      "blank_lines": 239,
+      "total_lines": 2253
+    },
+    {
+      "path": "__init__.py",
+      "language": "python",
+      "code_lines": 0,
+      "comment_lines": 1,
+      "blank_lines": 0,
+      "total_lines": 1
+    },
+    {
+      "path": "markets_overview.py",
+      "language": "python",
+      "code_lines": 304,
+      "comment_lines": 4,
+      "blank_lines": 31,
+      "total_lines": 339
+    },
+    {
+      "path": "updater.py",
+      "language": "python",
+      "code_lines": 474,
+      "comment_lines": 39,
+      "blank_lines": 73,
+      "total_lines": 586
+    },
+    {
+      "path": "api_status.py",
+      "language": "python",
+      "code_lines": 13,
+      "comment_lines": 32,
+      "blank_lines": 6,
+      "total_lines": 51
+    },
+    {
+      "path": "concalls.py",
+      "language": "python",
+      "code_lines": 388,
+      "comment_lines": 0,
+      "blank_lines": 93,
+      "total_lines": 481
+    },
+    {
+      "path": "financial_results_scheduler.py",
+      "language": "python",
+      "code_lines": 100,
+      "comment_lines": 0,
+      "blank_lines": 24,
+      "total_lines": 124
+    },
+    {
+      "path": "dhan_security_master_scheduler.py",
+      "language": "python",
+      "code_lines": 46,
+      "comment_lines": 31,
+      "blank_lines": 20,
+      "total_lines": 97
+    },
+    {
+      "path": "nse_results_scheduler.py",
+      "language": "python",
+      "code_lines": 115,
+      "comment_lines": 0,
+      "blank_lines": 28,
+      "total_lines": 143
+    },
+    {
+      "path": "api.py",
+      "language": "python",
+      "code_lines": 699,
+      "comment_lines": 1446,
+      "blank_lines": 291,
+      "total_lines": 2436
+    },
+    {
+      "path": "dhan_live.py",
+      "language": "python",
+      "code_lines": 146,
+      "comment_lines": 35,
+      "blank_lines": 43,
+      "total_lines": 224
+    },
+    {
+      "path": "rrg.py",
+      "language": "python",
+      "code_lines": 348,
+      "comment_lines": 532,
+      "blank_lines": 125,
+      "total_lines": 1005
+    },
+    {
+      "path": "youtube_panel.py",
+      "language": "python",
+      "code_lines": 821,
+      "comment_lines": 5,
+      "blank_lines": 172,
+      "total_lines": 998
+    },
+    {
+      "path": "nse_history.py",
+      "language": "python",
+      "code_lines": 137,
+      "comment_lines": 237,
+      "blank_lines": 70,
+      "total_lines": 444
+    },
+    {
+      "path": "nse_earnings.py",
+      "language": "python",
+      "code_lines": 930,
+      "comment_lines": 96,
+      "blank_lines": 208,
+      "total_lines": 1234
+    },
+    {
+      "path": "scripts/apply_classification_theme_workbook.py",
+      "language": "python",
+      "code_lines": 174,
+      "comment_lines": 10,
+      "blank_lines": 24,
+      "total_lines": 208
+    },
+    {
+      "path": "scripts/generate_avalon_indas_financials.py",
+      "language": "python",
+      "code_lines": 826,
+      "comment_lines": 0,
+      "blank_lines": 84,
+      "total_lines": 910
+    },
+    {
+      "path": "scripts/__init__.py",
+      "language": "python",
+      "code_lines": 0,
+      "comment_lines": 0,
+      "blank_lines": 1,
+      "total_lines": 1
+    },
+    {
+      "path": "scripts/generate_nse_only_financials.py",
+      "language": "python",
+      "code_lines": 1169,
+      "comment_lines": 0,
+      "blank_lines": 130,
+      "total_lines": 1299
+    },
+    {
+      "path": "market_data.py",
+      "language": "python",
+      "code_lines": 41,
+      "comment_lines": 194,
+      "blank_lines": 44,
+      "total_lines": 279
+    },
+    {
+      "path": "nse_listings.py",
+      "language": "python",
+      "code_lines": 550,
+      "comment_lines": 59,
+      "blank_lines": 111,
+      "total_lines": 720
+    },
+    {
+      "path": "notifications.py",
+      "language": "python",
+      "code_lines": 408,
+      "comment_lines": 80,
+      "blank_lines": 101,
+      "total_lines": 589
+    },
+    {
+      "path": "announcement_scheduler.py",
+      "language": "python",
+      "code_lines": 196,
+      "comment_lines": 0,
+      "blank_lines": 45,
+      "total_lines": 241
+    },
+    {
+      "path": "stage_analysis_panel.py",
+      "language": "python",
+      "code_lines": 73,
+      "comment_lines": 367,
+      "blank_lines": 76,
+      "total_lines": 516
+    },
+    {
+      "path": "overview_stock_cards.py",
+      "language": "python",
+      "code_lines": 234,
+      "comment_lines": 814,
+      "blank_lines": 104,
+      "total_lines": 1152
+    },
+    {
+      "path": "scheduler.py",
+      "language": "python",
+      "code_lines": 131,
+      "comment_lines": 9,
+      "blank_lines": 25,
+      "total_lines": 165
+    },
+    {
+      "path": "watchlist_formulas.py",
+      "language": "python",
+      "code_lines": 142,
+      "comment_lines": 2175,
+      "blank_lines": 355,
+      "total_lines": 2672
+    },
+    {
+      "path": "market_breadth.py",
+      "language": "python",
+      "code_lines": 437,
+      "comment_lines": 557,
+      "blank_lines": 130,
+      "total_lines": 1124
+    },
+    {
+      "path": "blocked_symbols.py",
+      "language": "python",
+      "code_lines": 89,
+      "comment_lines": 0,
+      "blank_lines": 20,
+      "total_lines": 109
+    },
+    {
+      "path": "nse_price_bands.py",
+      "language": "python",
+      "code_lines": 130,
+      "comment_lines": 15,
+      "blank_lines": 39,
+      "total_lines": 184
+    },
+    {
+      "path": "financial_results_sync.py",
+      "language": "python",
+      "code_lines": 242,
+      "comment_lines": 400,
+      "blank_lines": 67,
+      "total_lines": 709
+    },
+    {
+      "path": "symbol_mapper.py",
+      "language": "python",
+      "code_lines": 94,
+      "comment_lines": 134,
+      "blank_lines": 59,
+      "total_lines": 287
+    },
+    {
+      "path": "announcements.py",
+      "language": "python",
+      "code_lines": 590,
+      "comment_lines": 735,
+      "blank_lines": 160,
+      "total_lines": 1485
+    },
+    {
+      "path": "relative_strength.py",
+      "language": "python",
+      "code_lines": 84,
+      "comment_lines": 285,
+      "blank_lines": 65,
+      "total_lines": 434
+    },
+    {
+      "path": "dhan_client.py",
+      "language": "python",
+      "code_lines": 55,
+      "comment_lines": 23,
+      "blank_lines": 29,
+      "total_lines": 107
+    },
+    {
+      "path": "dhan_security_master.py",
+      "language": "python",
+      "code_lines": 132,
+      "comment_lines": 93,
+      "blank_lines": 51,
+      "total_lines": 276
+    },
+    {
+      "path": "stage_analysis.py",
+      "language": "python",
+      "code_lines": 388,
+      "comment_lines": 0,
+      "blank_lines": 73,
+      "total_lines": 461
+    },
+    {
+      "path": "test_tc2000_formulas.py",
+      "language": "python",
+      "code_lines": 92,
+      "comment_lines": 11,
+      "blank_lines": 17,
+      "total_lines": 120
+    },
+    {
+      "path": "rmv.py",
+      "language": "python",
+      "code_lines": 115,
+      "comment_lines": 0,
+      "blank_lines": 36,
+      "total_lines": 151
+    }
+  ],
+  "by_directory": [
+    {
+      "path": ".",
+      "code_lines": 18995,
+      "comment_lines": 18140,
+      "blank_lines": 5164,
+      "total_lines": 42299
+    },
+    {
+      "path": "scripts",
+      "code_lines": 2169,
+      "comment_lines": 10,
+      "blank_lines": 239,
+      "total_lines": 2418
+    },
+    {
+      "path": "providers",
+      "code_lines": 274,
+      "comment_lines": 288,
+      "blank_lines": 127,
+      "total_lines": 689
+    }
+  ],
+  "warnings": [],
+  "total_files": 56,
+  "total_lines": 45406,
+  "code_lines": 21438
+}

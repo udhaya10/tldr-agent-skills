@@ -1,0 +1,1 @@
+tldr loc . -l typescript

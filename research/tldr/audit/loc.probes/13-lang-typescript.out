@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "total_files": 627,
+    "total_lines": 156390,
+    "code_lines": 118664,
+    "comment_lines": 18486,
+    "blank_lines": 19240,
+    "code_percent": 75.87697423108895,
+    "comment_percent": 11.820448877805486,
+    "blank_percent": 12.30257689110557
+  },
+  "by_language": {
+    "typescript": {
+      "language": "typescript",
+      "files": 627,
+      "code_lines": 118664,
+      "comment_lines": 18486,
+      "blank_lines": 19240,
+      "total_lines": 156390
+    }
+  },
+  "warnings": [],
+  "total_files": 627,
+  "total_lines": 156390,
+  "code_lines": 118664
+}

@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_files": 4,
+    "total_lines": 689,
+    "code_lines": 274,
+    "comment_lines": 288,
+    "blank_lines": 127,
+    "code_percent": 39.7677793904209,
+    "comment_percent": 41.79970972423803,
+    "blank_percent": 18.432510885341074
+  },
+  "by_language": {
+    "python": {
+      "language": "python",
+      "files": 4,
+      "code_lines": 274,
+      "comment_lines": 288,
+      "blank_lines": 127,
+      "total_lines": 689
+    }
+  },
+  "by_file": [
+    {
+      "path": "dhan.py",
+      "language": "python",
+      "code_lines": 59,
+      "comment_lines": 136,
+      "blank_lines": 35,
+      "total_lines": 230
+    },
+    {
+      "path": "yahoo.py",
+      "language": "python",
+      "code_lines": 146,
+      "comment_lines": 46,
+      "blank_lines": 47,
+      "total_lines": 239
+    },
+    {
+      "path": "__init__.py",
+      "language": "python",
+      "code_lines": 21,
+      "comment_lines": 12,
+      "blank_lines": 8,
+      "total_lines": 41
+    },
+    {
+      "path": "base.py",
+      "language": "python",
+      "code_lines": 48,
+      "comment_lines": 94,
+      "blank_lines": 37,
+      "total_lines": 179
+    }
+  ],
+  "warnings": [],
+  "total_files": 4,
+  "total_lines": 689,
+  "code_lines": 274
+}

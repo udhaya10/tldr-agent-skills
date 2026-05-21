@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "total_files": 1,
+    "total_lines": 8281,
+    "code_lines": 5461,
+    "comment_lines": 1732,
+    "blank_lines": 1088,
+    "code_percent": 65.9461417703176,
+    "comment_percent": 20.91534838787586,
+    "blank_percent": 13.138509841806545
+  },
+  "by_language": {
+    "python": {
+      "language": "python",
+      "files": 1,
+      "code_lines": 5461,
+      "comment_lines": 1732,
+      "blank_lines": 1088,
+      "total_lines": 8281
+    }
+  },
+  "warnings": [
+    "Stopped after 1 files (max_files limit)"
+  ],
+  "total_files": 1,
+  "total_lines": 8281,
+  "code_lines": 5461
+}

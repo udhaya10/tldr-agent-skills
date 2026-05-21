@@ -1,0 +1,100 @@
+{
+  "classes": [
+    {
+      "class_name": "DhanProvider",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "line": 17,
+      "lcom4": 3,
+      "method_count": 7,
+      "field_count": 2,
+      "verdict": "split_candidate",
+      "split_suggestion": "Consider splitting DhanProvider into 3 classes: [_get_client, _load_mappings, fetch_historical_data, fetch_intraday_chart, fetch_metadata] + [fetch_market_cap] + [fetch_quotes]",
+      "components": [
+        {
+          "methods": [
+            "_get_client",
+            "_load_mappings",
+            "fetch_historical_data",
+            "fetch_intraday_chart",
+            "fetch_metadata"
+          ],
+          "fields": [
+            "_client",
+            "_mappings"
+          ]
+        },
+        {
+          "methods": [
+            "fetch_market_cap"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_quotes"
+          ],
+          "fields": []
+        }
+      ]
+    },
+    {
+      "class_name": "YahooProvider",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "line": 28,
+      "lcom4": 5,
+      "method_count": 5,
+      "field_count": 0,
+      "verdict": "split_candidate",
+      "split_suggestion": "Consider splitting YahooProvider into 5 classes: [fetch_historical_data] + [fetch_intraday_chart] + [fetch_market_cap] + [fetch_metadata] + [fetch_quotes]",
+      "components": [
+        {
+          "methods": [
+            "fetch_historical_data"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_intraday_chart"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_market_cap"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_metadata"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_quotes"
+          ],
+          "fields": []
+        }
+      ]
+    },
+    {
+      "class_name": "Provider",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "line": 155,
+      "lcom4": 0,
+      "method_count": 0,
+      "field_count": 0,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": []
+    }
+  ],
+  "summary": {
+    "total_classes": 3,
+    "cohesive": 1,
+    "split_candidates": 2,
+    "avg_lcom4": 2.67
+  }
+}

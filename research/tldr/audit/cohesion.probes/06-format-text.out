@@ -1,0 +1,18 @@
+Cohesion Analysis (LCOM4) (3 classes, 2 split candidates)
+
+ LCOM4  Methods  Fields  Class                         File
+     5        5       0  YahooProvider                 yahoo.py:28
+     |--  Component 1: fetch_historical_data
+     |--  Component 2: fetch_intraday_chart
+     |--  Component 3: fetch_market_cap
+     |--  Component 4: fetch_metadata
+     |--  Component 5: fetch_quotes
+     `--  Suggestion: Consider splitting YahooProvider into 5 classes: [fetch_historical_data] + [fetch_intraday_chart] + [fetch_market_cap] + [fetch_metadata] + [fetch_quotes]
+     3        7       2  DhanProvider                  dhan.py:17
+     |--  Component 1: _get_client, _load_mappings, fetch_historical_data, fetch_intraday_chart, fetch_metadata [_client, _mappings]
+     |--  Component 2: fetch_market_cap
+     |--  Component 3: fetch_quotes
+     `--  Suggestion: Consider splitting DhanProvider into 3 classes: [_get_client, _load_mappings, fetch_historical_data, fetch_intraday_chart, fetch_metadata] + [fetch_market_cap] + [fetch_quotes]
+
+Summary: 3 classes, 2 split candidates (66.7%), avg LCOM4: 2.67
+

@@ -1,0 +1,21 @@
+{
+  "classes": [
+    {
+      "class_name": "Provider",
+      "file_path": "backend/providers/base.py",
+      "line": 155,
+      "lcom4": 0,
+      "method_count": 0,
+      "field_count": 0,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": []
+    }
+  ],
+  "summary": {
+    "total_classes": 1,
+    "cohesive": 1,
+    "split_candidates": 0,
+    "avg_lcom4": 0.0
+  }
+}

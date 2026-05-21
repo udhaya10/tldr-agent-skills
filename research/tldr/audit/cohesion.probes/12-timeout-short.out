@@ -1,0 +1,347 @@
+{
+  "classes": [
+    {
+      "class_name": "DhanProvider",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "line": 17,
+      "lcom4": 3,
+      "method_count": 7,
+      "field_count": 2,
+      "verdict": "split_candidate",
+      "split_suggestion": "Consider splitting DhanProvider into 3 classes: [_get_client, _load_mappings, fetch_historical_data, fetch_intraday_chart, fetch_metadata] + [fetch_market_cap] + [fetch_quotes]",
+      "components": [
+        {
+          "methods": [
+            "_get_client",
+            "_load_mappings",
+            "fetch_historical_data",
+            "fetch_intraday_chart",
+            "fetch_metadata"
+          ],
+          "fields": [
+            "_client",
+            "_mappings"
+          ]
+        },
+        {
+          "methods": [
+            "fetch_market_cap"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_quotes"
+          ],
+          "fields": []
+        }
+      ]
+    },
+    {
+      "class_name": "YahooProvider",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "line": 28,
+      "lcom4": 5,
+      "method_count": 5,
+      "field_count": 0,
+      "verdict": "split_candidate",
+      "split_suggestion": "Consider splitting YahooProvider into 5 classes: [fetch_historical_data] + [fetch_intraday_chart] + [fetch_market_cap] + [fetch_metadata] + [fetch_quotes]",
+      "components": [
+        {
+          "methods": [
+            "fetch_historical_data"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_intraday_chart"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_market_cap"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_metadata"
+          ],
+          "fields": []
+        },
+        {
+          "methods": [
+            "fetch_quotes"
+          ],
+          "fields": []
+        }
+      ]
+    },
+    {
+      "class_name": "Provider",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "line": 155,
+      "lcom4": 0,
+      "method_count": 0,
+      "field_count": 0,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": []
+    },
+    {
+      "class_name": "TcParser",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/tc2000_formulas.py",
+      "line": 202,
+      "lcom4": 1,
+      "method_count": 14,
+      "field_count": 2,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "advance",
+            "current",
+            "expect",
+            "match",
+            "parse",
+            "parse_additive_expression",
+            "parse_and_expression",
+            "parse_comparison_expression",
+            "parse_multiplicative_expression",
+            "parse_or_expression",
+            "parse_postfix_expression",
+            "parse_power_expression",
+            "parse_primary_expression",
+            "parse_unary_expression"
+          ],
+          "fields": [
+            "index",
+            "tokens"
+          ]
+        }
+      ]
+    },
+    {
+      "class_name": "DhanLivePoller",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/dhan_live.py",
+      "line": 51,
+      "lcom4": 1,
+      "method_count": 6,
+      "field_count": 3,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "_fetch_and_store_today",
+            "_flush_batch",
+            "_load_symbols",
+            "_run",
+            "start",
+            "stop"
+          ],
+          "fields": [
+            "_running",
+            "_thread",
+            "db_path"
+          ]
+        }
+      ]
+    },
+    {
+      "class_name": "IndasSampleBuilder",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/scripts/generate_avalon_indas_financials.py",
+      "line": 459,
+      "lcom4": 1,
+      "method_count": 17,
+      "field_count": 4,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "add_growth_rows",
+            "annual_report_balance_overrides",
+            "build",
+            "build_payload_for_basis",
+            "build_sources",
+            "build_statement_rows",
+            "cash_value",
+            "duration_value",
+            "extract_balance_raw",
+            "extract_cash_raw",
+            "extract_pnl_raw",
+            "integrated_sources",
+            "money_duration",
+            "money_instant",
+            "sum_money_duration",
+            "sum_money_instant",
+            "ytd_money_duration"
+          ],
+          "fields": [
+            "annual_report_balance_cache",
+            "base_symbol",
+            "extractor",
+            "stock_info"
+          ]
+        }
+      ]
+    },
+    {
+      "class_name": "NseFinancialExtractor",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/scripts/generate_nse_only_financials.py",
+      "line": 300,
+      "lcom4": 1,
+      "method_count": 34,
+      "field_count": 7,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "annual_context_score",
+            "bse_absolute_url",
+            "build_compact_rows",
+            "build_payload",
+            "build_periods",
+            "build_pnl_rows",
+            "build_sources",
+            "build_stock_payloads",
+            "derive_balance_raw",
+            "derive_cash_raw",
+            "derive_cash_raw_from_bse_pdf",
+            "derive_pnl_raw",
+            "derive_pnl_raw_from_bse_result",
+            "detect_index",
+            "duration_days",
+            "empty_rows",
+            "extract_cash_values_from_text",
+            "extract_last_two_numbers",
+            "fetch_binary",
+            "fetch_html",
+            "fetch_json",
+            "fetch_xbrl",
+            "instant_context_score",
+            "merge_raw_values",
+            "null_values",
+            "parse_bse_period_label",
+            "parse_bse_result_values",
+            "pick_annual_sources",
+            "pick_bse_result_sources",
+            "pick_quarter_sources",
+            "quarter_context_score",
+            "scale_result_value",
+            "select_duration_value",
+            "select_instant_value"
+          ],
+          "fields": [
+            "binary_cache",
+            "bse_cash_pdf_cache",
+            "bse_result_value_cache",
+            "html_cache",
+            "json_cache",
+            "session",
+            "xbrl_cache"
+          ]
+        }
+      ]
+    },
+    {
+      "class_name": "FormulaParser",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/watchlist_formulas.py",
+      "line": 374,
+      "lcom4": 1,
+      "method_count": 13,
+      "field_count": 2,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "advance",
+            "current",
+            "expect",
+            "match",
+            "parse",
+            "parse_additive_expression",
+            "parse_and_expression",
+            "parse_comparison_expression",
+            "parse_multiplicative_expression",
+            "parse_or_expression",
+            "parse_power_expression",
+            "parse_primary_expression",
+            "parse_unary_expression"
+          ],
+          "fields": [
+            "index",
+            "tokens"
+          ]
+        }
+      ]
+    },
+    {
+      "class_name": "SymbolMapper",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/symbol_mapper.py",
+      "line": 32,
+      "lcom4": 1,
+      "method_count": 9,
+      "field_count": 2,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "_get_connection",
+            "clear_cache",
+            "get_all_mapped_symbols",
+            "get_dhan_security_id",
+            "get_unmapped_symbols",
+            "get_yahoo_symbol",
+            "map_batch",
+            "validate_mapping",
+            "validate_watchlist"
+          ],
+          "fields": [
+            "_mapping_cache",
+            "db_path"
+          ]
+        }
+      ]
+    },
+    {
+      "class_name": "SecurityMaster",
+      "file_path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/dhan_security_master.py",
+      "line": 33,
+      "lcom4": 1,
+      "method_count": 7,
+      "field_count": 1,
+      "verdict": "cohesive",
+      "split_suggestion": null,
+      "components": [
+        {
+          "methods": [
+            "cache_security_master",
+            "download_security_master",
+            "get_security_id_by_symbol",
+            "get_statistics",
+            "get_symbol_by_security_id",
+            "get_unmapped_symbols",
+            "refresh_security_master"
+          ],
+          "fields": [
+            "db_path"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_classes": 10,
+    "cohesive": 8,
+    "split_candidates": 2,
+    "avg_lcom4": 1.5
+  }
+}

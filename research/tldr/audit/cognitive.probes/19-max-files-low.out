@@ -1,0 +1,89 @@
+{
+  "functions": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "cognitive": 12,
+      "max_nesting": 3,
+      "nesting_penalty": 3,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "line": 49,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 3,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/dhan.py",
+      "line": 219,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "_load_mappings",
+      "file": "backend/providers/dhan.py",
+      "line": 31,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "_get_client",
+      "file": "backend/providers/dhan.py",
+      "line": 25,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/dhan.py",
+      "line": 215,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/dhan.py",
+      "line": 207,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/dhan.py",
+      "line": 20,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    }
+  ],
+  "violations": [],
+  "summary": {
+    "total_functions": 8,
+    "total_cognitive": 24,
+    "avg_cognitive": 3.0,
+    "max_cognitive": 12,
+    "violations_count": 0,
+    "severe_violations_count": 0,
+    "compliance_rate": 100.0
+  },
+  "warnings": [
+    "Stopped after 1 files (max_files limit)"
+  ]
+}

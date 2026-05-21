@@ -1,0 +1,77 @@
+{
+  "functions": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "line": 87,
+      "cognitive": 14,
+      "max_nesting": 2,
+      "nesting_penalty": 7,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 190,
+      "cognitive": 9,
+      "max_nesting": 2,
+      "nesting_penalty": 3,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 149,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 4,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 5,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 218,
+      "cognitive": 5,
+      "max_nesting": 2,
+      "nesting_penalty": 1,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "_to_finite_float",
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "cognitive": 3,
+      "max_nesting": 2,
+      "nesting_penalty": 1,
+      "threshold_status": "ok"
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/yahoo.py",
+      "line": 35,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "ok"
+    }
+  ],
+  "violations": [],
+  "summary": {
+    "total_functions": 7,
+    "total_cognitive": 49,
+    "avg_cognitive": 7.0,
+    "max_cognitive": 14,
+    "violations_count": 0,
+    "severe_violations_count": 0,
+    "compliance_rate": 100.0
+  }
+}

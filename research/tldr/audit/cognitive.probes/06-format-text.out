@@ -1,0 +1,29 @@
+Cognitive Complexity (23 functions, 0 violations)
+
+   #  Score  Nest  Status     Function                      File
+   1     14     2  ok         fetch_intraday_chart          yahoo.py:87
+   2     12     3  ok         fetch_intraday_chart          dhan.py:126
+   3      9     3  ok         fetch_historical_data         dhan.py:49
+   4      9     2  ok         fetch_market_cap              yahoo.py:190
+   5      9     3  ok         fetch_quotes                  yahoo.py:149
+   6      9     3  ok         fetch_historical_data         yahoo.py:38
+   7      5     2  ok         fetch_metadata                yahoo.py:218
+   8      3     2  ok         _to_finite_float              yahoo.py:18
+   9      1     1  ok         fetch_metadata                dhan.py:219
+  10      1     1  ok         _load_mappings                dhan.py:31
+  11      1     1  ok         _get_client                   dhan.py:25
+  12      1     1  ok         get_yahoo_provider            __init__.py:26
+  13      0     0  ok         fetch_market_cap              dhan.py:215
+  14      0     0  ok         fetch_quotes                  dhan.py:207
+  15      0     0  ok         __init__                      dhan.py:20
+  16      0     0  ok         __init__                      yahoo.py:35
+  17      0     0  ok         __repr__                      base.py:178
+  18      0     0  ok         __init__                      base.py:169
+  19      0     0  ok         fetch_metadata                base.py:133
+  20      0     0  ok         fetch_market_cap              base.py:117
+  21      0     0  ok         fetch_quotes                  base.py:81
+  22      0     0  ok         fetch_intraday_chart          base.py:50
+  23      0     0  ok         fetch_historical_data         base.py:19
+
+Summary: avg=3.2, max=14, compliance=100.0%
+

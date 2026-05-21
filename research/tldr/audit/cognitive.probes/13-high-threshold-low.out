@@ -1,0 +1,306 @@
+{
+  "functions": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "line": 87,
+      "cognitive": 14,
+      "max_nesting": 2,
+      "nesting_penalty": 7,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "cognitive": 12,
+      "max_nesting": 3,
+      "nesting_penalty": 3,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "line": 49,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 3,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 190,
+      "cognitive": 9,
+      "max_nesting": 2,
+      "nesting_penalty": 3,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 149,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 4,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 5,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 218,
+      "cognitive": 5,
+      "max_nesting": 2,
+      "nesting_penalty": 1,
+      "threshold_status": "severe"
+    },
+    {
+      "name": "_to_finite_float",
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "cognitive": 3,
+      "max_nesting": 2,
+      "nesting_penalty": 1,
+      "threshold_status": "violation"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/dhan.py",
+      "line": 219,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "violation"
+    },
+    {
+      "name": "_load_mappings",
+      "file": "backend/providers/dhan.py",
+      "line": 31,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "violation"
+    },
+    {
+      "name": "_get_client",
+      "file": "backend/providers/dhan.py",
+      "line": 25,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "violation"
+    },
+    {
+      "name": "get_yahoo_provider",
+      "file": "backend/providers/__init__.py",
+      "line": 26,
+      "cognitive": 1,
+      "max_nesting": 1,
+      "nesting_penalty": 0,
+      "threshold_status": "violation"
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/dhan.py",
+      "line": 215,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/dhan.py",
+      "line": 207,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/dhan.py",
+      "line": 20,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/yahoo.py",
+      "line": 35,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "__repr__",
+      "file": "backend/providers/base.py",
+      "line": 178,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/base.py",
+      "line": 169,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/base.py",
+      "line": 133,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/base.py",
+      "line": 117,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/base.py",
+      "line": 81,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/base.py",
+      "line": 50,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/base.py",
+      "line": 19,
+      "cognitive": 0,
+      "max_nesting": 0,
+      "nesting_penalty": 0,
+      "threshold_status": "warning"
+    }
+  ],
+  "violations": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "line": 87,
+      "cognitive": 14,
+      "severity": "severe"
+    },
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "cognitive": 12,
+      "severity": "severe"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "line": 49,
+      "cognitive": 9,
+      "severity": "severe"
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 190,
+      "cognitive": 9,
+      "severity": "severe"
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 149,
+      "cognitive": 9,
+      "severity": "severe"
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "cognitive": 9,
+      "severity": "severe"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 218,
+      "cognitive": 5,
+      "severity": "severe"
+    },
+    {
+      "name": "_to_finite_float",
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "cognitive": 3,
+      "severity": "violation"
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/dhan.py",
+      "line": 219,
+      "cognitive": 1,
+      "severity": "violation"
+    },
+    {
+      "name": "_load_mappings",
+      "file": "backend/providers/dhan.py",
+      "line": 31,
+      "cognitive": 1,
+      "severity": "violation"
+    },
+    {
+      "name": "_get_client",
+      "file": "backend/providers/dhan.py",
+      "line": 25,
+      "cognitive": 1,
+      "severity": "violation"
+    },
+    {
+      "name": "get_yahoo_provider",
+      "file": "backend/providers/__init__.py",
+      "line": 26,
+      "cognitive": 1,
+      "severity": "violation"
+    }
+  ],
+  "summary": {
+    "total_functions": 23,
+    "total_cognitive": 74,
+    "avg_cognitive": 3.217391304347826,
+    "max_cognitive": 14,
+    "violations_count": 12,
+    "severe_violations_count": 7,
+    "compliance_rate": 47.82608695652174
+  }
+}

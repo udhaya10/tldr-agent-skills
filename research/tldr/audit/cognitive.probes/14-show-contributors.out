@@ -1,0 +1,53 @@
+{
+  "functions": [
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "cognitive": 9,
+      "max_nesting": 3,
+      "nesting_penalty": 5,
+      "threshold_status": "ok",
+      "contributors": [
+        {
+          "line": 60,
+          "construct": "if",
+          "base_increment": 1,
+          "nesting_increment": 1,
+          "nesting_level": 2
+        },
+        {
+          "line": 64,
+          "construct": "if",
+          "base_increment": 1,
+          "nesting_increment": 1,
+          "nesting_level": 2
+        },
+        {
+          "line": 68,
+          "construct": "if",
+          "base_increment": 1,
+          "nesting_increment": 2,
+          "nesting_level": 3
+        },
+        {
+          "line": 83,
+          "construct": "catch",
+          "base_increment": 1,
+          "nesting_increment": 1,
+          "nesting_level": 2
+        }
+      ]
+    }
+  ],
+  "violations": [],
+  "summary": {
+    "total_functions": 1,
+    "total_cognitive": 9,
+    "avg_cognitive": 9.0,
+    "max_cognitive": 9,
+    "violations_count": 0,
+    "severe_violations_count": 0,
+    "compliance_rate": 100.0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "functions": [],
+  "violations": [],
+  "summary": {
+    "total_functions": 0,
+    "total_cognitive": 0,
+    "avg_cognitive": 0.0,
+    "max_cognitive": 0,
+    "violations_count": 0,
+    "severe_violations_count": 0,
+    "compliance_rate": 0.0
+  },
+  "warnings": [
+    "No supported source files found in backend/providers"
+  ]
+}

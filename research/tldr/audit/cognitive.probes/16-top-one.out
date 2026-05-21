@@ -1,0 +1,23 @@
+{
+  "functions": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "line": 87,
+      "cognitive": 14,
+      "max_nesting": 2,
+      "nesting_penalty": 7,
+      "threshold_status": "warning"
+    }
+  ],
+  "violations": [],
+  "summary": {
+    "total_functions": 1,
+    "total_cognitive": 14,
+    "avg_cognitive": 14.0,
+    "max_cognitive": 14,
+    "violations_count": 0,
+    "severe_violations_count": 0,
+    "compliance_rate": 100.0
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "function": "fetch_historical_data",
+  "file": "backend/providers/yahoo.py",
+  "line_start": 38,
+  "line_end": 85,
+  "line": 38,
+  "language": "python",
+  "signature": {
+    "params": [
+      {
+        "name": "symbol",
+        "type": "str"
+      },
+      {
+        "name": "start_date",
+        "type": "date"
+      },
+      {
+        "name": "end_date",
+        "type": "date"
+      }
+    ],
+    "return_type": "pd.DataFrame",
+    "decorators": [],
+    "is_async": false,
+    "docstring": "Fetch historical daily OHLCV data from Yahoo Finance.\n\n        Matches existing behavior from market_data.py:\n        - Uses auto_adjust=False (unadjusted prices)\n        - Returns UTC-normalized timestamps"
+  },
+  "purity": {
+    "classification": "impure",
+    "effects": [
+      "attribute_write",
+      "io"
+    ],
+    "confidence": "high"
+  },
+  "complexity": {
+    "cyclomatic": 5,
+    "num_blocks": 6,
+    "num_edges": 8,
+    "has_loops": true
+  },
+  "callers": [
+    {
+      "name": "fetch_and_store_dhan_historical",
+      "file": "backend/dhan_historical.py",
+      "line": 93
+    },
+    {
+      "name": "_fetch_one",
+      "file": "backend/market_data.py",
+      "line": 212
+    },
+    {
+      "name": "fetch_and_store_ticker_data",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/market_data.py",
+      "line": 212
+    }
+  ],
+  "callees": [
+    {
+      "name": "yf.download",
+      "file": "<external>",
+      "line": 52
+    },
+    {
+      "name": "pd.DataFrame",
+      "file": "<external>",
+      "line": 61
+    },
+    {
+      "name": "pd.to_datetime",
+      "file": "<external>",
+      "line": 65
+    },
+    {
+      "name": "df.index.tz_localize",
+      "file": "<external>",
+      "line": 69
+    },
+    {
+      "name": "col.lower",
+      "file": "<external>",
+      "line": 74
+    },
+    {
+      "name": "print",
+      "file": "<external>",
+      "line": 84
+    }
+  ]
+}

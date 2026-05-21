@@ -1,0 +1,2 @@
+Error: symbol 'YahooProvider.no_such_method' not found in backend/providers/yahoo.py
+exit=20

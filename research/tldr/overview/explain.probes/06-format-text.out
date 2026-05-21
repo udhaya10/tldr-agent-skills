@@ -1,0 +1,31 @@
+Function: _to_finite_float
+File: backend/providers/yahoo.py
+Lines: 18-25
+Language: python
+
+Signature:
+  Parameters: 1
+    - value: Any
+  Returns: Optional[float]
+  Docstring: Convert value to finite float, return None if not finite.
+
+Purity:
+  Classification: unknown
+  Confidence: medium
+
+Complexity:
+  Cyclomatic: 3
+  Blocks: 3
+  Edges: 3
+  Has loops: false
+
+Callers (5):
+  - fetch_quotes (backend/providers/yahoo.py:169)
+  - fetch_market_cap (backend/providers/yahoo.py:201)
+  - fetch_metadata (backend/providers/yahoo.py:228)
+  - _compute_symbol_snapshot_rows (backend/precomputed_indicators.py:437)
+  - _aggregate_to_weekly_bars (backend/stage_analysis.py:91)
+
+Callees (2):
+  - float (<external>:21)
+  - math.isfinite (<external>:25)

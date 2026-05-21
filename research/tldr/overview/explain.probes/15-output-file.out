@@ -1,0 +1,141 @@
+{
+  "function": "_to_finite_float",
+  "file": "backend/providers/yahoo.py",
+  "line_start": 18,
+  "line_end": 25,
+  "line": 18,
+  "language": "python",
+  "signature": {
+    "params": [
+      {
+        "name": "value",
+        "type": "Any"
+      }
+    ],
+    "return_type": "Optional[float]",
+    "decorators": [],
+    "is_async": false,
+    "docstring": "Convert value to finite float, return None if not finite."
+  },
+  "purity": {
+    "classification": "unknown",
+    "effects": [],
+    "confidence": "medium"
+  },
+  "complexity": {
+    "cyclomatic": 3,
+    "num_blocks": 3,
+    "num_edges": 3,
+    "has_loops": false
+  },
+  "callers": [
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 169
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 201
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 228
+    },
+    {
+      "name": "_compute_symbol_snapshot_rows",
+      "file": "backend/precomputed_indicators.py",
+      "line": 437
+    },
+    {
+      "name": "_aggregate_to_weekly_bars",
+      "file": "backend/stage_analysis.py",
+      "line": 91
+    }
+  ],
+  "callees": [
+    {
+      "name": "float",
+      "file": "<external>",
+      "line": 21
+    },
+    {
+      "name": "math.isfinite",
+      "file": "<external>",
+      "line": 25
+    }
+  ]
+}
+--FILE--
+{
+  "function": "_to_finite_float",
+  "file": "backend/providers/yahoo.py",
+  "line_start": 18,
+  "line_end": 25,
+  "line": 18,
+  "language": "python",
+  "signature": {
+    "params": [
+      {
+        "name": "value",
+        "type": "Any"
+      }
+    ],
+    "return_type": "Optional[float]",
+    "decorators": [],
+    "is_async": false,
+    "docstring": "Convert value to finite float, return None if not finite."
+  },
+  "purity": {
+    "classification": "unknown",
+    "effects": [],
+    "confidence": "medium"
+  },
+  "complexity": {
+    "cyclomatic": 3,
+    "num_blocks": 3,
+    "num_edges": 3,
+    "has_loops": false
+  },
+  "callers": [
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 169
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 201
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 228
+    },
+    {
+      "name": "_compute_symbol_snapshot_rows",
+      "file": "backend/precomputed_indicators.py",
+      "line": 437
+    },
+    {
+      "name": "_aggregate_to_weekly_bars",
+      "file": "backend/stage_analysis.py",
+      "line": 91
+    }
+  ],
+  "callees": [
+    {
+      "name": "float",
+      "file": "<external>",
+      "line": 21
+    },
+    {
+      "name": "math.isfinite",
+      "file": "<external>",
+      "line": 25
+    }
+  ]
+}

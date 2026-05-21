@@ -1,0 +1,21 @@
+# Code Context: _to_finite_float (depth=3)
+
+## Summary
+- Entry point: `_to_finite_float`
+- Functions included: 1
+
+## Functions
+
+### _to_finite_float (precomputed_indicators.py:32)
+
+```
+def _to_finite_float(value) -> float | None
+```
+
+**Calls:** value
+
+**Complexity:** 13 blocks, cyclomatic=3
+
+---
+
+

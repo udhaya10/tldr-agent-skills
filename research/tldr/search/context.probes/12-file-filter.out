@@ -1,0 +1,5 @@
+{
+  "entry_point": "fetch_historical_data",
+  "depth": 3,
+  "functions": []
+}

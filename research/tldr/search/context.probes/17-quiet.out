@@ -1,0 +1,18 @@
+{
+  "entry_point": "_to_finite_float",
+  "depth": 3,
+  "functions": [
+    {
+      "name": "_to_finite_float",
+      "file": "providers/yahoo.py",
+      "line": 18,
+      "signature": "def _to_finite_float(value) -> Optional[float]",
+      "calls": [
+        "float",
+        "math.isfinite"
+      ],
+      "blocks": 8,
+      "cyclomatic": 3
+    }
+  ]
+}

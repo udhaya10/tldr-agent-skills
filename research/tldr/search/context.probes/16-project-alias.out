@@ -1,0 +1,17 @@
+{
+  "entry_point": "_to_finite_float",
+  "depth": 3,
+  "functions": [
+    {
+      "name": "_to_finite_float",
+      "file": "precomputed_indicators.py",
+      "line": 32,
+      "signature": "def _to_finite_float(value) -> float | None",
+      "calls": [
+        "value"
+      ],
+      "blocks": 13,
+      "cyclomatic": 3
+    }
+  ]
+}

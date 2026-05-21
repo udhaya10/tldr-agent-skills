@@ -1,0 +1,21 @@
+{
+  "entry_point": "fetch_historical_data",
+  "depth": 3,
+  "functions": [
+    {
+      "name": "YahooProvider.fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "signature": "function fetch_historical_data(self, symbol, start_date, end_date) -> pd.DataFrame",
+      "calls": [
+        "col.lower",
+        "df.index.tz_localize",
+        "pd.DataFrame",
+        "pd.to_datetime",
+        "print",
+        "yf.download"
+      ],
+      "blocks": 0
+    }
+  ]
+}

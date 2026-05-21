@@ -1,0 +1,44 @@
+{
+  "entry_point": "fetch_historical_data",
+  "depth": 1,
+  "functions": [
+    {
+      "name": "DhanProvider.fetch_historical_data",
+      "file": "providers/dhan.py",
+      "line": 49,
+      "signature": "def fetch_historical_data(self, symbol, start_date, end_date) -> pd.DataFrame",
+      "calls": [
+        "DhanProvider._get_client",
+        "DhanProvider._load_mappings"
+      ],
+      "blocks": 26,
+      "cyclomatic": 8
+    },
+    {
+      "name": "DhanProvider._load_mappings",
+      "file": "providers/dhan.py",
+      "line": 31,
+      "signature": "def _load_mappings(self) -> Dict[str, Tuple[int, str, str]]",
+      "calls": [
+        "conn.close",
+        "conn.cursor",
+        "cursor.execute",
+        "cursor.fetchall",
+        "open_sqlite_connection"
+      ],
+      "blocks": 12,
+      "cyclomatic": 2
+    },
+    {
+      "name": "DhanProvider._get_client",
+      "file": "providers/dhan.py",
+      "line": 25,
+      "signature": "def _get_client(self)",
+      "calls": [
+        "get_dhan_client"
+      ],
+      "blocks": 6,
+      "cyclomatic": 2
+    }
+  ]
+}

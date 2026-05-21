@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <ENTRY>
+
+Usage: tldr context <ENTRY> [PATH]
+
+For more information, try '--help'.
+exit=2

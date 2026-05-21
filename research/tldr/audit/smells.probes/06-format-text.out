@@ -1,0 +1,16 @@
+Code Smells Report (7 issues)
+
+Note: 8 smell analyzers require --deep flag. Run with --deep for: low_cohesion, tight_coupling, dead_code, code_clone, high_cognitive_complexity, middle_man, refused_bequest, inappropriate_intimacy
+
+   #  Sev  Type                  Name                          File:Line
+   1    1  Lazy Element          HistoricalDataProvider        base.py:15
+   2    1  Lazy Element          IntradayChartProvider         base.py:46
+   3    1  Lazy Element          QuoteProvider                 base.py:77
+   4    1  Lazy Element          MetadataProvider              base.py:113
+   5    2  Long Method           fetch_historical_data         dhan.py:49
+   6    2  Long Method           fetch_intraday_chart          dhan.py:126
+   7    1  Long Method           fetch_intraday_chart          yahoo.py:87
+
+Summary: 7 smells found (0 sev-3, 2 sev-2, 5 sev-1) across 3 files
+  Lazy Element: 4, Long Method: 3
+

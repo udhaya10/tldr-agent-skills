@@ -1,0 +1,14 @@
+{
+  "smells": [],
+  "files_scanned": 4,
+  "by_file": {},
+  "summary": {
+    "total_smells": 0,
+    "by_type": {},
+    "avg_smells_per_file": 0.0
+  },
+  "excluded_test_smells": 0,
+  "warnings": [],
+  "total_smells": 0,
+  "avg_smells_per_file": 0.0
+}

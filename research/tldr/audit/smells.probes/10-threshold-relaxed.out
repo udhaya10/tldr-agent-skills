@@ -1,0 +1,86 @@
+{
+  "smells": [
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "HistoricalDataProvider",
+      "line": 15,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "IntradayChartProvider",
+      "line": 46,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "QuoteProvider",
+      "line": 77,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "MetadataProvider",
+      "line": 113,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    }
+  ],
+  "files_scanned": 4,
+  "by_file": {
+    "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py": [
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "HistoricalDataProvider",
+        "line": 15,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      },
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "IntradayChartProvider",
+        "line": 46,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      },
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "QuoteProvider",
+        "line": 77,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      },
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "MetadataProvider",
+        "line": 113,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      }
+    ]
+  },
+  "summary": {
+    "total_smells": 4,
+    "by_type": {
+      "Lazy Element": 4
+    },
+    "avg_smells_per_file": 1.0
+  },
+  "excluded_test_smells": 0,
+  "warnings": [
+    "Note: 8 smell analyzers require --deep flag. Run with --deep for: low_cohesion, tight_coupling, dead_code, code_clone, high_cognitive_complexity, middle_man, refused_bequest, inappropriate_intimacy"
+  ],
+  "total_smells": 4,
+  "avg_smells_per_file": 1.0
+}

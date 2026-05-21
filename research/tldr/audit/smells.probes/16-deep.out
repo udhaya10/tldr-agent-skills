@@ -1,0 +1,453 @@
+{
+  "smells": [
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "name": "fetch_historical_data",
+      "line": 49,
+      "reason": "Method has 76 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+      "name": "fetch_intraday_chart",
+      "line": 126,
+      "reason": "Method has 80 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "HistoricalDataProvider.fetch_historical_data ~ IntradayChartProvider.fetch_intraday_chart",
+      "line": 19,
+      "reason": "Similarity score 100% with backend/providers/base.py:50",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "HistoricalDataProvider.fetch_historical_data ~ QuoteProvider.fetch_quotes",
+      "line": 19,
+      "reason": "Similarity score 93% with backend/providers/base.py:81",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "HistoricalDataProvider.fetch_historical_data ~ MetadataProvider.fetch_market_cap",
+      "line": 19,
+      "reason": "Similarity score 86% with backend/providers/base.py:117",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "HistoricalDataProvider.fetch_historical_data ~ MetadataProvider.fetch_metadata",
+      "line": 19,
+      "reason": "Similarity score 86% with backend/providers/base.py:133",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "IntradayChartProvider.fetch_intraday_chart ~ QuoteProvider.fetch_quotes",
+      "line": 50,
+      "reason": "Similarity score 93% with backend/providers/base.py:81",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "IntradayChartProvider.fetch_intraday_chart ~ MetadataProvider.fetch_market_cap",
+      "line": 50,
+      "reason": "Similarity score 86% with backend/providers/base.py:117",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "IntradayChartProvider.fetch_intraday_chart ~ MetadataProvider.fetch_metadata",
+      "line": 50,
+      "reason": "Similarity score 86% with backend/providers/base.py:133",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "QuoteProvider.fetch_quotes ~ MetadataProvider.fetch_market_cap",
+      "line": 81,
+      "reason": "Similarity score 91% with backend/providers/base.py:117",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "QuoteProvider.fetch_quotes ~ MetadataProvider.fetch_metadata",
+      "line": 81,
+      "reason": "Similarity score 91% with backend/providers/base.py:133",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/base.py",
+      "name": "MetadataProvider.fetch_market_cap ~ MetadataProvider.fetch_metadata",
+      "line": 117,
+      "reason": "Similarity score 100% with backend/providers/base.py:133",
+      "severity": 2
+    },
+    {
+      "smell_type": "low_cohesion",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider",
+      "line": 17,
+      "reason": "Class has LCOM4=5 (>1 indicates multiple responsibilities)",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_historical_data ~ DhanProvider.fetch_intraday_chart",
+      "line": 49,
+      "reason": "Similarity score 91% with backend/providers/dhan.py:126",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ QuoteProvider.fetch_quotes",
+      "line": 207,
+      "reason": "Similarity score 100% with backend/providers/base.py:81",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ HistoricalDataProvider.fetch_historical_data",
+      "line": 207,
+      "reason": "Similarity score 93% with backend/providers/base.py:19",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ IntradayChartProvider.fetch_intraday_chart",
+      "line": 207,
+      "reason": "Similarity score 93% with backend/providers/base.py:50",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ DhanProvider.fetch_market_cap",
+      "line": 207,
+      "reason": "Similarity score 91% with backend/providers/dhan.py:215",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ MetadataProvider.fetch_market_cap",
+      "line": 207,
+      "reason": "Similarity score 91% with backend/providers/base.py:117",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ MetadataProvider.fetch_metadata",
+      "line": 207,
+      "reason": "Similarity score 91% with backend/providers/base.py:133",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ MetadataProvider.fetch_market_cap",
+      "line": 215,
+      "reason": "Similarity score 100% with backend/providers/base.py:117",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ MetadataProvider.fetch_metadata",
+      "line": 215,
+      "reason": "Similarity score 100% with backend/providers/base.py:133",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ QuoteProvider.fetch_quotes",
+      "line": 215,
+      "reason": "Similarity score 91% with backend/providers/base.py:81",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ HistoricalDataProvider.fetch_historical_data",
+      "line": 215,
+      "reason": "Similarity score 86% with backend/providers/base.py:19",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ IntradayChartProvider.fetch_intraday_chart",
+      "line": 215,
+      "reason": "Similarity score 86% with backend/providers/base.py:50",
+      "severity": 2
+    },
+    {
+      "smell_type": "low_cohesion",
+      "file": "backend/providers/yahoo.py",
+      "name": "YahooProvider",
+      "line": 28,
+      "reason": "Class has LCOM4=5 (>1 indicates multiple responsibilities)",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/yahoo.py",
+      "name": "YahooProvider.fetch_historical_data ~ YahooProvider.fetch_intraday_chart",
+      "line": 38,
+      "reason": "Similarity score 87% with backend/providers/yahoo.py:87",
+      "severity": 2
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/yahoo.py",
+      "name": "YahooProvider.fetch_market_cap ~ YahooProvider.fetch_metadata",
+      "line": 190,
+      "reason": "Similarity score 94% with backend/providers/yahoo.py:218",
+      "severity": 2
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "HistoricalDataProvider",
+      "line": 15,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "IntradayChartProvider",
+      "line": 46,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "QuoteProvider",
+      "line": 77,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "lazy_element",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+      "name": "MetadataProvider",
+      "line": 113,
+      "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+      "name": "fetch_intraday_chart",
+      "line": 87,
+      "reason": "Method has 61 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "low_cohesion",
+      "file": "backend/providers/base.py",
+      "name": "MetadataProvider",
+      "line": 113,
+      "reason": "Class has LCOM4=2 (>1 indicates multiple responsibilities)",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider._load_mappings ~ _to_finite_float",
+      "line": 31,
+      "reason": "Similarity score 70% with backend/providers/yahoo.py:18",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_historical_data ~ YahooProvider.fetch_historical_data",
+      "line": 49,
+      "reason": "Similarity score 75% with backend/providers/yahoo.py:38",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_historical_data ~ YahooProvider.fetch_intraday_chart",
+      "line": 49,
+      "reason": "Similarity score 73% with backend/providers/yahoo.py:87",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_historical_data ~ HistoricalDataProvider.fetch_historical_data",
+      "line": 49,
+      "reason": "Similarity score 70% with backend/providers/base.py:19",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_historical_data ~ IntradayChartProvider.fetch_intraday_chart",
+      "line": 49,
+      "reason": "Similarity score 70% with backend/providers/base.py:50",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_intraday_chart ~ YahooProvider.fetch_historical_data",
+      "line": 126,
+      "reason": "Similarity score 74% with backend/providers/yahoo.py:38",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_intraday_chart ~ YahooProvider.fetch_intraday_chart",
+      "line": 126,
+      "reason": "Similarity score 74% with backend/providers/yahoo.py:87",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_intraday_chart ~ HistoricalDataProvider.fetch_historical_data",
+      "line": 126,
+      "reason": "Similarity score 70% with backend/providers/base.py:19",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_intraday_chart ~ IntradayChartProvider.fetch_intraday_chart",
+      "line": 126,
+      "reason": "Similarity score 70% with backend/providers/base.py:50",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_quotes ~ YahooProvider.fetch_quotes",
+      "line": 207,
+      "reason": "Similarity score 70% with backend/providers/yahoo.py:149",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ DhanProvider.fetch_metadata",
+      "line": 215,
+      "reason": "Similarity score 70% with backend/providers/dhan.py:219",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ YahooProvider.fetch_market_cap",
+      "line": 215,
+      "reason": "Similarity score 70% with backend/providers/yahoo.py:190",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_market_cap ~ YahooProvider.fetch_metadata",
+      "line": 215,
+      "reason": "Similarity score 70% with backend/providers/yahoo.py:218",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_metadata ~ YahooProvider.fetch_market_cap",
+      "line": 219,
+      "reason": "Similarity score 70% with backend/providers/yahoo.py:190",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_metadata ~ YahooProvider.fetch_metadata",
+      "line": 219,
+      "reason": "Similarity score 70% with backend/providers/yahoo.py:218",
+      "severity": 1
+    },
+    {
+      "smell_type": "code_clone",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider.fetch_metadata ~ MetadataProvider.fetch_market_cap",
+      "line": 219,
+      "reason": "Similarity score 70% with backend/providers/base.py:117",
+
+... [543 lines truncated, full output regeneratable via probe.sh] ...
+
+    "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py": [
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "HistoricalDataProvider",
+        "line": 15,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      },
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "IntradayChartProvider",
+        "line": 46,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      },
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "QuoteProvider",
+        "line": 77,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      },
+      {
+        "smell_type": "lazy_element",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/base.py",
+        "name": "MetadataProvider",
+        "line": 113,
+        "reason": "Class has only 0 method(s) and 0 field(s) - may not justify its own class",
+        "severity": 1
+      }
+    ]
+  },
+  "summary": {
+    "total_smells": 60,
+    "by_type": {
+      "Code Clone": 50,
+      "Long Method": 3,
+      "Low Cohesion": 3,
+      "Lazy Element": 4
+    },
+    "avg_smells_per_file": 15.0
+  },
+  "excluded_test_smells": 0,
+  "warnings": [],
+  "total_smells": 60,
+  "avg_smells_per_file": 15.0
+}

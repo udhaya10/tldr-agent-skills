@@ -1,0 +1,453 @@
+{
+  "smells": [
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "is_non_holding_label",
+      "line": 456,
+      "reason": "Method has cyclomatic complexity 17 (threshold: 10)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_parameter_list",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "is_derivative_or_contract_row",
+      "line": 485,
+      "reason": "Function has 7 parameters (threshold: 5)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "is_derivative_or_contract_row",
+      "line": 485,
+      "reason": "Method has 53 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_parameter_list",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "is_displayable_holding_row",
+      "line": 540,
+      "reason": "Function has 7 parameters (threshold: 5)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "sanitize_parsed_holdings",
+      "line": 605,
+      "reason": "Method has cyclomatic complexity 11 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "ensure_amfi_schema",
+      "line": 702,
+      "reason": "Method has 99 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_parameter_list",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "upsert_amfi_member",
+      "line": 841,
+      "reason": "Function has 8 parameters (threshold: 5)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_hdfc_monthly_files",
+      "line": 1372,
+      "reason": "Method has 70 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "select_recent_hdfc_files",
+      "line": 1444,
+      "reason": "Method has cyclomatic complexity 16 (threshold: 10)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_samco_monthly_files",
+      "line": 1699,
+      "reason": "Method has 55 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_oldbridge_monthly_files",
+      "line": 1756,
+      "reason": "Method has cyclomatic complexity 13 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_motilal_monthly_workbooks",
+      "line": 1884,
+      "reason": "Method has cyclomatic complexity 17 (threshold: 10)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_motilal_monthly_workbooks_from_fund_pages",
+      "line": 1928,
+      "reason": "Method has cyclomatic complexity 23 (threshold: 10)",
+      "severity": 3
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_unifi_monthly_files",
+      "line": 2235,
+      "reason": "Method has cyclomatic complexity 14 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_mahindra_monthly_workbooks",
+      "line": 2284,
+      "reason": "Method has cyclomatic complexity 13 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "discover_taurus_monthly_files",
+      "line": 2330,
+      "reason": "Method has 118 lines of code (threshold: 50)",
+      "severity": 3
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "select_recent_nippon_workbooks",
+      "line": 2450,
+      "reason": "Method has cyclomatic complexity 12 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "select_recent_ppfas_workbooks",
+      "line": 2471,
+      "reason": "Method has cyclomatic complexity 12 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "select_recent_groww_workbooks",
+      "line": 2492,
+      "reason": "Method has cyclomatic complexity 12 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "select_recent_baroda_workbooks",
+      "line": 2513,
+      "reason": "Method has cyclomatic complexity 12 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "select_recent_motilal_workbooks",
+      "line": 2534,
+      "reason": "Method has cyclomatic complexity 11 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_nippon_workbook_sheet_metas",
+      "line": 2594,
+      "reason": "Method has 54 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_ppfas_workbook_sheet_metas",
+      "line": 2659,
+      "reason": "Method has 68 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_baroda_workbook_sheet_metas",
+      "line": 2772,
+      "reason": "Method has 51 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_abakkus_workbook_sheet_metas",
+      "line": 2825,
+      "reason": "Method has 51 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_quantum_workbook_sheet_metas",
+      "line": 2878,
+      "reason": "Method has 51 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_dsp_workbook_sheet_metas",
+      "line": 2931,
+      "reason": "Method has cyclomatic complexity 11 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_motilal_workbook_sheet_metas",
+      "line": 3024,
+      "reason": "Method has 51 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_trust_workbook_sheet_metas",
+      "line": 3120,
+      "reason": "Method has 55 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_tata_workbook_sheet_metas",
+      "line": 3177,
+      "reason": "Method has 71 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "expand_mahindra_workbook_sheet_metas",
+      "line": 3250,
+      "reason": "Method has 61 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "build_recent_sbi_file_metas",
+      "line": 3467,
+      "reason": "Method has 58 lines of code (threshold: 50)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "build_hdfc_header_map",
+      "line": 3605,
+      "reason": "Method has cyclomatic complexity 13 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "infer_security_kind",
+      "line": 3630,
+      "reason": "Method has cyclomatic complexity 17 (threshold: 10)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_hdfc_monthly_xlsx_v1",
+      "line": 3643,
+      "reason": "Method has 86 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "build_sbi_header_map",
+      "line": 3755,
+      "reason": "Method has cyclomatic complexity 11 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_sbi_monthly_xlsx_v1",
+      "line": 3780,
+      "reason": "Method has 81 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "build_nippon_header_map",
+      "line": 3885,
+      "reason": "Method has cyclomatic complexity 14 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_nippon_monthly_xlsx_v1",
+      "line": 3911,
+      "reason": "Method has 89 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "is_ppfas_junk_row",
+      "line": 4016,
+      "reason": "Method has cyclomatic complexity 12 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "classify_ppfas_security_kind",
+      "line": 4036,
+      "reason": "Method has cyclomatic complexity 34 (threshold: 10)",
+      "severity": 3
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_ppfas_monthly_xls_v1",
+      "line": 4066,
+      "reason": "Method has 107 lines of code (threshold: 50)",
+      "severity": 3
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_groww_monthly_xlsx_v1",
+      "line": 4184,
+      "reason": "Method has 82 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "build_baroda_header_map",
+      "line": 4321,
+      "reason": "Method has cyclomatic complexity 17 (threshold: 10)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_baroda_monthly_xlsx_v1",
+      "line": 4346,
+      "reason": "Method has 82 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "build_quantum_header_map",
+      "line": 4448,
+      "reason": "Method has cyclomatic complexity 15 (threshold: 10)",
+      "severity": 1
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_quantum_monthly_xlsx_v1",
+      "line": 4473,
+      "reason": "Method has 87 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_samco_monthly_xlsx_v1",
+      "line": 4574,
+      "reason": "Method has 77 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_oldbridge_monthly_xlsx_v1",
+      "line": 4653,
+      "reason": "Method has 81 lines of code (threshold: 50)",
+      "severity": 2
+    },
+    {
+      "smell_type": "long_method",
+      "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+      "name": "parse_dsp_monthly_xlsx_v1",
+      "line": 4736,
+      "reason": "Method has 117 lines of code (threshold: 50)",
+
+... [7056 lines truncated, full output regeneratable via probe.sh] ...
+
+        "line": 862,
+        "reason": "Method has cyclomatic complexity 11 (threshold: 10)",
+        "severity": 1
+      },
+      {
+        "smell_type": "long_method",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/nse_earnings.py",
+        "name": "fetch_concall_earnings_rows",
+        "line": 956,
+        "reason": "Method has 51 lines of code (threshold: 50)",
+        "severity": 1
+      },
+      {
+        "smell_type": "long_method",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/nse_earnings.py",
+        "name": "sync_nse_earnings",
+        "line": 1076,
+        "reason": "Method has 159 lines of code (threshold: 50)",
+        "severity": 3
+      },
+      {
+        "smell_type": "deep_nesting",
+        "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/nse_earnings.py",
+        "name": "fetch_concall_earnings_rows",
+        "line": 956,
+        "reason": "Function has nesting depth 5 (threshold: 5)",
+        "severity": 1
+      }
+    ]
+  },
+  "summary": {
+    "total_smells": 462,
+    "by_type": {
+      "Long Method": 303,
+      "Deep Nesting": 14,
+      "Primitive Obsession": 18,
+      "Lazy Element": 56,
+      "Message Chain": 28,
+      "God Class": 1,
+      "Long Parameter List": 42
+    },
+    "avg_smells_per_file": 8.25
+  },
+  "excluded_test_smells": 0,
+  "warnings": [
+    "Note: 8 smell analyzers require --deep flag. Run with --deep for: low_cohesion, tight_coupling, dead_code, code_clone, high_cognitive_complexity, middle_man, refused_bequest, inappropriate_intimacy"
+  ],
+  "total_smells": 462,
+  "avg_smells_per_file": 8.25
+}

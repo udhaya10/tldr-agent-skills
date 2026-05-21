@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--smell-type <SMELL_TYPE>'
+  [possible values: god-class, long-method, long-parameter-list, feature-envy, data-clumps, low-cohesion, tight-coupling, dead-code, code-clone, high-cognitive-complexity, deep-nesting, data-class, lazy-element, message-chain, primitive-obsession, middle-man, refused-bequest, inappropriate-intimacy]
+
+For more information, try '--help'.
+exit=2

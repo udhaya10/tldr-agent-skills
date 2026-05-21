@@ -1,0 +1,16 @@
+{
+  "smells": [],
+  "files_scanned": 0,
+  "by_file": {},
+  "summary": {
+    "total_smells": 0,
+    "by_type": {},
+    "avg_smells_per_file": 0.0
+  },
+  "excluded_test_smells": 0,
+  "warnings": [
+    "Note: 8 smell analyzers require --deep flag. Run with --deep for: low_cohesion, tight_coupling, dead_code, code_clone, high_cognitive_complexity, middle_man, refused_bequest, inappropriate_intimacy"
+  ],
+  "total_smells": 0,
+  "avg_smells_per_file": 0.0
+}

@@ -1,0 +1,72 @@
+{
+  "smells": [
+    {
+      "smell_type": "low_cohesion",
+      "file": "backend/providers/dhan.py",
+      "name": "DhanProvider",
+      "line": 17,
+      "reason": "Class has LCOM4=5 (>1 indicates multiple responsibilities)",
+      "severity": 2
+    },
+    {
+      "smell_type": "low_cohesion",
+      "file": "backend/providers/yahoo.py",
+      "name": "YahooProvider",
+      "line": 28,
+      "reason": "Class has LCOM4=5 (>1 indicates multiple responsibilities)",
+      "severity": 2
+    },
+    {
+      "smell_type": "low_cohesion",
+      "file": "backend/providers/base.py",
+      "name": "MetadataProvider",
+      "line": 113,
+      "reason": "Class has LCOM4=2 (>1 indicates multiple responsibilities)",
+      "severity": 1
+    }
+  ],
+  "files_scanned": 3,
+  "by_file": {
+    "backend/providers/dhan.py": [
+      {
+        "smell_type": "low_cohesion",
+        "file": "backend/providers/dhan.py",
+        "name": "DhanProvider",
+        "line": 17,
+        "reason": "Class has LCOM4=5 (>1 indicates multiple responsibilities)",
+        "severity": 2
+      }
+    ],
+    "backend/providers/yahoo.py": [
+      {
+        "smell_type": "low_cohesion",
+        "file": "backend/providers/yahoo.py",
+        "name": "YahooProvider",
+        "line": 28,
+        "reason": "Class has LCOM4=5 (>1 indicates multiple responsibilities)",
+        "severity": 2
+      }
+    ],
+    "backend/providers/base.py": [
+      {
+        "smell_type": "low_cohesion",
+        "file": "backend/providers/base.py",
+        "name": "MetadataProvider",
+        "line": 113,
+        "reason": "Class has LCOM4=2 (>1 indicates multiple responsibilities)",
+        "severity": 1
+      }
+    ]
+  },
+  "summary": {
+    "total_smells": 3,
+    "by_type": {
+      "Low Cohesion": 3
+    },
+    "avg_smells_per_file": 1.0
+  },
+  "excluded_test_smells": 0,
+  "warnings": [],
+  "total_smells": 3,
+  "avg_smells_per_file": 1.0
+}

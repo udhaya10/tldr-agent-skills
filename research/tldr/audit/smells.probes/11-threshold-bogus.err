@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--threshold <THRESHOLD>'
+  [possible values: strict, default, relaxed]
+
+For more information, try '--help'.
+exit=2

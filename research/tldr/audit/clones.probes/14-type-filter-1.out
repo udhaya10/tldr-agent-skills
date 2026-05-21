@@ -1,0 +1,32 @@
+{
+  "root": "backend/providers",
+  "language": "python",
+  "clone_pairs": [],
+  "stats": {
+    "files_analyzed": 4,
+    "total_tokens": 2514,
+    "clones_found": 0,
+    "type1_count": 0,
+    "type2_count": 0,
+    "type3_count": 0,
+    "detection_time_ms": 5
+  },
+  "config": {
+    "min_tokens": 25,
+    "min_lines": 5,
+    "similarity_threshold": 0.7,
+    "normalization": "all",
+    "type_filter": "Type-1"
+  },
+  "total_clones": 0,
+  "files_analyzed": 4,
+  "summary": {
+    "total_clones": 0,
+    "files_analyzed": 4,
+    "total_tokens": 2514,
+    "type1_count": 0,
+    "type2_count": 0,
+    "type3_count": 0,
+    "detection_time_ms": 5
+  }
+}

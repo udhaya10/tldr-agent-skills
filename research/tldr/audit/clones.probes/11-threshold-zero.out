@@ -1,0 +1,164 @@
+{
+  "root": "backend/providers",
+  "language": "python",
+  "clone_pairs": [
+    {
+      "id": 1,
+      "clone_type": "Type-3",
+      "similarity": 0.19594594594594594,
+      "fragment1": {
+        "file": "backend/providers/__init__.py",
+        "start_line": 1,
+        "end_line": 41,
+        "tokens": 58,
+        "lines": 41,
+        "preview": "\"\"\"\nProvider abstraction layer for multi-source data integration.\n\nProviders abstract away data s..."
+      },
+      "fragment2": {
+        "file": "backend/providers/base.py",
+        "start_line": 1,
+        "end_line": 179,
+        "tokens": 238,
+        "lines": 179,
+        "preview": "\"\"\"\nAbstract base classes for market data providers.\n\nAll data providers (Yahoo, Dhan, etc.) impl..."
+      },
+      "interpretation": "Low similarity (different code)"
+    },
+    {
+      "id": 2,
+      "clone_type": "Type-3",
+      "similarity": 0.06655574043261231,
+      "fragment1": {
+        "file": "backend/providers/__init__.py",
+        "start_line": 1,
+        "end_line": 41,
+        "tokens": 58,
+        "lines": 41,
+        "preview": "\"\"\"\nProvider abstraction layer for multi-source data integration.\n\nProviders abstract away data s..."
+      },
+      "fragment2": {
+        "file": "backend/providers/dhan.py",
+        "start_line": 1,
+        "end_line": 230,
+        "tokens": 1144,
+        "lines": 230,
+        "preview": "\"\"\"\nDhan broker data provider.\n\nFetches historical daily OHLCV via the dhanhq SDK.\nSymbol mapping..."
+      },
+      "interpretation": "Low similarity (different code)"
+    },
+    {
+      "id": 3,
+      "clone_type": "Type-3",
+      "similarity": 0.07243816254416961,
+      "fragment1": {
+        "file": "backend/providers/__init__.py",
+        "start_line": 1,
+        "end_line": 41,
+        "tokens": 58,
+        "lines": 41,
+        "preview": "\"\"\"\nProvider abstraction layer for multi-source data integration.\n\nProviders abstract away data s..."
+      },
+      "fragment2": {
+        "file": "backend/providers/yahoo.py",
+        "start_line": 1,
+        "end_line": 239,
+        "tokens": 1074,
+        "lines": 239,
+        "preview": "\"\"\"\nYahoo Finance provider implementation.\n\nWraps yfinance calls behind the provider abstraction...."
+      },
+      "interpretation": "Low similarity (different code)"
+    },
+    {
+      "id": 4,
+      "clone_type": "Type-3",
+      "similarity": 0.27496382054992763,
+      "fragment1": {
+        "file": "backend/providers/base.py",
+        "start_line": 1,
+        "end_line": 179,
+        "tokens": 238,
+        "lines": 179,
+        "preview": "\"\"\"\nAbstract base classes for market data providers.\n\nAll data providers (Yahoo, Dhan, etc.) impl..."
+      },
+      "fragment2": {
+        "file": "backend/providers/dhan.py",
+        "start_line": 1,
+        "end_line": 230,
+        "tokens": 1144,
+        "lines": 230,
+        "preview": "\"\"\"\nDhan broker data provider.\n\nFetches historical daily OHLCV via the dhanhq SDK.\nSymbol mapping..."
+      },
+      "interpretation": "Low similarity (different code)"
+    },
+    {
+      "id": 5,
+      "clone_type": "Type-3",
+      "similarity": 0.2804878048780488,
+      "fragment1": {
+        "file": "backend/providers/base.py",
+        "start_line": 1,
+        "end_line": 179,
+        "tokens": 238,
+        "lines": 179,
+        "preview": "\"\"\"\nAbstract base classes for market data providers.\n\nAll data providers (Yahoo, Dhan, etc.) impl..."
+      },
+      "fragment2": {
+        "file": "backend/providers/yahoo.py",
+        "start_line": 1,
+        "end_line": 239,
+        "tokens": 1074,
+        "lines": 239,
+        "preview": "\"\"\"\nYahoo Finance provider implementation.\n\nWraps yfinance calls behind the provider abstraction...."
+      },
+      "interpretation": "Low similarity (different code)"
+    },
+    {
+      "id": 6,
+      "clone_type": "Type-3",
+      "similarity": 0.7105500450856628,
+      "fragment1": {
+        "file": "backend/providers/dhan.py",
+        "start_line": 1,
+        "end_line": 230,
+        "tokens": 1144,
+        "lines": 230,
+        "preview": "\"\"\"\nDhan broker data provider.\n\nFetches historical daily OHLCV via the dhanhq SDK.\nSymbol mapping..."
+      },
+      "fragment2": {
+        "file": "backend/providers/yahoo.py",
+        "start_line": 1,
+        "end_line": 239,
+        "tokens": 1074,
+        "lines": 239,
+        "preview": "\"\"\"\nYahoo Finance provider implementation.\n\nWraps yfinance calls behind the provider abstraction...."
+      },
+      "interpretation": "Moderate similarity (Type-3 clone candidate)"
+    }
+  ],
+  "stats": {
+    "files_analyzed": 4,
+    "total_tokens": 2514,
+    "clones_found": 6,
+    "type1_count": 0,
+    "type2_count": 0,
+    "type3_count": 6,
+    "detection_time_ms": 5
+  },
+  "config": {
+    "min_tokens": 25,
+    "min_lines": 5,
+    "similarity_threshold": 0.0,
+    "normalization": "all"
+  },
+  "total_clones": 6,
+  "files_analyzed": 4,
+  "summary": {
+    "total_clones": 6,
+    "files_analyzed": 4,
+    "total_tokens": 2514,
+    "type1_count": 0,
+    "type2_count": 0,
+    "type3_count": 6,
+    "detection_time_ms": 5
+  }
+}

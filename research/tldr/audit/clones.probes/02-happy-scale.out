@@ -1,0 +1,54 @@
+{
+  "root": "backend/providers",
+  "language": "python",
+  "clone_pairs": [
+    {
+      "id": 1,
+      "clone_type": "Type-3",
+      "similarity": 0.7105500450856628,
+      "fragment1": {
+        "file": "backend/providers/dhan.py",
+        "start_line": 1,
+        "end_line": 230,
+        "tokens": 1144,
+        "lines": 230,
+        "preview": "\"\"\"\nDhan broker data provider.\n\nFetches historical daily OHLCV via the dhanhq SDK.\nSymbol mapping..."
+      },
+      "fragment2": {
+        "file": "backend/providers/yahoo.py",
+        "start_line": 1,
+        "end_line": 239,
+        "tokens": 1074,
+        "lines": 239,
+        "preview": "\"\"\"\nYahoo Finance provider implementation.\n\nWraps yfinance calls behind the provider abstraction...."
+      },
+      "interpretation": "Moderate similarity (Type-3 clone candidate)"
+    }
+  ],
+  "stats": {
+    "files_analyzed": 4,
+    "total_tokens": 2514,
+    "clones_found": 1,
+    "type1_count": 0,
+    "type2_count": 0,
+    "type3_count": 1,
+    "detection_time_ms": 5
+  },
+  "config": {
+    "min_tokens": 25,
+    "min_lines": 5,
+    "similarity_threshold": 0.5,
+    "normalization": "all"
+  },
+  "total_clones": 1,
+  "files_analyzed": 4,
+  "summary": {
+    "total_clones": 1,
+    "files_analyzed": 4,
+    "total_tokens": 2514,
+    "type1_count": 0,
+    "type2_count": 0,
+    "type3_count": 1,
+    "detection_time_ms": 5
+  }
+}

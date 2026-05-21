@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "tldr",
+          "version": "0.4.0",
+          "informationUri": "https://github.com/anthropics/claude-code",
+          "rules": [
+            {
+              "id": "clone/type-1",
+              "name": "ExactClone",
+              "shortDescription": {
+                "text": "Exact code clone detected"
+              },
+              "fullDescription": {
+                "text": "Type-1 clone: Identical code fragments (ignoring whitespace and comments). Consider extracting to a shared function or module."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "clone/type-2",
+              "name": "ParameterizedClone",
+              "shortDescription": {
+                "text": "Parameterized clone detected"
+              },
+              "fullDescription": {
+                "text": "Type-2 clone: Code fragments with renamed identifiers or different literal values. The structure is identical. Consider refactoring to accept parameters."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "clone/type-3",
+              "name": "GappedClone",
+              "shortDescription": {
+                "text": "Similar code pattern detected"
+              },
+              "fullDescription": {
+                "text": "Type-3 clone: Code fragments with similar structure but some statements added, removed, or modified. May indicate copy-paste programming."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              }
+            }
+          ]
+        }
+      },
+      "results": [],
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ]
+    }
+  ]
+}

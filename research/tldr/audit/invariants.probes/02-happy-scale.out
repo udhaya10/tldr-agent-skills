@@ -1,0 +1,138 @@
+{
+  "functions": [
+    {
+      "function_name": "clamp",
+      "preconditions": [
+        {
+          "variable": "arg0",
+          "kind": "type",
+          "expression": "arg0: int",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg0",
+          "kind": "non_null",
+          "expression": "arg0 is not None",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg0",
+          "kind": "range",
+          "expression": "-5 <= arg0 <= 15",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg1",
+          "kind": "type",
+          "expression": "arg1: int",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg1",
+          "kind": "non_null",
+          "expression": "arg1 is not None",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg1",
+          "kind": "non_negative",
+          "expression": "arg1 >= 0",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg2",
+          "kind": "type",
+          "expression": "arg2: int",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg2",
+          "kind": "non_null",
+          "expression": "arg2 is not None",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg2",
+          "kind": "positive",
+          "expression": "arg2 > 0",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "arg1,arg2",
+          "kind": "relation",
+          "expression": "arg1 < arg2",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        }
+      ],
+      "postconditions": [
+        {
+          "variable": "result",
+          "kind": "type",
+          "expression": "result: int",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "result",
+          "kind": "non_null",
+          "expression": "result is not None",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "result",
+          "kind": "non_negative",
+          "expression": "result >= 0",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        },
+        {
+          "variable": "result",
+          "kind": "range",
+          "expression": "0 <= result <= 10",
+          "confidence": "high",
+          "observations": 14,
+          "counterexample_count": 0
+        }
+      ],
+      "observation_count": 14
+    }
+  ],
+  "summary": {
+    "total_observations": 14,
+    "total_invariants": 14,
+    "by_kind": {
+      "range": 2,
+      "positive": 1,
+      "type": 4,
+      "non_negative": 2,
+      "relation": 1,
+      "non_null": 4
+    },
+    "test_files_scanned": 1,
+    "test_functions_scanned": 6
+  }
+}

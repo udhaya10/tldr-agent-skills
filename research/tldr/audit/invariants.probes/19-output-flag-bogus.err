@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--output-format <OUTPUT_FORMAT>'
+  [possible values: json, text]
+
+For more information, try '--help'.
+exit=2

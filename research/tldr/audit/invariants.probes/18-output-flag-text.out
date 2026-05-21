@@ -1,0 +1,47 @@
+Function: add (12 observations)
+  Requires: arg0: int [high]
+  Requires: arg0 is not None [high]
+  Requires: arg0 >= 0 [high]
+  Requires: 0 <= arg0 <= 10 [high]
+  Requires: arg1: int [high]
+  Requires: arg1 is not None [high]
+  Requires: arg1 >= 0 [high]
+  Requires: 0 <= arg1 <= 20 [high]
+  Ensures: result: int [high]
+  Ensures: result is not None [high]
+  Ensures: result > 0 [high]
+  Ensures: 3 <= result <= 30 [high]
+
+Function: clamp (14 observations)
+  Requires: arg0: int [high]
+  Requires: arg0 is not None [high]
+  Requires: -5 <= arg0 <= 15 [high]
+  Requires: arg1: int [high]
+  Requires: arg1 is not None [high]
+  Requires: arg1 >= 0 [high]
+  Requires: arg2: int [high]
+  Requires: arg2 is not None [high]
+  Requires: arg2 > 0 [high]
+  Requires: arg1 < arg2 [high]
+  Ensures: result: int [high]
+  Ensures: result is not None [high]
+  Ensures: result >= 0 [high]
+  Ensures: 0 <= result <= 10 [high]
+
+Function: divide (6 observations)
+  Requires: arg0: int [medium]
+  Requires: arg0 is not None [medium]
+  Requires: arg0 > 0 [medium]
+  Requires: 10 <= arg0 <= 100 [medium]
+  Requires: arg1: int [medium]
+  Requires: arg1 is not None [medium]
+  Requires: arg1 > 0 [medium]
+  Requires: 2 <= arg1 <= 5 [medium]
+  Requires: arg0 > arg1 [medium]
+  Ensures: result: int [medium]
+  Ensures: result is not None [medium]
+  Ensures: result > 0 [medium]
+  Ensures: 5 <= result <= 20 [medium]
+
+Summary: 32 observations, 39 invariants
+By kind: positive: 5, type: 10, range: 8, relation: 2, non_negative: 4, non_null: 10

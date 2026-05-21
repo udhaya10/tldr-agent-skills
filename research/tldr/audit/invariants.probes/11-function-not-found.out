@@ -1,0 +1,10 @@
+{
+  "functions": [],
+  "summary": {
+    "total_observations": 0,
+    "total_invariants": 0,
+    "by_kind": {},
+    "test_files_scanned": 1,
+    "test_functions_scanned": 6
+  }
+}

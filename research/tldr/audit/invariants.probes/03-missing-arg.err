@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <FILE>
+
+Usage: tldr invariants --from-tests <FROM_TESTS> <FILE>
+
+For more information, try '--help'.
+exit=2

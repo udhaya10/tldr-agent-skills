@@ -1,0 +1,33 @@
+{
+  "function": "fetch_historical_data",
+  "file": "backend/providers/yahoo.py",
+  "preconditions": [
+    {
+      "variable": "symbol",
+      "constraint": "isinstance(symbol, str)",
+      "source_line": 38,
+      "confidence": "low"
+    },
+    {
+      "variable": "start_date",
+      "constraint": "isinstance(start_date, date)",
+      "source_line": 38,
+      "confidence": "low"
+    },
+    {
+      "variable": "end_date",
+      "constraint": "isinstance(end_date, date)",
+      "source_line": 38,
+      "confidence": "low"
+    }
+  ],
+  "postconditions": [
+    {
+      "variable": "return",
+      "constraint": "isinstance(return, pd.DataFrame)",
+      "source_line": 38,
+      "confidence": "low"
+    }
+  ],
+  "invariants": []
+}

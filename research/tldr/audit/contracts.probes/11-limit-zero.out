@@ -1,0 +1,7 @@
+{
+  "function": "fetch_historical_data",
+  "file": "backend/providers/yahoo.py",
+  "preconditions": [],
+  "postconditions": [],
+  "invariants": []
+}

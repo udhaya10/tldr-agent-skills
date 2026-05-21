@@ -1,0 +1,6 @@
+Function: _to_finite_float
+  Preconditions:
+    - isinstance(value, Any) (value, line 18, low)
+  Postconditions:
+    - isinstance(return, Optional[float]) (return, line 18, low)
+

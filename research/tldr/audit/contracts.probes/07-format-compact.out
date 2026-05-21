@@ -1,0 +1,1 @@
+{"function":"_to_finite_float","file":"backend/providers/yahoo.py","preconditions":[{"variable":"value","constraint":"isinstance(value, Any)","source_line":18,"confidence":"low"}],"postconditions":[{"variable":"return","constraint":"isinstance(return, Optional[float])","source_line":18,"confidence":"low"}],"invariants":[]}

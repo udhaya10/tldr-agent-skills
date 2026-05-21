@@ -1,0 +1,111 @@
+{
+  "module": "pandas",
+  "importers": [
+    {
+      "file": "backend/providers/base.py",
+      "line": 12,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/providers/dhan.py",
+      "line": 12,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/providers/yahoo.py",
+      "line": 12,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/api.py",
+      "line": 10,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/classification.py",
+      "line": 8,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/dhan_live.py",
+      "line": 27,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/dhan_security_master.py",
+      "line": 16,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/importer.py",
+      "line": 3,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/market_breadth.py",
+      "line": 9,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/market_data.py",
+      "line": 6,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/markets_overview.py",
+      "line": 8,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/overview_stock_cards.py",
+      "line": 8,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/precomputed_indicators.py",
+      "line": 8,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/rankings.py",
+      "line": 11,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/relative_strength.py",
+      "line": 9,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/rmv.py",
+      "line": 5,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/rrg.py",
+      "line": 10,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "line": 6,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/stage_analysis_panel.py",
+      "line": 9,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/updater.py",
+      "line": 8,
+      "import_statement": "import pandas as pd"
+    },
+    {
+      "file": "backend/watchlist_formulas.py",
+      "line": 13,
+      "import_statement": "import pandas as pd"
+    }
+  ],
+  "total": 21
+}

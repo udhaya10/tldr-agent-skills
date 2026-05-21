@@ -1,0 +1,1 @@
+tldr daemon start --project '/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor' >/dev/null 2>&1 && tldr warm '/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor' >/dev/null 2>&1 && tldr importers backend.providers.base

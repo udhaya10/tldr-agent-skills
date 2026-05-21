@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <MODULE>
+
+Usage: tldr importers <MODULE> [PATH]
+
+For more information, try '--help'.
+exit=2

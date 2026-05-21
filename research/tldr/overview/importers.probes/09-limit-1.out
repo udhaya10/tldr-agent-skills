@@ -1,0 +1,11 @@
+{
+  "module": "pandas",
+  "importers": [
+    {
+      "file": "backend/providers/base.py",
+      "line": 12,
+      "import_statement": "import pandas as pd"
+    }
+  ],
+  "total": 21
+}

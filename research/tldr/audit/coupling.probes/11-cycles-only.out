@@ -1,0 +1,351 @@
+{
+  "martin_metrics": {
+    "schema_version": "1.0",
+    "modules_analyzed": 0,
+    "metrics": [],
+    "cycles": [],
+    "summary": {
+      "avg_instability": 0.0,
+      "total_cycles": 0,
+      "most_stable": "__init__.py",
+      "most_unstable": "__init__.py"
+    }
+  },
+  "pairwise_coupling": {
+    "modules_analyzed": 56,
+    "pairs_analyzed": 12,
+    "total_cross_file_pairs": 12,
+    "avg_coupling_score": 0.40361498398542883,
+    "tight_coupling_count": 3,
+    "top_pairs": [
+      {
+        "source": "tc2000_formulas.py",
+        "target": "watchlist_formulas.py",
+        "import_count": 4,
+        "call_count": 16,
+        "calls_source_to_target": [
+          {
+            "caller": "_extract_integer_literal",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_parse_compact_identifier",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "compile_tc2000_formula",
+            "callee": "CompiledFormula"
+          },
+          {
+            "caller": "_tokenize_tc2000",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.parse",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_extract_integer_number",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_evaluate_call",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_require_argument_count",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "compile_tc2000_formula",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.expect",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_evaluate_identifier",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_determine_required_bars_for_call",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_determine_required_bars",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_collect_dependencies",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.parse_primary_expression",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.parse_postfix_expression",
+            "callee": "FormulaValidationError"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "typing",
+          "__future__",
+          "dataclasses",
+          "re",
+          "math"
+        ],
+        "score": 0.9640275800758169,
+        "verdict": "tight"
+      },
+      {
+        "source": "scripts/generate_avalon_indas_financials.py",
+        "target": "scripts/generate_nse_only_financials.py",
+        "import_count": 1,
+        "call_count": 11,
+        "calls_source_to_target": [
+          {
+            "caller": "IndasSampleBuilder.__init__",
+            "callee": "NseFinancialExtractor.__init__"
+          },
+          {
+            "caller": "IndasSampleBuilder.extract_cash_raw",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.extract_balance_raw",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.annual_report_balance_overrides",
+            "callee": "NseFinancialExtractor.fetch_binary"
+          },
+          {
+            "caller": "IndasSampleBuilder.duration_value",
+            "callee": "NseFinancialExtractor.select_duration_value"
+          },
+          {
+            "caller": "IndasSampleBuilder.money_instant",
+            "callee": "NseFinancialExtractor.select_instant_value"
+          },
+          {
+            "caller": "IndasSampleBuilder.ytd_money_duration",
+            "callee": "NseFinancialExtractor.select_duration_value"
+          },
+          {
+            "caller": "IndasSampleBuilder.__init__",
+            "callee": "NseFinancialExtractor.detect_index"
+          },
+          {
+            "caller": "IndasSampleBuilder.extract_pnl_raw",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.ytd_money_duration",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.integrated_sources",
+            "callee": "NseFinancialExtractor.fetch_json"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "io",
+          "typing",
+          "json",
+          "re",
+          "pathlib",
+          "__future__",
+          "datetime"
+        ],
+        "score": 0.8336546070121552,
+        "verdict": "tight"
+      },
+      {
+        "source": "api.py",
+        "target": "providers/dhan.py",
+        "import_count": 7,
+        "call_count": 2,
+        "calls_source_to_target": [
+          {
+            "caller": "get_stock_history",
+            "callee": "DhanProvider.__init__"
+          },
+          {
+            "caller": "get_stock_history",
+            "callee": "DhanProvider.fetch_intraday_chart"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.config",
+          "backend.dhan_client",
+          "datetime",
+          "backend.db",
+          "pandas"
+        ],
+        "score": 0.7162978701990245,
+        "verdict": "tight"
+      },
+      {
+        "source": "market_data.py",
+        "target": "providers/dhan.py",
+        "import_count": 2,
+        "call_count": 2,
+        "calls_source_to_target": [
+          {
+            "caller": "_fetch_one",
+            "callee": "DhanProvider.fetch_historical_data"
+          },
+          {
+            "caller": "fetch_and_store_ticker_data",
+            "callee": "DhanProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.dhan_client",
+          "datetime",
+          "backend.db",
+          "pandas"
+        ],
+        "score": 0.3799489622552249,
+        "verdict": "moderate"
+      },
+      {
+        "source": "dhan_historical.py",
+        "target": "providers/dhan.py",
+        "import_count": 2,
+        "call_count": 2,
+        "calls_source_to_target": [
+          {
+            "caller": "fetch_and_store_dhan_historical",
+            "callee": "DhanProvider.fetch_historical_data"
+          },
+          {
+            "caller": "fetch_and_store_dhan_historical",
+            "callee": "DhanProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.config",
+          "backend.dhan_client",
+          "datetime",
+          "typing",
+          "backend.db"
+        ],
+        "score": 0.3799489622552249,
+        "verdict": "moderate"
+      },
+      {
+        "source": "dhan_security_master.py",
+        "target": "dhan_security_master_scheduler.py",
+        "import_count": 1,
+        "call_count": 2,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "refresh_security_master_background",
+            "callee": "SecurityMaster.get_statistics"
+          },
+          {
+            "caller": "refresh_security_master_background",
+            "callee": "SecurityMaster.refresh_security_master"
+          }
+        ],
+        "shared_imports": [
+          "datetime",
+          "typing",
+          "backend.db"
+        ],
+        "score": 0.2913126124515909,
+        "verdict": "loose"
+      },
+      {
+        "source": "api.py",
+        "target": "dhan_security_master.py",
+        "import_count": 2,
+        "call_count": 1,
+        "calls_source_to_target": [
+          {
+            "caller": "lifespan",
+            "callee": "SecurityMaster.get_statistics"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.db",
+          "io",
+          "datetime",
+          "pandas",
+          "backend.config",
+          "sqlite3"
+        ],
+        "score": 0.2913126124515909,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/__init__.py",
+        "target": "providers/yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [
+          {
+            "caller": "get_yahoo_provider",
+            "callee": "YahooProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.providers.base"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/base.py",
+        "target": "providers/dhan.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "DhanProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "pandas",
+          "datetime",
+          "typing"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/base.py",
+        "target": "providers/yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "YahooProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "pandas",
+          "datetime",
+          "typing"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      }
+    ]
+  }
+}

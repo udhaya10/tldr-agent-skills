@@ -1,0 +1,21 @@
+{
+  "path_a": "backend/providers/yahoo.py",
+  "path_b": "backend/providers/base.py",
+  "a_to_b": {
+    "calls": [
+      {
+        "caller": "YahooProvider.__init__",
+        "callee": "Provider.__init__",
+        "line": 0
+      }
+    ],
+    "count": 1
+  },
+  "b_to_a": {
+    "calls": [],
+    "count": 0
+  },
+  "total_calls": 1,
+  "coupling_score": 0.5,
+  "verdict": "high"
+}

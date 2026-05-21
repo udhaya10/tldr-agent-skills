@@ -1,0 +1,110 @@
+{
+  "martin_metrics": {
+    "schema_version": "1.0",
+    "modules_analyzed": 4,
+    "metrics": [
+      {
+        "module": "__init__.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "base.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "dhan.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "yahoo.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      }
+    ],
+    "cycles": [],
+    "summary": {
+      "avg_instability": 0.0,
+      "total_cycles": 0,
+      "most_stable": "__init__.py",
+      "most_unstable": "__init__.py"
+    }
+  },
+  "pairwise_coupling": {
+    "modules_analyzed": 4,
+    "pairs_analyzed": 3,
+    "total_cross_file_pairs": 3,
+    "avg_coupling_score": 0.197375320224904,
+    "tight_coupling_count": 0,
+    "top_pairs": [
+      {
+        "source": "base.py",
+        "target": "yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "YahooProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "datetime",
+          "typing",
+          "pandas"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "__init__.py",
+        "target": "yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [
+          {
+            "caller": "get_yahoo_provider",
+            "callee": "YahooProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.providers.base"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "base.py",
+        "target": "dhan.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "DhanProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "datetime",
+          "typing",
+          "pandas"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      }
+    ]
+  }
+}

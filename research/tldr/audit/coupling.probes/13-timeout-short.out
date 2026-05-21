@@ -1,0 +1,453 @@
+{
+  "martin_metrics": {
+    "schema_version": "1.0",
+    "modules_analyzed": 54,
+    "metrics": [
+      {
+        "module": "__init__.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "amfi_portfolios.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "announcement_scheduler.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "announcements.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "api.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "api_status.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "blocked_symbols.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "classification.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "concalls.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "config.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "db.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "dhan_client.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "dhan_historical.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "dhan_live.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "dhan_security_master.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "dhan_security_master_scheduler.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "financial_results_scheduler.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "financial_results_sync.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "importer.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "market_breadth.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "market_data.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "markets_overview.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "notifications.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_earnings.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_history.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_indas_financials.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_index_history.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_listings.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_price_bands.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_results.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "nse_results_scheduler.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "overview_stock_cards.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "precomputed_indicators.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "providers/__init__.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "providers/base.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "providers/dhan.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "providers/yahoo.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "rankings.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "relative_strength.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "rmv.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "rrg.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "scheduler.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "screener.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "scripts/__init__.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "scripts/apply_classification_theme_workbook.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "scripts/generate_avalon_indas_financials.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "scripts/generate_nse_only_financials.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "stage_analysis.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "stage_analysis_panel.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "symbol_mapper.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "tc2000_formulas.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "updater.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "watchlist_formulas.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "youtube_panel.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      }
+    ],
+    "cycles": [],
+    "summary": {
+      "avg_instability": 0.0,
+      "total_cycles": 0,
+      "most_stable": "__init__.py",
+      "most_unstable": "youtube_panel.py"
+    }
+  },
+  "pairwise_coupling": {
+    "modules_analyzed": 56,
+    "pairs_analyzed": 12,
+    "total_cross_file_pairs": 12,
+    "avg_coupling_score": 0.40361498398542883,
+    "tight_coupling_count": 3,
+    "top_pairs": [
+      {
+
+... [280 lines truncated, full output regeneratable via probe.sh] ...
+
+        ],
+        "shared_imports": [
+          "datetime",
+          "pandas",
+          "typing"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/__init__.py",
+        "target": "providers/yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [
+          {
+            "caller": "get_yahoo_provider",
+            "callee": "YahooProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.providers.base"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/base.py",
+        "target": "providers/dhan.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "DhanProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "datetime",
+          "pandas",
+          "typing"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      }
+    ]
+  }
+}

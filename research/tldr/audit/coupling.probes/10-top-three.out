@@ -1,0 +1,373 @@
+{
+  "martin_metrics": {
+    "schema_version": "1.0",
+    "modules_analyzed": 3,
+    "metrics": [
+      {
+        "module": "__init__.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "amfi_portfolios.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      },
+      {
+        "module": "announcement_scheduler.py",
+        "ca": 0,
+        "ce": 0,
+        "instability": 0.0,
+        "in_cycle": false
+      }
+    ],
+    "cycles": [],
+    "summary": {
+      "avg_instability": 0.0,
+      "total_cycles": 0,
+      "most_stable": "__init__.py",
+      "most_unstable": "__init__.py"
+    }
+  },
+  "pairwise_coupling": {
+    "modules_analyzed": 56,
+    "pairs_analyzed": 12,
+    "total_cross_file_pairs": 12,
+    "avg_coupling_score": 0.40361498398542883,
+    "tight_coupling_count": 3,
+    "top_pairs": [
+      {
+        "source": "tc2000_formulas.py",
+        "target": "watchlist_formulas.py",
+        "import_count": 4,
+        "call_count": 16,
+        "calls_source_to_target": [
+          {
+            "caller": "compile_tc2000_formula",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "compile_tc2000_formula",
+            "callee": "CompiledFormula"
+          },
+          {
+            "caller": "TcParser.parse_primary_expression",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.parse",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_tokenize_tc2000",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_parse_compact_identifier",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_determine_required_bars",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_determine_required_bars_for_call",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_extract_integer_literal",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.parse_postfix_expression",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_require_argument_count",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "TcParser.expect",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_evaluate_identifier",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_extract_integer_number",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_collect_dependencies",
+            "callee": "FormulaValidationError"
+          },
+          {
+            "caller": "_evaluate_call",
+            "callee": "FormulaValidationError"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "typing",
+          "__future__",
+          "dataclasses",
+          "math",
+          "re"
+        ],
+        "score": 0.9640275800758169,
+        "verdict": "tight"
+      },
+      {
+        "source": "scripts/generate_avalon_indas_financials.py",
+        "target": "scripts/generate_nse_only_financials.py",
+        "import_count": 1,
+        "call_count": 11,
+        "calls_source_to_target": [
+          {
+            "caller": "IndasSampleBuilder.extract_pnl_raw",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.extract_cash_raw",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.integrated_sources",
+            "callee": "NseFinancialExtractor.fetch_json"
+          },
+          {
+            "caller": "IndasSampleBuilder.ytd_money_duration",
+            "callee": "NseFinancialExtractor.select_duration_value"
+          },
+          {
+            "caller": "IndasSampleBuilder.duration_value",
+            "callee": "NseFinancialExtractor.select_duration_value"
+          },
+          {
+            "caller": "IndasSampleBuilder.__init__",
+            "callee": "NseFinancialExtractor.__init__"
+          },
+          {
+            "caller": "IndasSampleBuilder.money_instant",
+            "callee": "NseFinancialExtractor.select_instant_value"
+          },
+          {
+            "caller": "IndasSampleBuilder.annual_report_balance_overrides",
+            "callee": "NseFinancialExtractor.fetch_binary"
+          },
+          {
+            "caller": "IndasSampleBuilder.__init__",
+            "callee": "NseFinancialExtractor.detect_index"
+          },
+          {
+            "caller": "IndasSampleBuilder.ytd_money_duration",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          },
+          {
+            "caller": "IndasSampleBuilder.extract_balance_raw",
+            "callee": "NseFinancialExtractor.fetch_xbrl"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "typing",
+          "io",
+          "json",
+          "__future__",
+          "re",
+          "pathlib",
+          "datetime"
+        ],
+        "score": 0.8336546070121552,
+        "verdict": "tight"
+      },
+      {
+        "source": "api.py",
+        "target": "providers/dhan.py",
+        "import_count": 7,
+        "call_count": 2,
+        "calls_source_to_target": [
+          {
+            "caller": "get_stock_history",
+            "callee": "DhanProvider.__init__"
+          },
+          {
+            "caller": "get_stock_history",
+            "callee": "DhanProvider.fetch_intraday_chart"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "pandas",
+          "datetime",
+          "backend.config",
+          "backend.db",
+          "backend.dhan_client"
+        ],
+        "score": 0.7162978701990245,
+        "verdict": "tight"
+      },
+      {
+        "source": "market_data.py",
+        "target": "providers/dhan.py",
+        "import_count": 2,
+        "call_count": 2,
+        "calls_source_to_target": [
+          {
+            "caller": "fetch_and_store_ticker_data",
+            "callee": "DhanProvider.__init__"
+          },
+          {
+            "caller": "_fetch_one",
+            "callee": "DhanProvider.fetch_historical_data"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "pandas",
+          "datetime",
+          "backend.db",
+          "backend.dhan_client"
+        ],
+        "score": 0.3799489622552249,
+        "verdict": "moderate"
+      },
+      {
+        "source": "dhan_historical.py",
+        "target": "providers/dhan.py",
+        "import_count": 2,
+        "call_count": 2,
+        "calls_source_to_target": [
+          {
+            "caller": "fetch_and_store_dhan_historical",
+            "callee": "DhanProvider.fetch_historical_data"
+          },
+          {
+            "caller": "fetch_and_store_dhan_historical",
+            "callee": "DhanProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "typing",
+          "datetime",
+          "backend.config",
+          "backend.db",
+          "backend.dhan_client"
+        ],
+        "score": 0.3799489622552249,
+        "verdict": "moderate"
+      },
+      {
+        "source": "dhan_security_master.py",
+        "target": "dhan_security_master_scheduler.py",
+        "import_count": 1,
+        "call_count": 2,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "refresh_security_master_background",
+            "callee": "SecurityMaster.get_statistics"
+          },
+          {
+            "caller": "refresh_security_master_background",
+            "callee": "SecurityMaster.refresh_security_master"
+          }
+        ],
+        "shared_imports": [
+          "backend.db",
+          "typing",
+          "datetime"
+        ],
+        "score": 0.2913126124515909,
+        "verdict": "loose"
+      },
+      {
+        "source": "api.py",
+        "target": "dhan_security_master.py",
+        "import_count": 2,
+        "call_count": 1,
+        "calls_source_to_target": [
+          {
+            "caller": "lifespan",
+            "callee": "SecurityMaster.get_statistics"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "pandas",
+          "sqlite3",
+          "io",
+          "datetime",
+          "backend.config",
+          "backend.db"
+        ],
+        "score": 0.2913126124515909,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/__init__.py",
+        "target": "providers/yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [
+          {
+            "caller": "get_yahoo_provider",
+            "callee": "YahooProvider.__init__"
+          }
+        ],
+        "calls_target_to_source": [],
+        "shared_imports": [
+          "backend.providers.base"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/base.py",
+        "target": "providers/dhan.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "DhanProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "typing",
+          "pandas",
+          "datetime"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      },
+      {
+        "source": "providers/base.py",
+        "target": "providers/yahoo.py",
+        "import_count": 1,
+        "call_count": 1,
+        "calls_source_to_target": [],
+        "calls_target_to_source": [
+          {
+            "caller": "YahooProvider.__init__",
+            "callee": "Provider.__init__"
+          }
+        ],
+        "shared_imports": [
+          "typing",
+          "pandas",
+          "datetime"
+        ],
+        "score": 0.197375320224904,
+        "verdict": "loose"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "martin_metrics": {
+    "schema_version": "1.0",
+    "modules_analyzed": 0,
+    "metrics": [],
+    "cycles": [],
+    "summary": {
+      "avg_instability": 0.0,
+      "total_cycles": 0
+    }
+  },
+  "pairwise_coupling": {
+    "modules_analyzed": 0,
+    "pairs_analyzed": 0,
+    "total_cross_file_pairs": 0,
+    "tight_coupling_count": 0,
+    "top_pairs": []
+  }
+}

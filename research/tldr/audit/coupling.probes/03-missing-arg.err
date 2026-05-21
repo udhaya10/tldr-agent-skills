@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <PATH_A>
+
+Usage: tldr coupling <PATH_A> [PATH_B]
+
+For more information, try '--help'.
+exit=2

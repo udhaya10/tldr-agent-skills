@@ -1,0 +1,3 @@
+Error: For pair mode, provide two file paths: tldr coupling <file_a> <file_b>
+For project-wide mode, provide a directory: tldr coupling <directory>
+exit=1

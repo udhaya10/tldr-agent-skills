@@ -1,0 +1,20 @@
+Martin Coupling Metrics (project-wide)
+
+ Module      | Ca | Ce |      I | Cycle?
+-------------+----+----+--------+-------
+ __init__.py |  0 |  0 |  0.00  |   --
+ base.py     |  0 |  0 |  0.00  |   --
+ dhan.py     |  0 |  0 |  0.00  |   --
+ yahoo.py    |  0 |  0 |  0.00  |   --
+
+Summary: 4 modules, 0 cycles detected, avg instability: 0.00
+
+Coupling Analysis (project-wide)
+
+ Score  Calls  Imports     Verdict  Source -> Target
+  0.20      1        1       loose  __init__.py -> yahoo.py
+  0.20      1        1       loose  base.py -> yahoo.py
+  0.20      1        1       loose  base.py -> dhan.py
+
+Summary: 4 modules, 3 pairs analyzed, 0 tight, avg score: 0.20
+

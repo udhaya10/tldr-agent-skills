@@ -1,0 +1,2 @@
+Warning: `churn --hotspots` is removed. Use `tldr hotspots` instead.
+exit=0

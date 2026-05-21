@@ -1,0 +1,278 @@
+{
+  "files": [
+    {
+      "file": "backend/api.py",
+      "commit_count": 22,
+      "lines_added": 1159,
+      "lines_deleted": 335,
+      "lines_changed": 1494,
+      "first_commit": "2026-04-25",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "roshankumarstocks@gmail.com",
+        "udhaya10@gmail.com"
+      ],
+      "author_count": 2
+    },
+    {
+      "file": ".beads/issues.jsonl",
+      "commit_count": 19,
+      "lines_added": 77,
+      "lines_deleted": 46,
+      "lines_changed": 123,
+      "first_commit": "2026-05-20",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "udhaya10@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/chart/components/ChartView.jsx",
+      "commit_count": 16,
+      "lines_added": 2668,
+      "lines_deleted": 535,
+      "lines_changed": 3203,
+      "first_commit": "2026-04-23",
+      "last_commit": "2026-05-19",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/dashboard/Dashboard.jsx",
+      "commit_count": 13,
+      "lines_added": 2527,
+      "lines_deleted": 616,
+      "lines_changed": 3143,
+      "first_commit": "2026-04-23",
+      "last_commit": "2026-05-18",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/chart/components/ChartPanel.jsx",
+      "commit_count": 12,
+      "lines_added": 2278,
+      "lines_deleted": 211,
+      "lines_changed": 2489,
+      "first_commit": "2026-04-23",
+      "last_commit": "2026-05-15",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/stocks/components/AllStocksPanel.jsx",
+      "commit_count": 10,
+      "lines_added": 1660,
+      "lines_deleted": 117,
+      "lines_changed": 1777,
+      "first_commit": "2026-04-24",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/chart/components/ChartToolbar.jsx",
+      "commit_count": 8,
+      "lines_added": 805,
+      "lines_deleted": 264,
+      "lines_changed": 1069,
+      "first_commit": "2026-04-23",
+      "last_commit": "2026-05-16",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "backend/watchlist_formulas.py",
+      "commit_count": 8,
+      "lines_added": 951,
+      "lines_deleted": 125,
+      "lines_changed": 1076,
+      "first_commit": "2026-04-28",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "backend/market_data.py",
+      "commit_count": 7,
+      "lines_added": 309,
+      "lines_deleted": 282,
+      "lines_changed": 591,
+      "first_commit": "2026-04-22",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "udhaya10@gmail.com",
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 2
+    },
+    {
+      "file": "backend/nse_results.py",
+      "commit_count": 7,
+      "lines_added": 2311,
+      "lines_deleted": 58,
+      "lines_changed": 2369,
+      "first_commit": "2026-05-08",
+      "last_commit": "2026-05-19",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/dashboard/panelRegistry.js",
+      "commit_count": 7,
+      "lines_added": 47,
+      "lines_deleted": 4,
+      "lines_changed": 51,
+      "first_commit": "2026-04-26",
+      "last_commit": "2026-05-16",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/stocks/api/stocksApi.js",
+      "commit_count": 7,
+      "lines_added": 86,
+      "lines_deleted": 40,
+      "lines_changed": 126,
+      "first_commit": "2026-04-23",
+      "last_commit": "2026-05-16",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/stocks/components/ResultsPanel.jsx",
+      "commit_count": 7,
+      "lines_added": 1448,
+      "lines_deleted": 139,
+      "lines_changed": 1587,
+      "first_commit": "2026-05-08",
+      "last_commit": "2026-05-19",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/stocks/components/WatchlistHeader.jsx",
+      "commit_count": 7,
+      "lines_added": 96,
+      "lines_deleted": 190,
+      "lines_changed": 286,
+      "first_commit": "2026-04-28",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "backend/updater.py",
+      "commit_count": 6,
+      "lines_added": 309,
+      "lines_deleted": 43,
+      "lines_changed": 352,
+      "first_commit": "2026-04-22",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "roshankumarstocks@gmail.com",
+        "udhaya10@gmail.com"
+      ],
+      "author_count": 2
+    },
+    {
+      "file": "webui/src/features/stocks/components/FilteredWatchlistEditorDialog.jsx",
+      "commit_count": 6,
+      "lines_added": 430,
+      "lines_deleted": 253,
+      "lines_changed": 683,
+      "first_commit": "2026-04-23",
+      "last_commit": "2026-05-19",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/components/Chart/utils/indicatorCreators.ts",
+      "commit_count": 5,
+      "lines_added": 284,
+      "lines_deleted": 111,
+      "lines_changed": 395,
+      "first_commit": "2026-04-24",
+      "last_commit": "2026-05-18",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "backend/rrg.py",
+      "commit_count": 5,
+      "lines_added": 1042,
+      "lines_deleted": 37,
+      "lines_changed": 1079,
+      "first_commit": "2026-04-28",
+      "last_commit": "2026-05-11",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "docs/ai-worklog.ndjson",
+      "commit_count": 5,
+      "lines_added": 41,
+      "lines_deleted": 0,
+      "lines_changed": 41,
+      "first_commit": "2026-05-11",
+      "last_commit": "2026-05-19",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    },
+    {
+      "file": "webui/src/features/stocks/lib/filteredWatchlists.js",
+      "commit_count": 5,
+      "lines_added": 472,
+      "lines_deleted": 41,
+      "lines_changed": 513,
+      "first_commit": "2026-05-11",
+      "last_commit": "2026-05-20",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    }
+  ],
+  "hotspots": [],
+  "authors": [],
+  "summary": {
+    "total_files": 2429,
+    "total_commits": 82,
+    "time_window_days": 30,
+    "total_lines_changed": 876485,
+    "avg_commits_per_file": 0.0337587484561548,
+    "most_churned_file": "backend/api.py"
+  },
+  "is_shallow": false
+}

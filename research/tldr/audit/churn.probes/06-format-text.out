@@ -1,0 +1,28 @@
+Churn Analysis (2649 files, 365 days)
+Total commits: 156, Lines changed: 1060365
+Most churned: webui/src/features/chart/components/ChartView.jsx
+
+High-Churn Files:
+   #  Commits   +Lines   -Lines  Auth        Last  File
+   1       49    +9755    -1461     1  2026-05-19  webui/src/features/chart/components/ChartView.jsx
+   2       45    +7519    -1483     1  2026-05-20  webui/src/features/stocks/components/AllStocksPanel.jsx
+   3       43    +2980     -544     2  2026-05-20  backend/api.py
+   4       41    +4536    -1259     1  2026-05-18  webui/src/features/dashboard/Dashboard.jsx
+   5       41    +4694     -868     1  2026-05-15  webui/src/features/chart/components/ChartPanel.jsx
+   6       23     +805     -202     1  2026-05-16  webui/src/features/stocks/components/WatchlistRow.jsx
+   7       21     +998     -397     1  2026-05-20  webui/src/features/stocks/components/WatchlistHeader.jsx
+   8       20    +2862    -1044     1  2026-05-16  webui/src/features/chart/components/ChartToolbar.jsx
+   9       20     +525      -98     1  2026-05-16  webui/src/features/stocks/api/stocksApi.js
+  10       19      +77      -46     1  2026-05-20  .beads/issues.jsonl
+  11       19     +202      -20     1  2026-05-16  webui/src/features/dashboard/panelRegistry.js
+  12       18    +1226     -153     1  2026-05-11  webui/src/features/stocks/lib/watchlistView.js
+  13       18     +642      -39     1  2026-05-11  webui/src/features/stocks/lib/watchlistState.js
+  14       18    +1224     -514     1  2026-05-11  webui/src/components/Chart/IndicatorLegend/IndicatorLegend.tsx
+  15       17    +2868     -196     1  2026-05-20  backend/watchlist_formulas.py
+  16       17     +645     -202     1  2026-05-08  webui/src/features/stocks/components/WatchlistSection.jsx
+  17       16    +2123     -686     1  2026-05-11  webui/src/features/stocks/components/StockDetailsPanel.jsx
+  18       15      +54       -4     1  2026-05-14  webui/src/features/chart/lib/chartPanelStorage.js
+  19       15    +1899     -763     1  2026-05-20  webui/src/features/stocks/components/WatchlistDropdown.jsx
+  20       14     +601     -135     1  2026-05-11  webui/src/components/Chart/IndicatorLegend/IndicatorLegend.module.css
+
+

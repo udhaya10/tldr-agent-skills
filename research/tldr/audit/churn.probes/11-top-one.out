@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "file": "webui/src/features/chart/components/ChartView.jsx",
+      "commit_count": 49,
+      "lines_added": 9755,
+      "lines_deleted": 1461,
+      "lines_changed": 11216,
+      "first_commit": "2026-03-16",
+      "last_commit": "2026-05-19",
+      "authors": [
+        "roshankumarstocks@gmail.com"
+      ],
+      "author_count": 1
+    }
+  ],
+  "hotspots": [],
+  "authors": [],
+  "summary": {
+    "total_files": 2649,
+    "total_commits": 156,
+    "time_window_days": 365,
+    "total_lines_changed": 1060365,
+    "avg_commits_per_file": 0.05889014722536806,
+    "most_churned_file": "webui/src/features/chart/components/ChartView.jsx"
+  },
+  "is_shallow": false
+}

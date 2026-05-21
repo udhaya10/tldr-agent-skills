@@ -1,0 +1,11 @@
+{
+  "file": "README.md",
+  "lines": [],
+  "count": 0,
+  "line_count": 0,
+  "source_line": 1,
+  "target_line": 10,
+  "path_exists": false,
+  "function": "anything",
+  "explanation": "Analysis could not be completed: function 'anything' not found in /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/README.md"
+}

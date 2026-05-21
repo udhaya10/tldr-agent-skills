@@ -1,0 +1,11 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "lines": [],
+  "count": 0,
+  "line_count": 0,
+  "source_line": 20,
+  "target_line": 24,
+  "path_exists": false,
+  "function": "_to_finite_float",
+  "explanation": "Analysis could not be completed: parse error in /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py: line 24 is within function '_to_finite_float' (lines 18-25) but no PDG node is anchored there (likely a brace, comment, or part of a multi-line statement attributed to a neighbouring line)"
+}

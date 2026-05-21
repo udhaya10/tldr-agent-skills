@@ -1,0 +1,8 @@
+error: unexpected argument '-5' found
+
+  tip: to pass '-5' as a value, use '-- -5'
+
+Usage: tldr chop [OPTIONS] <file> <function> <source_line> <target_line>
+
+For more information, try '--help'.
+exit=2

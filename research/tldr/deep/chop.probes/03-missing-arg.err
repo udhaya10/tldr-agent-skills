@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <target_line>
+
+Usage: tldr chop <file> <function> <source_line> <target_line>
+
+For more information, try '--help'.
+exit=2

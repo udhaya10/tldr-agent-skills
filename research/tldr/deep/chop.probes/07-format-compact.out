@@ -1,0 +1,1 @@
+{"file":"backend/providers/yahoo.py","lines":[20,21,25],"count":3,"line_count":3,"source_line":21,"target_line":25,"path_exists":true,"function":"_to_finite_float","explanation":"Found 3 lines on the dependency path from line 21 to line 25."}

@@ -1,0 +1,12 @@
+Chop Analysis: 21 -> 25
+Function: _to_finite_float
+
+Path exists: 3 lines on dependency path
+
+Lines:
+  Line 20
+  Line 21
+  Line 25
+
+Explanation: Found 3 lines on the dependency path from line 21 to line 25.
+

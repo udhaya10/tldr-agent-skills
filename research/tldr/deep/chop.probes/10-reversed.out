@@ -1,0 +1,11 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "lines": [],
+  "count": 0,
+  "line_count": 0,
+  "source_line": 25,
+  "target_line": 20,
+  "path_exists": false,
+  "function": "_to_finite_float",
+  "explanation": "No dependency path from line 25 to line 20. The source line does not affect the target line."
+}

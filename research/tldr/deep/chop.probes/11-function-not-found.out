@@ -1,0 +1,11 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "lines": [],
+  "count": 0,
+  "line_count": 0,
+  "source_line": 10,
+  "target_line": 20,
+  "path_exists": false,
+  "function": "no_such_function",
+  "explanation": "Analysis could not be completed: function 'no_such_function' not found in /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py"
+}

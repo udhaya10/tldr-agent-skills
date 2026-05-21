@@ -1,0 +1,11 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "lines": [],
+  "count": 0,
+  "line_count": 0,
+  "source_line": 99999,
+  "target_line": 100000,
+  "path_exists": false,
+  "function": "_to_finite_float",
+  "explanation": "Analysis could not be completed: line 99999 is outside function '_to_finite_float' (lines 18-25)"
+}

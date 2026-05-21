@@ -1,0 +1,13 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "lines": [
+    20
+  ],
+  "count": 1,
+  "line_count": 1,
+  "source_line": 20,
+  "target_line": 20,
+  "path_exists": true,
+  "function": "_to_finite_float",
+  "explanation": "Source and target are the same line (20)."
+}

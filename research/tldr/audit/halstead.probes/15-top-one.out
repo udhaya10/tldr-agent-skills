@@ -1,0 +1,50 @@
+{
+  "functions": [
+    {
+      "name": "create_app",
+      "file": "backend/api.py",
+      "line": 1561,
+      "metrics": {
+        "n1": 100,
+        "n2": 647,
+        "N1": 1936,
+        "N2": 2070,
+        "vocabulary": 747,
+        "length": 4006,
+        "volume": 38237.12751775369,
+        "difficulty": 159.96908809891806,
+        "effort": 6116758.420537104,
+        "time": 339819.9122520613,
+        "bugs": 12.745709172584563
+      },
+      "thresholds": {
+        "volume_status": "bad",
+        "difficulty_status": "bad"
+      }
+    }
+  ],
+  "violations": [
+    {
+      "name": "create_app",
+      "file": "backend/api.py",
+      "metric": "volume",
+      "value": 38237.12751775369,
+      "threshold": 1000.0
+    },
+    {
+      "name": "create_app",
+      "file": "backend/api.py",
+      "metric": "difficulty",
+      "value": 159.96908809891806,
+      "threshold": 20.0
+    }
+  ],
+  "summary": {
+    "total_functions": 1,
+    "avg_volume": 38237.12751775369,
+    "avg_difficulty": 159.96908809891806,
+    "avg_effort": 6116758.420537104,
+    "total_estimated_bugs": 12.745709172584563,
+    "violations_count": 2
+  }
+}

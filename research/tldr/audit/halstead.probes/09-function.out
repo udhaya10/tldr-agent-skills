@@ -1,0 +1,50 @@
+{
+  "functions": [
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "metrics": {
+        "n1": 29,
+        "n2": 55,
+        "N1": 103,
+        "N2": 102,
+        "vocabulary": 84,
+        "length": 205,
+        "volume": 1310.4250716696458,
+        "difficulty": 26.89090909090909,
+        "effort": 35238.52147271648,
+        "time": 1957.6956373731377,
+        "bugs": 0.43680835722321526
+      },
+      "thresholds": {
+        "volume_status": "warning",
+        "difficulty_status": "warning"
+      }
+    }
+  ],
+  "violations": [
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "metric": "volume",
+      "value": 1310.4250716696458,
+      "threshold": 1000.0
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "metric": "difficulty",
+      "value": 26.89090909090909,
+      "threshold": 20.0
+    }
+  ],
+  "summary": {
+    "total_functions": 1,
+    "avg_volume": 1310.4250716696458,
+    "avg_difficulty": 26.89090909090909,
+    "avg_effort": 35238.52147271648,
+    "total_estimated_bugs": 0.43680835722321526,
+    "violations_count": 2
+  }
+}

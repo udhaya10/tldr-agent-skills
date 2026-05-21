@@ -1,0 +1,94 @@
+
+Halstead Metrics Report
+
+
+Summary (23 functions analyzed)
+
+  Avg Volume:     528.66
+
+  Avg Difficulty: 13.70
+
+  Avg Effort:     17472.94
+
+  Est. Bugs:      4.053
+
+  Violations: 11
+
+
+Functions
+
+  Name                                 n1       n2     Volume   Difficulty     Effort   Status
+
+--------------------------------------------------------------------------------------------------
+
+  fetch_intraday_chart                 55      105    2833.59        52.90     149910      bad
+
+  fetch_historical_data                40       78    2119.85        41.54      88055      bad
+
+  fetch_intraday_chart                 37       71    1580.64        31.79      50247  warning
+
+  fetch_historical_data                29       55    1310.43        26.89      35239  warning
+
+  fetch_quotes                         29       48    1008.95        27.49      27736  warning
+
+  fetch_market_cap                     28       27     699.54        29.04      20313     good
+
+  fetch_metadata                       18       35     681.62        17.23      11743     good
+
+  _load_mappings                       21       27     541.74        18.67      10113     good
+
+  fetch_metadata                       13       19     250.00        10.61       2651     good
+
+  _to_finite_float                     13       13     155.11         9.00       1396     good
+
+  __init__                              7       14     149.34         5.00        747     good
+
+  _get_client                          12        7     127.44        11.14       1420     good
+
+  fetch_quotes                          4       12      88.00         2.83        249     good
+
+  fetch_quotes                          4       12      84.00         2.83        238     good
+
+  __repr__                              5       10      82.04         3.00        246     good
+
+  get_yahoo_provider                   10        6      80.00         8.33        667     good
+
+  fetch_historical_data                 5       11      72.00         2.73        196     good
+
+  fetch_intraday_chart                  5       11      72.00         2.73        196     good
+
+  __init__                              5        6      48.43         3.75        182     good
+
+  __init__                              5        6      44.97         2.92        131     good
+
+  fetch_metadata                        3        8      44.97         1.69         76     good
+
+  fetch_market_cap                      3        9      43.02         1.50         65     good
+
+  fetch_market_cap                      3        8      41.51         1.50         62     good
+
+
+Threshold Violations
+
+  fetch_intraday_chart in dhan.py: volume = 2833.59 (threshold: 1000.00)
+
+  fetch_intraday_chart in dhan.py: difficulty = 52.90 (threshold: 20.00)
+
+  fetch_historical_data in dhan.py: volume = 2119.85 (threshold: 1000.00)
+
+  fetch_historical_data in dhan.py: difficulty = 41.54 (threshold: 20.00)
+
+  fetch_intraday_chart in yahoo.py: volume = 1580.64 (threshold: 1000.00)
+
+  fetch_intraday_chart in yahoo.py: difficulty = 31.79 (threshold: 20.00)
+
+  fetch_historical_data in yahoo.py: volume = 1310.43 (threshold: 1000.00)
+
+  fetch_historical_data in yahoo.py: difficulty = 26.89 (threshold: 20.00)
+
+  fetch_quotes in yahoo.py: volume = 1008.95 (threshold: 1000.00)
+
+  fetch_quotes in yahoo.py: difficulty = 27.49 (threshold: 20.00)
+
+  fetch_market_cap in yahoo.py: difficulty = 29.04 (threshold: 20.00)
+

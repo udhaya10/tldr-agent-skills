@@ -1,0 +1,221 @@
+{
+  "functions": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "metrics": {
+        "n1": 55,
+        "n2": 105,
+        "N1": 185,
+        "N2": 202,
+        "vocabulary": 160,
+        "length": 387,
+        "volume": 2833.586172721409,
+        "difficulty": 52.904761904761905,
+        "effort": 149910.2018044517,
+        "time": 8328.344544691761,
+        "bugs": 0.9445287242404697
+      },
+      "thresholds": {
+        "volume_status": "bad",
+        "difficulty_status": "bad"
+      }
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "line": 49,
+      "metrics": {
+        "n1": 40,
+        "n2": 78,
+        "N1": 146,
+        "N2": 162,
+        "vocabulary": 118,
+        "length": 308,
+        "volume": 2119.8540592034474,
+        "difficulty": 41.53846153846154,
+        "effort": 88055.47630537397,
+        "time": 4891.970905854109,
+        "bugs": 0.7066180197344825
+      },
+      "thresholds": {
+        "volume_status": "bad",
+        "difficulty_status": "bad"
+      }
+    },
+    {
+      "name": "_load_mappings",
+      "file": "backend/providers/dhan.py",
+      "line": 31,
+      "metrics": {
+        "n1": 21,
+        "n2": 27,
+        "N1": 49,
+        "N2": 48,
+        "vocabulary": 48,
+        "length": 97,
+        "volume": 541.7413625699521,
+        "difficulty": 18.666666666666664,
+        "effort": 10112.505434639104,
+        "time": 561.8058574799502,
+        "bugs": 0.18058045418998403
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/dhan.py",
+      "line": 219,
+      "metrics": {
+        "n1": 13,
+        "n2": 19,
+        "N1": 19,
+        "N2": 31,
+        "vocabulary": 32,
+        "length": 50,
+        "volume": 250.0,
+        "difficulty": 10.605263157894736,
+        "effort": 2651.315789473684,
+        "time": 147.2953216374269,
+        "bugs": 0.08333333333333333
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/dhan.py",
+      "line": 20,
+      "metrics": {
+        "n1": 7,
+        "n2": 14,
+        "N1": 14,
+        "N2": 20,
+        "vocabulary": 21,
+        "length": 34,
+        "volume": 149.33879237447786,
+        "difficulty": 5.0,
+        "effort": 746.6939618723893,
+        "time": 41.482997881799406,
+        "bugs": 0.04977959745815929
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "_get_client",
+      "file": "backend/providers/dhan.py",
+      "line": 25,
+      "metrics": {
+        "n1": 12,
+        "n2": 7,
+        "N1": 17,
+        "N2": 13,
+        "vocabulary": 19,
+        "length": 30,
+        "volume": 127.43782540330756,
+        "difficulty": 11.142857142857142,
+        "effort": 1420.021483065427,
+        "time": 78.89008239252372,
+        "bugs": 0.042479275134435855
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/dhan.py",
+      "line": 207,
+      "metrics": {
+        "n1": 4,
+        "n2": 12,
+        "N1": 4,
+        "N2": 17,
+        "vocabulary": 16,
+        "length": 21,
+        "volume": 84.0,
+        "difficulty": 2.8333333333333335,
+        "effort": 238.0,
+        "time": 13.222222222222221,
+        "bugs": 0.028
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/dhan.py",
+      "line": 215,
+      "metrics": {
+        "n1": 3,
+        "n2": 9,
+        "N1": 3,
+        "N2": 9,
+        "vocabulary": 12,
+        "length": 12,
+        "volume": 43.01955000865387,
+        "difficulty": 1.5,
+        "effort": 64.5293250129808,
+        "time": 3.584962500721156,
+        "bugs": 0.014339850002884624
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    }
+  ],
+  "violations": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "metric": "volume",
+      "value": 2833.586172721409,
+      "threshold": 1000.0
+    },
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/dhan.py",
+      "metric": "difficulty",
+      "value": 52.904761904761905,
+      "threshold": 20.0
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "metric": "volume",
+      "value": 2119.8540592034474,
+      "threshold": 1000.0
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/dhan.py",
+      "metric": "difficulty",
+      "value": 41.53846153846154,
+      "threshold": 20.0
+    }
+  ],
+  "summary": {
+    "total_functions": 8,
+    "avg_volume": 768.6222202851559,
+    "avg_difficulty": 18.023917967996915,
+    "avg_effort": 31649.84301298616,
+    "total_estimated_bugs": 2.0496592540937493,
+    "violations_count": 4
+  },
+  "warnings": [
+    "Stopped after 1 files (max_files limit)"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "functions": [],
+  "violations": [],
+  "summary": {
+    "total_functions": 0,
+    "avg_volume": 0.0,
+    "avg_difficulty": 0.0,
+    "avg_effort": 0.0,
+    "total_estimated_bugs": 0.0,
+    "violations_count": 0
+  }
+}

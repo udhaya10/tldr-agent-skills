@@ -1,0 +1,217 @@
+{
+  "functions": [
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "line": 87,
+      "metrics": {
+        "n1": 37,
+        "n2": 71,
+        "N1": 112,
+        "N2": 122,
+        "vocabulary": 108,
+        "length": 234,
+        "volume": 1580.6436755062516,
+        "difficulty": 31.788732394366196,
+        "effort": 50246.658811515634,
+        "time": 2791.481045084202,
+        "bugs": 0.5268812251687506
+      },
+      "thresholds": {
+        "volume_status": "warning",
+        "difficulty_status": "warning"
+      }
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "line": 38,
+      "metrics": {
+        "n1": 29,
+        "n2": 55,
+        "N1": 103,
+        "N2": 102,
+        "vocabulary": 84,
+        "length": 205,
+        "volume": 1310.4250716696458,
+        "difficulty": 26.89090909090909,
+        "effort": 35238.52147271648,
+        "time": 1957.6956373731377,
+        "bugs": 0.43680835722321526
+      },
+      "thresholds": {
+        "volume_status": "warning",
+        "difficulty_status": "warning"
+      }
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "line": 149,
+      "metrics": {
+        "n1": 29,
+        "n2": 48,
+        "N1": 70,
+        "N2": 91,
+        "vocabulary": 77,
+        "length": 161,
+        "volume": 1008.952633051879,
+        "difficulty": 27.489583333333332,
+        "effort": 27735.687485665716,
+        "time": 1540.8715269814286,
+        "bugs": 0.33631754435062633
+      },
+      "thresholds": {
+        "volume_status": "warning",
+        "difficulty_status": "warning"
+      }
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "line": 190,
+      "metrics": {
+        "n1": 28,
+        "n2": 27,
+        "N1": 65,
+        "N2": 56,
+        "vocabulary": 55,
+        "length": 121,
+        "volume": 699.5445253364838,
+        "difficulty": 29.037037037037035,
+        "effort": 20312.700291251975,
+        "time": 1128.4833495139985,
+        "bugs": 0.23318150844549462
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "warning"
+      }
+    },
+    {
+      "name": "fetch_metadata",
+      "file": "backend/providers/yahoo.py",
+      "line": 218,
+      "metrics": {
+        "n1": 18,
+        "n2": 35,
+        "N1": 52,
+        "N2": 67,
+        "vocabulary": 53,
+        "length": 119,
+        "volume": 681.6225340930207,
+        "difficulty": 17.228571428571428,
+        "effort": 11743.38251594547,
+        "time": 652.4101397747484,
+        "bugs": 0.22720751136434023
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "_to_finite_float",
+      "file": "backend/providers/yahoo.py",
+      "line": 18,
+      "metrics": {
+        "n1": 13,
+        "n2": 13,
+        "N1": 15,
+        "N2": 18,
+        "vocabulary": 26,
+        "length": 33,
+        "volume": 155.11451069865603,
+        "difficulty": 9.0,
+        "effort": 1396.0305962879042,
+        "time": 77.55725534932802,
+        "bugs": 0.05170483689955201
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    },
+    {
+      "name": "__init__",
+      "file": "backend/providers/yahoo.py",
+      "line": 35,
+      "metrics": {
+        "n1": 5,
+        "n2": 6,
+        "N1": 6,
+        "N2": 7,
+        "vocabulary": 11,
+        "length": 13,
+        "volume": 44.97261104228487,
+        "difficulty": 2.916666666666667,
+        "effort": 131.17011553999754,
+        "time": 7.287228641110975,
+        "bugs": 0.01499087034742829
+      },
+      "thresholds": {
+        "volume_status": "good",
+        "difficulty_status": "good"
+      }
+    }
+  ],
+  "violations": [
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "metric": "volume",
+      "value": 1310.4250716696458,
+      "threshold": 1000.0
+    },
+    {
+      "name": "fetch_historical_data",
+      "file": "backend/providers/yahoo.py",
+      "metric": "difficulty",
+      "value": 26.89090909090909,
+      "threshold": 20.0
+    },
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "metric": "volume",
+      "value": 1580.6436755062516,
+      "threshold": 1000.0
+    },
+    {
+      "name": "fetch_intraday_chart",
+      "file": "backend/providers/yahoo.py",
+      "metric": "difficulty",
+      "value": 31.788732394366196,
+      "threshold": 20.0
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "metric": "volume",
+      "value": 1008.952633051879,
+      "threshold": 1000.0
+    },
+    {
+      "name": "fetch_quotes",
+      "file": "backend/providers/yahoo.py",
+      "metric": "difficulty",
+      "value": 27.489583333333332,
+      "threshold": 20.0
+    },
+    {
+      "name": "fetch_market_cap",
+      "file": "backend/providers/yahoo.py",
+      "metric": "difficulty",
+      "value": 29.037037037037035,
+      "threshold": 20.0
+    }
+  ],
+  "summary": {
+    "total_functions": 7,
+    "avg_volume": 783.0393659140318,
+    "avg_difficulty": 20.621642850126246,
+    "avg_effort": 20972.02161270331,
+    "total_estimated_bugs": 1.8270918537994072,
+    "violations_count": 7
+  }
+}

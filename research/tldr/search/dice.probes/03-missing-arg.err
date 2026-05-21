@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <TARGET2>
+
+Usage: tldr dice <TARGET1> <TARGET2>
+
+For more information, try '--help'.
+exit=2

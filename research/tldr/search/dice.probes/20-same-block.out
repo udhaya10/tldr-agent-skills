@@ -1,0 +1,8 @@
+{
+  "target1": "backend/providers/base.py:1:10",
+  "target2": "backend/providers/base.py:1:10",
+  "dice_coefficient": 1.0,
+  "interpretation": "Near-identical (exact or trivial differences)",
+  "tokens1_count": 23,
+  "tokens2_count": 23
+}

@@ -1,0 +1,2 @@
+Error: Failed to read package.json: No such file or directory (os error 2)
+exit=1

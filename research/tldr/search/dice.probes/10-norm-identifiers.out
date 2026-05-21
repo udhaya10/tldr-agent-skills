@@ -1,0 +1,8 @@
+{
+  "target1": "backend/providers/yahoo.py",
+  "target2": "backend/providers/dhan.py",
+  "dice_coefficient": 0.8634399308556612,
+  "interpretation": "High similarity (likely Type-2 clone)",
+  "tokens1_count": 1106,
+  "tokens2_count": 1208
+}

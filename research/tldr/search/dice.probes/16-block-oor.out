@@ -1,0 +1,8 @@
+{
+  "target1": "backend/providers/yahoo.py:99999:99999",
+  "target2": "backend/providers/base.py:99999:99999",
+  "dice_coefficient": 1.0,
+  "interpretation": "Near-identical (exact or trivial differences)",
+  "tokens1_count": 0,
+  "tokens2_count": 0
+}

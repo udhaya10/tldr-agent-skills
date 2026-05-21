@@ -1,0 +1,9 @@
+Similarity Comparison
+=====================
+
+Target 1: backend/providers/yahoo.py (1106 tokens)
+Target 2: backend/providers/dhan.py (1208 tokens)
+
+Dice coefficient: 90.32%
+Interpretation: Very high similarity (Type-1/2 clone)
+

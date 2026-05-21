@@ -1,0 +1,2 @@
+Error: --format dot not supported by imports. Use --format json. DOT is only emitted by: clones, deps, calls, impact, hubs, inheritance.
+exit=1

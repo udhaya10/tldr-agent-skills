@@ -1,0 +1,44 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "language": "python",
+  "imports": [
+    {
+      "module": "math",
+      "is_from": false
+    },
+    {
+      "module": "datetime",
+      "names": [
+        "date"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "typing",
+      "names": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional"
+      ],
+      "is_from": true
+    },
+    {
+      "module": "pandas",
+      "is_from": false,
+      "alias": "pd"
+    },
+    {
+      "module": "yfinance",
+      "is_from": false,
+      "alias": "yf"
+    },
+    {
+      "module": "backend.providers.base",
+      "names": [
+        "Provider"
+      ],
+      "is_from": true
+    }
+  ]
+}

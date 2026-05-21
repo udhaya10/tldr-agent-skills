@@ -1,0 +1,1 @@
+{"file":"backend/providers/base.py","language":"python","imports":[{"module":"abc","names":["ABC","abstractmethod"],"is_from":true},{"module":"datetime","names":["date"],"is_from":true},{"module":"typing","names":["Any","Dict","List","Optional"],"is_from":true},{"module":"pandas","is_from":false,"alias":"pd"}]}

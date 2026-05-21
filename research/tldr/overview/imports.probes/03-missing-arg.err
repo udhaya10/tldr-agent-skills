@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <FILE>
+
+Usage: tldr imports <FILE>
+
+For more information, try '--help'.
+exit=2

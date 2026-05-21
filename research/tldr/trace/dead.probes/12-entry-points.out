@@ -1,0 +1,22 @@
+{
+  "dead_functions": [],
+  "possibly_dead": [
+    {
+      "file": "__init__.py",
+      "name": "get_yahoo_provider",
+      "line": 26,
+      "signature": "get_yahoo_provider() -> YahooProvider",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    }
+  ],
+  "by_file": {},
+  "total_dead": 0,
+  "total_possibly_dead": 1,
+  "functions_analyzed": 23,
+  "total_functions": 23,
+  "dead_percentage": 0.0
+}

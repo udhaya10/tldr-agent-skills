@@ -1,0 +1,346 @@
+{
+  "dead_functions": [
+    {
+      "file": "nse_results.py",
+      "name": "_safe_parse_xbrl",
+      "line": 766,
+      "signature": "_safe_parse_xbrl(url) -> dict[str, Any]",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "nse_results.py",
+      "name": "_has_material_discontinued_profit",
+      "line": 1237,
+      "signature": "_has_material_discontinued_profit(discontinued_pat, total_pat) -> bool",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "nse_results.py",
+      "name": "_build_previous_row_index",
+      "line": 1990,
+      "signature": "_build_previous_row_index(rows) -> dict[tuple[str, str, str, str], dict[str, Any]]",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "rrg.py",
+      "name": "_latest_trade_date_from_timestamp",
+      "line": 436,
+      "signature": "_latest_trade_date_from_timestamp(timestamp_iso) -> str | None",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "rrg.py",
+      "name": "_prune_rrg_scores_by_retention",
+      "line": 458,
+      "signature": "_prune_rrg_scores_by_retention(conn, benchmark_symbol, timeframe, retention_limit) -> None",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "rrg.py",
+      "name": "_build_rrg_series",
+      "line": 814,
+      "signature": "_build_rrg_series(metadata, close_dataframe, benchmark_symbol, timeframe, trail, selected_symbols) -> list[dict[str, Any]]",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "watchlist_formulas.py",
+      "name": "_calculate_q4fy26_earnings_metric",
+      "line": 1265,
+      "signature": "_calculate_q4fy26_earnings_metric(context, name, index) -> Any",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "watchlist_formulas.py",
+      "name": "_normalize_earnings_period_value",
+      "line": 1336,
+      "signature": "_normalize_earnings_period_value(value) -> str",
+      "ref_count": 1,
+      "is_public": false,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    }
+  ],
+  "possibly_dead": [
+    {
+      "file": "amfi_portfolios.py",
+      "name": "repair_existing_portfolio_holdings",
+      "line": 6031,
+      "signature": "repair_existing_portfolio_holdings(conn, snapshot_ids) -> dict",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "amfi_portfolios.py",
+      "name": "reparse_existing_portfolio_snapshots",
+      "line": 6300,
+      "signature": "reparse_existing_portfolio_snapshots(conn, snapshot_ids, parser_names) -> dict",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "rankings.py",
+      "name": "build_metric_value",
+      "line": 622,
+      "signature": "build_metric_value(metric_key, group) -> tuple[float | None, pd.Timestamp | None]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "providers/__init__.py",
+      "name": "get_yahoo_provider",
+      "line": 26,
+      "signature": "get_yahoo_provider() -> YahooProvider",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "nse_index_history.py",
+      "name": "load_private_test_index_states",
+      "line": 469,
+      "signature": "load_private_test_index_states(conn, symbols) -> list[dict[str, object]]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "nse_index_history.py",
+      "name": "start_private_test_nifty500_backfill_worker",
+      "line": 698,
+      "signature": "start_private_test_nifty500_backfill_worker() -> None",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "screener.py",
+      "name": "classify_metric_profile",
+      "line": 6292,
+      "signature": "classify_metric_profile(sector, industry, theme) -> dict[str, bool]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "api.py",
+      "name": "get_latest_stocks",
+      "line": 1380,
+      "signature": "get_latest_stocks()",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "api.py",
+      "name": "get_app",
+      "line": 2431,
+      "signature": "get_app() -> FastAPI",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "market_data.py",
+      "name": "commit_with_lock_retry",
+      "line": 50,
+      "signature": "commit_with_lock_retry(conn, label)",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "market_data.py",
+      "name": "fetch_market_caps_for_chunk",
+      "line": 95,
+      "signature": "fetch_market_caps_for_chunk(tickers, max_workers)",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "blocked_symbols.py",
+      "name": "filter_blocked_symbols",
+      "line": 106,
+      "signature": "filter_blocked_symbols(symbols) -> list[str] | None",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "financial_results_sync.py",
+      "name": "run_recent_financial_results_catchup",
+      "line": 700,
+      "signature": "run_recent_financial_results_catchup(days) -> dict[str, object]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "symbol_mapper.py",
+      "name": "SymbolMapper.get_yahoo_symbol",
+      "line": 80,
+      "signature": "get_yahoo_symbol(self, dhan_security_id) -> Optional[str]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "symbol_mapper.py",
+      "name": "SymbolMapper.clear_cache",
+      "line": 245,
+      "signature": "clear_cache(self)",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "symbol_mapper.py",
+      "name": "SymbolMapper.validate_watchlist",
+      "line": 249,
+      "signature": "validate_watchlist(self, watchlist_symbols) -> Tuple[Dict[str, int], List[str], Dict[str, str]]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "relative_strength.py",
+      "name": "determine_relative_strength_refresh_required",
+      "line": 290,
+      "signature": "determine_relative_strength_refresh_required(conn, universe_symbols) -> bool",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "dhan_security_master.py",
+      "name": "SecurityMaster.get_security_id_by_symbol",
+      "line": 165,
+      "signature": "get_security_id_by_symbol(self, symbol, conn) -> Optional[int]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "dhan_security_master.py",
+      "name": "SecurityMaster.get_symbol_by_security_id",
+      "line": 190,
+      "signature": "get_symbol_by_security_id(self, security_id, conn) -> Optional[str]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "stage_analysis.py",
+      "name": "compute_stage_series_from_daily_history",
+      "line": 240,
+      "signature": "compute_stage_series_from_daily_history(times, opens, highs, lows, closes, volumes, ema_len, atr_len, atr_mult, confirmation_mode) -> list[int | None]",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "rmv.py",
+      "name": "compute_latest_rmv_from_dataframe",
+      "line": 127,
+      "signature": "compute_latest_rmv_from_dataframe(dataframe) -> float | None",
+      "ref_count": 1,
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    }
+  ],
+  "by_file": {
+    "rrg.py": [
+      "_latest_trade_date_from_timestamp",
+      "_prune_rrg_scores_by_retention",
+      "_build_rrg_series"
+    ],
+    "watchlist_formulas.py": [
+      "_calculate_q4fy26_earnings_metric",
+      "_normalize_earnings_period_value"
+    ],
+    "nse_results.py": [
+      "_safe_parse_xbrl",
+      "_has_material_discontinued_profit",
+      "_build_previous_row_index"
+    ]
+  },
+  "total_dead": 8,
+  "total_possibly_dead": 21,
+  "functions_analyzed": 1286,
+  "total_functions": 1286,
+  "dead_percentage": 0.62
+}

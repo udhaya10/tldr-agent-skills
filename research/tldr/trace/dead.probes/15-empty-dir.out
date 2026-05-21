@@ -1,0 +1,10 @@
+{
+  "dead_functions": [],
+  "possibly_dead": [],
+  "by_file": {},
+  "total_dead": 0,
+  "total_possibly_dead": 0,
+  "functions_analyzed": 0,
+  "total_functions": 0,
+  "dead_percentage": 0.0
+}

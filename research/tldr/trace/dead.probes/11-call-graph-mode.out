@@ -1,0 +1,121 @@
+{
+  "dead_functions": [],
+  "possibly_dead": [
+    {
+      "file": "dhan.py",
+      "name": "DhanProvider.fetch_historical_data",
+      "line": 49,
+      "signature": "fetch_historical_data(self, symbol, start_date, end_date) -> pd.DataFrame",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "dhan.py",
+      "name": "DhanProvider.fetch_intraday_chart",
+      "line": 126,
+      "signature": "fetch_intraday_chart(self, symbol, interval, period_bars) -> pd.DataFrame",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "dhan.py",
+      "name": "DhanProvider.fetch_quotes",
+      "line": 207,
+      "signature": "fetch_quotes(self, symbols, fields) -> Dict[str, Dict[str, Any]]",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "dhan.py",
+      "name": "DhanProvider.fetch_market_cap",
+      "line": 215,
+      "signature": "fetch_market_cap(self, symbol) -> Optional[float]",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "dhan.py",
+      "name": "DhanProvider.fetch_metadata",
+      "line": 219,
+      "signature": "fetch_metadata(self, symbol) -> Dict[str, Any]",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "yahoo.py",
+      "name": "YahooProvider.fetch_historical_data",
+      "line": 38,
+      "signature": "fetch_historical_data(self, symbol, start_date, end_date) -> pd.DataFrame",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "yahoo.py",
+      "name": "YahooProvider.fetch_intraday_chart",
+      "line": 87,
+      "signature": "fetch_intraday_chart(self, symbol, interval, period_bars) -> pd.DataFrame",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "yahoo.py",
+      "name": "YahooProvider.fetch_quotes",
+      "line": 149,
+      "signature": "fetch_quotes(self, symbols, fields) -> Dict[str, Dict[str, Any]]",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "yahoo.py",
+      "name": "YahooProvider.fetch_market_cap",
+      "line": 190,
+      "signature": "fetch_market_cap(self, symbol) -> Optional[float]",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "yahoo.py",
+      "name": "YahooProvider.fetch_metadata",
+      "line": 218,
+      "signature": "fetch_metadata(self, symbol) -> Dict[str, Any]",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    },
+    {
+      "file": "__init__.py",
+      "name": "get_yahoo_provider",
+      "line": 26,
+      "signature": "get_yahoo_provider() -> YahooProvider",
+      "is_public": true,
+      "is_test": false,
+      "is_trait_method": false,
+      "has_decorator": false
+    }
+  ],
+  "by_file": {},
+  "total_dead": 0,
+  "total_possibly_dead": 11,
+  "functions_analyzed": 23,
+  "total_functions": 23,
+  "dead_percentage": 0.0
+}

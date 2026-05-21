@@ -1,0 +1,31 @@
+digraph inheritance {
+    rankdir=BT;
+    node [shape=box, fontname="Helvetica"];
+    edge [arrowhead=empty];
+
+    "QuoteProvider" [label="<<abstract>>\nQuoteProvider\n(base.py:77)", style=filled, fillcolor=lightyellow];
+    "YahooProvider" [label="YahooProvider\n(yahoo.py:28)"];
+    "HistoricalDataProvider" [label="<<abstract>>\nHistoricalDataProvider\n(base.py:15)", style=filled, fillcolor=lightyellow];
+    "IntradayChartProvider" [label="<<abstract>>\nIntradayChartProvider\n(base.py:46)", style=filled, fillcolor=lightyellow];
+    "MetadataProvider" [label="<<abstract>>\nMetadataProvider\n(base.py:113)", style=filled, fillcolor=lightyellow];
+    "DhanProvider" [label="DhanProvider\n(dhan.py:17)"];
+    "Provider" [label="<<abstract>>\nProvider\n(base.py:155)", style=filled, fillcolor=lightyellow];
+
+    "YahooProvider" -> "Provider";
+    "QuoteProvider" -> "ABC" [style=dashed, color=blue];
+    "MetadataProvider" -> "ABC" [style=dashed, color=blue];
+    "DhanProvider" -> "Provider";
+    "IntradayChartProvider" -> "ABC" [style=dashed, color=blue];
+    "Provider" -> "HistoricalDataProvider";
+    "Provider" -> "IntradayChartProvider";
+    "Provider" -> "QuoteProvider";
+    "Provider" -> "MetadataProvider";
+    "Provider" -> "ABC" [style=dashed, color=blue];
+    "HistoricalDataProvider" -> "ABC" [style=dashed, color=blue];
+    "ABC" [label="ABC\n(external)", style=filled, fillcolor=lightblue, shape=ellipse];
+    "ABC" [label="ABC\n(external)", style=filled, fillcolor=lightblue, shape=ellipse];
+    "ABC" [label="ABC\n(external)", style=filled, fillcolor=lightblue, shape=ellipse];
+    "ABC" [label="ABC\n(external)", style=filled, fillcolor=lightblue, shape=ellipse];
+    "ABC" [label="ABC\n(external)", style=filled, fillcolor=lightblue, shape=ellipse];
+}
+

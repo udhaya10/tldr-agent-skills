@@ -1,0 +1,16 @@
+=== Inheritance Graph ===
+
+Project: backend/providers
+Classes found: 7
+Languages: python
+Scan time: 1ms
+
+Roots (no project parents):
+  (none)
+
+Leaves (no children):
+  DhanProvider 
+  YahooProvider 
+
+Hierarchy:
+

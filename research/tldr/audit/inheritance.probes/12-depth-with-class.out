@@ -1,0 +1,53 @@
+{
+  "edges": [
+    {
+      "child": "YahooProvider",
+      "parent": "Provider",
+      "child_file": "backend/providers/yahoo.py",
+      "child_line": 28,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 155,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Provider",
+      "file": "backend/providers/base.py",
+      "line": 155,
+      "language": "python",
+      "bases": [
+        "HistoricalDataProvider",
+        "IntradayChartProvider",
+        "QuoteProvider",
+        "MetadataProvider",
+        "ABC"
+      ],
+      "abstract": true
+    },
+    {
+      "name": "YahooProvider",
+      "file": "backend/providers/yahoo.py",
+      "line": 28,
+      "language": "python",
+      "bases": [
+        "Provider"
+      ],
+      "abstract": null
+    }
+  ],
+  "roots": [
+    "Provider"
+  ],
+  "leaves": [
+    "YahooProvider"
+  ],
+  "count": 2,
+  "languages": [
+    "python"
+  ],
+  "root": "backend/providers",
+  "scan_time_ms": 1
+}

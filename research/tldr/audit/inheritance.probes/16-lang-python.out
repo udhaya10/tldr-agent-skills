@@ -1,0 +1,212 @@
+{
+  "edges": [
+    {
+      "child": "QuoteProvider",
+      "parent": "ABC",
+      "child_file": "backend/providers/base.py",
+      "child_line": 77,
+      "parent_file": null,
+      "parent_line": null,
+      "kind": "extends",
+      "external": true,
+      "resolution": "stdlib"
+    },
+    {
+      "child": "HistoricalDataProvider",
+      "parent": "ABC",
+      "child_file": "backend/providers/base.py",
+      "child_line": 15,
+      "parent_file": null,
+      "parent_line": null,
+      "kind": "extends",
+      "external": true,
+      "resolution": "stdlib"
+    },
+    {
+      "child": "MetadataProvider",
+      "parent": "ABC",
+      "child_file": "backend/providers/base.py",
+      "child_line": 113,
+      "parent_file": null,
+      "parent_line": null,
+      "kind": "extends",
+      "external": true,
+      "resolution": "stdlib"
+    },
+    {
+      "child": "YahooProvider",
+      "parent": "Provider",
+      "child_file": "backend/providers/yahoo.py",
+      "child_line": 28,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 155,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    },
+    {
+      "child": "Provider",
+      "parent": "HistoricalDataProvider",
+      "child_file": "backend/providers/base.py",
+      "child_line": 155,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 15,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    },
+    {
+      "child": "Provider",
+      "parent": "IntradayChartProvider",
+      "child_file": "backend/providers/base.py",
+      "child_line": 155,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 46,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    },
+    {
+      "child": "Provider",
+      "parent": "QuoteProvider",
+      "child_file": "backend/providers/base.py",
+      "child_line": 155,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 77,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    },
+    {
+      "child": "Provider",
+      "parent": "MetadataProvider",
+      "child_file": "backend/providers/base.py",
+      "child_line": 155,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 113,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    },
+    {
+      "child": "Provider",
+      "parent": "ABC",
+      "child_file": "backend/providers/base.py",
+      "child_line": 155,
+      "parent_file": null,
+      "parent_line": null,
+      "kind": "extends",
+      "external": true,
+      "resolution": "stdlib"
+    },
+    {
+      "child": "DhanProvider",
+      "parent": "Provider",
+      "child_file": "backend/providers/dhan.py",
+      "child_line": 17,
+      "parent_file": "backend/providers/base.py",
+      "parent_line": 155,
+      "kind": "extends",
+      "external": false,
+      "resolution": "project"
+    },
+    {
+      "child": "IntradayChartProvider",
+      "parent": "ABC",
+      "child_file": "backend/providers/base.py",
+      "child_line": 46,
+      "parent_file": null,
+      "parent_line": null,
+      "kind": "extends",
+      "external": true,
+      "resolution": "stdlib"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "QuoteProvider",
+      "file": "backend/providers/base.py",
+      "line": 77,
+      "language": "python",
+      "bases": [
+        "ABC"
+      ],
+      "abstract": true
+    },
+    {
+      "name": "YahooProvider",
+      "file": "backend/providers/yahoo.py",
+      "line": 28,
+      "language": "python",
+      "bases": [
+        "Provider"
+      ],
+      "abstract": null
+    },
+    {
+      "name": "DhanProvider",
+      "file": "backend/providers/dhan.py",
+      "line": 17,
+      "language": "python",
+      "bases": [
+        "Provider"
+      ],
+      "abstract": null
+    },
+    {
+      "name": "HistoricalDataProvider",
+      "file": "backend/providers/base.py",
+      "line": 15,
+      "language": "python",
+      "bases": [
+        "ABC"
+      ],
+      "abstract": true
+    },
+    {
+      "name": "Provider",
+      "file": "backend/providers/base.py",
+      "line": 155,
+      "language": "python",
+      "bases": [
+        "HistoricalDataProvider",
+        "IntradayChartProvider",
+        "QuoteProvider",
+        "MetadataProvider",
+        "ABC"
+      ],
+      "abstract": true
+    },
+    {
+      "name": "IntradayChartProvider",
+      "file": "backend/providers/base.py",
+      "line": 46,
+      "language": "python",
+      "bases": [
+        "ABC"
+      ],
+      "abstract": true
+    },
+    {
+      "name": "MetadataProvider",
+      "file": "backend/providers/base.py",
+      "line": 113,
+      "language": "python",
+      "bases": [
+        "ABC"
+      ],
+      "abstract": true
+    }
+  ],
+  "roots": [],
+  "leaves": [
+    "YahooProvider",
+    "DhanProvider"
+  ],
+  "count": 7,
+  "languages": [
+    "python"
+  ],
+  "root": "backend/providers",
+  "scan_time_ms": 1
+}

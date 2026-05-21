@@ -1,0 +1,4 @@
+Error: Invalid argument --depth: --depth requires --class. Use --class <NAME> --depth N to limit traversal depth.
+
+Hint: To scan entire project without depth limit, omit --depth.
+exit=25

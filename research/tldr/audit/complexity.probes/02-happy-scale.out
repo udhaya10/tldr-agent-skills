@@ -1,0 +1,7 @@
+{
+  "function": "fetch_historical_data",
+  "cyclomatic": 5,
+  "cognitive": 9,
+  "max_nesting": 3,
+  "lines_of_code": 48
+}

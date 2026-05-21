@@ -1,0 +1,18 @@
+digraph calls {
+    rankdir=LR;
+    node [shape=box, fontname="Helvetica"];
+    edge [fontname="Helvetica", fontsize=10];
+
+    "__init__.py:get_yahoo_provider" -> "yahoo.py:YahooProvider.__init__" [label="Direct"];
+    "dhan.py:DhanProvider.__init__" -> "base.py:Provider.__init__" [label="Method"];
+    "dhan.py:DhanProvider.fetch_historical_data" -> "dhan.py:DhanProvider._get_client" [label="Method"];
+    "dhan.py:DhanProvider.fetch_historical_data" -> "dhan.py:DhanProvider._load_mappings" [label="Method"];
+    "dhan.py:DhanProvider.fetch_intraday_chart" -> "dhan.py:DhanProvider._get_client" [label="Method"];
+    "dhan.py:DhanProvider.fetch_intraday_chart" -> "dhan.py:DhanProvider._load_mappings" [label="Method"];
+    "dhan.py:DhanProvider.fetch_metadata" -> "dhan.py:DhanProvider._load_mappings" [label="Method"];
+    "yahoo.py:YahooProvider.__init__" -> "base.py:Provider.__init__" [label="Method"];
+    "yahoo.py:YahooProvider.fetch_market_cap" -> "yahoo.py:_to_finite_float" [label="Direct"];
+    "yahoo.py:YahooProvider.fetch_metadata" -> "yahoo.py:_to_finite_float" [label="Direct"];
+    "yahoo.py:YahooProvider.fetch_quotes" -> "yahoo.py:_to_finite_float" [label="Direct"];
+}
+

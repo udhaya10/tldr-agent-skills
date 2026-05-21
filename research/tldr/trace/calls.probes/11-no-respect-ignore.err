@@ -1,0 +1,6 @@
+error: unexpected value 'false' for '--respect-ignore' found; no more were expected
+
+Usage: tldr calls <PATH|--lang <LANG>|--respect-ignore|--max-items <MAX_ITEMS>>
+
+For more information, try '--help'.
+exit=2

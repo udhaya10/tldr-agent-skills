@@ -1,0 +1,18 @@
+{
+  "file": "backend/providers/yahoo.py",
+  "language": "typescript",
+  "function": null,
+  "resources": [],
+  "leaks": [],
+  "double_closes": [],
+  "use_after_closes": [],
+  "suggestions": [],
+  "constraints": [],
+  "summary": {
+    "resources_detected": 0,
+    "leaks_found": 0,
+    "double_closes_found": 0,
+    "use_after_closes_found": 0
+  },
+  "analysis_time_ms": 9
+}

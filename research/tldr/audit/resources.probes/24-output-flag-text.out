@@ -1,0 +1,14 @@
+Resource Analysis: backend/providers/yahoo.py
+Language: python
+
+Resources detected: 0
+
+Leaks found: 0
+
+Summary:
+  resources_detected: 0
+  leaks_found: 0
+  double_closes_found: 0
+  use_after_closes_found: 0
+
+Analysis completed in 1ms

@@ -1,0 +1,118 @@
+{
+  "issues": [],
+  "top_files": [
+    {
+      "file": "backend/amfi_portfolios.py",
+      "total_minutes": 4820,
+      "issue_count": 276
+    },
+    {
+      "file": "backend/screener.py",
+      "total_minutes": 1555,
+      "issue_count": 110
+    },
+    {
+      "file": "backend/watchlist_formulas.py",
+      "total_minutes": 1460,
+      "issue_count": 65
+    },
+    {
+      "file": "backend/api.py",
+      "total_minutes": 1100,
+      "issue_count": 76
+    },
+    {
+      "file": "backend/nse_results.py",
+      "total_minutes": 1080,
+      "issue_count": 36
+    },
+    {
+      "file": "backend/scripts/generate_nse_only_financials.py",
+      "total_minutes": 900,
+      "issue_count": 59
+    },
+    {
+      "file": "backend/nse_earnings.py",
+      "total_minutes": 680,
+      "issue_count": 52
+    },
+    {
+      "file": "backend/tc2000_formulas.py",
+      "total_minutes": 615,
+      "issue_count": 37
+    },
+    {
+      "file": "backend/announcements.py",
+      "total_minutes": 585,
+      "issue_count": 24
+    },
+    {
+      "file": "backend/rankings.py",
+      "total_minutes": 540,
+      "issue_count": 33
+    },
+    {
+      "file": "backend/notifications.py",
+      "total_minutes": 475,
+      "issue_count": 33
+    },
+    {
+      "file": "backend/scripts/generate_avalon_indas_financials.py",
+      "total_minutes": 460,
+      "issue_count": 40
+    },
+    {
+      "file": "backend/nse_listings.py",
+      "total_minutes": 380,
+      "issue_count": 27
+    },
+    {
+      "file": "backend/nse_index_history.py",
+      "total_minutes": 330,
+      "issue_count": 30
+    },
+    {
+      "file": "backend/youtube_panel.py",
+      "total_minutes": 315,
+      "issue_count": 10
+    },
+    {
+      "file": "backend/overview_stock_cards.py",
+      "total_minutes": 300,
+      "issue_count": 15
+    },
+    {
+      "file": "backend/rrg.py",
+      "total_minutes": 280,
+      "issue_count": 12
+    },
+    {
+      "file": "backend/nse_history.py",
+      "total_minutes": 275,
+      "issue_count": 20
+    },
+    {
+      "file": "backend/updater.py",
+      "total_minutes": 255,
+      "issue_count": 15
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "total_minutes": 235,
+      "issue_count": 14
+    }
+  ],
+  "summary": {
+    "total_minutes": 0,
+    "total_hours": 0.0,
+    "debt_ratio": 0.0,
+    "debt_density": 0.0,
+    "by_category": {},
+    "by_rule": {},
+    "by_severity": {},
+    "by_severity_count": {}
+  },
+  "language": null,
+  "total_minutes": 0,
+  "total_hours": 0.0
+}

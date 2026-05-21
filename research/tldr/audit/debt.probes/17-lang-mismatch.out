@@ -1,0 +1,17 @@
+{
+  "issues": [],
+  "top_files": [],
+  "summary": {
+    "total_minutes": 0,
+    "total_hours": 0.0,
+    "debt_ratio": 0.0,
+    "debt_density": 0.0,
+    "by_category": {},
+    "by_rule": {},
+    "by_severity": {},
+    "by_severity_count": {}
+  },
+  "language": "typescript",
+  "total_minutes": 0,
+  "total_hours": 0.0
+}

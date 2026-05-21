@@ -1,0 +1,14 @@
+Technical Debt Report
+==================================================
+Total Debt: 0.3 hours (20 minutes)
+Debt Ratio: 5.4% (Good)
+Debt Density: 54.0 minutes per KLOC
+
+By Category:
+  Maintainability: 0.3h (100%)
+
+Top Debtors:
+  1. dhan.py - 0.3h (1 issues)
+
+Top Issues:
+  [MAINTAINABILITY] dhan.py:126 - Cyclomatic complexity 12 exceeds threshold (20m)

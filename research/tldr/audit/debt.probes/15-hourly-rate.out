@@ -1,0 +1,453 @@
+{
+  "issues": [
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 1372,
+      "element": "discover_hdfc_monthly_files",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 29 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 2330,
+      "element": "discover_taurus_monthly_files",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 36 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 3250,
+      "element": "expand_mahindra_workbook_sheet_metas",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 27 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 3643,
+      "element": "parse_hdfc_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 29 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 3780,
+      "element": "parse_sbi_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 32 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 3911,
+      "element": "parse_nippon_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 44 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4036,
+      "element": "classify_ppfas_security_kind",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 34 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4066,
+      "element": "parse_ppfas_monthly_xls_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 47 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4184,
+      "element": "parse_groww_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 46 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4346,
+      "element": "parse_baroda_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 44 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4473,
+      "element": "parse_quantum_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 49 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4574,
+      "element": "parse_samco_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 47 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4653,
+      "element": "parse_oldbridge_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 38 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4736,
+      "element": "parse_dsp_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 83 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4855,
+      "element": "parse_shriram_monthly_xls_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 66 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 4959,
+      "element": "parse_motilal_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 61 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5068,
+      "element": "parse_wealth_monthly_xls_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 52 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5155,
+      "element": "parse_quant_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 65 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5250,
+      "element": "parse_angel_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 75 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5370,
+      "element": "parse_trust_monthly_excel_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 55 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5460,
+      "element": "parse_tata_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 54 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5559,
+      "element": "parse_unifi_monthly_excel_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 82 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5682,
+      "element": "parse_mahindra_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 56 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 5776,
+      "element": "parse_taurus_monthly_xlsx_v1",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 60 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 7357,
+      "element": "query_mutual_fund_buying_watchlist",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 26 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 7573,
+      "element": "query_stock_mutual_fund_holdings",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 43 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/amfi_portfolios.py",
+      "line": 7946,
+      "element": "query_mutual_fund_scheme_holdings",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 44 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/rankings.py",
+      "line": 674,
+      "element": "build_metric_value_from_prepared",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 36 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/rankings.py",
+      "line": 789,
+      "element": "query_ranked_universe",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 39 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/rankings.py",
+      "line": 975,
+      "element": "query_bubble_universe",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 36 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/screener.py",
+      "line": 2819,
+      "element": "build_metals_mining_about_profile",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 27 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/screener.py",
+      "line": 6123,
+      "element": "get_stock_about_profile",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 32 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/screener.py",
+      "line": 6327,
+      "element": "build_derived_metrics",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 37 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/tc2000_formulas.py",
+      "line": 762,
+      "element": "_resolve_compact_identifier",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 29 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/tc2000_formulas.py",
+      "line": 804,
+      "element": "_evaluate_binary",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 42 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/tc2000_formulas.py",
+      "line": 862,
+      "element": "_evaluate_call",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 75 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 177,
+      "element": "_result_announcement_score",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 34 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 937,
+      "element": "_parse_pdf_number",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 26 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 987,
+      "element": "_section_lines_for_basis",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 40 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 1152,
+      "element": "_parse_xbrl_text",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 42 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 1477,
+      "element": "_repair_cached_result_payload",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 27 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 1674,
+      "element": "_load_cached_result_rows",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 30 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 1858,
+      "element": "_load_price_context",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 30 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+      "line": 2005,
+      "element": "_build_integrated_previous_row_index",
+      "rule": "complexity.extreme",
+      "message": "Cyclomatic complexity 31 exceeds threshold",
+      "category": "maintainability",
+      "debt_minutes": 60
+    },
+    {
+      "file": "backend/nse_results.py",
+
+... [10068 lines truncated, full output regeneratable via probe.sh] ...
+
+    },
+    {
+      "file": "backend/updater.py",
+      "total_minutes": 255,
+      "issue_count": 15
+    },
+    {
+      "file": "backend/stage_analysis.py",
+      "total_minutes": 235,
+      "issue_count": 14
+    }
+  ],
+  "summary": {
+    "total_minutes": 19020,
+    "total_hours": 317.0,
+    "total_cost": 31700.0,
+    "debt_ratio": 0.528,
+    "debt_density": 528.0,
+    "by_category": {
+      "changeability": 40,
+      "maintainability": 18395,
+      "testability": 585
+    },
+    "by_rule": {
+      "complexity.extreme": 4440,
+      "complexity.high": 2020,
+      "complexity.very_high": 2400,
+      "deep_nesting": 135,
+      "high_coupling": 40,
+      "long_method": 1380,
+      "long_param_list": 585,
+      "missing_docs": 8020
+    },
+    "by_severity": {
+      "critical": 4440,
+      "high": 3780,
+      "low": 8020,
+      "medium": 2780
+    },
+    "by_severity_count": {
+      "critical": 74,
+      "high": 126,
+      "low": 802,
+      "medium": 151
+    }
+  },
+  "language": null,
+  "total_minutes": 19020,
+  "total_hours": 317.0
+}

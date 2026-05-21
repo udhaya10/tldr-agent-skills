@@ -1,0 +1,90 @@
+{
+  "findings": [
+    {
+      "file": "backend/concalls.py",
+      "line": 428,
+      "column": 11,
+      "rule": {
+        "id": "PY001",
+        "name": "missing-timeout",
+        "category": "parameters",
+        "severity": "high",
+        "description": "requests.get/post/etc without timeout parameter can hang indefinitely",
+        "correct_usage": "requests.get(url, timeout=30)"
+      },
+      "api_call": "requests.get",
+      "message": "requests.get called without timeout parameter",
+      "fix_suggestion": "Add timeout parameter: requests.get(url, timeout=30)",
+      "code_context": "response = requests.get("
+    },
+    {
+      "file": "backend/notifications.py",
+      "line": 89,
+      "column": 26,
+      "rule": {
+        "id": "PY004",
+        "name": "weak-hash-sha1",
+        "category": "crypto",
+        "severity": "high",
+        "description": "SHA1 is cryptographically weak, don't use for security purposes",
+        "correct_usage": "hashlib.sha256() or stronger"
+      },
+      "api_call": "hashlib.sha1",
+      "message": "SHA1 is cryptographically weak and should not be used for security purposes",
+      "fix_suggestion": "Use hashlib.sha256() or stronger",
+      "code_context": "return f\"universe-change:{hashlib.sha1(encoded_payload.encode('utf-8')).hexdigest()}\""
+    },
+    {
+      "file": "backend/notifications.py",
+      "line": 95,
+      "column": 28,
+      "rule": {
+        "id": "PY004",
+        "name": "weak-hash-sha1",
+        "category": "crypto",
+        "severity": "high",
+        "description": "SHA1 is cryptographically weak, don't use for security purposes",
+        "correct_usage": "hashlib.sha256() or stronger"
+      },
+      "api_call": "hashlib.sha1",
+      "message": "SHA1 is cryptographically weak and should not be used for security purposes",
+      "fix_suggestion": "Use hashlib.sha256() or stronger",
+      "code_context": "return f\"earnings-conflict:{hashlib.sha1(encoded_payload.encode('utf-8')).hexdigest()}\""
+    },
+    {
+      "file": "backend/notifications.py",
+      "line": 101,
+      "column": 32,
+      "rule": {
+        "id": "PY004",
+        "name": "weak-hash-sha1",
+        "category": "crypto",
+        "severity": "high",
+        "description": "SHA1 is cryptographically weak, don't use for security purposes",
+        "correct_usage": "hashlib.sha256() or stronger"
+      },
+      "api_call": "hashlib.sha1",
+      "message": "SHA1 is cryptographically weak and should not be used for security purposes",
+      "fix_suggestion": "Use hashlib.sha256() or stronger",
+      "code_context": "return f\"amc-connector-failure:{hashlib.sha1(encoded_payload.encode('utf-8')).hexdigest()}\""
+    }
+  ],
+  "summary": {
+    "total_findings": 4,
+    "by_category": {
+      "crypto": 3,
+      "parameters": 1
+    },
+    "by_severity": {
+      "high": 4
+    },
+    "apis_checked": [
+      "requests.get",
+      "hashlib.sha1"
+    ],
+    "files_scanned": 56
+  },
+  "rules_applied": 92,
+  "total_findings": 4,
+  "files_scanned": 56
+}

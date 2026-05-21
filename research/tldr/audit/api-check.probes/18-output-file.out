@@ -1,0 +1,14 @@
+--FILE--
+{
+  "findings": [],
+  "summary": {
+    "total_findings": 0,
+    "by_category": {},
+    "by_severity": {},
+    "apis_checked": [],
+    "files_scanned": 4
+  },
+  "rules_applied": 92,
+  "total_findings": 0,
+  "files_scanned": 4
+}

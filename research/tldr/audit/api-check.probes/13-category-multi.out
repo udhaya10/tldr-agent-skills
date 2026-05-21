@@ -1,0 +1,71 @@
+{
+  "findings": [
+    {
+      "file": "backend/notifications.py",
+      "line": 89,
+      "column": 26,
+      "rule": {
+        "id": "PY004",
+        "name": "weak-hash-sha1",
+        "category": "crypto",
+        "severity": "high",
+        "description": "SHA1 is cryptographically weak, don't use for security purposes",
+        "correct_usage": "hashlib.sha256() or stronger"
+      },
+      "api_call": "hashlib.sha1",
+      "message": "SHA1 is cryptographically weak and should not be used for security purposes",
+      "fix_suggestion": "Use hashlib.sha256() or stronger",
+      "code_context": "return f\"universe-change:{hashlib.sha1(encoded_payload.encode('utf-8')).hexdigest()}\""
+    },
+    {
+      "file": "backend/notifications.py",
+      "line": 95,
+      "column": 28,
+      "rule": {
+        "id": "PY004",
+        "name": "weak-hash-sha1",
+        "category": "crypto",
+        "severity": "high",
+        "description": "SHA1 is cryptographically weak, don't use for security purposes",
+        "correct_usage": "hashlib.sha256() or stronger"
+      },
+      "api_call": "hashlib.sha1",
+      "message": "SHA1 is cryptographically weak and should not be used for security purposes",
+      "fix_suggestion": "Use hashlib.sha256() or stronger",
+      "code_context": "return f\"earnings-conflict:{hashlib.sha1(encoded_payload.encode('utf-8')).hexdigest()}\""
+    },
+    {
+      "file": "backend/notifications.py",
+      "line": 101,
+      "column": 32,
+      "rule": {
+        "id": "PY004",
+        "name": "weak-hash-sha1",
+        "category": "crypto",
+        "severity": "high",
+        "description": "SHA1 is cryptographically weak, don't use for security purposes",
+        "correct_usage": "hashlib.sha256() or stronger"
+      },
+      "api_call": "hashlib.sha1",
+      "message": "SHA1 is cryptographically weak and should not be used for security purposes",
+      "fix_suggestion": "Use hashlib.sha256() or stronger",
+      "code_context": "return f\"amc-connector-failure:{hashlib.sha1(encoded_payload.encode('utf-8')).hexdigest()}\""
+    }
+  ],
+  "summary": {
+    "total_findings": 3,
+    "by_category": {
+      "crypto": 3
+    },
+    "by_severity": {
+      "high": 3
+    },
+    "apis_checked": [
+      "hashlib.sha1"
+    ],
+    "files_scanned": 56
+  },
+  "rules_applied": 92,
+  "total_findings": 3,
+  "files_scanned": 56
+}

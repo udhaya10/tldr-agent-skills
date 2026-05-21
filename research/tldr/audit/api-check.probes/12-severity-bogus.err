@@ -1,0 +1,5 @@
+error: invalid value 'over9000' for '--severity <SEVERITY>'
+  [possible values: info, low, medium, high]
+
+For more information, try '--help'.
+exit=2

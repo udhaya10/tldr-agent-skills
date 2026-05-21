@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--category <CATEGORY>'
+  [possible values: call-order, error-handling, parameters, resources, crypto, concurrency, security]
+
+For more information, try '--help'.
+exit=2

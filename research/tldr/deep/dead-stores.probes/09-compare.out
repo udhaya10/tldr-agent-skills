@@ -1,0 +1,30 @@
+{
+  "function": "fetch_historical_data",
+  "file": "backend/providers/yahoo.py",
+  "dead_stores_ssa": [],
+  "count": 0,
+  "dead_stores_live_vars": [
+    {
+      "variable": "self",
+      "ssa_name": "self_lv",
+      "line": 39,
+      "block_id": 0,
+      "is_phi": false
+    },
+    {
+      "variable": "required",
+      "ssa_name": "required_lv",
+      "line": 77,
+      "block_id": 9,
+      "is_phi": false
+    },
+    {
+      "variable": "available",
+      "ssa_name": "available_lv",
+      "line": 78,
+      "block_id": 9,
+      "is_phi": false
+    }
+  ],
+  "live_vars_count": 3
+}

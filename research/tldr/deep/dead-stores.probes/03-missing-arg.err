@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <function>
+
+Usage: tldr dead-stores <file> <function>
+
+For more information, try '--help'.
+exit=2

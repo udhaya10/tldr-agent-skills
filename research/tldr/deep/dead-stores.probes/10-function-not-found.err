@@ -1,0 +1,2 @@
+Error: function 'no_such_function' not found in backend/providers/yahoo.py
+exit=1

@@ -1,0 +1,8 @@
+{
+  "function": "_to_finite_float",
+  "file": "backend/providers/yahoo.py",
+  "dead_stores_ssa": [],
+  "count": 0,
+  "dead_stores_live_vars": null,
+  "live_vars_count": null
+}

@@ -1,0 +1,2 @@
+Error: function '_to_finite_float' not found in backend/providers/yahoo.py
+exit=1

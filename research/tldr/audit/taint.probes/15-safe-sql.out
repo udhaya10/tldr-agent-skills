@@ -1,0 +1,20 @@
+{
+  "function": "safe_sql",
+  "tainted_vars": {
+    "2": [],
+    "1": [],
+    "0": []
+  },
+  "sources": [],
+  "sinks": [
+    {
+      "var": "cursor",
+      "line": 21,
+      "sink_type": "sql_query",
+      "tainted": false,
+      "statement": "    cursor.execute(\"SELECT * FROM users WHERE id = ?\", (user_id,))"
+    }
+  ],
+  "flows": [],
+  "sanitized_vars": []
+}

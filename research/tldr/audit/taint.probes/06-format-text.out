@@ -1,0 +1,13 @@
+Taint Analysis: vulnerable_sql
+==================================================
+
+Sources (0):
+  No taint sources detected.
+
+Sinks (1):
+  Line 13: query (SqlQuery) - safe
+    cursor.execute(query)
+
+Vulnerabilities (0):
+  No vulnerabilities found.
+

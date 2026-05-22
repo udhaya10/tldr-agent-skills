@@ -1,0 +1,27 @@
+{
+  "function": "vulnerable_shell",
+  "tainted_vars": {
+    "0": [],
+    "1": [],
+    "2": []
+  },
+  "sources": [],
+  "sinks": [
+    {
+      "var": "True",
+      "line": 28,
+      "sink_type": "shell_exec",
+      "tainted": false,
+      "statement": "    return subprocess.run(cmd, shell=True, capture_output=True)"
+    },
+    {
+      "var": "cmd",
+      "line": 28,
+      "sink_type": "shell_exec",
+      "tainted": false,
+      "statement": "    return subprocess.run(cmd, shell=True, capture_output=True)"
+    }
+  ],
+  "flows": [],
+  "sanitized_vars": []
+}

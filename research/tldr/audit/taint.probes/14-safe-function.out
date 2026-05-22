@@ -1,0 +1,12 @@
+{
+  "function": "safe_function",
+  "tainted_vars": {
+    "1": [],
+    "0": [],
+    "2": []
+  },
+  "sources": [],
+  "sinks": [],
+  "flows": [],
+  "sanitized_vars": []
+}

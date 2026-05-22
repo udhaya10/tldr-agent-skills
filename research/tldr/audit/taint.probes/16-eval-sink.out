@@ -1,0 +1,20 @@
+{
+  "function": "vulnerable_eval",
+  "tainted_vars": {
+    "0": [],
+    "1": [],
+    "2": []
+  },
+  "sources": [],
+  "sinks": [
+    {
+      "var": "user_expr",
+      "line": 33,
+      "sink_type": "code_eval",
+      "tainted": false,
+      "statement": "    return eval(user_expr)"
+    }
+  ],
+  "flows": [],
+  "sanitized_vars": []
+}

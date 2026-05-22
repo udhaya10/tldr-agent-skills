@@ -1,0 +1,20 @@
+{
+  "function": "vulnerable_sql",
+  "tainted_vars": {
+    "1": [],
+    "2": [],
+    "0": []
+  },
+  "sources": [],
+  "sinks": [
+    {
+      "var": "query",
+      "line": 13,
+      "sink_type": "sql_query",
+      "tainted": false,
+      "statement": "    cursor.execute(query)"
+    }
+  ],
+  "flows": [],
+  "sanitized_vars": []
+}

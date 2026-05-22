@@ -1,0 +1,44 @@
+{
+  "function": "vulnerable_path",
+  "tainted_vars": {
+    "0": [
+      "f"
+    ],
+    "1": [
+      "f"
+    ]
+  },
+  "sources": [
+    {
+      "var": "f",
+      "line": 46,
+      "source_type": "file_read",
+      "statement": "        return f.read()"
+    }
+  ],
+  "sinks": [
+    {
+      "var": "os",
+      "line": 44,
+      "sink_type": "file_open",
+      "tainted": true,
+      "statement": "    full = os.path.join(\"/var/data\", user_path)"
+    },
+    {
+      "var": "user_path",
+      "line": 44,
+      "sink_type": "file_open",
+      "tainted": false,
+      "statement": "    full = os.path.join(\"/var/data\", user_path)"
+    },
+    {
+      "var": "full",
+      "line": 45,
+      "sink_type": "file_open",
+      "tainted": false,
+      "statement": "    with open(full) as f:"
+    }
+  ],
+  "flows": [],
+  "sanitized_vars": []
+}

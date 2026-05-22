@@ -129,7 +129,7 @@ Several claims in earlier project documents (chat logs, README versions, the `tl
 
 Given the per-project daemon and no idle-timeout override, the design space is:
 
-### Design A — One daemon, one parent path (recommended for most users)
+### Design A — One daemon, one parent path (TESTED, FAILS for default usage)
 
 Run one daemon rooted at a common parent of all your work:
 
@@ -142,7 +142,7 @@ tldr daemon start --project ~/Workspace
 - Cache persists on disk between restarts (Salsa store at `~/Workspace/.tldr/` or `~/.cache/tldr/`)
 - Net effect: daemon cycles every 30 min idle, but service brings it back immediately
 
-**Open question** for empirical verification: when running `tldr search "foo"` from `~/Workspace/sub-project/`, does the CLI find and use the parent daemon at `~/Workspace`, or does it start a NEW daemon for `sub-project`? Needs probe.
+**Verified empirically 2026-05-22: this design DOES NOT WORK for default usage.** Commands like `tldr structure .` from a sub-project (`~/Workspace/sub-project/`) do NOT route to the parent daemon — they route by path argument, not cwd walk-up. Only `tldr daemon status` walks up cwd to find a daemon. See `04_INSTALL_DESIGN_BLOCKERS.md` for the full probe data and why we postponed shipping an install script as a result.
 
 ### Design B — One daemon per project (if you only work on one project)
 

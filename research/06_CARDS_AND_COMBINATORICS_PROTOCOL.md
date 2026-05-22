@@ -52,12 +52,23 @@ prose. Not the JSON schema.
 **Killer detail** (1 sentence): The non-obvious thing that separates this
 from sibling tools — the "if you only remember one thing".
 
+**Other footguns** (OPTIONAL, 1–3 bullets): Additional non-obvious failure
+modes that didn't make the singular killer-detail slot. Use ONLY when the
+dossier surfaces multiple unrelated traps of comparable severity.
+
 **Source**: `research/tldr/<group>/<cmd>.md`
 ```
 
 ### Target size
 
-~200 words per card. All 66 cards together ≈ 13K words — small enough that multiple cards can be loaded into a single context window during synthesis.
+~200 words per card (cards with the optional "Other footguns" section may
+run to ~250 words).
+
+> **Rule of thumb on "Other footguns":** If you find yourself using this
+> section in more than ~1 in 3 cards, you're over-using it. The discipline
+> of forcing a singular killer detail is load-bearing — the optional
+> section is a relief valve for genuinely multi-trap commands, not a dump
+> for every minor caveat. All 66 cards together ≈ 13K words — small enough that multiple cards can be loaded into a single context window during synthesis.
 
 ### Anti-patterns
 

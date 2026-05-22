@@ -182,6 +182,8 @@ The retirement is wholesale because the new skills don't 1:1-map to old ones (mo
 
 - **Journal 04** — operational protocol for the dossier evidence layer (the foundation)
 - **Journal 06** — cards and combinatorics protocol (the bridge from dossiers to skills)
+- **Journal 08** — skill lifecycle protocol (versioning, deprecation, regeneration workflow)
 - **`agent-skills-authoring/02_KEY_INSIGHTS.md`** — Anthropic's skill-authoring guidance that motivated the self-containment and intent-alignment constraints
+- **`agent-skills-authoring/03_ECOSYSTEM_MAP.md`** — full ecosystem map (spec / distribution CLI / client implementations)
 - **`tool-combinatorics/<topic>-family-chooser.md`** — the 19 combinatorics docs that get distributed into the 14 skill bodies
 - **`tool-cards/<group>/<cmd>.md`** — the 64 cards that get inlined into the 14 skill bodies

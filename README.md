@@ -68,6 +68,8 @@ The research that informed both the authoring and the ecosystem understanding li
 
 **Total: 64 active CLI commands** mapped into 14 intent-aligned skills. No router — each skill's description self-routes based on user intent.
 
+> **Note**: 14 additional folders (`tldr-router/`, `tldr-overview/`, `tldr-search/`, `tldr-trace/`, `tldr-deep/`, `tldr-audit/`, `tldr-fix/`, `tldr-ops/`, `tldr-refactor-history/`, `tldr-refactor-oo/`, `tldr-formal-methods/`, `tldr-api-stability/`, `tldr-metrics-raw/`, `tldr-security-taint/`) exist as **deprecation stubs** — soft landings for users who installed an earlier version of this skill set. They will be removed in a future release. See [Journal 08](research/08_SKILL_LIFECYCLE_PROTOCOL.md) for the protocol. Run `bash bin/check-versions.sh` to see the full corpus state.
+
 ---
 
 ## Research architecture (3 layers)
@@ -104,6 +106,7 @@ The research process itself is documented:
 - [Journal 05 — Omitted Commands Rationale](research/05_OMITTED_COMMANDS_RATIONALE.md) — why some CLI surface is intentionally excluded
 - [Journal 06 — Cards and Combinatorics Protocol](research/06_CARDS_AND_COMBINATORICS_PROTOCOL.md) — the bridge from dossiers to skills
 - [Journal 07 — Skill Architecture Decision](research/07_SKILL_ARCHITECTURE_DECISION.md) — locks in the final shape: 14 intent-aligned skills, no router, cards inlined per skill
+- [Journal 08 — Skill Lifecycle Protocol](research/08_SKILL_LIFECYCLE_PROTOCOL.md) — versioning, deprecation stubs, and the regeneration workflow for keeping skills current as tldr-code evolves
 
 ### Agent-skills authoring research
 

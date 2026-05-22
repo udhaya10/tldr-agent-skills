@@ -1,0 +1,453 @@
+{
+  "tool": "bugbot",
+  "mode": "check",
+  "language": "python",
+  "base_ref": "HEAD",
+  "detection_method": "git:uncommitted",
+  "timestamp": "2026-05-22T05:41:37.145244+00:00",
+  "changed_files": [
+    "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/fix_dateutil.py",
+    "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/fix_db.py",
+    "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/test.py",
+    "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/test_logger.py"
+  ],
+  "findings": [
+    {
+      "finding_type": "call-graph-change",
+      "severity": "medium",
+      "file": "(project)",
+      "function": "(project-level)",
+      "line": 0,
+      "message": "Significant call graph change: 200 new edges, 11853 removed edges",
+      "evidence": {
+        "new_edge_count": 200,
+        "removed_edge_count": 11853,
+        "related_findings": [
+          {
+            "finding_type": "dead-code-introduced",
+            "severity": "info",
+            "line": 0,
+            "message": "8 dead code entries detected in project"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_ppfas_monthly_workbooks -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_mahindra_workbook_sheet_metas -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_ppfas_workbook_sheet_metas -> backend/amfi_portfolios.py::is_zip_excel_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::fetch_sbi_portfolio_file_url -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_abakkus_workbook_sheet_metas -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_abakkus_monthly_workbooks -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_hdfc_monthly_files -> backend/amfi_portfolios.py::clean_hdfc_scheme_name"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_one360_workbook_sheet_metas -> backend/amfi_portfolios.py::clean_nippon_scheme_name"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::find_hdfc_header_row -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_wealth_monthly_files -> backend/amfi_portfolios.py::extract_report_month_from_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::find_sbi_header_row -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::ingest_portfolio_files -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_baroda_monthly_workbooks -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::load_first_sheet_rows -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::classify_ppfas_security_kind -> backend/amfi_portfolios.py::normalize_holding_label"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::build_baroda_header_map -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::ingest_portfolio_files -> backend/amfi_portfolios.py::upsert_portfolio_snapshot"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::find_shriram_report_month -> backend/amfi_portfolios.py::extract_report_month_from_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_motilal_workbook_sheet_metas -> backend/amfi_portfolios.py::clean_nippon_scheme_name"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::clean_hdfc_scheme_name -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_taurus_monthly_files -> backend/amfi_portfolios.py::extract_month_only_hint"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_unifi_monthly_files -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_samco_monthly_files -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_motilal_monthly_workbooks -> backend/amfi_portfolios.py::extract_report_month_from_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::ingest_portfolio_files -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_motilal_monthly_workbooks -> backend/amfi_portfolios.py::discover_motilal_monthly_workbooks_from_fund_pages"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::ingest_portfolio_files -> backend/amfi_portfolios.py::parse_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_abakkus_workbook_sheet_metas -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_motilal_workbook_sheet_metas -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_motilal_workbook_sheet_metas -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_trust_workbook_sheet_metas -> backend/amfi_portfolios.py::open_xlrd_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_nippon_workbook_sheet_metas -> backend/amfi_portfolios.py::load_excel_sheet_names_and_rows"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_groww_monthly_workbooks -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::download_portfolio_file -> backend/amfi_portfolios.py::requires_relaxed_ssl_verification"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::normalize_isin -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::decode_json_escaped_text -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_baroda_workbook_sheet_metas -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_abakkus_workbook_sheet_metas -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_quantum_workbook_sheet_metas -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_motilal_workbook_sheet_metas -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_hdfc_monthly_files -> backend/amfi_portfolios.py::extract_next_data_payload"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_mahindra_workbook_sheet_metas -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_quantum_workbook_sheet_metas -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_wealth_monthly_files -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::ensure_amfi_schema -> backend/amfi_portfolios.py::seed_known_stock_isins"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_dsp_monthly_archives -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_motilal_monthly_workbooks -> backend/amfi_portfolios.py::extract_month_only_hint"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_quant_monthly_files -> backend/amfi_portfolios.py::extract_file_name_month_hint"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_groww_workbook_sheet_metas -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_nippon_workbook_sheet_metas -> backend/amfi_portfolios.py::clean_nippon_scheme_name"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::extract_file_name_month_hint -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::extract_report_month_from_text -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::discover_groww_monthly_workbooks -> backend/amfi_portfolios.py::extract_report_month_from_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_one360_workbook_sheet_metas -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_trust_workbook_sheet_metas -> backend/amfi_portfolios.py::is_zip_excel_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::find_nippon_header_row -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::load_excel_sheet_names_and_rows -> backend/amfi_portfolios.py::is_zip_excel_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::parse_angel_monthly_xlsx_v1 -> backend/amfi_portfolios.py::infer_security_kind"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::load_excel_sheet_names_and_rows -> backend/amfi_portfolios.py::load_openpyxl_workbook"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::parse_baroda_monthly_xlsx_v1 -> backend/amfi_portfolios.py::normalize_text"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "New call edge: backend/amfi_portfolios.py::expand_dsp_workbook_sheet_metas -> backend/amfi_portfolios.py::download_portfolio_file"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+
+... [71935 lines truncated, full output regeneratable via probe.sh] ...
+
+            "message": "Removed call edge: webui/dist/assets/ChartView-uYC-yzCY.js::_closeAllDropdowns -> webui/dist/assets/ChartView-uYC-yzCY.js::u"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "Removed call edge: webui/src/plugins/line-tools/tools/trend-line.ts::TrendLinePaneView.renderer -> webui/src/plugins/line-tools/tools/trend-line.ts::TrendLinePaneRenderer.constructor"
+          },
+          {
+            "finding_type": "call-graph-change",
+            "severity": "info",
+            "line": 0,
+            "message": "Removed call edge: webui/src/features/stocks/components/AllStocksPanel.jsx::handleContextMenuAction -> webui/src/features/stocks/components/AllStocksPanel.jsx::openCreateWatchlist"
+          }
+        ]
+      },
+      "confidence": "DETERMINISTIC",
+      "finding_id": "50899810a1087b93"
+    }
+  ],
+  "summary": {
+    "total_findings": 1,
+    "by_severity": {
+      "medium": 1
+    },
+    "by_type": {
+      "call-graph-change": 1
+    },
+    "files_analyzed": 4,
+    "functions_analyzed": 1,
+    "l1_findings": 0,
+    "l2_findings": 1,
+    "tools_run": 0,
+    "tools_failed": 0
+  },
+  "elapsed_ms": 13291,
+  "errors": [],
+  "notes": [],
+  "l2_engine_results": [
+    {
+      "name": "TldrDifferentialEngine",
+      "success": true,
+      "duration_ms": 13231,
+      "finding_count": 12055,
+      "functions_analyzed": 4,
+      "functions_skipped": 0,
+      "status": "complete"
+    }
+  ]
+}

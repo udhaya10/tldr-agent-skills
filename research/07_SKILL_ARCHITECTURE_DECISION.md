@@ -187,3 +187,18 @@ The retirement is wholesale because the new skills don't 1:1-map to old ones (mo
 - **`agent-skills-authoring/03_ECOSYSTEM_MAP.md`** — full ecosystem map (spec / distribution CLI / client implementations)
 - **`tool-combinatorics/<topic>-family-chooser.md`** — the 19 combinatorics docs that get distributed into the 14 skill bodies
 - **`tool-cards/<group>/<cmd>.md`** — the 64 cards that get inlined into the 14 skill bodies
+
+---
+
+## Addendum (post-decision): the 15th skill — `tldr-setup-check`
+
+After the original 14-skill rewrite shipped, a 15th skill was added: **`tldr-setup-check`**. It does NOT wrap a new sub-family of tldr commands — it sits orthogonally to the other 14 as a **meta-skill** with two purposes:
+
+1. **LLM orientation** — when the LLM encounters tldr for the first time, this skill answers "what is tldr, why should I care, when do I reach for the other 14 skills?"
+2. **Setup diagnosis** — runs `tldr --version`, `tldr doctor`, `tldr daemon status`, `tldr stats`, a `tldr semantic --help` probe (to detect whether semantic search was compiled in), and a dynamic GitHub release-tag fetch (to nudge users on outdated versions)
+
+**It does NOT manage** — for actually starting/stopping the daemon, warming caches, or clearing state, it refers out to `tldr-runtime`. The split mirrors the diagnostic-vs-management distinction we used elsewhere (e.g., `tldr-fix-and-detect`'s two-branch model).
+
+The architecture decision documented above (the 14 intent-aligned tool-wrapper skills) was correct AT THE TIME. The 15th skill is an extension, not a revision — it adds a new INTENT ("orient and diagnose") that the original 14 didn't serve. The same intent-alignment principle (sharp trigger phrases, self-contained body) still applies.
+
+**Final corpus**: 14 intent-aligned tool wrappers + 1 meta-skill = 15 skills, no router.

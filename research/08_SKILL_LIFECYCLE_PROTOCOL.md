@@ -4,7 +4,7 @@
 
 ## Why this exists
 
-After completing the skill rewrite (14 intent-aligned skills), three lifecycle gaps became visible:
+After completing the skill rewrite (14 intent-aligned tool-wrapper skills, later extended with `tldr-setup-check` for a total of 15), three lifecycle gaps became visible:
 
 1. **No way to track skill versions.** Users on `npx skills update` would get new content with no indication of what changed or how big the change was.
 2. **No way to trace a shipped skill back to the research evidence that produced it.** If a user reports "your `tldr-locate-code` skill claims X but the actual behavior is Y," there was no fast path from the skill to the underlying probe-verified dossier.
@@ -158,7 +158,7 @@ The full workflow for keeping skills current with `tldr-code` evolution:
        discriminator or common-mistakes updated
 
 6. Re-render affected skills
-   └─► Identify which of the 14 skills wrap the changed commands:
+   └─► Identify which of the 15 skills wrap the changed commands:
        bash bin/check-versions.sh   (uses metadata.tldr.commands-wrapped)
    └─► Re-write or edit the affected SKILL.md files
    └─► Bump metadata.version per the rules above
@@ -213,6 +213,6 @@ The script also reminds the user how to install/update via the `vercel-labs/skil
 
 - **Journal 04** — operational protocol for the dossier evidence layer (step 2 of regeneration workflow)
 - **Journal 06** — cards and combinatorics protocol (steps 4-5 of regeneration workflow)
-- **Journal 07** — the skill architecture decision (the 14 skills this protocol maintains)
+- **Journal 07** — the skill architecture decision (the 14 tool-wrapper skills + 1 meta-skill `tldr-setup-check` that this protocol maintains)
 - **`agent-skills-authoring/03_ECOSYSTEM_MAP.md`** — full ecosystem context (spec, distribution CLI, client implementations)
 - **`bin/check-versions.sh`** — the version/deprecation report helper

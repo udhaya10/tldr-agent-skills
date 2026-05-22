@@ -78,7 +78,8 @@ tldr-agent-skills/
 ├── tldr-audit-complexity/     # Complexity metrics (cognitive, complexity, halstead, loc)
 ├── tldr-audit-smells/         # Smells, debt, refactor priorities (smells, debt, hotspots, churn, todo, resources, health)
 ├── tldr-audit-coverage/       # Test coverage and specs (coverage, contracts, invariants, verify, specs)
-└── tldr-audit-api/            # API design and stability (api-check, interface, inheritance, patterns, surface)
+├── tldr-audit-api/            # API design and stability (api-check, interface, inheritance, patterns, surface)
+└── tldr-setup-check/          # META: orientation + diagnose tldr installation (--version, doctor, daemon status, stats, semantic probe)
 ```
 
 By adhering to this flat, modular structure, you can publish this repository once, and users can selectively install `tldr-fix-and-detect` or `tldr-audit-api` via `npx skills add` without being forced to download unrelated toolsets.
@@ -87,7 +88,7 @@ By adhering to this flat, modular structure, you can publish this repository onc
 
 ## 5. The Research Corpus (`research/`)
 
-The `research/` directory is the **source of truth** that the 14 skills are authored from. It is intentionally kept separate from the skill folders so that the npx-skills consumer never sees it; only repository contributors and skill authors do.
+The `research/` directory is the **source of truth** that the 14 tool-wrapper skills are authored from (a 15th meta-skill, `tldr-setup-check`, was added later for LLM orientation and is documented in its own SKILL.md). The research folder is intentionally kept separate from the skill folders so that the npx-skills consumer never sees it; only repository contributors and skill authors do.
 
 ```text
 tldr-agent-skills/

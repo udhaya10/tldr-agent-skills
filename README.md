@@ -15,9 +15,9 @@ The `tldr-code` CLI is a powerful static analysis tool with **66 commands** (64 
 | **Family-chooser combinatorics** (which sibling to pick) | ✅ Complete | 16 docs (all sub-families + 2 cross-group) |
 | **Multi-lens orchestration combinatorics** (multi-tool workflows) | ⏸️ Deferred | ~12–15 expected |
 | **Skill architecture decision** (Journal 07 — 14 intent-aligned skills, no router) | ✅ Locked | See [Journal 07](research/07_SKILL_ARCHITECTURE_DECISION.md) |
-| **Skill rewrite** (14 new intent-aligned `tldr-*` skills) | ✅ Complete | 14 |
+| **Skill rewrite** (14 intent-aligned `tldr-*` skills + 1 setup-check meta-skill = 15 total) | ✅ Complete | 15 |
 
-The 14 skills below are intent-aligned (named after what the user wants to do, not after the underlying CLI group), self-contained (no external file references — cards inlined directly), and self-routing (no router skill needed; sharp descriptions match user intent).
+The 15 skills below are intent-aligned (named after what the user wants to do, not after the underlying CLI group), self-contained (no external file references — cards inlined directly), and self-routing (no router skill needed; sharp descriptions match user intent). 14 of them wrap tldr commands by user intent; the 15th (`tldr-setup-check`) is a meta-skill that orients the LLM to tldr itself and diagnoses installation/setup issues.
 
 ---
 
@@ -65,8 +65,9 @@ The research that informed both the authoring and the ecosystem understanding li
 | **tldr-audit-smells** | "Find code smells, debt, and refactor priorities" | smells, debt, hotspots, churn, todo, resources, health |
 | **tldr-audit-coverage** | "Assess test coverage and specification quality" | coverage, contracts, invariants, verify, specs |
 | **tldr-audit-api** | "Audit API design, interfaces, and stability" | api-check, interface, inheritance, patterns, surface |
+| **tldr-setup-check** *(meta)* | "Is tldr installed, latest, and well-configured? What is tldr anyway?" | --version, doctor, daemon status, stats, semantic (probe) — diagnoses and orients; refers to tldr-runtime for management |
 
-**Total: 64 active CLI commands** mapped into 14 intent-aligned skills. No router — each skill's description self-routes based on user intent. Run `bash bin/check-versions.sh` to see the corpus state with versions.
+**Total: 64 active CLI commands** mapped into 14 intent-aligned tool-wrapper skills, plus 1 meta-skill (`tldr-setup-check`) for LLM orientation and setup diagnosis = 15 skills total. No router — each skill's description self-routes based on user intent. Run `bash bin/check-versions.sh` to see the corpus state with versions.
 
 ---
 

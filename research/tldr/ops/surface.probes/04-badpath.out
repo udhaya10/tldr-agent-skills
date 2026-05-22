@@ -1,0 +1,8 @@
+{
+  "package": "no_such_package_zzz_brainfuck",
+  "language": "python",
+  "total": 0,
+  "apis": [],
+  "files_skipped": 0,
+  "warnings": []
+}

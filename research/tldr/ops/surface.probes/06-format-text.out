@@ -1,0 +1,87 @@
+API Surface: json (python) - 12 APIs
+============================================================
+
+[function] json.dump
+  (obj, fp, skipkeys = False, ensure_ascii = True, check_circular = True, allow_nan = True, cls = None, indent = None, separators = None, default = None, sort_keys = False, **kw)
+  Serialize ``obj`` as a JSON formatted stream to ``fp`` (a ``.write()``-supporting file-like object).
+  Example: result = json.dump(..., ..., False, True, True, True, None, None, None, None, False, **kwargs)
+  Triggers: dump, serialize, obj, json, formatted, stream, fp
+  Location: __init__.py:120
+
+[function] json.dumps
+  (obj, skipkeys = False, ensure_ascii = True, check_circular = True, allow_nan = True, cls = None, indent = None, separators = None, default = None, sort_keys = False, **kw)
+  Serialize ``obj`` to a JSON formatted ``str``.
+  Example: result = json.dumps(..., False, True, True, True, None, None, None, None, False, **kwargs)
+  Triggers: dumps, serialize, obj, json, formatted, str
+  Location: __init__.py:185
+
+[function] json.load
+  (fp, cls = None, object_hook = None, parse_float = None, parse_int = None, parse_constant = None, object_pairs_hook = None, **kw)
+  Deserialize ``fp`` (a ``.read()``-supporting file-like object containing a JSON document) to a Python object.
+  Example: result = json.load(..., None, None, None, None, None, None, **kwargs)
+  Triggers: load, deserialize, fp, read()``-supporting, file-like, object, containing
+  Location: __init__.py:278
+
+[function] json.loads
+  (s, cls = None, object_hook = None, parse_float = None, parse_int = None, parse_constant = None, object_pairs_hook = None, **kw)
+  Deserialize ``s`` (a ``str``, ``bytes`` or ``bytearray`` instance containing a JSON document) to a Python object.
+  Example: result = json.loads(..., None, None, None, None, None, None, **kwargs)
+  Triggers: loads, deserialize, str, bytes, bytearray, instance
+  Location: __init__.py:304
+
+[class] json.JSONDecodeError
+  (self, msg, doc, pos)
+  Subclass of ValueError with the following additional properties:
+  Example: json_decode_error = json.JSONDecodeError(..., ..., ...)
+  Triggers: json, decode, error, subclass, valueerror, with, following, additional, properties
+  Location: decoder.py:20
+
+[class] json.JSONDecoder
+  (self, msg, doc, pos)
+  Simple JSON <https://json.org> decoder
+  Example: json_decoder = json.JSONDecoder(..., ..., ...)
+  Triggers: json, decoder, simple, https://json.org
+  Location: decoder.py:262
+
+[class] json.JSONEncoder
+  (self, skipkeys = False, ensure_ascii = True, check_circular = True, allow_nan = True, sort_keys = False, indent = None, separators = None, default = None)
+  Extensible JSON <https://json.org> encoder for Python data structures.
+  Example: json_encoder = json.JSONEncoder(False, True, True, True, False, None, None, None)
+  Triggers: json, encoder, extensible, https://json.org, python, data, structures
+  Location: encoder.py:74
+
+[method] json.JSONDecoder.decode
+  (self, s, _w = WHITESPACE.match)
+  Return the Python representation of ``s`` (a ``str`` instance containing a JSON document).
+  Example: result = json_decoder.decode(..., WHITESPACE.match)
+  Triggers: decode, python, representation, str, instance
+  Location: decoder.py:340
+
+[method] json.JSONDecoder.raw_decode
+  (self, s, idx = 0)
+  Decode a JSON document from ``s`` (a ``str`` beginning with a JSON document) and return a 2-tuple of the Python representation and the index in ``s`` where the document ended.
+  Example: result = json_decoder.raw_decode(..., 0)
+  Triggers: raw, decode, json, document, from, str, beginning, with
+  Location: decoder.py:351
+
+[method] json.JSONEncoder.default
+  (self, o)
+  Implement this method in a subclass such that it returns a serializable object for ``o``, or calls the base implementation (to raise a ``TypeError``).
+  Example: result = json_encoder.default(...)
+  Triggers: default, implement, method, subclass, such, that
+  Location: encoder.py:163
+
+[method] json.JSONEncoder.encode
+  (self, o)
+  Return a JSON string representation of a Python data structure.
+  Example: result = json_encoder.encode(...)
+  Triggers: encode, json, string, representation, python, data, structure
+  Location: encoder.py:185
+
+[method] json.JSONEncoder.iterencode
+  (self, o, _one_shot = False)
+  Encode the given object and yield each string representation as available.
+  Example: result = json_encoder.iterencode(..., False)
+  Triggers: iterencode, encode, given, object, yield, each, string
+  Location: encoder.py:207
+

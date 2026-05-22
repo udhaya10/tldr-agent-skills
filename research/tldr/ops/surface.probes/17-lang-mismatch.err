@@ -1,0 +1,2 @@
+Error: Parse error in : Cannot find typescript package 'json'. No node_modules/json/package.json found in '/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor' or any parent directory.
+exit=10

@@ -1,0 +1,81 @@
+{
+  "package": "json",
+  "language": "python",
+  "total": 1,
+  "apis": [
+    {
+      "qualified_name": "json.loads",
+      "kind": "Function",
+      "module": "json",
+      "signature": {
+        "params": [
+          {
+            "name": "s",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "cls",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "object_hook",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "parse_float",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "parse_int",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "parse_constant",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "object_pairs_hook",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "kw",
+            "is_variadic": false,
+            "is_keyword": true
+          }
+        ],
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Deserialize ``s`` (a ``str``, ``bytes`` or ``bytearray`` instance containing a JSON document) to a Python object.",
+      "example": "result = json.loads(..., None, None, None, None, None, None, **kwargs)",
+      "triggers": [
+        "loads",
+        "deserialize",
+        "str",
+        "bytes",
+        "bytearray",
+        "instance"
+      ],
+      "is_property": false,
+      "location": {
+        "file": "__init__.py",
+        "line": 304
+      }
+    }
+  ],
+  "files_skipped": 0,
+  "warnings": []
+}

@@ -1,0 +1,453 @@
+{
+  "package": "providers",
+  "language": "python",
+  "total": 16,
+  "apis": [
+    {
+      "qualified_name": "providers.get_yahoo_provider",
+      "kind": "Function",
+      "module": "providers",
+      "signature": {
+        "params": [],
+        "return_type": "YahooProvider",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Get or create singleton YahooProvider instance.",
+      "example": "result = providers.get_yahoo_provider()",
+      "triggers": [
+        "get",
+        "yahoo",
+        "provider",
+        "create",
+        "singleton",
+        "yahooprovider",
+        "instance"
+      ],
+      "is_property": false,
+      "return_type": "YahooProvider",
+      "location": {
+        "file": "__init__.py",
+        "line": 26
+      }
+    },
+    {
+      "qualified_name": "providers.HistoricalDataProvider",
+      "kind": "Class",
+      "module": "providers",
+      "docstring": "Interface for fetching historical OHLCV data.",
+      "example": "historical_data_provider = providers.HistoricalDataProvider()",
+      "triggers": [
+        "historical",
+        "data",
+        "provider",
+        "interface",
+        "fetching",
+        "ohlcv"
+      ],
+      "is_property": false,
+      "location": {
+        "file": "base.py",
+        "line": 15
+      }
+    },
+    {
+      "qualified_name": "providers.IntradayChartProvider",
+      "kind": "Class",
+      "module": "providers",
+      "docstring": "Interface for fetching intraday chart data.",
+      "example": "intraday_chart_provider = providers.IntradayChartProvider()",
+      "triggers": [
+        "intraday",
+        "chart",
+        "provider",
+        "interface",
+        "fetching",
+        "data"
+      ],
+      "is_property": false,
+      "location": {
+        "file": "base.py",
+        "line": 46
+      }
+    },
+    {
+      "qualified_name": "providers.MetadataProvider",
+      "kind": "Class",
+      "module": "providers",
+      "docstring": "Interface for instrument metadata.",
+      "example": "metadata_provider = providers.MetadataProvider()",
+      "triggers": [
+        "metadata",
+        "provider",
+        "interface",
+        "instrument"
+      ],
+      "is_property": false,
+      "location": {
+        "file": "base.py",
+        "line": 113
+      }
+    },
+    {
+      "qualified_name": "providers.QuoteProvider",
+      "kind": "Class",
+      "module": "providers",
+      "docstring": "Interface for live quotes.",
+      "example": "quote_provider = providers.QuoteProvider()",
+      "triggers": [
+        "quote",
+        "provider",
+        "interface",
+        "live",
+        "quotes"
+      ],
+      "is_property": false,
+      "location": {
+        "file": "base.py",
+        "line": 77
+      }
+    },
+    {
+      "qualified_name": "providers.YahooProvider",
+      "kind": "Class",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Yahoo Finance data provider.",
+      "example": "yahoo_provider = providers.YahooProvider()",
+      "triggers": [
+        "yahoo",
+        "provider"
+      ],
+      "is_property": false,
+      "location": {
+        "file": "yahoo.py",
+        "line": 28
+      }
+    },
+    {
+      "qualified_name": "providers.HistoricalDataProvider.fetch_historical_data",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbol",
+            "type_annotation": "str",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "start_date",
+            "type_annotation": "date",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "end_date",
+            "type_annotation": "date",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "pd.DataFrame",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch historical daily OHLCV data.",
+      "example": "result = historical_data_provider.fetch_historical_data(\"example\", ..., ...)",
+      "triggers": [
+        "fetch",
+        "historical",
+        "data"
+      ],
+      "is_property": false,
+      "return_type": "pd.DataFrame",
+      "location": {
+        "file": "base.py",
+        "line": 19
+      }
+    },
+    {
+      "qualified_name": "providers.IntradayChartProvider.fetch_intraday_chart",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbol",
+            "type_annotation": "str",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "interval",
+            "type_annotation": "str",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "period_bars",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "pd.DataFrame",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch intraday OHLCV data.",
+      "example": "result = intraday_chart_provider.fetch_intraday_chart(\"example\", \"example\", 42)",
+      "triggers": [
+        "fetch",
+        "intraday",
+        "chart"
+      ],
+      "is_property": false,
+      "return_type": "pd.DataFrame",
+      "location": {
+        "file": "base.py",
+        "line": 50
+      }
+    },
+    {
+      "qualified_name": "providers.MetadataProvider.fetch_market_cap",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbol",
+            "type_annotation": "str",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "Optional[float]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch market cap for a symbol.",
+      "example": "result = metadata_provider.fetch_market_cap(\"example\")",
+      "triggers": [
+        "fetch",
+        "market",
+        "cap"
+      ],
+      "is_property": false,
+      "return_type": "Optional[float]",
+      "location": {
+        "file": "base.py",
+        "line": 117
+      }
+    },
+    {
+      "qualified_name": "providers.MetadataProvider.fetch_metadata",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbol",
+            "type_annotation": "str",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "Dict[str, Any]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch metadata for a symbol.",
+      "example": "result = metadata_provider.fetch_metadata(\"example\")",
+      "triggers": [
+        "fetch",
+        "metadata"
+      ],
+      "is_property": false,
+      "return_type": "Dict[str, Any]",
+      "location": {
+        "file": "base.py",
+        "line": 133
+      }
+    },
+    {
+      "qualified_name": "providers.QuoteProvider.fetch_quotes",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbols",
+            "type_annotation": "List[str]",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "fields",
+            "type_annotation": "Optional[List[str]]",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "Dict[str, Dict[str, Any]]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch live quotes for symbols.",
+      "example": "result = quote_provider.fetch_quotes([], None)",
+      "triggers": [
+        "fetch",
+        "quotes"
+      ],
+      "is_property": false,
+      "return_type": "Dict[str, Dict[str, Any]]",
+      "location": {
+        "file": "base.py",
+        "line": 81
+      }
+    },
+    {
+      "qualified_name": "providers.YahooProvider.fetch_historical_data",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbol",
+            "type_annotation": "str",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "start_date",
+            "type_annotation": "date",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "end_date",
+            "type_annotation": "date",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "pd.DataFrame",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch historical daily OHLCV data from Yahoo Finance.",
+      "example": "result = yahoo_provider.fetch_historical_data(\"example\", ..., ...)",
+      "triggers": [
+        "fetch",
+        "historical",
+        "data"
+      ],
+      "is_property": false,
+      "return_type": "pd.DataFrame",
+      "location": {
+        "file": "yahoo.py",
+        "line": 38
+      }
+    },
+    {
+      "qualified_name": "providers.YahooProvider.fetch_intraday_chart",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+
+... [109 lines truncated, full output regeneratable via probe.sh] ...
+
+        "file": "yahoo.py",
+        "line": 218
+      }
+    },
+    {
+      "qualified_name": "providers.YahooProvider.fetch_quotes",
+      "kind": "Method",
+      "module": "providers",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "symbols",
+            "type_annotation": "List[str]",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "fields",
+            "type_annotation": "Optional[List[str]]",
+            "default": "None",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "Dict[str, Dict[str, Any]]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "docstring": "Fetch live quotes from Yahoo Finance.",
+      "example": "result = yahoo_provider.fetch_quotes([], None)",
+      "triggers": [
+        "fetch",
+        "quotes"
+      ],
+      "is_property": false,
+      "return_type": "Dict[str, Dict[str, Any]]",
+      "location": {
+        "file": "yahoo.py",
+        "line": 149
+      }
+    }
+  ],
+  "files_skipped": 0,
+  "warnings": []
+}

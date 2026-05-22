@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <TARGET>
+
+Usage: tldr surface <TARGET>
+
+For more information, try '--help'.
+exit=2

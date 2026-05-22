@@ -1,0 +1,453 @@
+{
+  "package": "backend",
+  "language": "python",
+  "total": 1339,
+  "apis": [
+    {
+      "qualified_name": "backend.amfi_portfolios.build_baroda_header_map",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "worksheet",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "header_row",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "dict[str, int]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_baroda_header_map(..., 42)",
+      "triggers": [
+        "build",
+        "baroda",
+        "header",
+        "map"
+      ],
+      "is_property": false,
+      "return_type": "dict[str, int]",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 4321
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_hdfc_header_map",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "worksheet",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "header_row",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "dict[str, int]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_hdfc_header_map(..., 42)",
+      "triggers": [
+        "build",
+        "hdfc",
+        "header",
+        "map"
+      ],
+      "is_property": false,
+      "return_type": "dict[str, int]",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 3605
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_mutual_fund_scheme_id",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "source_key",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "scheme_key",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "str",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_mutual_fund_scheme_id(..., ...)",
+      "triggers": [
+        "build",
+        "mutual",
+        "fund",
+        "scheme",
+        "id"
+      ],
+      "is_property": false,
+      "return_type": "str",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 7773
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_nippon_header_map",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "rows",
+            "type_annotation": "list[list[object]]",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "header_row",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "dict[str, int]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_nippon_header_map([], 42)",
+      "triggers": [
+        "build",
+        "nippon",
+        "header",
+        "map"
+      ],
+      "is_property": false,
+      "return_type": "dict[str, int]",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 3885
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_quantum_header_map",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "worksheet",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "header_row",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "dict[str, int]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_quantum_header_map(..., 42)",
+      "triggers": [
+        "build",
+        "quantum",
+        "header",
+        "map"
+      ],
+      "is_property": false,
+      "return_type": "dict[str, int]",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 4448
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_recent_sbi_file_metas",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "session",
+            "type_annotation": "requests.Session",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "fund_row",
+            "type_annotation": "dict",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "target_year",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "months_per_fund",
+            "type_annotation": "int",
+            "default": "2",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "list[dict]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_recent_sbi_file_metas(..., {}, 42, 2)",
+      "triggers": [
+        "build",
+        "recent",
+        "sbi",
+        "file",
+        "metas"
+      ],
+      "is_property": false,
+      "return_type": "list[dict]",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 3467
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_sbi_header_map",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "worksheet",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "header_row",
+            "type_annotation": "int",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "dict[str, int]",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_sbi_header_map(..., 42)",
+      "triggers": [
+        "build",
+        "sbi",
+        "header",
+        "map"
+      ],
+      "is_property": false,
+      "return_type": "dict[str, int]",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 3755
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.build_snapshot_file_meta",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "snapshot_row",
+            "type_annotation": "sqlite3.Row | dict",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "dict",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.build_snapshot_file_meta(...)",
+      "triggers": [
+        "build",
+        "snapshot",
+        "file",
+        "meta"
+      ],
+      "is_property": false,
+      "return_type": "dict",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 6191
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.classify_ppfas_security_kind",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "section_name",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "sub_section_name",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "security_name",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "industry_or_rating",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "str | None",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.classify_ppfas_security_kind(..., ..., ..., ...)",
+      "triggers": [
+        "classify",
+        "ppfas",
+        "security",
+        "kind"
+      ],
+      "is_property": false,
+      "return_type": "str | None",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 4036
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.classify_scheme_holding_row",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "symbol",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          },
+          {
+            "name": "isin",
+            "type_annotation": "str | None",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "str",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = backend.amfi_portfolios.classify_scheme_holding_row(..., ...)",
+      "triggers": [
+        "classify",
+        "scheme",
+        "holding",
+        "row"
+      ],
+      "is_property": false,
+      "return_type": "str",
+      "location": {
+        "file": "amfi_portfolios.py",
+        "line": 7796
+      }
+    },
+    {
+      "qualified_name": "backend.amfi_portfolios.clean_angel_scheme_name",
+      "kind": "Function",
+      "module": "backend.amfi_portfolios",
+      "signature": {
+        "params": [
+          {
+            "name": "file_name",
+
+... [37661 lines truncated, full output regeneratable via probe.sh] ...
+
+        "return_type": "Any",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = formula_parser.parse_primary_expression()",
+      "triggers": [
+        "parse",
+        "primary",
+        "expression"
+      ],
+      "is_property": false,
+      "return_type": "Any",
+      "location": {
+        "file": "watchlist_formulas.py",
+        "line": 456
+      }
+    },
+    {
+      "qualified_name": "backend.watchlist_formulas.FormulaParser.parse_unary_expression",
+      "kind": "Method",
+      "module": "backend.watchlist_formulas",
+      "signature": {
+        "params": [
+          {
+            "name": "self",
+            "is_variadic": false,
+            "is_keyword": false
+          }
+        ],
+        "return_type": "Any",
+        "is_async": false,
+        "is_generator": false
+      },
+      "example": "result = formula_parser.parse_unary_expression()",
+      "triggers": [
+        "parse",
+        "unary",
+        "expression"
+      ],
+      "is_property": false,
+      "return_type": "Any",
+      "location": {
+        "file": "watchlist_formulas.py",
+        "line": 447
+      }
+    }
+  ],
+  "files_skipped": 0,
+  "warnings": []
+}

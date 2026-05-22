@@ -1,0 +1,14 @@
+digraph deps {
+  rankdir=LR;
+  node [shape=box, fontname="Helvetica"];
+  edge [fontname="Helvetica", fontsize=10];
+
+  // Nodes
+  "__init__.py" [label="__init__.py"];
+  "base.py" [label="base.py"];
+  "yahoo.py" [label="yahoo.py"];
+  "dhan.py" [label="dhan.py"];
+
+  // Edges
+}
+

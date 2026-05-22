@@ -1,0 +1,20 @@
+{
+  "root": "/var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/tmp.Usk6A5amVZ",
+  "language": null,
+  "internal_dependencies": {},
+  "external_dependencies": {},
+  "circular_dependencies": [],
+  "stats": {
+    "total_files": 0,
+    "total_internal_deps": 0,
+    "total_external_deps": 0,
+    "max_depth": 0,
+    "cycles_found": 0,
+    "leaf_files": 0,
+    "root_files": 0
+  },
+  "files_skipped": 0,
+  "warnings": [
+    "Empty directory: no source files to analyze"
+  ]
+}

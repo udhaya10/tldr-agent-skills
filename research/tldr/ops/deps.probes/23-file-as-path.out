@@ -1,0 +1,15 @@
+{
+  "root": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+  "language": "python",
+  "internal_dependencies": {},
+  "stats": {
+    "total_files": 0,
+    "total_internal_deps": 0,
+    "total_external_deps": 0,
+    "max_depth": 0,
+    "cycles_found": 0,
+    "leaf_files": 0,
+    "root_files": 0
+  },
+  "files_skipped": 0
+}

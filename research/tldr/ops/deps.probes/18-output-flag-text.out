@@ -1,0 +1,12 @@
+Dependency Analysis: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers
+Language: Python
+
+Internal Dependencies (0 edges, 4 files):
+
+No circular dependencies found.
+
+Stats:
+  Max depth: 0
+  Leaf files: 4 (no outgoing deps)
+  Root files: 4 (no incoming deps)
+

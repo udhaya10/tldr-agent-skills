@@ -1,0 +1,45 @@
+{
+  "root": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers",
+  "language": "python",
+  "internal_dependencies": {
+    "__init__.py": [],
+    "base.py": [],
+    "dhan.py": [],
+    "yahoo.py": []
+  },
+  "external_dependencies": {
+    "__init__.py": [
+      "backend"
+    ],
+    "base.py": [
+      "abc",
+      "datetime",
+      "typing",
+      "pandas"
+    ],
+    "dhan.py": [
+      "datetime",
+      "typing",
+      "pandas",
+      "backend"
+    ],
+    "yahoo.py": [
+      "math",
+      "datetime",
+      "typing",
+      "pandas",
+      "yfinance",
+      "backend"
+    ]
+  },
+  "stats": {
+    "total_files": 4,
+    "total_internal_deps": 0,
+    "total_external_deps": 7,
+    "max_depth": 0,
+    "cycles_found": 0,
+    "leaf_files": 4,
+    "root_files": 4
+  },
+  "files_skipped": 0
+}

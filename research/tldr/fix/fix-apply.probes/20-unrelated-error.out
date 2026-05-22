@@ -1,0 +1,6 @@
+{
+  "language": "python",
+  "error_code": "NameError",
+  "message": "NameError in 'module()': foo not defined. No deterministic fix available -- re-prompt the model with the exception class and message as context.",
+  "confidence": "Low"
+}

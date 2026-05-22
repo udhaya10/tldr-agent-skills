@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  --source <SOURCE>
+
+Usage: tldr fix apply --source <SOURCE> --error <ERROR>
+
+For more information, try '--help'.
+exit=2

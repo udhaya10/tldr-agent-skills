@@ -1,0 +1,2 @@
+Error: No error text provided. Use --error, --error-file, or pipe to stdin.
+exit=1

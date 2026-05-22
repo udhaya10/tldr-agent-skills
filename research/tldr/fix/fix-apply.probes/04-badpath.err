@@ -1,0 +1,2 @@
+Error: Failed to read source file '/no/such/file.py': No such file or directory (os error 2)
+exit=1

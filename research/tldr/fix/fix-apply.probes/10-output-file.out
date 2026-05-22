@@ -1,0 +1,7 @@
+{
+  "language": "python",
+  "error_code": "NameError",
+  "message": "Name 'valeu' is not defined. Check spelling or add the missing import.",
+  "confidence": "Low"
+}
+=== output file content ===

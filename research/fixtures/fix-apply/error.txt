@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "buggy.py", line 6, in compute
+    return valeu * 2
+NameError: name 'valeu' is not defined. Did you mean: 'value'?

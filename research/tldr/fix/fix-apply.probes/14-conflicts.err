@@ -1,0 +1,6 @@
+error: the argument '--error <ERROR>' cannot be used with '--error-file <ERROR_FILE>'
+
+Usage: tldr fix apply --source <SOURCE> --error <ERROR>
+
+For more information, try '--help'.
+exit=2

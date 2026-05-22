@@ -1,0 +1,1 @@
+tldr fix apply -s /Users/udhayakumar/Workspace/03-Parcadei-Ecosystem/AIHarnessUtilities/tldr-agent-skills/research/fixtures/fix-apply/buggy.py -e "NameError: name 'valeu' is not defined. Did you mean: 'value'?" -o /var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/patched.py.XXXXXX.hLYqqEHnca

@@ -1,0 +1,10 @@
+{
+  "language": "python",
+  "error_code": "NameError",
+  "message": "Name 'valeu' is not defined. Check spelling or add the missing import.",
+  "location": {
+    "file": "buggy.py",
+    "line": 6
+  },
+  "confidence": "Low"
+}

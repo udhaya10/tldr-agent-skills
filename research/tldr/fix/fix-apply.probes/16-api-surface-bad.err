@@ -1,0 +1,4 @@
+Note: API surface enrichment available from '/no/such/api.json'
+No auto-fix available (confidence: Low). Diagnosis:
+Error: No deterministic fix available for this error. Escalate to a model.
+exit=1

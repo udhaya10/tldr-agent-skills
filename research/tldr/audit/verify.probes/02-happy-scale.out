@@ -1,0 +1,453 @@
+{
+  "path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend",
+  "sub_results": {
+    "contracts": {
+      "name": "contracts",
+      "status": "success",
+      "items_found": 4729,
+      "elapsed_ms": 9172,
+      "error": null,
+      "data": [
+        {
+          "function": "utc_now_iso",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, str)",
+              "source_line": 416,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "normalize_text",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "value is None",
+              "constraint": "not (value is None)",
+              "source_line": 421,
+              "confidence": "medium"
+            },
+            {
+              "variable": "value",
+              "constraint": "parameter value is required",
+              "source_line": 420,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, str | None)",
+              "source_line": 420,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "normalize_symbol",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "value",
+              "constraint": "parameter value is required",
+              "source_line": 428,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, str | None)",
+              "source_line": 428,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "normalize_isin",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "normalized_value",
+              "constraint": "normalized_value",
+              "source_line": 435,
+              "confidence": "medium"
+            },
+            {
+              "variable": "value",
+              "constraint": "parameter value is required",
+              "source_line": 433,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, str | None)",
+              "source_line": 433,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "is_valid_isin",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "normalized_value",
+              "constraint": "normalized_value",
+              "source_line": 443,
+              "confidence": "medium"
+            },
+            {
+              "variable": "value",
+              "constraint": "parameter value is required",
+              "source_line": 441,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, bool)",
+              "source_line": 441,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "normalize_holding_label",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "value",
+              "constraint": "isinstance(value, str | None)",
+              "source_line": 449,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, str)",
+              "source_line": 449,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "is_non_holding_label",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "normalized_label",
+              "constraint": "normalized_label",
+              "source_line": 458,
+              "confidence": "medium"
+            },
+            {
+              "variable": "CASH_OR_REPO_LABEL_PATTERN.fullmatch(normalized_label)",
+              "constraint": "not (CASH_OR_REPO_LABEL_PATTERN.fullmatch(normalized_label))",
+              "source_line": 461,
+              "confidence": "medium"
+            },
+            {
+              "variable": "re.match(r\"^\\d+\\.\\s\", normalized_label)",
+              "constraint": "not (re.match(r\"^\\d+\\.\\s\", normalized_label))",
+              "source_line": 464,
+              "confidence": "medium"
+            },
+            {
+              "variable": "normalized_label in GENERIC_SECTION_OR_SUBSECTION_LABELS",
+              "constraint": "not (normalized_label in GENERIC_SECTION_OR_SUBSECTION_LABELS)",
+              "source_line": 467,
+              "confidence": "medium"
+            },
+            {
+              "variable": "any(normalized_label.startswith(prefix) for prefix in GENERIC_NON_HOLDING_PREFIXES)",
+              "constraint": "not (any(normalized_label.startswith(prefix) for prefix in GENERIC_NON_HOLDING_PREFIXES))",
+              "source_line": 470,
+              "confidence": "medium"
+            },
+            {
+              "variable": "any(fragment in normalized_label for fragment in GENERIC_NON_HOLDING_CONTAINS)",
+              "constraint": "not (any(fragment in normalized_label for fragment in GENERIC_NON_HOLDING_CONTAINS))",
+              "source_line": 473,
+              "confidence": "medium"
+            },
+            {
+              "variable": "normalized_label.endswith(\" total\") or normalized_label.endswith(\" subtotal\")",
+              "constraint": "not (normalized_label.endswith(\" total\") or normalized_label.endswith(\" subtotal\"))",
+              "source_line": 476,
+              "confidence": "medium"
+            },
+            {
+              "variable": "normalized_label.startswith(\"(a)\") or normalized_label.startswith(\"(b)\") or normalized_label.startswith(\"(c)\") or normalized_label.startswith(\"(d)\")",
+              "constraint": "not (normalized_label.startswith(\"(a)\") or normalized_label.startswith(\"(b)\") or normalized_label.startswith(\"(c)\") or normalized_label.startswith(\"(d)\"))",
+              "source_line": 479,
+              "confidence": "medium"
+            },
+            {
+              "variable": "label",
+              "constraint": "isinstance(label, str | None)",
+              "source_line": 456,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, bool)",
+              "source_line": 456,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "is_derivative_or_contract_row",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "normalized_security_name in DERIVATIVE_MARKERS or normalized_isin in DERIVATIVE_MARKERS",
+              "constraint": "not (normalized_security_name in DERIVATIVE_MARKERS or normalized_isin in DERIVATIVE_MARKERS)",
+              "source_line": 510,
+              "confidence": "medium"
+            },
+            {
+              "variable": "DERIVATIVE_ISIN_VALUE_PATTERN.fullmatch(normalized_isin)",
+              "constraint": "not (DERIVATIVE_ISIN_VALUE_PATTERN.fullmatch(normalized_isin))",
+              "source_line": 513,
+              "confidence": "medium"
+            },
+            {
+              "variable": "FUTURE_SECURITY_NAME_PATTERN.search(normalized_security_name)",
+              "constraint": "not (FUTURE_SECURITY_NAME_PATTERN.search(normalized_security_name))",
+              "source_line": 516,
+              "confidence": "medium"
+            },
+            {
+              "variable": "any(keyword in combined_text for keyword in DERIVATIVE_SECTION_KEYWORDS)",
+              "constraint": "not (any(keyword in combined_text for keyword in DERIVATIVE_SECTION_KEYWORDS))",
+              "source_line": 519,
+              "confidence": "medium"
+            },
+            {
+              "variable": "security_name",
+              "constraint": "isinstance(security_name, str | None)",
+              "source_line": 485,
+              "confidence": "low"
+            },
+            {
+              "variable": "isin",
+              "constraint": "isinstance(isin, str | None)",
+              "source_line": 485,
+              "confidence": "low"
+            },
+            {
+              "variable": "section_name",
+              "constraint": "isinstance(section_name, str | None)",
+              "source_line": 485,
+              "confidence": "low"
+            },
+            {
+              "variable": "sub_section_name",
+              "constraint": "isinstance(sub_section_name, str | None)",
+              "source_line": 485,
+              "confidence": "low"
+            },
+            {
+              "variable": "quantity",
+              "constraint": "parameter quantity (default: None)",
+              "source_line": 485,
+              "confidence": "low"
+            },
+            {
+              "variable": "market_value",
+              "constraint": "parameter market_value (default: None)",
+              "source_line": 485,
+              "confidence": "low"
+            },
+            {
+              "variable": "pct_to_aum",
+              "constraint": "parameter pct_to_aum (default: None)",
+              "source_line": 485,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, bool)",
+              "source_line": 485,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "is_displayable_holding_row",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "not normalized_label or is_non_holding_label(normalized_label)",
+              "constraint": "not (not normalized_label or is_non_holding_label(normalized_label))",
+              "source_line": 551,
+              "confidence": "medium"
+            },
+            {
+              "variable": "is_derivative_or_contract_row(\n        security_name,\n        isin,\n        section_name=section_name,\n        sub_section_name=sub_section_name,\n        quantity=quantity,\n        market_value=market_value,\n        pct_to_aum=pct_to_aum,\n    )",
+              "constraint": "not (is_derivative_or_contract_row(\n        security_name,\n        isin,\n        section_name=section_name,\n        sub_section_name=sub_section_name,\n        quantity=quantity,\n        market_value=market_value,\n        pct_to_aum=pct_to_aum,\n    ))",
+              "source_line": 554,
+              "confidence": "medium"
+            },
+            {
+              "variable": "is_valid_isin(isin)",
+              "constraint": "not (is_valid_isin(isin))",
+              "source_line": 565,
+              "confidence": "medium"
+            },
+            {
+              "variable": "security_name",
+              "constraint": "isinstance(security_name, str | None)",
+              "source_line": 540,
+              "confidence": "low"
+            },
+            {
+              "variable": "isin",
+              "constraint": "isinstance(isin, str | None)",
+              "source_line": 540,
+              "confidence": "low"
+            },
+            {
+              "variable": "section_name",
+              "constraint": "isinstance(section_name, str | None)",
+              "source_line": 540,
+              "confidence": "low"
+            },
+            {
+              "variable": "sub_section_name",
+              "constraint": "isinstance(sub_section_name, str | None)",
+              "source_line": 540,
+              "confidence": "low"
+            },
+            {
+              "variable": "quantity",
+              "constraint": "parameter quantity (default: None)",
+              "source_line": 540,
+              "confidence": "low"
+            },
+            {
+              "variable": "market_value",
+              "constraint": "parameter market_value (default: None)",
+              "source_line": 540,
+              "confidence": "low"
+            },
+            {
+              "variable": "pct_to_aum",
+              "constraint": "parameter pct_to_aum (default: None)",
+              "source_line": 540,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, bool)",
+              "source_line": 540,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "is_equity_related_holding",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "preconditions": [
+            {
+              "variable": "security_kind",
+              "constraint": "isinstance(security_kind, str | None)",
+              "source_line": 571,
+              "confidence": "low"
+            },
+            {
+              "variable": "section_name",
+              "constraint": "isinstance(section_name, str | None)",
+              "source_line": 571,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, bool)",
+              "source_line": 571,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+
+... [39073 lines truncated, full output regeneratable via probe.sh] ...
+
+              "source_line": 127,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        }
+      ]
+    },
+    "specs": {
+      "name": "specs",
+      "status": "success",
+      "items_found": 0,
+      "elapsed_ms": 0,
+      "error": null,
+      "data": {
+        "functions": [],
+        "summary": {
+          "total_specs": 0,
+          "by_type": {
+            "input_output": 0,
+            "exception": 0,
+            "property": 0
+          },
+          "test_functions_scanned": 0,
+          "test_files_scanned": 1,
+          "functions_found": 0
+        }
+      }
+    }
+  },
+  "summary": {
+    "spec_count": 0,
+    "invariant_count": 0,
+    "contract_count": 4729,
+    "annotated_count": 0,
+    "behavioral_count": 0,
+    "pattern_count": 0,
+    "pattern_high_confidence": 0,
+    "coverage": {
+      "constrained_functions": 1132,
+      "total_functions": 1160,
+      "coverage_pct": 98.0,
+      "scope": "constraint-relevant functions (subset of all project functions; typically << structure/health total_functions)"
+    }
+  },
+  "total_elapsed_ms": 9177,
+  "files_analyzed": 54,
+  "files_failed": 0,
+  "partial_results": false
+}

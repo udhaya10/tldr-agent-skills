@@ -1,0 +1,210 @@
+{
+  "path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+  "sub_results": {
+    "specs": {
+      "name": "specs",
+      "status": "failed",
+      "items_found": 0,
+      "elapsed_ms": 0,
+      "error": "No test directory found",
+      "data": null
+    },
+    "contracts": {
+      "name": "contracts",
+      "status": "success",
+      "items_found": 18,
+      "elapsed_ms": 7,
+      "error": null,
+      "data": [
+        {
+          "function": "_to_finite_float",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [
+            {
+              "variable": "value",
+              "constraint": "isinstance(value, Any)",
+              "source_line": 18,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, Optional[float])",
+              "source_line": 18,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "__init__",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [],
+          "postconditions": [],
+          "invariants": []
+        },
+        {
+          "function": "fetch_historical_data",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [
+            {
+              "variable": "symbol",
+              "constraint": "isinstance(symbol, str)",
+              "source_line": 38,
+              "confidence": "low"
+            },
+            {
+              "variable": "start_date",
+              "constraint": "isinstance(start_date, date)",
+              "source_line": 38,
+              "confidence": "low"
+            },
+            {
+              "variable": "end_date",
+              "constraint": "isinstance(end_date, date)",
+              "source_line": 38,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, pd.DataFrame)",
+              "source_line": 38,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "fetch_intraday_chart",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [
+            {
+              "variable": "symbol",
+              "constraint": "isinstance(symbol, str)",
+              "source_line": 87,
+              "confidence": "low"
+            },
+            {
+              "variable": "interval",
+              "constraint": "isinstance(interval, str)",
+              "source_line": 87,
+              "confidence": "low"
+            },
+            {
+              "variable": "period_bars",
+              "constraint": "isinstance(period_bars, int)",
+              "source_line": 87,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, pd.DataFrame)",
+              "source_line": 87,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "fetch_quotes",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [
+            {
+              "variable": "symbols",
+              "constraint": "symbols",
+              "source_line": 159,
+              "confidence": "medium"
+            },
+            {
+              "variable": "symbols",
+              "constraint": "isinstance(symbols, List[str])",
+              "source_line": 149,
+              "confidence": "low"
+            },
+            {
+              "variable": "fields",
+              "constraint": "isinstance(fields, Optional[List[str]])",
+              "source_line": 149,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, Dict[str, Dict[str, Any]])",
+              "source_line": 149,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "fetch_market_cap",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [
+            {
+              "variable": "symbol",
+              "constraint": "isinstance(symbol, str)",
+              "source_line": 190,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, Optional[float])",
+              "source_line": 190,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        },
+        {
+          "function": "fetch_metadata",
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "preconditions": [
+            {
+              "variable": "symbol",
+              "constraint": "isinstance(symbol, str)",
+              "source_line": 218,
+              "confidence": "low"
+            }
+          ],
+          "postconditions": [
+            {
+              "variable": "return",
+              "constraint": "isinstance(return, Dict[str, Any])",
+              "source_line": 218,
+              "confidence": "low"
+            }
+          ],
+          "invariants": []
+        }
+      ]
+    }
+  },
+  "summary": {
+    "spec_count": 0,
+    "invariant_count": 0,
+    "contract_count": 18,
+    "annotated_count": 0,
+    "behavioral_count": 0,
+    "pattern_count": 0,
+    "pattern_high_confidence": 0,
+    "coverage": {
+      "constrained_functions": 6,
+      "total_functions": 7,
+      "coverage_pct": 86.0,
+      "scope": "constraint-relevant functions (subset of all project functions; typically << structure/health total_functions)"
+    }
+  },
+  "total_elapsed_ms": 7,
+  "files_analyzed": 1,
+  "files_failed": 0,
+  "partial_results": true
+}

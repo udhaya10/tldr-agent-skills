@@ -1,0 +1,15 @@
+Verification: /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers
+==================================================
+Test Specs:    0 behavioral specs extracted
+Invariants:    0 inferred invariants
+Contracts:     64 pre/postconditions inferred
+Annotations:   0 Annotated[T] constraints found
+Behaviors:     0 functions with behavioral models
+Patterns:      0 project patterns (0 high-confidence)
+
+Constraint Coverage:
+  Functions with any constraint: 11/11 (100.0%)
+  Scope: constraint-relevant functions (subset of all project functions; typically << structure/health total_functions)
+
+Elapsed: 21ms
+Errors: specs

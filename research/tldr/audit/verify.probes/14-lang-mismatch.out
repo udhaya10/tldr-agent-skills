@@ -1,0 +1,40 @@
+{
+  "path": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers",
+  "sub_results": {
+    "specs": {
+      "name": "specs",
+      "status": "failed",
+      "items_found": 0,
+      "elapsed_ms": 0,
+      "error": "No test directory found",
+      "data": null
+    },
+    "contracts": {
+      "name": "contracts",
+      "status": "success",
+      "items_found": 0,
+      "elapsed_ms": 0,
+      "error": null,
+      "data": []
+    }
+  },
+  "summary": {
+    "spec_count": 0,
+    "invariant_count": 0,
+    "contract_count": 0,
+    "annotated_count": 0,
+    "behavioral_count": 0,
+    "pattern_count": 0,
+    "pattern_high_confidence": 0,
+    "coverage": {
+      "constrained_functions": 0,
+      "total_functions": 0,
+      "coverage_pct": 0.0,
+      "scope": "constraint-relevant functions (subset of all project functions; typically << structure/health total_functions)"
+    }
+  },
+  "total_elapsed_ms": 1,
+  "files_analyzed": 0,
+  "files_failed": 0,
+  "partial_results": true
+}

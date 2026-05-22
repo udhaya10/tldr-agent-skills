@@ -1,0 +1,23 @@
+{
+  "wrapper": "todo",
+  "path": "backend/providers/yahoo.py",
+  "items": [
+    {
+      "category": "cohesion",
+      "priority": 3,
+      "description": "Low cohesion in class YahooProvider: LCOM4=5, consider splitting",
+      "file": "backend/providers/yahoo.py",
+      "line": 28,
+      "severity": "high",
+      "score": 1.0
+    }
+  ],
+  "summary": {
+    "dead_count": 0,
+    "similar_pairs": 0,
+    "low_cohesion_count": 1,
+    "hotspot_count": 0,
+    "equivalence_groups": 0
+  },
+  "total_elapsed_ms": 13.115291
+}

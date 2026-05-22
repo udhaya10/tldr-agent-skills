@@ -1,0 +1,194 @@
+{
+  "wrapper": "todo",
+  "path": "backend",
+  "items": [
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _safe_parse_xbrl",
+      "file": "nse_results.py",
+      "line": 766,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _has_material_discontinued_profit",
+      "file": "nse_results.py",
+      "line": 1237,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _build_previous_row_index",
+      "file": "nse_results.py",
+      "line": 1990,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _latest_trade_date_from_timestamp",
+      "file": "rrg.py",
+      "line": 436,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _prune_rrg_scores_by_retention",
+      "file": "rrg.py",
+      "line": 458,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _build_rrg_series",
+      "file": "rrg.py",
+      "line": 814,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _calculate_q4fy26_earnings_metric",
+      "file": "watchlist_formulas.py",
+      "line": 1265,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "dead_code",
+      "priority": 1,
+      "description": "Unused function: _normalize_earnings_period_value",
+      "file": "watchlist_formulas.py",
+      "line": 1336,
+      "severity": "medium",
+      "score": 0.0
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in create_app: cyclomatic=156, consider refactoring",
+      "file": "backend/api.py",
+      "line": 1561,
+      "severity": "high",
+      "score": 3.12
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in _evaluate_candlestick_pattern: cyclomatic=94, consider refactoring",
+      "file": "backend/watchlist_formulas.py",
+      "line": 976,
+      "severity": "high",
+      "score": 1.88
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in query_nse_results: cyclomatic=87, consider refactoring",
+      "file": "backend/nse_results.py",
+      "line": 2058,
+      "severity": "high",
+      "score": 1.74
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in _build_formula_contexts: cyclomatic=84, consider refactoring",
+      "file": "backend/watchlist_formulas.py",
+      "line": 1925,
+      "severity": "high",
+      "score": 1.68
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in parse_dsp_monthly_xlsx_v1: cyclomatic=83, consider refactoring",
+      "file": "backend/amfi_portfolios.py",
+      "line": 4736,
+      "severity": "high",
+      "score": 1.66
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in parse_unifi_monthly_excel_v1: cyclomatic=82, consider refactoring",
+      "file": "backend/amfi_portfolios.py",
+      "line": 5559,
+      "severity": "high",
+      "score": 1.64
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in parse_angel_monthly_xlsx_v1: cyclomatic=75, consider refactoring",
+      "file": "backend/amfi_portfolios.py",
+      "line": 5250,
+      "severity": "high",
+      "score": 1.5
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in _evaluate_call: cyclomatic=75, consider refactoring",
+      "file": "backend/tc2000_formulas.py",
+      "line": 862,
+      "severity": "high",
+      "score": 1.5
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in sync_nse_listings: cyclomatic=73, consider refactoring",
+      "file": "backend/nse_listings.py",
+      "line": 356,
+      "severity": "high",
+      "score": 1.46
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in _evaluate_function: cyclomatic=67, consider refactoring",
+      "file": "backend/watchlist_formulas.py",
+      "line": 2293,
+      "severity": "high",
+      "score": 1.34
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in parse_shriram_monthly_xls_v1: cyclomatic=66, consider refactoring",
+      "file": "backend/amfi_portfolios.py",
+      "line": 4855,
+      "severity": "high",
+      "score": 1.32
+    },
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in _build_market_breadth_payload: cyclomatic=66, consider refactoring",
+      "file": "backend/market_breadth.py",
+      "line": 666,
+      "severity": "high",
+      "score": 1.32
+    }
+  ],
+  "summary": {
+    "dead_count": 8,
+    "similar_pairs": 0,
+    "low_cohesion_count": 7,
+    "hotspot_count": 255,
+    "equivalence_groups": 0
+  },
+  "total_elapsed_ms": 5659.187250000001
+}

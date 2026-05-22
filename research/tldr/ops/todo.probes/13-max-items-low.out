@@ -1,0 +1,23 @@
+{
+  "wrapper": "todo",
+  "path": "backend/providers",
+  "items": [
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in DhanProvider.fetch_intraday_chart: cyclomatic=12, consider refactoring",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "severity": "medium",
+      "score": 0.24
+    }
+  ],
+  "summary": {
+    "dead_count": 0,
+    "similar_pairs": 0,
+    "low_cohesion_count": 2,
+    "hotspot_count": 1,
+    "equivalence_groups": 0
+  },
+  "total_elapsed_ms": 22.5105
+}

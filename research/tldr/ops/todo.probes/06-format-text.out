@@ -1,0 +1,23 @@
+TODO Report for: backend/providers
+Total items: 3
+
+Summary:
+  Dead code items: 0
+  Complexity hotspots: 1
+  Low cohesion classes: 2
+  Similar code pairs: 0
+  Equivalence groups: 0
+
+Items (sorted by priority):
+
+1. [complexity] High complexity in DhanProvider.fetch_intraday_chart: cyclomatic=12, consider refactoring (priority: 2)
+   Location: backend/providers/dhan.py:126
+   Severity: medium
+2. [cohesion] Low cohesion in class DhanProvider: LCOM4=5, consider splitting (priority: 3)
+   Location: backend/providers/dhan.py:17
+   Severity: high
+3. [cohesion] Low cohesion in class YahooProvider: LCOM4=5, consider splitting (priority: 3)
+   Location: backend/providers/yahoo.py:28
+   Severity: high
+
+Analysis time: 23.19ms

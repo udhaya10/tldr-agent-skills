@@ -1,0 +1,13 @@
+{
+  "wrapper": "todo",
+  "path": "/var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/tmp.S64YsIRr8X",
+  "items": [],
+  "summary": {
+    "dead_count": 0,
+    "similar_pairs": 0,
+    "low_cohesion_count": 0,
+    "hotspot_count": 0,
+    "equivalence_groups": 0
+  },
+  "total_elapsed_ms": 2.221125
+}

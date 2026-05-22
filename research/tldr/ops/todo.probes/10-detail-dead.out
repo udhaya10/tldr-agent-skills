@@ -1,0 +1,65 @@
+{
+  "wrapper": "todo",
+  "path": "backend/providers",
+  "items": [
+    {
+      "category": "complexity",
+      "priority": 2,
+      "description": "High complexity in DhanProvider.fetch_intraday_chart: cyclomatic=12, consider refactoring",
+      "file": "backend/providers/dhan.py",
+      "line": 126,
+      "severity": "medium",
+      "score": 0.24
+    },
+    {
+      "category": "cohesion",
+      "priority": 3,
+      "description": "Low cohesion in class DhanProvider: LCOM4=5, consider splitting",
+      "file": "backend/providers/dhan.py",
+      "line": 17,
+      "severity": "high",
+      "score": 1.0
+    },
+    {
+      "category": "cohesion",
+      "priority": 3,
+      "description": "Low cohesion in class YahooProvider: LCOM4=5, consider splitting",
+      "file": "backend/providers/yahoo.py",
+      "line": 28,
+      "severity": "high",
+      "score": 1.0
+    }
+  ],
+  "summary": {
+    "dead_count": 0,
+    "similar_pairs": 0,
+    "low_cohesion_count": 2,
+    "hotspot_count": 1,
+    "equivalence_groups": 0
+  },
+  "sub_results": {
+    "dead_code": {
+      "dead_functions": [],
+      "possibly_dead": [
+        {
+          "file": "__init__.py",
+          "name": "get_yahoo_provider",
+          "line": 26,
+          "signature": "get_yahoo_provider() -> YahooProvider",
+          "ref_count": 1,
+          "is_public": true,
+          "is_test": false,
+          "is_trait_method": false,
+          "has_decorator": false
+        }
+      ],
+      "by_file": {},
+      "total_dead": 0,
+      "total_possibly_dead": 1,
+      "functions_analyzed": 23,
+      "total_functions": 23,
+      "dead_percentage": 0.0
+    }
+  },
+  "total_elapsed_ms": 22.634791
+}

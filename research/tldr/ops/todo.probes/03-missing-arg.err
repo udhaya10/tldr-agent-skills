@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <PATH>
+
+Usage: tldr todo <PATH>
+
+For more information, try '--help'.
+exit=2

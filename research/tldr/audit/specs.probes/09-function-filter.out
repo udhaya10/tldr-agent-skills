@@ -1,0 +1,90 @@
+{
+  "functions": [
+    {
+      "function_name": "add",
+      "summary": "",
+      "test_count": 0,
+      "input_output_specs": [
+        {
+          "function": "add",
+          "inputs": [
+            1,
+            2
+          ],
+          "output": 3,
+          "test_function": "test_add_positives",
+          "line": 7,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            2,
+            3
+          ],
+          "output": 5,
+          "test_function": "test_add_positives",
+          "line": 8,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            10,
+            20
+          ],
+          "output": 30,
+          "test_function": "test_add_positives",
+          "line": 9,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            5,
+            5
+          ],
+          "output": 10,
+          "test_function": "test_add_positives",
+          "line": 10,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            0,
+            7
+          ],
+          "output": 7,
+          "test_function": "test_add_with_zero",
+          "line": 14,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            8,
+            0
+          ],
+          "output": 8,
+          "test_function": "test_add_with_zero",
+          "line": 15,
+          "confidence": "high"
+        }
+      ],
+      "exception_specs": [],
+      "property_specs": []
+    }
+  ],
+  "summary": {
+    "total_specs": 6,
+    "by_type": {
+      "input_output": 6,
+      "exception": 0,
+      "property": 0
+    },
+    "test_functions_scanned": 6,
+    "test_files_scanned": 1,
+    "functions_found": 1
+  }
+}

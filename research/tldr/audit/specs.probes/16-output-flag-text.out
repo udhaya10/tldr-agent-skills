@@ -1,0 +1,24 @@
+Function: add
+  IO: add(1, 2) == 3
+  IO: add(2, 3) == 5
+  IO: add(10, 20) == 30
+  IO: add(5, 5) == 10
+  IO: add(0, 7) == 7
+  IO: add(8, 0) == 8
+
+Function: clamp
+  IO: clamp(5, 0, 10) == 5
+  IO: clamp(7, 0, 10) == 7
+  IO: clamp(3, 0, 10) == 3
+  IO: clamp(0, 0, 10) == 0
+  IO: clamp(10, 0, 10) == 10
+  IO: clamp(15, 0, 10) == 10
+  IO: clamp(-5, 0, 10) == 0
+
+Function: divide
+  IO: divide(10, 2) == 5
+  IO: divide(20, 4) == 5
+  IO: divide(100, 5) == 20
+
+Total specs: 16
+

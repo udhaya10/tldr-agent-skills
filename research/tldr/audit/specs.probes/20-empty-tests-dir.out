@@ -1,0 +1,14 @@
+{
+  "functions": [],
+  "summary": {
+    "total_specs": 0,
+    "by_type": {
+      "input_output": 0,
+      "exception": 0,
+      "property": 0
+    },
+    "test_functions_scanned": 0,
+    "test_files_scanned": 0,
+    "functions_found": 0
+  }
+}

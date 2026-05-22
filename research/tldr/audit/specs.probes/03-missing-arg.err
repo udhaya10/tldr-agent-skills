@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  --from-tests <FROM_TESTS>
+
+Usage: tldr specs --from-tests <FROM_TESTS>
+
+For more information, try '--help'.
+exit=2

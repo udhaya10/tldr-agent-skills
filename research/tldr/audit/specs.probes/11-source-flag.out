@@ -1,0 +1,225 @@
+{
+  "functions": [
+    {
+      "function_name": "add",
+      "summary": "",
+      "test_count": 0,
+      "input_output_specs": [
+        {
+          "function": "add",
+          "inputs": [
+            1,
+            2
+          ],
+          "output": 3,
+          "test_function": "test_add_positives",
+          "line": 7,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            2,
+            3
+          ],
+          "output": 5,
+          "test_function": "test_add_positives",
+          "line": 8,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            10,
+            20
+          ],
+          "output": 30,
+          "test_function": "test_add_positives",
+          "line": 9,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            5,
+            5
+          ],
+          "output": 10,
+          "test_function": "test_add_positives",
+          "line": 10,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            0,
+            7
+          ],
+          "output": 7,
+          "test_function": "test_add_with_zero",
+          "line": 14,
+          "confidence": "high"
+        },
+        {
+          "function": "add",
+          "inputs": [
+            8,
+            0
+          ],
+          "output": 8,
+          "test_function": "test_add_with_zero",
+          "line": 15,
+          "confidence": "high"
+        }
+      ],
+      "exception_specs": [],
+      "property_specs": []
+    },
+    {
+      "function_name": "clamp",
+      "summary": "",
+      "test_count": 0,
+      "input_output_specs": [
+        {
+          "function": "clamp",
+          "inputs": [
+            5,
+            0,
+            10
+          ],
+          "output": 5,
+          "test_function": "test_clamp_within_range",
+          "line": 19,
+          "confidence": "high"
+        },
+        {
+          "function": "clamp",
+          "inputs": [
+            7,
+            0,
+            10
+          ],
+          "output": 7,
+          "test_function": "test_clamp_within_range",
+          "line": 20,
+          "confidence": "high"
+        },
+        {
+          "function": "clamp",
+          "inputs": [
+            3,
+            0,
+            10
+          ],
+          "output": 3,
+          "test_function": "test_clamp_within_range",
+          "line": 21,
+          "confidence": "high"
+        },
+        {
+          "function": "clamp",
+          "inputs": [
+            0,
+            0,
+            10
+          ],
+          "output": 0,
+          "test_function": "test_clamp_at_bounds",
+          "line": 25,
+          "confidence": "high"
+        },
+        {
+          "function": "clamp",
+          "inputs": [
+            10,
+            0,
+            10
+          ],
+          "output": 10,
+          "test_function": "test_clamp_at_bounds",
+          "line": 26,
+          "confidence": "high"
+        },
+        {
+          "function": "clamp",
+          "inputs": [
+            15,
+            0,
+            10
+          ],
+          "output": 10,
+          "test_function": "test_clamp_outside_range",
+          "line": 30,
+          "confidence": "high"
+        },
+        {
+          "function": "clamp",
+          "inputs": [
+            -5,
+            0,
+            10
+          ],
+          "output": 0,
+          "test_function": "test_clamp_outside_range",
+          "line": 31,
+          "confidence": "high"
+        }
+      ],
+      "exception_specs": [],
+      "property_specs": []
+    },
+    {
+      "function_name": "divide",
+      "summary": "",
+      "test_count": 0,
+      "input_output_specs": [
+        {
+          "function": "divide",
+          "inputs": [
+            10,
+            2
+          ],
+          "output": 5,
+          "test_function": "test_divide_positives",
+          "line": 35,
+          "confidence": "high"
+        },
+        {
+          "function": "divide",
+          "inputs": [
+            20,
+            4
+          ],
+          "output": 5,
+          "test_function": "test_divide_positives",
+          "line": 36,
+          "confidence": "high"
+        },
+        {
+          "function": "divide",
+          "inputs": [
+            100,
+            5
+          ],
+          "output": 20,
+          "test_function": "test_divide_positives",
+          "line": 37,
+          "confidence": "high"
+        }
+      ],
+      "exception_specs": [],
+      "property_specs": []
+    }
+  ],
+  "summary": {
+    "total_specs": 16,
+    "by_type": {
+      "input_output": 16,
+      "exception": 0,
+      "property": 0
+    },
+    "test_functions_scanned": 6,
+    "test_files_scanned": 1,
+    "functions_found": 3
+  }
+}

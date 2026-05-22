@@ -1,0 +1,18 @@
+{
+  "file_a": "backend/providers/yahoo.py",
+  "file_b": "backend/providers/yahoo.py",
+  "identical": true,
+  "changes": [],
+  "summary": {
+    "total_changes": 0,
+    "semantic_changes": 0,
+    "inserts": 0,
+    "deletes": 0,
+    "updates": 0,
+    "moves": 0,
+    "renames": 0,
+    "formats": 0,
+    "extracts": 0
+  },
+  "granularity": "function"
+}

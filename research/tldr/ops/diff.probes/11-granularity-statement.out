@@ -1,0 +1,453 @@
+{
+  "file_a": "backend/providers/yahoo.py",
+  "file_b": "backend/providers/dhan.py",
+  "identical": false,
+  "changes": [
+    {
+      "change_type": "delete",
+      "node_kind": "function",
+      "name": "_to_finite_float",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 18,
+        "column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "class",
+      "name": "YahooProvider",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 28,
+        "column": 0
+      }
+    },
+    {
+      "change_type": "update",
+      "node_kind": "method",
+      "name": "__init__",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 35,
+        "column": 4
+      },
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 20,
+        "column": 4
+      },
+      "old_text": "def __init__(self):\n        super().__init__(name=\"Yahoo\")",
+      "new_text": "def __init__(self):\n        super().__init__(name=\"Dhan\")\n        self._client = None\n        self._mappings: Optional[Dict[str, Tuple[int, str, str]]] = None",
+      "similarity": 0.0,
+      "children": [
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 21,
+            "column": 0
+          },
+          "new_text": "expression_statement:super().__init__(name=\"Dhan\")"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 22,
+            "column": 0
+          },
+          "new_text": "assignment:self._client = None"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 22,
+            "column": 0
+          },
+          "new_text": "expression_statement:self._client = None"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 23,
+            "column": 0
+          },
+          "new_text": "assignment:self._mappings: Optional[Dict[str, Tuple[int, str, str]]] = None"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 36,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 23,
+            "column": 0
+          },
+          "old_text": "expression_statement:super().__init__(name=\"Yahoo\")",
+          "new_text": "expression_statement:self._mappings: Optional[Dict[str, Tuple[int, str, str]]] = None"
+        }
+      ]
+    },
+    {
+      "change_type": "update",
+      "node_kind": "method",
+      "name": "fetch_historical_data",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 38,
+        "column": 4
+      },
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 49,
+        "column": 4
+      },
+      "old_text": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,\n    ) -> pd.DataFrame:\n        \"\"\"\n        Fetch historical daily OHLCV data from Yahoo Finance.\n\n        Matches existing behavior from market_data.py:\n        - Uses auto_adjust=False (unadjusted prices)\n        - Returns UTC-normalized timestamps\n        \"\"\"\n        try:\n            df = yf.download(\n                symbol,\n                start=start_date,\n                end=end_date,\n                auto_adjust=False,\n                progress=False,\n            )\n\n            if df.empty:\n                return pd.DataFrame()\n\n            # Normalize to UTC and ensure required columns\n            if df.index.name == \"Date\":\n                df.index = pd.to_datetime(df.index, utc=True)\n            else:\n                df.index = pd.to_datetime(df.index)\n                if df.index.tzinfo is None:\n                    df.index = df.index.tz_localize(\"UTC\")\n\n            df.index.name = \"time\"\n\n            # Rename columns to lowercase\n            df.columns = [col.lower() for col in df.columns]\n\n            # Keep only OHLCV\n            required = [\"open\", \"high\", \"low\", \"close\", \"volume\"]\n            available = [col for col in required if col in df.columns]\n            df = df[available]\n\n            return df\n\n        except Exception as error:\n            print(f\"Error fetching historical data for {symbol}: {error}\")\n            return pd.DataFrame()",
+      "new_text": "def fetch_historical_data(\n        self,\n        symbol: str,\n        start_date: date,\n        end_date: date,\n    ) -> pd.DataFrame:\n        \"\"\"\n        Fetch historical daily OHLCV from Dhan.\n\n        Args:\n            symbol: Yahoo-format symbol (e.g. 'RELIANCE.NS')\n            start_date: Inclusive start date\n            end_date: Inclusive end date (Dhan is inclusive on both ends)\n\n        Returns:\n            DataFrame with UTC DatetimeIndex named 'time' and columns\n            [open, high, low, close, volume]. Empty DataFrame on any failure.\n\n        Note:\n            Dhan timestamps are Unix seconds at 18:30 UTC (midnight IST).\n            Stored as-is; timestamp alignment with Yahoo is a Phase 3 concern.\n        \"\"\"\n        mappings = self._load_mappings()\n        info = mappings.get(symbol)\n        if info is None:\n            return pd.DataFrame()\n\n        security_id, exchange_segment, instrument_type = info\n        start_str = start_date.strftime(\"%Y-%m-%d\")\n        end_str = end_date.strftime(\"%Y-%m-%d\")\n\n        try:\n            dhan = self._get_client()\n            response = dhan.historical_daily_data(\n                str(security_id),\n                exchange_segment,\n                instrument_type,\n                start_str,\n                end_str,\n            )\n        except Exception as error:\n            from backend.dhan_client import DhanAuthError\n            if isinstance(error, DhanAuthError):\n                raise\n            print(f\"[DhanProvider] API error for {symbol}: {error}\")\n            return pd.DataFrame()\n\n        if response.get(\"status\") != \"success\":\n            print(f\"[DhanProvider] Non-success response for {symbol}: {response.get('status')}\")\n            return pd.DataFrame()\n\n        data = response.get(\"data\", {})\n        timestamps = data.get(\"timestamp\", [])\n        opens = data.get(\"open\", [])\n        highs = data.get(\"high\", [])\n        lows = data.get(\"low\", [])\n        closes = data.get(\"close\", [])\n        volumes = data.get(\"volume\", [])\n\n        if not timestamps or not closes:\n            return pd.DataFrame()\n\n        index = pd.to_datetime(timestamps, unit=\"s\", utc=True)\n        df = pd.DataFrame(\n            {\n                \"open\": opens,\n                \"high\": highs,\n                \"low\": lows,\n                \"close\": closes,\n                \"volume\": volumes,\n            },\n            index=index,\n        )\n        df.index.name = \"time\"\n        df = df.dropna(subset=[\"close\"])\n        return df",
+      "similarity": 0.14457831325301204,
+      "children": [
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 71,
+            "column": 0
+          },
+          "new_text": "assignment:mappings = self._load_mappings()"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 71,
+            "column": 0
+          },
+          "new_text": "expression_statement:mappings = self._load_mappings()"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "assignment",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 72,
+            "column": 0
+          },
+          "old_text": "assignment:df = yf.download(",
+          "new_text": "assignment:info = mappings.get(symbol)"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 72,
+            "column": 0
+          },
+          "old_text": "expression_statement:df = yf.download(",
+          "new_text": "expression_statement:info = mappings.get(symbol)"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "if_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 73,
+            "column": 0
+          },
+          "new_text": "if_statement:if info is None:"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 76,
+            "column": 0
+          },
+          "new_text": "assignment:security_id, exchange_segment, instrument_type = info"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 76,
+            "column": 0
+          },
+          "new_text": "expression_statement:security_id, exchange_segment, instrument_type = info"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 77,
+            "column": 0
+          },
+          "new_text": "assignment:start_str = start_date.strftime(\"%Y-%m-%d\")"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 77,
+            "column": 0
+          },
+          "new_text": "expression_statement:start_str = start_date.strftime(\"%Y-%m-%d\")"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 78,
+            "column": 0
+          },
+          "new_text": "assignment:end_str = end_date.strftime(\"%Y-%m-%d\")"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 78,
+            "column": 0
+          },
+          "new_text": "expression_statement:end_str = end_date.strftime(\"%Y-%m-%d\")"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 81,
+            "column": 0
+          },
+          "new_text": "assignment:dhan = self._get_client()"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 81,
+            "column": 0
+          },
+          "new_text": "expression_statement:dhan = self._get_client()"
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "assignment",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 82,
+            "column": 0
+          },
+          "new_text": "assignment:response = dhan.historical_daily_data("
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 82,
+            "column": 0
+          },
+          "new_text": "expression_statement:response = dhan.historical_daily_data("
+        },
+        {
+          "change_type": "insert",
+          "node_kind": "statement",
+          "name": "raise_statement",
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 92,
+            "column": 0
+          },
+          "new_text": "raise_statement:raise"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "if_statement",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 60,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 91,
+            "column": 0
+          },
+          "old_text": "if_statement:if df.empty:",
+          "new_text": "if_statement:if isinstance(error, DhanAuthError):"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "assignment",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 65,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 93,
+            "column": 0
+          },
+          "old_text": "assignment:df.index = pd.to_datetime(df.index, utc=True)",
+          "new_text": "expression_statement:print(f\"[DhanProvider] API error for {symbol}: {error}\")"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 65,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 94,
+            "column": 0
+          },
+          "old_text": "expression_statement:df.index = pd.to_datetime(df.index, utc=True)",
+          "new_text": "return_statement:return pd.DataFrame()"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "assignment",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 67,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 80,
+            "column": 0
+          },
+          "old_text": "assignment:df.index = pd.to_datetime(df.index)",
+          "new_text": "try_statement:try:"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+          "name": "expression_statement",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 67,
+            "column": 0
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 97,
+            "column": 0
+          },
+          "old_text": "expression_statement:df.index = pd.to_datetime(df.index)",
+          "new_text": "expression_statement:print(f\"[DhanProvider] Non-success response for {symbol}: {response.get('status')}\")"
+        },
+        {
+          "change_type": "update",
+          "node_kind": "statement",
+
+... [2002 lines truncated, full output regeneratable via probe.sh] ...
+
+          },
+          "old_text": "try_statement:try:",
+          "new_text": "return_statement:return {"
+        }
+      ]
+    },
+    {
+      "change_type": "insert",
+      "node_kind": "class",
+      "name": "DhanProvider",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 17,
+        "column": 0
+      }
+    },
+    {
+      "change_type": "insert",
+      "node_kind": "method",
+      "name": "_get_client",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 25,
+        "column": 4
+      }
+    },
+    {
+      "change_type": "insert",
+      "node_kind": "method",
+      "name": "_load_mappings",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 31,
+        "column": 4
+      }
+    }
+  ],
+  "summary": {
+    "total_changes": 11,
+    "semantic_changes": 11,
+    "inserts": 3,
+    "deletes": 2,
+    "updates": 6,
+    "moves": 0,
+    "renames": 0,
+    "formats": 0,
+    "extracts": 0
+  },
+  "granularity": "statement"
+}

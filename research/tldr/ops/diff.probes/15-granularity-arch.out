@@ -1,0 +1,16 @@
+{
+  "file_a": "backend",
+  "file_b": "backend",
+  "identical": true,
+  "changes": [],
+  "granularity": "architecture",
+  "arch_changes": [],
+  "arch_summary": {
+    "layer_migrations": 0,
+    "directories_added": 0,
+    "directories_removed": 0,
+    "cycles_introduced": 0,
+    "cycles_resolved": 0,
+    "stability_score": 1.0
+  }
+}

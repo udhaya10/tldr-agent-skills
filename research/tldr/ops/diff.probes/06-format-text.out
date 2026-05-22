@@ -1,0 +1,31 @@
+Diff Report
+===========
+
+File A: backend/providers/yahoo.py
+File B: backend/providers/dhan.py
+Identical: false
+
+Changes:
+--------
+  - function _to_finite_float at backend/providers/yahoo.py:18
+  - class YahooProvider at backend/providers/yahoo.py:28
+  ~ method __init__ from backend/providers/yahoo.py:35 to backend/providers/dhan.py:20
+  ~ method fetch_historical_data from backend/providers/yahoo.py:38 to backend/providers/dhan.py:49
+  ~ method fetch_intraday_chart from backend/providers/yahoo.py:87 to backend/providers/dhan.py:126
+  ~ method fetch_quotes from backend/providers/yahoo.py:149 to backend/providers/dhan.py:207
+  ~ method fetch_market_cap from backend/providers/yahoo.py:190 to backend/providers/dhan.py:215
+  ~ method fetch_metadata from backend/providers/yahoo.py:218 to backend/providers/dhan.py:219
+  + class DhanProvider at backend/providers/dhan.py:17
+  + method _get_client at backend/providers/dhan.py:25
+  + method _load_mappings at backend/providers/dhan.py:31
+
+Summary:
+--------
+  Total changes: 11
+  Semantic changes: 11
+  Inserts: 3
+  Deletes: 2
+  Updates: 6
+  Renames: 0
+  Moves: 0
+

@@ -1,0 +1,453 @@
+{
+  "file_a": "backend/providers/yahoo.py",
+  "file_b": "backend/providers/dhan.py",
+  "identical": false,
+  "changes": [
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "\"\"\" Yahoo Finance provider implementation.  Wraps yfinance calls behind the prov...",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 1,
+        "column": 0,
+        "end_line": 6,
+        "end_column": 3
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "import",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 8,
+        "column": 0,
+        "end_line": 8,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "from",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 9,
+        "column": 0,
+        "end_line": 9,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "from",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 10,
+        "column": 0,
+        "end_line": 10,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "import",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 12,
+        "column": 0,
+        "end_line": 12,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "import",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 13,
+        "column": 0,
+        "end_line": 13,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "from",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 15,
+        "column": 0,
+        "end_line": 15,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "expression",
+      "name": "def",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 18,
+        "column": 0,
+        "end_line": 18,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "update",
+      "node_kind": "expression",
+      "name": "class",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 28,
+        "column": 0,
+        "end_line": 28,
+        "end_column": 0
+      },
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 17,
+        "column": 0,
+        "end_line": 17,
+        "end_column": 0
+      },
+      "children": [
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "YahooProvider",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 28,
+            "column": 6,
+            "end_line": 28,
+            "end_column": 19
+          }
+        },
+        {
+          "change_type": "update",
+          "node_kind": "expression",
+          "name": "\"\"\"     Yahoo Finance data provider.      Implements the provider abstraction us...",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 29,
+            "column": 4,
+            "end_line": 33,
+            "end_column": 7
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 18,
+            "column": 4,
+            "end_line": 18,
+            "end_column": 53
+          },
+          "old_text": "\"\"\"\n    Yahoo Finance data provider.\n\n    Implements the provider abstraction using yfinance library.\n    \"\"\"",
+          "new_text": "\"\"\"Dhan broker data provider using dhanhq SDK.\"\"\"",
+          "similarity": 0.3302752293577982
+        },
+        {
+          "change_type": "update",
+          "node_kind": "expression",
+          "name": "\"Yahoo\"",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 36,
+            "column": 30,
+            "end_line": 36,
+            "end_column": 37
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 21,
+            "column": 30,
+            "end_line": 21,
+            "end_column": 36
+          },
+          "old_text": "\"Yahoo\"",
+          "new_text": "\"Dhan\"",
+          "similarity": 0.4285714285714286
+        },
+        {
+          "change_type": "update",
+          "node_kind": "expression",
+          "name": "\"\"\"         Fetch historical daily OHLCV data from Yahoo Finance.          Match...",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 44,
+            "column": 8,
+            "end_line": 50,
+            "end_column": 11
+          },
+          "new_location": {
+            "file": "backend/providers/dhan.py",
+            "line": 55,
+            "column": 8,
+            "end_line": 70,
+            "end_column": 11
+          },
+          "old_text": "\"\"\"\n        Fetch historical daily OHLCV data from Yahoo Finance.\n\n        Matches existing behavior from market_data.py:\n        - Uses auto_adjust=False (unadjusted prices)\n        - Returns UTC-normalized timestamps\n        \"\"\"",
+          "new_text": "\"\"\"\n        Fetch historical daily OHLCV from Dhan.\n\n        Args:\n            symbol: Yahoo-format symbol (e.g. 'RELIANCE.NS')\n            start_date: Inclusive start date\n            end_date: Inclusive end date (Dhan is inclusive on both ends)\n\n        Returns:\n            DataFrame with UTC DatetimeIndex named 'time' and columns\n            [open, high, low, close, volume]. Empty DataFrame on any failure.\n\n        Note:\n            Dhan timestamps are Unix seconds at 18:30 UTC (midnight IST).\n            Stored as-is; timestamp alignment with Yahoo is a Phase 3 concern.\n        \"\"\"",
+          "similarity": 0.2668918918918919
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "try",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 51,
+            "column": 8,
+            "end_line": 51,
+            "end_column": 11
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "df",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 12,
+            "end_line": 52,
+            "end_column": 14
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "yf",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 17,
+            "end_line": 52,
+            "end_column": 19
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": ".",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 19,
+            "end_line": 52,
+            "end_column": 20
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "download",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 20,
+            "end_line": 52,
+            "end_column": 28
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "(",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 52,
+            "column": 28,
+            "end_line": 52,
+            "end_column": 29
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "symbol",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 53,
+            "column": 16,
+            "end_line": 53,
+            "end_column": 22
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": ",",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 53,
+            "column": 22,
+            "end_line": 53,
+            "end_column": 23
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "start",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 54,
+            "column": 16,
+            "end_line": 54,
+            "end_column": 21
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": ",",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 54,
+            "column": 32,
+            "end_line": 54,
+            "end_column": 33
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "end",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 55,
+            "column": 16,
+            "end_line": 55,
+            "end_column": 19
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": ",",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 55,
+            "column": 28,
+            "end_line": 55,
+            "end_column": 29
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "auto_adjust",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 56,
+            "column": 16,
+            "end_line": 56,
+            "end_column": 27
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "False",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 56,
+            "column": 28,
+            "end_line": 56,
+            "end_column": 33
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": ",",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 56,
+            "column": 33,
+            "end_line": 56,
+            "end_column": 34
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "progress",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 57,
+            "column": 16,
+            "end_line": 57,
+            "end_column": 24
+          }
+        },
+        {
+          "change_type": "delete",
+          "node_kind": "expression",
+          "name": "False",
+          "old_location": {
+            "file": "backend/providers/yahoo.py",
+            "line": 57,
+            "column": 25,
+            "end_line": 57,
+            "end_column": 30
+
+... [16200 lines truncated, full output regeneratable via probe.sh] ...
+
+    {
+      "change_type": "insert",
+      "node_kind": "expression",
+      "name": "from",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 10,
+        "column": 0,
+        "end_line": 10,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "insert",
+      "node_kind": "expression",
+      "name": "import",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 12,
+        "column": 0,
+        "end_line": 12,
+        "end_column": 0
+      }
+    },
+    {
+      "change_type": "insert",
+      "node_kind": "expression",
+      "name": "from",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 14,
+        "column": 0,
+        "end_line": 14,
+        "end_column": 0
+      }
+    }
+  ],
+  "summary": {
+    "total_changes": 14,
+    "semantic_changes": 14,
+    "inserts": 5,
+    "deletes": 8,
+    "updates": 1,
+    "moves": 0,
+    "renames": 0,
+    "formats": 0,
+    "extracts": 0
+  },
+  "granularity": "expression"
+}

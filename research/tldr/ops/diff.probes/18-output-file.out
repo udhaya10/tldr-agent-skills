@@ -1,0 +1,21 @@
+=== output file content (first 20 lines) ===
+{
+  "file_a": "backend/providers/yahoo.py",
+  "file_b": "backend/providers/dhan.py",
+  "identical": false,
+  "changes": [
+    {
+      "change_type": "delete",
+      "node_kind": "function",
+      "name": "_to_finite_float",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 18,
+        "column": 0
+      }
+    },
+    {
+      "change_type": "delete",
+      "node_kind": "class",
+      "name": "YahooProvider",
+      "old_location": {

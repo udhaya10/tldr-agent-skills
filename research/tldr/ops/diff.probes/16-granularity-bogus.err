@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--granularity <GRANULARITY>'
+  [possible values: token, expression, statement, function, class, file, module, architecture]
+
+For more information, try '--help'.
+exit=2

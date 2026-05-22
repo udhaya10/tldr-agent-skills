@@ -1,0 +1,39 @@
+{
+  "file_a": "backend/providers/yahoo.py",
+  "file_b": "backend/providers/dhan.py",
+  "identical": false,
+  "changes": [
+    {
+      "change_type": "delete",
+      "node_kind": "class",
+      "name": "YahooProvider",
+      "old_location": {
+        "file": "backend/providers/yahoo.py",
+        "line": 28,
+        "column": 0
+      }
+    },
+    {
+      "change_type": "insert",
+      "node_kind": "class",
+      "name": "DhanProvider",
+      "new_location": {
+        "file": "backend/providers/dhan.py",
+        "line": 17,
+        "column": 0
+      }
+    }
+  ],
+  "summary": {
+    "total_changes": 2,
+    "semantic_changes": 2,
+    "inserts": 1,
+    "deletes": 1,
+    "updates": 0,
+    "moves": 0,
+    "renames": 0,
+    "formats": 0,
+    "extracts": 0
+  },
+  "granularity": "class"
+}

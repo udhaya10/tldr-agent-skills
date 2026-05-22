@@ -1,0 +1,8 @@
+{
+  "file_a": "backend/providers",
+  "file_b": "backend/providers",
+  "identical": true,
+  "changes": [],
+  "granularity": "file",
+  "file_changes": []
+}

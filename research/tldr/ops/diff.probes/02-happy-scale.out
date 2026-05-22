@@ -1,0 +1,308 @@
+{
+  "file_a": "backend/providers",
+  "file_b": "backend",
+  "identical": false,
+  "changes": [],
+  "granularity": "file",
+  "file_changes": [
+    {
+      "relative_path": "__init__.py",
+      "change_type": "update",
+      "old_fingerprint": 17621626534356096832,
+      "new_fingerprint": 15130871412783076140,
+      "signature_changes": [
+        "fn:get_yahoo_provider(())|14964825422530038881"
+      ]
+    },
+    {
+      "relative_path": "amfi_portfolios.py",
+      "change_type": "insert",
+      "new_fingerprint": 10286499041233978711
+    },
+    {
+      "relative_path": "announcement_scheduler.py",
+      "change_type": "insert",
+      "new_fingerprint": 14485922972300043336
+    },
+    {
+      "relative_path": "announcements.py",
+      "change_type": "insert",
+      "new_fingerprint": 6373999255635717006
+    },
+    {
+      "relative_path": "api.py",
+      "change_type": "insert",
+      "new_fingerprint": 720853447684760431
+    },
+    {
+      "relative_path": "api_status.py",
+      "change_type": "insert",
+      "new_fingerprint": 2492978269974393144
+    },
+    {
+      "relative_path": "base.py",
+      "change_type": "delete",
+      "old_fingerprint": 17465049227586093862
+    },
+    {
+      "relative_path": "blocked_symbols.py",
+      "change_type": "insert",
+      "new_fingerprint": 11035264924100074679
+    },
+    {
+      "relative_path": "classification.py",
+      "change_type": "insert",
+      "new_fingerprint": 15500316233254945335
+    },
+    {
+      "relative_path": "concalls.py",
+      "change_type": "insert",
+      "new_fingerprint": 8794652136044558437
+    },
+    {
+      "relative_path": "config.py",
+      "change_type": "insert",
+      "new_fingerprint": 15130871412783076140
+    },
+    {
+      "relative_path": "db.py",
+      "change_type": "insert",
+      "new_fingerprint": 4317350485596836178
+    },
+    {
+      "relative_path": "dhan.py",
+      "change_type": "delete",
+      "old_fingerprint": 7349429310758684250
+    },
+    {
+      "relative_path": "dhan_client.py",
+      "change_type": "insert",
+      "new_fingerprint": 16960699938439215831
+    },
+    {
+      "relative_path": "dhan_historical.py",
+      "change_type": "insert",
+      "new_fingerprint": 3869791106116875850
+    },
+    {
+      "relative_path": "dhan_live.py",
+      "change_type": "insert",
+      "new_fingerprint": 16524465955585384684
+    },
+    {
+      "relative_path": "dhan_security_master.py",
+      "change_type": "insert",
+      "new_fingerprint": 518095953517247630
+    },
+    {
+      "relative_path": "dhan_security_master_scheduler.py",
+      "change_type": "insert",
+      "new_fingerprint": 2935747994107080684
+    },
+    {
+      "relative_path": "financial_results_scheduler.py",
+      "change_type": "insert",
+      "new_fingerprint": 8999624399273233682
+    },
+    {
+      "relative_path": "financial_results_sync.py",
+      "change_type": "insert",
+      "new_fingerprint": 15272962775166549028
+    },
+    {
+      "relative_path": "importer.py",
+      "change_type": "insert",
+      "new_fingerprint": 1290038705186281067
+    },
+    {
+      "relative_path": "market_breadth.py",
+      "change_type": "insert",
+      "new_fingerprint": 5794237530542593762
+    },
+    {
+      "relative_path": "market_data.py",
+      "change_type": "insert",
+      "new_fingerprint": 7422955605390374031
+    },
+    {
+      "relative_path": "markets_overview.py",
+      "change_type": "insert",
+      "new_fingerprint": 3959755878652560410
+    },
+    {
+      "relative_path": "notifications.py",
+      "change_type": "insert",
+      "new_fingerprint": 15459710747845664587
+    },
+    {
+      "relative_path": "nse_earnings.py",
+      "change_type": "insert",
+      "new_fingerprint": 9504190180668487157
+    },
+    {
+      "relative_path": "nse_history.py",
+      "change_type": "insert",
+      "new_fingerprint": 12993166284675632061
+    },
+    {
+      "relative_path": "nse_indas_financials.py",
+      "change_type": "insert",
+      "new_fingerprint": 14683375397211874868
+    },
+    {
+      "relative_path": "nse_index_history.py",
+      "change_type": "insert",
+      "new_fingerprint": 15803270886817025036
+    },
+    {
+      "relative_path": "nse_listings.py",
+      "change_type": "insert",
+      "new_fingerprint": 6120755463736697219
+    },
+    {
+      "relative_path": "nse_price_bands.py",
+      "change_type": "insert",
+      "new_fingerprint": 3547872208095082648
+    },
+    {
+      "relative_path": "nse_results.py",
+      "change_type": "insert",
+      "new_fingerprint": 11721672247008493086
+    },
+    {
+      "relative_path": "nse_results_scheduler.py",
+      "change_type": "insert",
+      "new_fingerprint": 2380012789130887840
+    },
+    {
+      "relative_path": "overview_stock_cards.py",
+      "change_type": "insert",
+      "new_fingerprint": 11479958429947125994
+    },
+    {
+      "relative_path": "precomputed_indicators.py",
+      "change_type": "insert",
+      "new_fingerprint": 5981656104318904819
+    },
+    {
+      "relative_path": "providers/__init__.py",
+      "change_type": "insert",
+      "new_fingerprint": 17621626534356096832
+    },
+    {
+      "relative_path": "providers/base.py",
+      "change_type": "insert",
+      "new_fingerprint": 17465049227586093862
+    },
+    {
+      "relative_path": "providers/dhan.py",
+      "change_type": "insert",
+      "new_fingerprint": 7349429310758684250
+    },
+    {
+      "relative_path": "providers/yahoo.py",
+      "change_type": "insert",
+      "new_fingerprint": 16394196603687180287
+    },
+    {
+      "relative_path": "rankings.py",
+      "change_type": "insert",
+      "new_fingerprint": 3657158748156316791
+    },
+    {
+      "relative_path": "relative_strength.py",
+      "change_type": "insert",
+      "new_fingerprint": 402284606408237969
+    },
+    {
+      "relative_path": "rmv.py",
+      "change_type": "insert",
+      "new_fingerprint": 14591046037691580606
+    },
+    {
+      "relative_path": "rrg.py",
+      "change_type": "insert",
+      "new_fingerprint": 14641992657642980225
+    },
+    {
+      "relative_path": "scheduler.py",
+      "change_type": "insert",
+      "new_fingerprint": 8999172844186035869
+    },
+    {
+      "relative_path": "screener.py",
+      "change_type": "insert",
+      "new_fingerprint": 4400130662763982810
+    },
+    {
+      "relative_path": "scripts/__init__.py",
+      "change_type": "insert",
+      "new_fingerprint": 15130871412783076140
+    },
+    {
+      "relative_path": "scripts/apply_classification_theme_workbook.py",
+      "change_type": "insert",
+      "new_fingerprint": 15279306559107152157
+    },
+    {
+      "relative_path": "scripts/generate_avalon_indas_financials.py",
+      "change_type": "insert",
+      "new_fingerprint": 2826861507967987968
+    },
+    {
+      "relative_path": "scripts/generate_nse_only_financials.py",
+      "change_type": "insert",
+      "new_fingerprint": 304492989343549993
+    },
+    {
+      "relative_path": "stage_analysis.py",
+      "change_type": "insert",
+      "new_fingerprint": 11467289077102444587
+    },
+    {
+      "relative_path": "stage_analysis_panel.py",
+      "change_type": "insert",
+      "new_fingerprint": 15494419611541131408
+    },
+    {
+      "relative_path": "symbol_mapper.py",
+      "change_type": "insert",
+      "new_fingerprint": 12235582177048593971
+    },
+    {
+      "relative_path": "tc2000_formulas.py",
+      "change_type": "insert",
+      "new_fingerprint": 2025349704393797917
+    },
+    {
+      "relative_path": "test_tc2000_formulas.py",
+      "change_type": "insert",
+      "new_fingerprint": 8084376080027428080
+    },
+    {
+      "relative_path": "test_watchlist_formulas_earn.py",
+      "change_type": "insert",
+      "new_fingerprint": 16165618982295652373
+    },
+    {
+      "relative_path": "updater.py",
+      "change_type": "insert",
+      "new_fingerprint": 1921691083411098369
+    },
+    {
+      "relative_path": "watchlist_formulas.py",
+      "change_type": "insert",
+      "new_fingerprint": 5847001397626031521
+    },
+    {
+      "relative_path": "yahoo.py",
+      "change_type": "delete",
+      "old_fingerprint": 16394196603687180287
+    },
+    {
+      "relative_path": "youtube_panel.py",
+      "change_type": "insert",
+      "new_fingerprint": 8258272761149686247
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <FILE_B>
+
+Usage: tldr diff <FILE_A> <FILE_B>
+
+For more information, try '--help'.
+exit=2

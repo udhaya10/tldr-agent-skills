@@ -1,0 +1,15 @@
+{
+  "file_a": "backend/providers",
+  "file_b": "backend/providers",
+  "identical": true,
+  "changes": [],
+  "granularity": "module",
+  "module_changes": [],
+  "import_graph_summary": {
+    "total_edges_a": 22,
+    "total_edges_b": 22,
+    "edges_added": 0,
+    "edges_removed": 0,
+    "modules_with_import_changes": 0
+  }
+}

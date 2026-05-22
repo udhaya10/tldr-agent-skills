@@ -1,0 +1,12 @@
+=== output file content (first 20 lines) ===
+{
+  "findings": [],
+  "summary": {
+    "total_findings": 0,
+    "by_severity": {},
+    "by_type": {},
+    "files_with_vulns": 0
+  },
+  "scan_duration_ms": 85,
+  "files_scanned": 4
+}

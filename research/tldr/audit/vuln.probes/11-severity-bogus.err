@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--severity <SEVERITY>'
+  [possible values: critical, high, medium, low, info]
+
+For more information, try '--help'.
+exit=2

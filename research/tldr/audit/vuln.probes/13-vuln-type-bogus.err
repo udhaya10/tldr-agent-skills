@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--vuln-type <TYPE>'
+  [possible values: sql_injection, xss, command_injection, ssrf, path_traversal, deserialization, unsafe_code, memory_safety, panic, xxe, open_redirect, ldap_injection, xpath_injection]
+
+For more information, try '--help'.
+exit=2

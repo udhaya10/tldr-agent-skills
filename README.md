@@ -114,6 +114,15 @@ Anthropic's official Agent Skills documentation (scraped 2026-05-22) and our syn
 - [Methodology + key insights](research/agent-skills-authoring/)
 - Raw doc snapshots in `research/agent-skills-authoring/references/`
 
+### TLDR daemon lifecycle research
+
+Source-level investigation of the `tldr-code` daemon (architecture, config schema, what's configurable in v0.4.0 vs what's documented-but-not-implemented). Informs the `tldr-runtime` and `tldr-setup-check` skills:
+
+- [Research methodology](research/tldr-daemon/01_RESEARCH_METHODOLOGY.md) — why we couldn't trust upstream docs and how we verified each claim against source
+- [Key findings](research/tldr-daemon/02_KEY_FINDINGS.md) — corrected daemon architecture (per-project, multi-daemon registry), corrections to prior project claims, implications for always-on install design
+- [Config reference](research/tldr-daemon/03_CONFIG_REFERENCE.md) — exhaustive `DaemonConfig` schema with every field, every default, every override path (including which ones aren't implemented yet)
+- Raw upstream doc snapshots in `research/tldr-daemon/references/`
+
 ---
 
 ## Directory Structure

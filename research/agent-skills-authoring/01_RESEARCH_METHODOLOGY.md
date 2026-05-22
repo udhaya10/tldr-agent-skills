@@ -31,7 +31,10 @@ Total: 5 concurrent scrapes, ~30 seconds wall-clock, ~101 KB / 2,655 lines of ma
 
 The `references/` folder is the **frozen source of truth** for this research cycle. If a doc page changes upstream, we re-scrape into a new dated folder rather than overwriting — same pattern as our Journal 04 environment-pin discipline for the tldr probes.
 
-The synthesis (what we learned + value assessment + gap analysis) lives in `02_KEY_INSIGHTS.md`.
+The synthesis lives in two follow-up docs:
+
+- **`02_KEY_INSIGHTS.md`** — what the Anthropic docs taught us about authoring (per-concept value rating + gap analysis)
+- **`03_ECOSYSTEM_MAP.md`** — added later, when it became clear we needed to also research the open-standard spec (agentskills.io) and the distribution CLI (vercel-labs/skills). Maps the three layers of the ecosystem (spec / distribution / client-implementation) and clarifies our role as a skill producer. Also documents the additional `agentskills-io-*` and `vercel-labs-skills-*` references in this folder.
 
 ## Re-running this research
 

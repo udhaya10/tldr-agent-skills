@@ -35,11 +35,15 @@ npx skills add udhaya10/tldr-agent-skills -g
 
 ### About the skill ecosystem
 
-Skills in this repository are distributed via [**agentskills.io**](https://agentskills.io/) — a third-party ecosystem and CLI (`npx skills`) for packaging and installing agent skills as npm-distributable folders.
+Skills in this repository conform to the **[Agent Skills](https://agentskills.io/) open standard** — originally developed by Anthropic, released as a vendor-neutral spec, and adopted across ~60 agent products including Claude Code, Cursor, OpenAI Codex, Gemini CLI, Goose, GitHub Copilot, VS Code, OpenHands, and many more.
 
-This is **distinct from [Anthropic's Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** — the first-party feature loaded via the Claude API's `container.skills` parameter, or filesystem-based in Claude Code. The two ecosystems are independent but share the same authoring format (SKILL.md with YAML frontmatter), so skills here follow Anthropic's published authoring best practices and work in both environments with little or no adaptation.
+The ecosystem has three layers, and our project touches two of them:
 
-The authoring research that informed these skills (scraped from Anthropic's official docs) lives in [`research/agent-skills-authoring/`](research/agent-skills-authoring/).
+- **The spec** — [agentskills.io](https://agentskills.io/) — defines the SKILL.md format and progressive-disclosure semantics. We follow it.
+- **Distribution** — [`vercel-labs/skills`](https://github.com/vercel-labs/skills) — the `npx skills` CLI users run to install. The install command in the section above uses this tool.
+- **Client implementation** — every agent product implements discovery/cataloging/activation on its own side. We don't need to do anything here; spec-compliant agents pick up our skills automatically.
+
+The research that informed both the authoring and the ecosystem understanding lives in [`research/agent-skills-authoring/`](research/agent-skills-authoring/) — see `03_ECOSYSTEM_MAP.md` for the full map.
 
 ---
 

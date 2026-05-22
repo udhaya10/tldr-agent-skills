@@ -1,0 +1,211 @@
+{
+  "constraints": [
+    {
+      "before": "self._load_mappings",
+      "after": "mappings.get",
+      "support": 3,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 222
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 72
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "before": "yf.Ticker",
+      "after": "_to_finite_float",
+      "support": 3,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 201
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 228
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "before": "start_date.strftime",
+      "after": "end_date.strftime",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 78
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "before": "isinstance",
+      "after": "print",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 93
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 177
+        }
+      ]
+    },
+    {
+      "before": "col.lower",
+      "after": "print",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 146
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "before": "super",
+      "after": "__init__",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 21
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "before": "yf.download",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 121
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "before": "end_date.strftime",
+      "after": "self._get_client",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 81
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 164
+        }
+      ]
+    },
+    {
+      "before": "str",
+      "after": "isinstance",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 91
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 175
+        }
+      ]
+    },
+    {
+      "before": "super().__init__",
+      "after": "super",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 21
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "before": "mappings.get",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 74
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "before": "data.get",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 109
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py",
+          "line": 192
+        }
+      ]
+    }
+  ],
+  "trigrams": [],
+  "metadata": {
+    "files_analyzed": 4,
+    "sequences_extracted": 276,
+    "min_support": 2,
+    "min_confidence": 1.0
+  }
+}

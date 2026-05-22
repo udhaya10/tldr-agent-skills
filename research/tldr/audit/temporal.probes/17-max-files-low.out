@@ -1,0 +1,453 @@
+{
+  "constraints": [
+    {
+      "before": "upsert_amfi_member",
+      "after": "json.dumps",
+      "support": 23,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1163
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1020
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 968
+        }
+      ]
+    },
+    {
+      "before": "ingest_portfolio_files",
+      "after": "len",
+      "support": 22,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6682
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6795
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6991
+        }
+      ]
+    },
+    {
+      "before": "item.get",
+      "after": "normalize_text",
+      "support": 10,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2519
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2519
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2540
+        }
+      ]
+    },
+    {
+      "before": "(normalize_text(value) or \"\").lower",
+      "after": "normalize_text",
+      "support": 9,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3277
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 5166
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 5286
+        }
+      ]
+    },
+    {
+      "before": "select_recent_hdfc_files",
+      "after": "ingest_portfolio_files",
+      "support": 8,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6788
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6900
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7012
+        }
+      ]
+    },
+    {
+      "before": "is_zip_excel_file",
+      "after": "load_openpyxl_workbook",
+      "support": 7,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3267
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2675
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3315
+        }
+      ]
+    },
+    {
+      "before": "decode_json_escaped_text",
+      "after": "match.group",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1184
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1184
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1184
+        }
+      ]
+    },
+    {
+      "before": "strip",
+      "after": "replace",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "before": "workbook_pattern.finditer",
+      "after": "normalize_text",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1673
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1900
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1611
+        }
+      ]
+    },
+    {
+      "before": "\" | \".join(values).lower",
+      "after": "\" | \".join",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 4441
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3748
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 4314
+        }
+      ]
+    },
+    {
+      "before": "post",
+      "after": "raise_for_status",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "before": "raise_for_status",
+      "after": "json",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "before": "load_first_sheet_rows",
+      "after": "len",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 5157
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 5252
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 5070
+        }
+      ]
+    },
+    {
+      "before": "scheme_name_hints.get",
+      "after": "workbook_meta.get",
+      "support": 6,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3243
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2871
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3070
+        }
+      ]
+    },
+    {
+      "before": "(normalize_text(cell.value) or \"\").lower",
+      "after": "normalize_text",
+      "support": 5,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3758
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 4758
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 4451
+        }
+      ]
+    },
+    {
+      "before": "sheet_names",
+      "after": "sheet_by_name",
+      "support": 4,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "before": "RuntimeError",
+      "after": "ensure_amfi_schema",
+      "support": 4,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7955
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7374
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7809
+        }
+      ]
+    },
+    {
+      "before": "selected_workbooks.append",
+      "after": "seen_report_months.add",
+      "support": 4,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2527
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2485
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2506
+        }
+      ]
+    },
+    {
+      "before": "result.get",
+      "after": "source_results.values",
+      "support": 4,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7346
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7346
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 7346
+        }
+      ]
+    },
+    {
+      "before": "file_name.replace(\"-\", \" \").replace",
+      "after": "file_name.replace",
+      "support": 4,
+      "confidence": 1.0,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1865
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 1865
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 2259
+        }
+
+... [1369 lines truncated, full output regeneratable via probe.sh] ...
+
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3817
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 3956
+        }
+      ]
+    },
+    {
+      "before": "failed.append",
+      "after": "str",
+      "support": 2,
+      "confidence": 0.5,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6420
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 6498
+        }
+      ]
+    },
+    {
+      "before": "re.match",
+      "after": "any",
+      "support": 2,
+      "confidence": 0.5,
+      "examples": [
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 4027
+        },
+        {
+          "file": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/amfi_portfolios.py",
+          "line": 470
+        }
+      ]
+    }
+  ],
+  "trigrams": [],
+  "metadata": {
+    "files_analyzed": 2,
+    "sequences_extracted": 4387,
+    "min_support": 2,
+    "min_confidence": 0.5
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "constraints": [
+    {
+      "before": "self._load_mappings",
+      "after": "mappings.get",
+      "support": 3,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "yf.Ticker",
+      "after": "_to_finite_float",
+      "support": 3,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "mappings.get",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "end_date.strftime",
+      "after": "self._get_client",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "isinstance",
+      "after": "print",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "col.lower",
+      "after": "print",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "super",
+      "after": "__init__",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "yf.download",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "start_date.strftime",
+      "after": "end_date.strftime",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "data.get",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "str",
+      "after": "isinstance",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "super().__init__",
+      "after": "super",
+      "support": 2,
+      "confidence": 1.0,
+      "examples": []
+    },
+    {
+      "before": "_to_finite_float",
+      "after": "fast_info.get",
+      "support": 8,
+      "confidence": 0.8888888888888888,
+      "examples": []
+    },
+    {
+      "before": "to_datetime",
+      "after": "DataFrame",
+      "support": 3,
+      "confidence": 0.75,
+      "examples": []
+    },
+    {
+      "before": "print",
+      "after": "pd.DataFrame",
+      "support": 4,
+      "confidence": 0.6666666666666666,
+      "examples": []
+    },
+    {
+      "before": "pd.to_datetime",
+      "after": "pd.DataFrame",
+      "support": 2,
+      "confidence": 0.6666666666666666,
+      "examples": []
+    },
+    {
+      "before": "fast_info.get",
+      "after": "_to_finite_float",
+      "support": 5,
+      "confidence": 0.625,
+      "examples": []
+    },
+    {
+      "before": "DataFrame",
+      "after": "to_datetime",
+      "support": 3,
+      "confidence": 0.6,
+      "examples": []
+    },
+    {
+      "before": "_get_client",
+      "after": "_load_mappings",
+      "support": 2,
+      "confidence": 0.5,
+      "examples": []
+    }
+  ],
+  "trigrams": [],
+  "metadata": {
+    "files_analyzed": 4,
+    "sequences_extracted": 276,
+    "min_support": 2,
+    "min_confidence": 0.5
+  }
+}

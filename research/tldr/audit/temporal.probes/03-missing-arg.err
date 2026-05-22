@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  <PATH>
+
+Usage: tldr temporal <PATH>
+
+For more information, try '--help'.
+exit=2

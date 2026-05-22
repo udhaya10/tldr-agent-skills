@@ -1,0 +1,10 @@
+{
+  "constraints": [],
+  "trigrams": [],
+  "metadata": {
+    "files_analyzed": 0,
+    "sequences_extracted": 0,
+    "min_support": 2,
+    "min_confidence": 0.5
+  }
+}

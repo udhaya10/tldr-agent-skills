@@ -1,0 +1,133 @@
+Temporal Constraints
+========================================
+
+Found 19 constraints:
+
+  self._load_mappings -> mappings.get
+    support: 3, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:222
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:151
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:72
+
+  yf.Ticker -> _to_finite_float
+    support: 3, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:201
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:169
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:228
+
+  data.get -> pd.DataFrame
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:192
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:109
+
+  mappings.get -> pd.DataFrame
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:153
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:74
+
+  str -> isinstance
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:175
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:91
+
+  yf.download -> pd.DataFrame
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:121
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:61
+
+  isinstance -> print
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:177
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:93
+
+  start_date.strftime -> end_date.strftime
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:161
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:78
+
+  super().__init__ -> super
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:21
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:36
+
+  col.lower -> print
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:146
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:84
+
+  end_date.strftime -> self._get_client
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:164
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:81
+
+  super -> __init__
+    support: 2, confidence: 1.00
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:21
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:36
+
+  _to_finite_float -> fast_info.get
+    support: 8, confidence: 0.89
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:201
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:201
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:201
+
+  to_datetime -> DataFrame
+    support: 3, confidence: 0.75
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:1
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:1
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:1
+
+  print -> pd.DataFrame
+    support: 4, confidence: 0.67
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:178
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:94
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:147
+
+  pd.to_datetime -> pd.DataFrame
+    support: 2, confidence: 0.67
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:195
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:112
+
+  fast_info.get -> _to_finite_float
+    support: 5, confidence: 0.62
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:206
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:206
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:206
+
+  DataFrame -> to_datetime
+    support: 3, confidence: 0.60
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:1
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:1
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/yahoo.py:1
+
+  _get_client -> _load_mappings
+    support: 2, confidence: 0.50
+    examples:
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:132
+      - /Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor/backend/providers/dhan.py:55
+
+
+Metadata
+----------------------------------------
+  Files analyzed: 4
+  Sequences extracted: 276
+  Min support: 2
+  Min confidence: 0.50

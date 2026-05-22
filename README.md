@@ -114,6 +114,12 @@ Anthropic's official Agent Skills documentation (scraped 2026-05-22) and our syn
 - [Methodology + key insights](research/agent-skills-authoring/)
 - Raw doc snapshots in `research/agent-skills-authoring/references/`
 
+### Upstream watchlist
+
+What we need from upstream that doesn't ship yet, plus the verification probes for detecting when each landed:
+
+- [Upstream Watchlist](research/UPSTREAM_WATCHLIST.md) — tracks tldr-code, agentskills.io spec, vercel-labs/skills CLI, and Anthropic Agent Skills docs. Single doc with "what we need / what we watch for / how we'll know / what we do" per upstream.
+
 ### TLDR daemon lifecycle research
 
 Source-level investigation of the `tldr-code` daemon (architecture, config schema, what's configurable in v0.4.0 vs what's documented-but-not-implemented). Informs the `tldr-runtime` and `tldr-setup-check` skills:

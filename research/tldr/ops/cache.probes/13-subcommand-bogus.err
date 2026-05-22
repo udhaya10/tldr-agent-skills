@@ -1,0 +1,6 @@
+error: unrecognized subcommand 'wat'
+
+Usage: tldr cache [OPTIONS] <COMMAND>
+
+For more information, try '--help'.
+exit=2

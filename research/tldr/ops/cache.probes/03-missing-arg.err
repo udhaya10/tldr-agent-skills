@@ -1,0 +1,16 @@
+Cache management commands (stats, clear)
+
+Usage: tldr cache [OPTIONS] <COMMAND>
+
+Commands:
+  stats  Show cache statistics
+  clear  Clear cache files
+  help   Print this message or the help of the given subcommand(s)
+
+Options:
+  -f, --format <FORMAT>  Output format [default: json]
+  -l, --lang <LANG>      Programming language (auto-detect if not specified)
+  -q, --quiet            Suppress progress output
+  -v, --verbose          Enable verbose/debug output
+  -h, --help             Print help (see more with '--help')
+exit=2

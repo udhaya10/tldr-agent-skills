@@ -87,6 +87,30 @@ Each card is written by reading the corresponding `research/tldr/<group>/<cmd>.m
 
 ## Phase 2: Tool combinatorics
 
+### Two doc types
+
+After the pilot for `search` + `overview` (12 cards → 4 combinatorics docs), it became clear that combinatorics content has two natural shapes, with different cost/benefit tradeoffs. Phase 2 therefore distinguishes **two doc types**:
+
+| Doc type | Purpose | Granularity | Loaded when |
+|----------|---------|-------------|-------------|
+| **Family-chooser** | Help the LLM pick between sibling tools that all solve a related problem (e.g., `search` vs `semantic` vs `similar` vs `dice`) | One per sub-family; small, targeted | LLM is at a choice point and needs the discriminator |
+| **Orchestration** | Help the LLM execute a workflow across a toolset under multiple possible lenses (e.g., codebase-orientation under canonical vs rapid vs pre-change lens) | One per topic; contains all lens treatments internally as sub-sections | LLM is doing a workflow and benefits from seeing all lens options together |
+
+**File naming convention:**
+- Family-chooser docs: `<topic>-family-chooser.md` (e.g., `locating-code-family-chooser.md`)
+- Orchestration docs: `<topic>-orchestration.md` (e.g., `security-audit-orchestration.md`)
+- Pure single-lens docs (rare): `<topic>-<lens>.md` — only when one lens treatment must be loaded in true isolation
+
+> **Rule of thumb:** Default to one orchestration doc per topic that contains all lens sections internally. Split into pure single-lens docs only when the lens treatments are large enough (>1,500 words each) that joint loading wastes context, OR when the lens treatments are written by genuinely different authors who'd diverge in voice if asked to share a file.
+
+### Why this split
+
+The orchestration doc model trades **file count** for **per-file size**:
+- Many-small-docs model (one file per lens): ~40 combinatorics docs at full scale, each ~500 words
+- Orchestration model: ~20 combinatorics docs at full scale, each ~1,500–2,500 words (containing multiple lens sections)
+
+The orchestration model halves the surface area to maintain. It preserves the lens-first *content* discipline (each lens still has its own sharp, opinion-rich section internally) but consolidates the *file* structure. Family-chooser docs stay separate because they're small, targeted, and loaded by an LLM in a different mental mode (picking between siblings, not executing a workflow).
+
 ### The breakthrough: lens-first organization
 
 Phase 2 is organized by **lens applied to a toolset**, not by toolset alone. The same set of tools can serve multiple distinct intents, and each intent surfaces a different tradeoff. Collapsing them into a single document loses the distinction that is actually load-bearing.

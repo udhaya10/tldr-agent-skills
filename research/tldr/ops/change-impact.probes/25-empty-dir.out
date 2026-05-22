@@ -1,0 +1,19 @@
+{
+  "changed_files": [],
+  "affected_tests": [],
+  "affected_test_functions": [],
+  "affected_functions": [],
+  "detection_method": "git:HEAD",
+  "metadata": {
+    "language": "python",
+    "call_graph_nodes": 0,
+    "call_graph_edges": 0,
+    "analysis_depth": 10
+  },
+  "status": {
+    "kind": "NoBaseline",
+    "details": {
+      "reason": "Invalid argument git: Git diff failed: fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'"
+    }
+  }
+}

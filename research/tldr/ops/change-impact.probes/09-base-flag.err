@@ -1,0 +1,4 @@
+ERROR: change-impact: no baseline (Invalid argument base: Branch 'origin/main' not found. fatal: Needed a single revision
+
+Hint: Check branch name with: git branch -a). Try --files <path> or --base <ref>.
+exit=3

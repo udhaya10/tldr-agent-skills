@@ -1,0 +1,4 @@
+ERROR: change-impact: no baseline (Invalid argument git: Git diff failed: fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'). Try --files <path> or --base <ref>.
+exit=3

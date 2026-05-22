@@ -1,0 +1,5 @@
+error: invalid value 'wat' for '--runner <RUNNER>'
+  [possible values: pytest, pytest-k, jest, go-test, cargo-test]
+
+For more information, try '--help'.
+exit=2

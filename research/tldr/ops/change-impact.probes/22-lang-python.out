@@ -1,0 +1,16 @@
+{
+  "changed_files": [],
+  "affected_tests": [],
+  "affected_test_functions": [],
+  "affected_functions": [],
+  "detection_method": "git:HEAD",
+  "metadata": {
+    "language": "python",
+    "call_graph_nodes": 2715,
+    "call_graph_edges": 2715,
+    "analysis_depth": 10
+  },
+  "status": {
+    "kind": "NoChanges"
+  }
+}

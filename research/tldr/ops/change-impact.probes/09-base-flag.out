@@ -1,0 +1,19 @@
+{
+  "changed_files": [],
+  "affected_tests": [],
+  "affected_test_functions": [],
+  "affected_functions": [],
+  "detection_method": "git:origin/main...HEAD",
+  "metadata": {
+    "language": "typescript",
+    "call_graph_nodes": 0,
+    "call_graph_edges": 0,
+    "analysis_depth": 10
+  },
+  "status": {
+    "kind": "NoBaseline",
+    "details": {
+      "reason": "Invalid argument base: Branch 'origin/main' not found. fatal: Needed a single revision\n\nHint: Check branch name with: git branch -a"
+    }
+  }
+}

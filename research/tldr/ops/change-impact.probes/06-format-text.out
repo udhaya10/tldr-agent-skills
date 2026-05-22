@@ -1,0 +1,12 @@
+Change Impact Analysis
+======================
+
+Detection: git:HEAD
+Changed: 0 files
+
+Affected Tests: 0 files, 0 functions
+  No tests affected.
+
+Call Graph: 11853 edges
+Traversal Depth: 10
+

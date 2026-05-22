@@ -1,0 +1,16 @@
+{
+  "changed_files": [],
+  "affected_tests": [],
+  "affected_test_functions": [],
+  "affected_functions": [],
+  "detection_method": "git:uncommitted",
+  "metadata": {
+    "language": "typescript",
+    "call_graph_nodes": 11853,
+    "call_graph_edges": 11853,
+    "analysis_depth": 10
+  },
+  "status": {
+    "kind": "NoChanges"
+  }
+}

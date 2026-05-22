@@ -14,9 +14,10 @@ The `tldr-code` CLI is a powerful static analysis tool with **66 commands** (64 
 | **Tool cards** (agent-oriented prose, one per command) | ✅ Complete | 64/64 |
 | **Family-chooser combinatorics** (which sibling to pick) | ✅ Complete | 16 docs (all sub-families + 2 cross-group) |
 | **Multi-lens orchestration combinatorics** (multi-tool workflows) | ⏸️ Deferred | ~12–15 expected |
-| **Final 14 skill rewrites** (using the corpus as source material) | ⏸️ Pending | 14 |
+| **Skill architecture decision** (Journal 07 — 14 intent-aligned skills, no router) | ✅ Locked | See [Journal 07](research/07_SKILL_ARCHITECTURE_DECISION.md) |
+| **Skill rewrite** (14 new intent-aligned `tldr-*` skills) | ⏸️ Pending | 14 |
 
-The current `tldr-*/SKILL.md` files are the original stub-level skills (~20–67 lines each). They will be rewritten using the research corpus once Phase 2 Step 2 (orchestration docs) completes.
+The current `tldr-*/SKILL.md` files are the original stub-level group-aligned skills (~20–67 lines each). They will be retired wholesale and replaced by 14 new intent-aligned skills per the architecture decision in Journal 07.
 
 ---
 
@@ -90,6 +91,7 @@ The research process itself is documented:
 - [Journal 04 — Probe Protocol](research/04_PROBE_PROTOCOL.md) — operational rulebook for the dossier evidence layer
 - [Journal 05 — Omitted Commands Rationale](research/05_OMITTED_COMMANDS_RATIONALE.md) — why some CLI surface is intentionally excluded
 - [Journal 06 — Cards and Combinatorics Protocol](research/06_CARDS_AND_COMBINATORICS_PROTOCOL.md) — the bridge from dossiers to skills
+- [Journal 07 — Skill Architecture Decision](research/07_SKILL_ARCHITECTURE_DECISION.md) — locks in the final shape: 14 intent-aligned skills, no router, cards inlined per skill
 
 ### Agent-skills authoring research
 

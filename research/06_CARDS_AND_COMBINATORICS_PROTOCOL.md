@@ -258,5 +258,6 @@ These are deliberately left undecided here — they should be answered by the pr
 
 - **Journal 03** — establishes "Zero Trust in Documentation" principle
 - **Journal 04** — operational protocol for the dossier evidence layer
+- **Journal 07** — the skill architecture decision that this layer feeds into (14 intent-aligned skills, no router, cards inlined per skill)
 - **`agent-skills-authoring/02_KEY_INSIGHTS.md`** — Anthropic's skill-authoring guidance that motivates the final skill rewrite
 - **`tldr/<group>/<cmd>.md`** — the dossier evidence each card and combinatorics doc must defer to

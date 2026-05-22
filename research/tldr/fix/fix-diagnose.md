@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`fix-diagnose.probes/probe.sh`](./fix-diagnose.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/fix/fix-diagnose.md).
 
 **Subcommand naming note:** CLI is `tldr fix diagnose` (space-separated); dossier filename uses `fix-diagnose.md`.
 

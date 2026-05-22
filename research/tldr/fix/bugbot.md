@@ -14,6 +14,7 @@
 | Scoping decision | Used `--no-tools` for most probes to skip L1 tool integration (clippy/cargo-audit/etc.) and keep runs fast |
 
 Re-run all evidence via [`bugbot.probes/probe.sh`](./bugbot.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/fix/bugbot.md).
 
 ---
 

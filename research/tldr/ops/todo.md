@@ -14,6 +14,7 @@
 | Scoping decision | All probes used `--quick` mode to skip the expensive similar-analysis |
 
 Re-run all evidence via [`todo.probes/probe.sh`](./todo.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/todo.md).
 
 ---
 

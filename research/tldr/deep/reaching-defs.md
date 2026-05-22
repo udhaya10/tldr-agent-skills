@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`reaching-defs.probes/probe.sh`](./reaching-defs.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/deep/reaching-defs.md).
 
 ---
 

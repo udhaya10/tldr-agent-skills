@@ -14,6 +14,7 @@
 | Scoping decision | Slow command per Journal 04 §5 — used `--quick` mode + `backend/providers/` (4 files) for happy probes |
 
 Re-run all evidence via [`secure.probes/probe.sh`](./secure.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/secure.md).
 
 ---
 

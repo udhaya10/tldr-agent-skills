@@ -10,7 +10,7 @@ Every skill must be its own top-level directory.
 
 **Correct Layout:**
 ```text
-agentic-utils/
+tldr-agent-skills/
 ├── tldr-router/         # Top-level directory for Skill 1
 ├── tldr-overview/       # Top-level directory for Skill 2
 ├── tldr-fix/            # Top-level directory for Skill 3
@@ -63,7 +63,7 @@ Keep the body concise (ideally under 200 lines). The body should contain:
 Based on our architectural decomposition and empirical research, the repository is structured with 14 specialized skills to accommodate the full `tldr-code` suite:
 
 ```text
-agentic-utils/
+tldr-agent-skills/
 │
 ├── tldr-router/               # Orchestrator
 ├── tldr-overview/             # L1 AST: tree, structure, extract, imports
@@ -82,3 +82,37 @@ agentic-utils/
 ```
 
 By adhering to this flat, modular structure, you can publish this repository once, and users can selectively install `tldr-fix` or `tldr-api-stability` via `npx skills add` without being forced to download unrelated toolsets.
+
+---
+
+## 5. The Research Corpus (`research/`)
+
+The `research/` directory is the **source of truth** that the 14 skills are authored from. It is intentionally kept separate from the skill folders so that the npx-skills consumer never sees it; only repository contributors and skill authors do.
+
+```text
+tldr-agent-skills/
+├── research/
+│   ├── 01_CLI_DISCOVERY_JOURNAL.md       # How commands were enumerated
+│   ├── 02_CLI_HELP_EXTRACTION_JOURNAL.md # How --help was captured
+│   ├── 03_EMPIRICAL_RESEARCH_METHODOLOGY.md  # Zero-trust-docs principle
+│   ├── 04_PROBE_PROTOCOL.md              # Operational rulebook for dossiers
+│   ├── 05_OMITTED_COMMANDS_RATIONALE.md  # Why some commands are excluded
+│   ├── 06_CARDS_AND_COMBINATORICS_PROTOCOL.md  # Bridge from dossiers to skills
+│   ├── _TEMPLATES/                       # Mandatory templates
+│   ├── fixtures/                         # Probe test fixtures
+│   ├── tldr/<group>/<cmd>.md             # Layer 1: probe-verified dossiers
+│   ├── tool-cards/<group>/<cmd>.md       # Layer 2: agent-oriented prose
+│   ├── tool-combinatorics/<topic>.md     # Layer 3: family-chooser + orchestration docs
+│   └── agent-skills-authoring/           # Anthropic Agent Skills doc research
+└── tldr-*/                               # Skills authored from the corpus
+```
+
+When authoring or revising a `tldr-*/SKILL.md`, the canonical source flow is:
+
+```
+dossier (evidence)  →  tool card (per-tool prose)  →  combinatorics (cross-tool)  →  SKILL.md
+```
+
+Each layer is more compressed and agent-oriented than the layer below it. Skills MUST NOT contradict the dossier evidence; the dossier wins on factual claims.
+
+See [research/06_CARDS_AND_COMBINATORICS_PROTOCOL.md](research/06_CARDS_AND_COMBINATORICS_PROTOCOL.md) for the full protocol governing the cards and combinatorics layers.

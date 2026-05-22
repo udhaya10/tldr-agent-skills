@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`daemon.probes/probe.sh`](./daemon.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/daemon.md).
 
 **Grouping note:** Per `05_OMITTED_COMMANDS_RATIONALE.md` §3, the 6 subcommands (start, stop, status, list, query, notify) are documented under a SINGLE `daemon` entry in the SKILL.md. This dossier covers the whole family.
 

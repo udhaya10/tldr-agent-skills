@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`context.probes/probe.sh`](./context.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/search/context.md).
 
 ---
 

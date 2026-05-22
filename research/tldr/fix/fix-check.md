@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`fix-check.probes/probe.sh`](./fix-check.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/fix/fix-check.md).
 
 **Subcommand naming note:** CLI is `tldr fix check` (space-separated); dossier filename uses `fix-check.md` for filesystem compatibility.
 

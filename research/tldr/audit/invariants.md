@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`invariants.probes/probe.sh`](./invariants.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/invariants.md).
 
 ---
 

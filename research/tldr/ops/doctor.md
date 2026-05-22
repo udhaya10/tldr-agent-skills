@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`doctor.probes/probe.sh`](./doctor.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/doctor.md).
 
 **Omission note:** Per `05_OMITTED_COMMANDS_RATIONALE.md` §2, `tldr doctor` is **SUPPRESSED from agent-facing skills**. It checks local system binaries (Python, Rustc, etc.) — purely for human operators debugging their environment. Agents cannot fix missing system binaries. Probed for research completeness, NOT for agent guidance.
 

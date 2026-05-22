@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`coupling.probes/probe.sh`](./coupling.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/coupling.md).
 
 ---
 

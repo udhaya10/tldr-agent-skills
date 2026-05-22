@@ -15,6 +15,7 @@
 | Scoping decision | Used `--timeout 10` on most probes (default 60 wastes CI time); single file in P01 for fastest happy path |
 
 Re-run all evidence via [`diagnostics.probes/probe.sh`](./diagnostics.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/fix/diagnostics.md).
 
 ---
 

@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`hotspots.probes/probe.sh`](./hotspots.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/hotspots.md).
 
 ---
 

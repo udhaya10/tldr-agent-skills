@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`specs.probes/probe.sh`](./specs.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/specs.md).
 
 ---
 

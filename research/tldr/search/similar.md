@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`similar.probes/probe.sh`](./similar.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/search/similar.md).
 
 ---
 

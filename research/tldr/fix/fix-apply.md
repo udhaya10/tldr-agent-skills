@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`fix-apply.probes/probe.sh`](./fix-apply.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/fix/fix-apply.md).
 
 **Subcommand naming note:** The CLI subcommand is `tldr fix apply` (space-separated), NOT `tldr fix-apply` (the dossier filename uses hyphen for filesystem compatibility — `tldr-apply` is not a recognized CLI command).
 

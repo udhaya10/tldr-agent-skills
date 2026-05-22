@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`deps.probes/probe.sh`](./deps.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/deps.md).
 
 **Consolidation note:** Per `05_OMITTED_COMMANDS_RATIONALE.md` §3, the `deps` command was consolidated under the `tldr-overview` skill (originally had duplicate dossiers in `overview/` and `ops/`). This dossier lives under `ops/` per the Ralph task list.
 

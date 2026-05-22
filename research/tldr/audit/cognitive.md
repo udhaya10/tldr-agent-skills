@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`cognitive.probes/probe.sh`](./cognitive.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/cognitive.md).
 
 ---
 

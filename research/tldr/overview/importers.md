@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`importers.probes/probe.sh`](./importers.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/overview/importers.md).
 
 ---
 

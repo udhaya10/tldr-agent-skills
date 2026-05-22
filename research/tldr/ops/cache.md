@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`cache.probes/probe.sh`](./cache.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/cache.md).
 
 **Omission note:** Per `05_OMITTED_COMMANDS_RATIONALE.md` §2, `tldr cache` is **SUPPRESSED from agent-facing skills**. Calling `tldr cache clear` while an agent is iterating wipes the daemon's analysis cache and causes ~10× slowdown on subsequent commands. This dossier exists for **research completeness** — agents should NOT be guided to invoke this command.
 

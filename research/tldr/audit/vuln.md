@@ -14,6 +14,7 @@
 | Scoping decision | Slow command per Journal 04 §5 — happy probes scoped to `backend/providers/` (4 files); P23 scanned full webui/src (156 files, 84 seconds) |
 
 Re-run all evidence via [`vuln.probes/probe.sh`](./vuln.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/vuln.md).
 
 ---
 

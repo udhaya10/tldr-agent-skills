@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`change-impact.probes/probe.sh`](./change-impact.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/change-impact.md).
 
 ---
 

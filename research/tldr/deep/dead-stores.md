@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`dead-stores.probes/probe.sh`](./dead-stores.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/deep/dead-stores.md).
 
 ---
 

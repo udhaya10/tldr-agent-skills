@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`surface.probes/probe.sh`](./surface.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/ops/surface.md).
 
 **Omission note:** Per `05_OMITTED_COMMANDS_RATIONALE.md` §2, `tldr surface` is **SUPPRESSED from agent-facing skills** because it outputs massive raw structural data (P18: 38,111 lines for backend/). Agents are better served by `tldr api-check` (compare surface changes) or `tldr interface` (synthesize interfaces). Probed for research completeness.
 

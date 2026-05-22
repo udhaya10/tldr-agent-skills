@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`extract.probes/probe.sh`](./extract.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/overview/extract.md).
 
 ---
 

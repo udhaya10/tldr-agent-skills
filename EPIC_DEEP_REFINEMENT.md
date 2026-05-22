@@ -1,6 +1,15 @@
 # BEADS EPIC: Deep Refinement of TLDR Commands
 
-**Objective:** Systematically revisit all 60 `tldr-code` commands across our 13 skills. For each command, we will apply the "Deep Refinement Methodology" to uncover its true architectural mechanics, LLM-specific value proposition, and edge cases. We will then update the research dossiers and `SKILL.md` files to capture these expert nuances.
+> **⚠️ SUPERSEDED.** This epic captured the original framing for command-by-command refinement (~13 skills × 60 commands, checkbox-tracked). It has been **superseded by the operational research arc**:
+>
+> - **[research/04_PROBE_PROTOCOL.md](research/04_PROBE_PROTOCOL.md)** — the operational rulebook that replaced the informal "Deep Refinement Methodology" below. All 64 active commands were processed under Journal 04 (Ralph-driven, probe-verified, structurally audited 17/17).
+> - **[research/06_CARDS_AND_COMBINATORICS_PROTOCOL.md](research/06_CARDS_AND_COMBINATORICS_PROTOCOL.md)** — the bridge from dossiers to skills (cards + combinatorics layers).
+>
+> The checkbox backlog below is **fully completed** — every command has a dossier, a tool card, and at least one combinatorics doc citing it. This file is kept as historical context for the project's evolution; do not use it as the current task list.
+
+---
+
+**Original objective (now obsolete):** Systematically revisit all 60 `tldr-code` commands across our 13 skills. For each command, we will apply the "Deep Refinement Methodology" to uncover its true architectural mechanics, LLM-specific value proposition, and edge cases. We will then update the research dossiers and `SKILL.md` files to capture these expert nuances.
 
 ## 🔬 The Deep Refinement Methodology (Per Command)
 1. **Architectural Deep Dive:** How does it work under the hood? (AST vs SQLite vs PDG vs Git history).

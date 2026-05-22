@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`clones.probes/probe.sh`](./clones.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/clones.md).
 
 ---
 

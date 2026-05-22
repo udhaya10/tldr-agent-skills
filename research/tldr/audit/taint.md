@@ -14,6 +14,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`taint.probes/probe.sh`](./taint.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/taint.md).
 
 ---
 

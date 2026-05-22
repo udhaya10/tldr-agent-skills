@@ -14,6 +14,7 @@
 | Scoping decision | All probes used `--quick` mode to skip expensive invariants/patterns sub-analyses |
 
 Re-run all evidence via [`verify.probes/probe.sh`](./verify.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/verify.md).
 
 ---
 

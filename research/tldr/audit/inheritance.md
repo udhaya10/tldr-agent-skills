@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`inheritance.probes/probe.sh`](./inheritance.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/audit/inheritance.md).
 
 ---
 

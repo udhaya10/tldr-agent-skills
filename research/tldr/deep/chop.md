@@ -13,6 +13,7 @@
 | Probe date | 2026-05-22 |
 
 Re-run all evidence via [`chop.probes/probe.sh`](./chop.probes/probe.sh).
+See also: [agent-oriented tool card](../../tool-cards/deep/chop.md).
 
 ---
 

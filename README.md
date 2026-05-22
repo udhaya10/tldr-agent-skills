@@ -66,9 +66,7 @@ The research that informed both the authoring and the ecosystem understanding li
 | **tldr-audit-coverage** | "Assess test coverage and specification quality" | coverage, contracts, invariants, verify, specs |
 | **tldr-audit-api** | "Audit API design, interfaces, and stability" | api-check, interface, inheritance, patterns, surface |
 
-**Total: 64 active CLI commands** mapped into 14 intent-aligned skills. No router — each skill's description self-routes based on user intent.
-
-> **Note**: 14 additional folders (`tldr-router/`, `tldr-overview/`, `tldr-search/`, `tldr-trace/`, `tldr-deep/`, `tldr-audit/`, `tldr-fix/`, `tldr-ops/`, `tldr-refactor-history/`, `tldr-refactor-oo/`, `tldr-formal-methods/`, `tldr-api-stability/`, `tldr-metrics-raw/`, `tldr-security-taint/`) exist as **deprecation stubs** — soft landings for users who installed an earlier version of this skill set. They will be removed in a future release. See [Journal 08](research/08_SKILL_LIFECYCLE_PROTOCOL.md) for the protocol. Run `bash bin/check-versions.sh` to see the full corpus state.
+**Total: 64 active CLI commands** mapped into 14 intent-aligned skills. No router — each skill's description self-routes based on user intent. Run `bash bin/check-versions.sh` to see the corpus state with versions.
 
 ---
 

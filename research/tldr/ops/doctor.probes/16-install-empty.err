@@ -1,0 +1,2 @@
+Error: No auto-install available for ''. Available: go, kotlin, lua, python, ruby, rust, swift. unknown language.
+exit=1

@@ -1,0 +1,6 @@
+error: the argument '--install <INSTALL>' cannot be used multiple times
+
+Usage: tldr doctor [OPTIONS]
+
+For more information, try '--help'.
+exit=2

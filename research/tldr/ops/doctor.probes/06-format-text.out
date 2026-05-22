@@ -1,0 +1,74 @@
+TLDR Diagnostics Check
+==================================================
+
+C:
+  [OK] gcc - /usr/bin/gcc
+  [OK] cppcheck - /opt/homebrew/bin/cppcheck
+
+Cpp:
+  [OK] g++ - /usr/bin/g++
+  [OK] cppcheck - /opt/homebrew/bin/cppcheck
+
+Csharp:
+  [X] dotnet - not found
+    -> https://dotnet.microsoft.com/download
+
+Elixir:
+  [X] elixir - not found
+    -> brew install elixir  OR  asdf install elixir
+  [X] mix - not found
+    -> Included with Elixir
+
+Go:
+  [OK] go - /opt/homebrew/bin/go
+  [X] golangci-lint - not found
+    -> brew install golangci-lint  OR  go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+
+Java:
+  [OK] javac - /usr/bin/javac
+  [X] checkstyle - not found
+    -> brew install checkstyle  OR  download from checkstyle.org
+
+Javascript:
+  [OK] eslint - /Users/udhayakumar/.nvm/versions/node/v24.13.0/bin/eslint
+
+Kotlin:
+  [X] kotlinc - not found
+    -> brew install kotlin  OR  sdk install kotlin
+  [X] ktlint - not found
+    -> brew install ktlint
+
+Lua:
+  [X] luacheck - not found
+    -> luarocks install luacheck
+
+Php:
+  [X] phpstan - not found
+    -> composer global require phpstan/phpstan
+
+Python:
+  [OK] pyright - /Users/udhayakumar/.local/bin/pyright
+  [OK] ruff - /Users/udhayakumar/.local/bin/ruff
+
+Ruby:
+  [X] rubocop - not found
+    -> gem install rubocop
+
+Rust:
+  [OK] cargo - /Users/udhayakumar/.cargo/bin/cargo
+  [OK] cargo-clippy - /Users/udhayakumar/.cargo/bin/cargo-clippy
+
+Scala:
+  [X] scalac - not found
+    -> brew install scala  OR  sdk install scala
+
+Swift:
+  [OK] swiftc - /usr/bin/swiftc
+  [X] swiftlint - not found
+    -> brew install swiftlint
+
+Typescript:
+  [OK] tsc - /Users/udhayakumar/.nvm/versions/node/v24.13.0/bin/tsc
+
+Missing 12 tool(s). Run: tldr doctor --install <lang>
+

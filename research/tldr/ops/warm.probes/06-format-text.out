@@ -1,0 +1,4 @@
+Warming call graph cache...
+Indexed 866 files, found 38383 edges
+Languages: javascript, python, typescript
+Cache written to: .tldr/cache/call_graph.json

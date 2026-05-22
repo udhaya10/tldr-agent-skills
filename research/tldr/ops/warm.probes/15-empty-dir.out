@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "files": 0,
+  "edges": 0,
+  "languages": [
+    "unknown"
+  ],
+  "cache_path": ".tldr/cache/call_graph.json"
+}

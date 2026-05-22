@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "files": 56,
+  "edges": 9116,
+  "languages": [
+    "python"
+  ],
+  "cache_path": ".tldr/cache/call_graph.json"
+}

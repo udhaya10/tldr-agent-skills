@@ -8,6 +8,21 @@
 4. **The actual user-configurable surface is tiny.** Two CLI flags (`--project`, `--foreground`), one env var (`TLDR_DAEMON_REGISTRY_DIR`, for testing). Everything else is hardcoded defaults.
 5. **"Always-on" still works via service auto-restart.** The 30-minute idle auto-shutdown can't be configured, but launchd `KeepAlive=true` / systemd `Restart=always` will restart the daemon immediately after auto-shutdown. Net effect: daemon cycles every 30 min but stays effectively always-up.
 
+## Two distinct `tldr` projects exist — we use `tldr-code` (the Rust one)
+
+Worth flagging because the project names are confusingly similar:
+
+| Repo | Language | Install | Reach |
+|------|----------|---------|-------|
+| **`parcadei/tldr-code`** ← what this project uses | Rust | `cargo install tldr-code` (or binary from GitHub releases) | Newer, source of all our research |
+| `parcadei/llm-tldr` | Python | `pip install llm-tldr` (PyPI package `llm-tldr`) | Older, ~1.2k stars, also installs a CLI named `tldr` |
+
+Both ship a CLI named `tldr` with overlapping commands (`semantic`, `warm`, `context`, etc.). The Rust `tldr-code` is what our local clone, our skill set, our probes, and our install instructions all target. The two have **separate implementations, separate command surfaces, separate config schemas** — claims verified against one do NOT necessarily transfer to the other.
+
+**All of our research, all of our skills, and our install commands (`cargo install tldr-code` or binary from `parcadei/tldr-code` releases) consistently use `tldr-code`.** We did not confuse the two, but the distinction isn't called out in the user-facing docs and probably should be (the README's `parcadei/tldr-code` link is unambiguous but a reader landing on the Python package might wonder why the commands don't match).
+
+If a user installed `pip install llm-tldr` instead of `cargo install tldr-code`, our skills won't work correctly — the commands look similar but the semantics differ. The `tldr-setup-check` skill's version check should catch this (different version-string formats, different `--help` outputs), but explicit guidance helps.
+
 ## The corrected daemon architecture
 
 ### Per-project, not global

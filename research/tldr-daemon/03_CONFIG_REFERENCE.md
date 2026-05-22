@@ -47,12 +47,22 @@ Source: `crates/tldr-cli/src/commands/daemon/types.rs:34-58`.
 | Aspect | Value |
 |--------|-------|
 | Type | `String` |
-| Default | `"bge-large-en-v1.5"` (per the `Default` impl) |
-| Used to | Choose the embedding model for `tldr semantic` queries |
-| Configurable today? | NO — uses default |
-| Future override | `.tldr/config.json` → `"semantic_model": "arctic-xs"` or any other supported model |
+| Default in `DaemonConfig::default()` | `"bge-large-en-v1.5"` |
+| **Actual user-facing default for `tldr semantic` / `tldr similar` / `tldr embed`** | **`arctic-m`** (per `default_value = "arctic-m"` on each CLI command's `--model` flag) |
+| Used to (intent) | Choose embedding model for daemon-side semantic queries |
+| **Used to (actual v0.4.0)** | **NOTHING — this field is dead config**. It's set in the struct, has a default, but `grep -r "self.config.semantic_model"` across `crates/` returns zero hits. No daemon code path reads it. |
+| Configurable today? | NO — and irrelevant, since the field is unused |
+| Future override (when loader lands AND field is wired up) | `.tldr/config.json` → `"semantic_model": "arctic-xs"` |
 
-> **Note**: Upstream SETUP.md claims the default is `arctic-m`. The source disagrees: `Default::default()` returns `"bge-large-en-v1.5"`. The source is authoritative.
+> **Important correction**: An earlier version of this doc said the "real" default was `bge-large-en-v1.5` and that upstream SETUP.md was wrong about `arctic-m`. Wrong on both counts.
+>
+> **The truth**:
+> - `arctic-m` IS the default user-facing model — confirmed in `semantic.rs`, `similar.rs`, and `embed.rs`, plus the upstream README which says "On first run it downloads the arctic-embed-m model (~110MB, cached)"
+> - `bge-large-en-v1.5` appears ONLY in `DaemonConfig::default()` and its tests — a dead Default for a struct field that no runtime code reads
+> - Users will see `arctic-m`; the `bge-large-en-v1.5` reference in the schema is essentially noise until the field is actually wired into the daemon's semantic handler
+
+**Available models for the `--model` flag** (per `semantic.rs`, `similar.rs`, `embed.rs`):
+`arctic-xs`, `arctic-s`, `arctic-m` (default), `arctic-m-long`, `arctic-l`. Each has different speed/quality tradeoffs.
 
 ### 4. `idle_timeout_secs`
 

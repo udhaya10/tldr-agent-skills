@@ -11,7 +11,7 @@ Two upstream documents are unreliable on daemon specifics:
 | Document | What it claims | What's actually true |
 |----------|---------------|---------------------|
 | `docs/SETUP.md` | "Default idle timeout: 300 seconds" | Default is **1800 seconds** (30 min) per `IDLE_TIMEOUT_SECS` constant in `crates/tldr-cli/src/commands/daemon/types.rs:21` |
-| `docs/SETUP.md` | "Default semantic model: arctic-m" | Default is **`bge-large-en-v1.5`** per `DaemonConfig::default()` |
+| `docs/SETUP.md` | "Default semantic model: arctic-m" | **Upstream is CORRECT**. `arctic-m` IS the user-facing default for `tldr semantic` / `tldr similar` / `tldr embed`. The `bge-large-en-v1.5` value seen in `DaemonConfig::default()` is in a struct field that is **never read at runtime** — dead config. An earlier version of this research wrongly flagged the upstream doc as incorrect. |
 | `docs/TROUBLESHOOTING.md` | `tldr daemon start --idle-timeout 600` is a valid command | **No `--idle-timeout` flag exists** on `daemon start` in v0.4.0; only `--project` and `--foreground` |
 | `crates/tldr-cli/src/commands/daemon/types.rs` doc comment | "Daemon configuration loaded from `.tldr/config.json` or `.claude/settings.json`" | **Config files are NOT loaded** in v0.4.0; `daemon start` calls `DaemonConfig::default()` directly with no file I/O |
 

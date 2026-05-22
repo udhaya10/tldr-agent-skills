@@ -1,0 +1,29 @@
+{
+  "diagnostics": [],
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "info": 0,
+    "hints": 0,
+    "total": 0
+  },
+  "tools_run": [
+    {
+      "name": "ruff",
+      "version": "ruff 0.15.12",
+      "success": true,
+      "duration_ms": 110,
+      "diagnostic_count": 0,
+      "error": null
+    },
+    {
+      "name": "pyright",
+      "version": "pyright 1.1.409",
+      "success": true,
+      "duration_ms": 210,
+      "diagnostic_count": 0,
+      "error": null
+    }
+  ],
+  "files_analyzed": 0
+}

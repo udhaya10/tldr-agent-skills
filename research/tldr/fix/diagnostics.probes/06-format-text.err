@@ -1,0 +1,3 @@
+Detecting tools for Python...
+Running diagnostics: pyright, ruff
+exit=1

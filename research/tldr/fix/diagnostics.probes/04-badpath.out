@@ -1,0 +1,42 @@
+{
+  "diagnostics": [
+    {
+      "file": "/no/such/dir",
+      "line": 1,
+      "column": 1,
+      "end_line": 1,
+      "end_column": 1,
+      "severity": "warning",
+      "message": "No such file or directory (os error 2)",
+      "code": "E902",
+      "source": "ruff",
+      "url": "https://docs.astral.sh/ruff/rules/io-error"
+    }
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 1,
+    "info": 0,
+    "hints": 0,
+    "total": 1
+  },
+  "tools_run": [
+    {
+      "name": "ruff",
+      "version": "ruff 0.15.12",
+      "success": true,
+      "duration_ms": 110,
+      "diagnostic_count": 1,
+      "error": null
+    },
+    {
+      "name": "pyright",
+      "version": "pyright 1.1.409",
+      "success": true,
+      "duration_ms": 218,
+      "diagnostic_count": 0,
+      "error": null
+    }
+  ],
+  "files_analyzed": 0
+}

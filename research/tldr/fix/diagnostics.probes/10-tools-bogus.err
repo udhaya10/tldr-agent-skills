@@ -1,0 +1,4 @@
+Note: No diagnostic tools available for Python. Install one of:
+  - pyright (pip install pyright)
+  - ruff (pip install ruff)
+exit=60

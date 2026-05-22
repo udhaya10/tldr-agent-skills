@@ -1,0 +1,5 @@
+ruff + pyright | 1 files | 2 errors
+
+yahoo.py:12:8: error[reportMissingImports] Import "pandas" could not be resolved (pyright)
+yahoo.py:13:8: error[reportMissingImports] Import "yfinance" could not be resolved (pyright)
+

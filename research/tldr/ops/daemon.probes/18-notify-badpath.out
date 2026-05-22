@@ -1,0 +1,4 @@
+{
+  "status": "error",
+  "error": "File '/no/such/file.py' is outside project root '/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor'"
+}

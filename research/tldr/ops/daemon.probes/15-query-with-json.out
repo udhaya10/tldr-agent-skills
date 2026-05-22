@@ -1,0 +1,19 @@
+{
+  "status": "ready",
+  "uptime": 0.237234792,
+  "files": 0,
+  "project": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor",
+  "salsa_stats": {
+    "hits": 0,
+    "misses": 0,
+    "invalidations": 0,
+    "recomputations": 0
+  },
+  "all_sessions": {
+    "active_sessions": 0,
+    "total_raw_tokens": 0,
+    "total_tldr_tokens": 0,
+    "total_requests": 0
+  },
+  "hook_stats": {}
+}

@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "pid": 78855,
+  "socket": "/var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/tldr-90b88caf.sock",
+  "message": "Daemon started"
+}
+{
+  "status": "running",
+  "uptime": 0.101489791,
+  "uptime_human": "0h 0m 0s",
+  "files": 0,
+  "project": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor",
+  "salsa_stats": {
+    "hits": 0,
+    "misses": 0,
+    "invalidations": 0,
+    "recomputations": 0
+  }
+}
+{
+  "status": "ok",
+  "message": "Daemon stopped"
+}

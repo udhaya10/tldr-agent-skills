@@ -1,0 +1,10 @@
+{
+  "daemons": [
+    {
+      "project": "/Users/udhayakumar/Workspace/17-Roshan-Projects/Stock-Monitor",
+      "pid": 78918,
+      "socket": "/var/folders/44/wdkprnv125l82wnkt6dsnnvr0000gn/T/tldr-90b88caf.sock",
+      "started_at": "2026-05-22T06:30:14.569486+00:00"
+    }
+  ]
+}

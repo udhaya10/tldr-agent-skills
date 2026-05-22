@@ -1,0 +1,12 @@
+{
+  "message": "No usage recorded yet",
+  "next_steps": [
+    "tldr daemon start  # begin recording usage",
+    "tldr <any-command> ...  # run a few commands while the daemon is up",
+    "tldr stats  # rerun this command to see call counts and latencies"
+  ],
+  "requires": [
+    "tldr daemon (run `tldr daemon start`)",
+    "at least one daemon-tracked invocation"
+  ]
+}

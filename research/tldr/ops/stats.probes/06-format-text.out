@@ -1,0 +1,8 @@
+No usage recorded yet
+
+Usage tracking requires the tldr daemon. To begin recording:
+  $ tldr daemon start  # begin recording usage
+  $ tldr <any-command> ...  # run a few commands while the daemon is up
+  $ tldr stats  # rerun this command to see call counts and latencies
+
+Once the daemon has captured invocations, this command will display call counts, latencies, and most-used commands.

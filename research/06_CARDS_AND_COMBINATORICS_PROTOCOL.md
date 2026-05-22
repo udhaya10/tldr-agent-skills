@@ -159,7 +159,20 @@ different things — link to siblings)
 
 ### Target size
 
-400–800 words per document. Combinatorics docs can breathe more than cards because they are pattern-level and reasoning-dense.
+400–900 words per document. Combinatorics docs can breathe more than cards because they are pattern-level and reasoning-dense.
+
+> **Empirical note from the 16-doc Phase 2 Step 1 batch:** docs ran 451–884 words, clustering around 700. Audit and fix family-choosers naturally ran toward the upper end because the underlying tool cards surface dense silent-failure footguns that the "Common mistakes" section must surface to discriminate siblings. **Do not force shorter docs at the cost of cutting sibling-discriminating content** — that's exactly the highest-value section.
+
+### The "pick a default" rule has two acceptable forms
+
+A family-chooser doc MUST commit to a default. There are two acceptable shapes:
+
+1. **Single default** with named exceptions — e.g., "`tldr search` is the default; escalate to `tldr semantic` when no shared vocabulary exists."
+2. **Intent-conditional defaults** — e.g., for `audit-api-design`: "`patterns` for LLM onboarding, `interface` for refactor capture, `api-check` for CI gating, `inheritance` for hierarchy review." Each intent has a clear default; the doc doesn't pretend the intents collapse.
+
+What is NEVER acceptable: **hedging** — phrases like "all have their place," "depends on context," "use whichever fits" without naming the contexts. That is the failure mode the family-chooser doc exists to prevent.
+
+> **Empirical note from Phase 2 Step 1:** 5 of 14 family-choosers settled on intent-conditional defaults rather than single defaults (36%). The intent-conditional form is not a fallback — it's the right answer when the family genuinely serves multiple incompatible intents (e.g., extract surface vs detect misuse vs check CI). Forcing a single default in those cases would be lying to the LLM.
 
 ### File naming convention
 

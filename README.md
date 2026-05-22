@@ -15,9 +15,9 @@ The `tldr-code` CLI is a powerful static analysis tool with **66 commands** (64 
 | **Family-chooser combinatorics** (which sibling to pick) | ✅ Complete | 16 docs (all sub-families + 2 cross-group) |
 | **Multi-lens orchestration combinatorics** (multi-tool workflows) | ⏸️ Deferred | ~12–15 expected |
 | **Skill architecture decision** (Journal 07 — 14 intent-aligned skills, no router) | ✅ Locked | See [Journal 07](research/07_SKILL_ARCHITECTURE_DECISION.md) |
-| **Skill rewrite** (14 new intent-aligned `tldr-*` skills) | ⏸️ Pending | 14 |
+| **Skill rewrite** (14 new intent-aligned `tldr-*` skills) | ✅ Complete | 14 |
 
-The current `tldr-*/SKILL.md` files are the original stub-level group-aligned skills (~20–67 lines each). They will be retired wholesale and replaced by 14 new intent-aligned skills per the architecture decision in Journal 07.
+The 14 skills below are intent-aligned (named after what the user wants to do, not after the underlying CLI group), self-contained (no external file references — cards inlined directly), and self-routing (no router skill needed; sharp descriptions match user intent).
 
 ---
 
@@ -35,26 +35,26 @@ npx skills add udhaya10/tldr-agent-skills -g
 
 ---
 
-## The 14 Skills (current — stub-level, pending rewrite)
+## The 14 Skills
 
-| Skill | Purpose | Key Commands |
-|-------|---------|--------------|
-| **tldr-router** | Orchestrator — routes intent to appropriate skill | Intent analysis, skill selection |
-| **tldr-overview** | Token-efficient codebase discovery | tree, structure, extract, explain, definition, importers, imports |
-| **tldr-search** | Code search and similarity | search, semantic, context, similar, dice |
-| **tldr-trace** | Call graph, references, blast radius | calls, references, impact, hubs, whatbreaks, dead |
-| **tldr-deep** | Data-flow and slicing | slice, chop, reaching-defs, available, dead-stores |
-| **tldr-audit** | Quality, security, complexity, smells | health, smells, vuln, secure, clones, debt, complexity, cohesion, +18 more |
-| **tldr-fix** | Diagnostics and deterministic repair | bugbot, diagnostics, fix-diagnose, fix-check, fix-apply |
-| **tldr-ops** | Caching, lifecycle, diff, reporting | daemon, warm, cache, change-impact, diff, stats, todo, +others |
-| **tldr-refactor-history** | Git history coupling | temporal, churn, hotspots |
-| **tldr-refactor-oo** | Object-oriented metrics | coupling, inheritance |
-| **tldr-formal-methods** | Contracts, invariants, verify | contracts, invariants, specs, resources, verify |
-| **tldr-api-stability** | API and interface boundaries | api-check, interface, patterns |
-| **tldr-metrics-raw** | Code metrics for CI | loc, halstead, coverage |
-| **tldr-security-taint** | Granular security taint | taint |
+| Skill | Intent it triggers on | Key Commands |
+|-------|----------------------|--------------|
+| **tldr-locate-code** | "Find code I don't already have the name/path for" | search, semantic, similar, dice, context |
+| **tldr-understand-function** | "Tell me about this named function" | definition, explain, extract, context |
+| **tldr-orient-codebase** | "Help me get oriented in this codebase" | tree, structure, extract, importers, imports |
+| **tldr-trace-relationships** | "Trace call/usage/dependency relationships at function level" | calls, references, impact, dead |
+| **tldr-trace-data-flow** | "Trace values, definitions, expressions at variable level" | slice, chop, reaching-defs, available, dead-stores |
+| **tldr-change-impact** | "What will break if I change this?" | change-impact, impact, whatbreaks, diff |
+| **tldr-architecture** | "Map the codebase's structure, layers, and coupling" | hubs, coupling, cohesion, clones, deps, temporal, structure |
+| **tldr-runtime** | "Manage tldr's daemon, cache, and environment" | cache, daemon, warm, stats, doctor |
+| **tldr-fix-and-detect** | "Find bugs or apply deterministic fixes" | bugbot, diagnostics, fix-diagnose, fix-check, fix-apply |
+| **tldr-audit-security** | "Audit for vulnerabilities and security issues" | secure, taint, vuln |
+| **tldr-audit-complexity** | "Measure code complexity and size" | cognitive, complexity, halstead, loc |
+| **tldr-audit-smells** | "Find code smells, debt, and refactor priorities" | smells, debt, hotspots, churn, todo, resources, health |
+| **tldr-audit-coverage** | "Assess test coverage and specification quality" | coverage, contracts, invariants, verify, specs |
+| **tldr-audit-api** | "Audit API design, interfaces, and stability" | api-check, interface, inheritance, patterns, surface |
 
-**Total: 64 active CLI commands** mapped into 14 skills.
+**Total: 64 active CLI commands** mapped into 14 intent-aligned skills. No router — each skill's description self-routes based on user intent.
 
 ---
 
@@ -130,10 +130,20 @@ tldr-agent-skills/
 │   │   └── (mirrors research/tldr/ structure)
 │   ├── tool-combinatorics/        # Layer 3: 16 family-chooser docs
 │   └── agent-skills-authoring/    # Anthropic Agent Skills authoring research
-├── tldr-router/                   # Skill: orchestrator
-├── tldr-overview/                 # Skill: codebase discovery
-├── tldr-search/                   # Skill: code search
-└── ... (11 more tldr-* skill folders)
+├── tldr-locate-code/              # Skill: find code by intent
+├── tldr-understand-function/      # Skill: inspect a known function
+├── tldr-orient-codebase/          # Skill: onboard to a codebase
+├── tldr-trace-relationships/      # Skill: function-level call/usage tracing
+├── tldr-trace-data-flow/          # Skill: variable-level data flow
+├── tldr-change-impact/            # Skill: what breaks if I change this
+├── tldr-architecture/             # Skill: structure, coupling, layers
+├── tldr-runtime/                  # Skill: daemon, cache, environment
+├── tldr-fix-and-detect/           # Skill: detect bugs + deterministic fixes
+├── tldr-audit-security/           # Skill: security audit
+├── tldr-audit-complexity/         # Skill: complexity metrics
+├── tldr-audit-smells/             # Skill: smells, debt, refactor priorities
+├── tldr-audit-coverage/           # Skill: test coverage and specs
+└── tldr-audit-api/                # Skill: API design and stability
 ```
 
 ---

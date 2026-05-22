@@ -11,9 +11,9 @@ Every skill must be its own top-level directory.
 **Correct Layout:**
 ```text
 tldr-agent-skills/
-├── tldr-router/         # Top-level directory for Skill 1
-├── tldr-overview/       # Top-level directory for Skill 2
-├── tldr-fix/            # Top-level directory for Skill 3
+├── tldr-locate-code/         # Top-level directory for Skill 1
+├── tldr-understand-function/ # Top-level directory for Skill 2
+├── tldr-fix-and-detect/      # Top-level directory for Skill 3
 ├── REPOSITORY_STRUCTURE.md
 └── README.md
 ```
@@ -23,7 +23,7 @@ tldr-agent-skills/
 Inside each skill folder, the only strictly required file is `SKILL.md`. However, complex skills can use standardized subdirectories.
 
 ```text
-tldr-fix/
+tldr-fix-and-detect/
 ├── SKILL.md             # REQUIRED: The agent prompt, instructions, and frontmatter
 ├── scripts/             # OPTIONAL: Bash or Python scripts the agent can execute
 │   └── run_fix.sh       
@@ -43,9 +43,9 @@ This must be at the very top of the file. It defines the skill for the CLI.
 
 ```yaml
 ---
-name: tldr-fix
-description: Autonomous repair loop. Diagnoses compiler errors, fixes bugs, and re-runs tests.
-allowed-tools: [Bash, Read, Edit]
+name: tldr-fix-and-detect
+description: Find bugs in code via static analysis OR apply deterministic fixes. Two branches — detection (bugbot, diagnostics) and repair (fix-diagnose, fix-check, fix-apply).
+allowed-tools: [Bash]
 ---
 ```
 *Note: Only list the tools the agent actually needs (`allowed-tools`). Giving a read-only skill the `Edit` tool is an anti-pattern.*
@@ -60,28 +60,28 @@ Keep the body concise (ideally under 200 lines). The body should contain:
 
 ## 4. Implementation Blueprint: The TLDR Suite
 
-Based on our architectural decomposition and empirical research, the repository is structured with 14 specialized skills to accommodate the full `tldr-code` suite:
+Based on our architectural decomposition (see `research/07_SKILL_ARCHITECTURE_DECISION.md`), the repository is structured with 14 **intent-aligned** skills (no router) to accommodate the full `tldr-code` surface. Each skill triggers on a user intent, not on a CLI group.
 
 ```text
 tldr-agent-skills/
 │
-├── tldr-router/               # Orchestrator
-├── tldr-overview/             # L1 AST: tree, structure, extract, imports
-├── tldr-search/               # Semantic: semantic, search, context, similar, dice
-├── tldr-trace/                # L2 Graph: calls, impact, hubs, whatbreaks
-├── tldr-deep/                 # L3-L5 Flow: slice, chop, reaching-defs
-├── tldr-audit/                # Batch QA: health, smells, clones
-├── tldr-fix/                  # Autonomous: fix check, bugbot, diagnostics
-├── tldr-ops/                  # Infrastructure: daemon, warm, change-impact, diff
-├── tldr-refactor-history/     # Git Coupling: temporal, hotspots, churn
-├── tldr-refactor-oo/          # Object-Oriented: coupling, inheritance
-├── tldr-formal-methods/       # Safety Proofs: contracts, invariants, resources
-├── tldr-api-stability/        # API Boundaries: api-check, interface
-├── tldr-metrics-raw/          # CI/CD Reporting: loc, halstead, coverage
-└── tldr-security-taint/       # Granular tracing: taint
+├── tldr-locate-code/          # Find code by name, concept, or pattern (search, semantic, similar, dice, context)
+├── tldr-understand-function/  # Inspect a known function (definition, explain, extract, context)
+├── tldr-orient-codebase/      # Onboard to a codebase (tree, structure, extract, importers, imports)
+├── tldr-trace-relationships/  # Function-level call/usage tracing (calls, references, impact, dead)
+├── tldr-trace-data-flow/      # Variable/expression-level data flow (slice, chop, reaching-defs, available, dead-stores)
+├── tldr-change-impact/        # What breaks if I change this (change-impact, impact, whatbreaks, diff)
+├── tldr-architecture/         # Structure, coupling, layers (hubs, coupling, cohesion, clones, deps, temporal, structure)
+├── tldr-runtime/              # Daemon, cache, environment (cache, daemon, warm, stats, doctor)
+├── tldr-fix-and-detect/       # Detect bugs + deterministic fixes (bugbot, diagnostics, fix-diagnose/check/apply)
+├── tldr-audit-security/       # Security audit (secure, taint, vuln)
+├── tldr-audit-complexity/     # Complexity metrics (cognitive, complexity, halstead, loc)
+├── tldr-audit-smells/         # Smells, debt, refactor priorities (smells, debt, hotspots, churn, todo, resources, health)
+├── tldr-audit-coverage/       # Test coverage and specs (coverage, contracts, invariants, verify, specs)
+└── tldr-audit-api/            # API design and stability (api-check, interface, inheritance, patterns, surface)
 ```
 
-By adhering to this flat, modular structure, you can publish this repository once, and users can selectively install `tldr-fix` or `tldr-api-stability` via `npx skills add` without being forced to download unrelated toolsets.
+By adhering to this flat, modular structure, you can publish this repository once, and users can selectively install `tldr-fix-and-detect` or `tldr-audit-api` via `npx skills add` without being forced to download unrelated toolsets.
 
 ---
 

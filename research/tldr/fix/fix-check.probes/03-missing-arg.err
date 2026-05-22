@@ -1,0 +1,7 @@
+error: the following required arguments were not provided:
+  --test-cmd <TEST_CMD>
+
+Usage: tldr fix check --file <FILE> --test-cmd <TEST_CMD>
+
+For more information, try '--help'.
+exit=2

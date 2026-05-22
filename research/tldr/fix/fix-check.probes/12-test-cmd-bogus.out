@@ -1,0 +1,15 @@
+{
+  "file": "/Users/udhayakumar/Workspace/03-Parcadei-Ecosystem/AIHarnessUtilities/tldr-agent-skills/research/fixtures/fix-check/buggy.py",
+  "test_cmd": "/no/such/command",
+  "attempts": [
+    {
+      "iteration": 1,
+      "error_code": "OSError",
+      "message": "FileNotFoundError in 'unknown()': /no/such/command: No such file or directory. Verify the path or create the file.",
+      "fixed": false,
+      "description": null
+    }
+  ],
+  "final_pass": false,
+  "iterations": 1
+}

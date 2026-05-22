@@ -1,0 +1,15 @@
+{
+  "file": "/Users/udhayakumar/Workspace/03-Parcadei-Ecosystem/AIHarnessUtilities/tldr-agent-skills/research/fixtures/fix-check/buggy.py",
+  "test_cmd": "false",
+  "attempts": [
+    {
+      "iteration": 1,
+      "error_code": "unparseable",
+      "message": "",
+      "fixed": false,
+      "description": null
+    }
+  ],
+  "final_pass": false,
+  "iterations": 1
+}

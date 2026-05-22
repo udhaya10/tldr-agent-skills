@@ -1,0 +1,6 @@
+error: the argument '--file <FILE>' cannot be used multiple times
+
+Usage: tldr fix check [OPTIONS] --file <FILE> --test-cmd <TEST_CMD>
+
+For more information, try '--help'.
+exit=2

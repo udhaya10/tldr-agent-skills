@@ -1,0 +1,1 @@
+cat /Users/udhayakumar/Workspace/03-Parcadei-Ecosystem/AIHarnessUtilities/tldr-agent-skills/research/fixtures/fix-diagnose/error.txt | tldr fix diagnose -s /Users/udhayakumar/Workspace/03-Parcadei-Ecosystem/AIHarnessUtilities/tldr-agent-skills/research/fixtures/fix-diagnose/buggy.py --stdin

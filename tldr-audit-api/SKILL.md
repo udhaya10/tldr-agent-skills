@@ -2,6 +2,14 @@
 name: tldr-audit-api
 description: Audit a codebase's API design — extract the public surface, detect API misuse, map the class hierarchy, or pull out the unwritten conventions an LLM needs to match local style. Reach for this when the question is about INTERFACES, SIGNATURES, INHERITANCE, or DESIGN PATTERNS rather than raw structure. Triggers on "extract the API surface", "extract interfaces", "what does this module expose", "class hierarchy", "inheritance tree", "find API misuse", "API stability check", "design patterns in this code", "extract conventions for LLM onboarding", "is the crypto / HTTP usage correct?".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "api-check, interface, inheritance, patterns, surface"
 ---
 
 # tldr-audit-api

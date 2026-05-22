@@ -2,6 +2,14 @@
 name: tldr-orient-codebase
 description: Orient in an unfamiliar codebase — get the forest-to-leaf tour without a specific target in mind. Reach for this whenever the user wants a tour, onboarding, or general layout discovery rather than locating a specific concept. Replaces hours of grep-and-read with a progressive zoom from filesystem to API surface to dependency edges. Triggers on "I'm new to this codebase", "help me orient", "explore this repo", "what's in this project", "show me the structure", "tour of", "onboarding", "get familiar with", "give me the layout", "where do I start".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "tree, structure, extract, importers, imports"
 ---
 
 # tldr-orient-codebase

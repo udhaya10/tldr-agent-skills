@@ -2,6 +2,14 @@
 name: tldr-audit-security
 description: Audit code for security vulnerabilities — taint-flow scanning, per-function CFG dives, and project-wide categorized vuln reports with SARIF for CI. Reach for this when the user asks for a "security audit", "find vulnerabilities", "scan for security issues", "SQL injection", "XSS", "command injection", "taint analysis", "security review", "is this safe from user input", or wants a CI security gate. NOT a CVE / dependency / supply-chain scanner — for "is requests vulnerable?" or "scan package.json", send the user to pip-audit / npm audit / osv-scanner.
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "secure, taint, vuln"
 ---
 
 # tldr-audit-security

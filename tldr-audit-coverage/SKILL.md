@@ -2,6 +2,14 @@
 name: tldr-audit-coverage
 description: Assess test coverage and specification quality — answer "is this code actually tested or specified?" Reach for this whenever the question is about constraint coverage, contract extraction, behavioral specs, observed invariants, or line-coverage reports — NOT about smells or bugs. Triggers on "test coverage", "is this code tested", "what's not covered", "extract contracts", "find invariants", "test specifications", "verify constraints", "specification coverage", "formal contracts", "what does the test suite prove", "uncovered lines", "pre/post conditions".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "coverage, contracts, invariants, verify, specs"
 ---
 
 # tldr-audit-coverage

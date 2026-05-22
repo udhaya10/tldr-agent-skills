@@ -2,6 +2,14 @@
 name: tldr-architecture
 description: Map a codebase's architecture — structure, layers, coupling, dependencies, duplication, and lifecycle protocols. Reach for this any time you'd otherwise read many files or grep imports to understand how the project is ORGANIZED, what's COUPLED to what, where the BOTTLENECKS live, what's DUPLICATED, or what import/call CYCLES exist. Triggers on "show me the architecture", "what's the structure of this codebase", "map the layers", "show coupling", "show dependencies", "find import cycles", "what depends on what", "find code duplication", "which functions are the choke points", "is this class doing too much", "what's the implicit lifecycle protocol".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "hubs, coupling, cohesion, clones, deps, temporal, structure"
 ---
 
 # tldr-architecture

@@ -2,6 +2,14 @@
 name: tldr-audit-complexity
 description: Measure code complexity and size — cyclomatic, cognitive, Halstead, or raw lines of code, for one function or a whole directory. Reach for this whenever the question is "how complex is this", "find the most complex functions", "what's the cyclomatic/cognitive complexity", "halstead metrics", "lines of code", or "code size". Replaces hand-rolled complexity loops, `wc -l`, and ad-hoc grep counts with one indexed query. Triggers on "find complex functions", "rank functions by complexity", "what's the worst function", "how big is this codebase", "code volume", "vocabulary effort", "predicted bugs".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "cognitive, complexity, halstead, loc"
 ---
 
 # tldr-audit-complexity

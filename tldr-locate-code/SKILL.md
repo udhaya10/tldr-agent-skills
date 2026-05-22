@@ -2,6 +2,14 @@
 name: tldr-locate-code
 description: Locate code in a project — find functions, classes, or symbols you DON'T already have the name or path for. Reach for this ANY TIME you'd otherwise grep or read multiple files to find code. Replaces 3–10 file reads with one indexed query. Triggers on "where is X handled", "find the function that does Y", "is there code like this snippet anywhere", "what implements concept Z", "find similar code to this", "search for", "discover code that does", "find usages of a pattern".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "search, semantic, similar, dice, context"
 ---
 
 # tldr-locate-code

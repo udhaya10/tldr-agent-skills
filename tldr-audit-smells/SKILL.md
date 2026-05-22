@@ -2,6 +2,14 @@
 name: tldr-audit-smells
 description: Find code smells, technical debt, hotspots, and refactor priorities — answer "what should I clean up first" with named anti-patterns, monetizable remediation minutes, churn × complexity bug-risk scores, and resource-leak findings. Reach for this when the question is about code quality, cleanup, refactor backlogs, or where bugs are likely to land. Triggers on "code smells", "what needs cleanup", "technical debt", "refactor priorities", "where are bugs likely", "hotspots", "what's been changing", "resource leaks", "audit code quality", "code health", "what should I clean up first".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "smells, debt, hotspots, churn, todo, resources, health"
 ---
 
 # tldr-audit-smells

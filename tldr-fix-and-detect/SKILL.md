@@ -2,6 +2,14 @@
 name: tldr-fix-and-detect
 description: Find bugs in code or apply deterministic fixes — scan a git diff for pre-commit/PR gates, run installed linters/type-checkers and unify their output, parse raw error text into structured JSON, or try a registry-based auto-fix on a known error pattern. Triggers on "find bugs", "fix this bug", "auto-fix", "lint check", "diagnose errors", "is this code OK", "review uncommitted changes", "pre-commit check", "apply patches", "what's wrong with this file", "parse this error", "loop test until it passes".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "bugbot, diagnostics, fix-diagnose, fix-check, fix-apply"
 ---
 
 # tldr-fix-and-detect

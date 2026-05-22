@@ -2,6 +2,14 @@
 name: tldr-change-impact
 description: Figure out what will break if a change ships — map a git diff to affected tests, walk the reverse call graph from a function to find every caller-of-caller, or auto-dispatch when the target type is ambiguous. Reach for this BEFORE editing a hot symbol, BEFORE merging a PR, or whenever you'd otherwise eyeball "is this safe to change." Triggers on "what will break if I change", "impact of this change", "what tests will be affected", "is it safe to change", "blast radius of this change", "show me what changed between", "diff this against", "what does this PR affect".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "change-impact, impact, whatbreaks, diff"
 ---
 
 # tldr-change-impact

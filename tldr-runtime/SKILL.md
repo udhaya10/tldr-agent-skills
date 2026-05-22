@@ -2,6 +2,14 @@
 name: tldr-runtime
 description: Manage tldr's own infrastructure — the background daemon, on-disk Salsa cache, warmed analysis caches, token-savings telemetry, and environment diagnostics. Reach for this when tldr itself feels slow, when prepping a multi-query session, or when checking whether tldr is installed and routed correctly. NOT for analyzing the user's code — this skill manages tldr's runtime. Triggers on "start the daemon", "warm the cache", "is tldr cached", "tldr is slow", "check tldr environment", "tldr installation", "stats on tldr usage", "token savings", "tldr doctor".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "cache, daemon, warm, stats, doctor"
 ---
 
 # tldr-runtime

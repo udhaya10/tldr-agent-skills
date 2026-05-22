@@ -2,6 +2,14 @@
 name: tldr-trace-relationships
 description: Trace call, usage, and dependency relationships at function level — answer "who calls X", "find all usages of", "trace what depends on", "blast radius", "what is unreachable", "dead code", "find references", "who uses this". Reach for this whenever you have a SYMBOL or FUNCTION NAME in hand and need to know what touches it, who calls it, or whether it's safe to delete. Replaces grep-then-read loops with AST-verified, scope-aware relationship queries. Includes the dead-code discovery workflow (discover candidates with `dead`, then ALWAYS verify each with `references` before deletion).
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "calls, references, impact, dead"
 ---
 
 # tldr-trace-relationships

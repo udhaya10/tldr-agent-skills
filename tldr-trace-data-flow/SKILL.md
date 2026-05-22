@@ -2,6 +2,14 @@
 name: tldr-trace-data-flow
 description: Trace data flow at the variable, line, or expression level INSIDE a single function — answer "what affects this value", "where does this variable come from", "what's on the dependency path between line A and line B", "which assignments are never read", or "is this expression already computed". Reach for this whenever the question is about VALUES, LINES, or DEFINITIONS rather than function-to-function call relationships. Triggers on "trace the data flow", "find unused assignments", "dead store", "common subexpression", "what depends on this line", "reaching definitions", "available expressions", "backward slice", "forward slice", "dependency path between".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "slice, chop, reaching-defs, available, dead-stores"
 ---
 
 # tldr-trace-data-flow

@@ -2,6 +2,14 @@
 name: tldr-understand-function
 description: Inspect a function or file by name (or cursor, or path) — get signature, purity, complexity, callers, callees, file inventory, or a handoff bundle. Reach for this ANY TIME the agent has a known starting point (function name, file path, cursor coordinate) and would otherwise read multiple files to learn what one symbol or file looks like. Triggers on "what does function X do", "tell me about function Y", "show me the signature of", "inspect this function", "is this function safe to refactor", "go to definition", "extract the API of this file", "what's defined in this file", "pack this function for handoff".
 allowed-tools: [Bash]
+compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
+metadata:
+  version: "1.0.0"
+  author: "udhaya10"
+  repository: "udhaya10/tldr-agent-skills"
+  tldr.cli-version: "0.4.0"
+  tldr.research-commit: "a025973"
+  tldr.commands-wrapped: "definition, explain, extract, context"
 ---
 
 # tldr-understand-function

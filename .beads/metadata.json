@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "SKILL",
+  "project_id": "1d9956af-7865-4e19-8786-cfd33b7a96ed"
+}

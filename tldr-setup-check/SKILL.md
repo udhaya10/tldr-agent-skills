@@ -87,23 +87,15 @@ tldr doctor
 - ⚠️ Some languages missing → tldr's `--install` only auto-installs analyzers for 7 of ~15 detected languages (go, kotlin, lua, python, ruby, rust, swift). If the user works in a different language, the analyzer may need manual setup or upstream support
 - 💡 If a language IS installable, suggest: `tldr doctor --install <lang>` (or similar — check `tldr doctor --help` for exact flag)
 
-### Step 5 — Is the daemon running and routing correctly? (performance check)
+### Step 5 — Is the daemon running? (performance check)
 
 ```bash
 tldr daemon status
 ```
 
-- ✅ Daemon running → proceed to verify routing below
-- ❌ Daemon not running → user is paying full cost on every command. **Refer to `tldr-runtime` skill** for the verified launch sequence: `tldr daemon start && tldr warm` (warms 4 caches vs 1 when run without daemon)
-
-**If daemon is running, verify routing is active** — a running daemon can still silently fall back to the direct path if its socket wasn't ready:
-
-```bash
-tldr search "main"
-tldr daemon status
-```
-
-Check the Salsa counters in the second call. **`hits + misses > 0` = routing confirmed.** If both are `0`, the daemon is up but not routing — stop it, restart, re-warm, and re-verify (see `tldr-runtime` → Session startup — verified launch sequence).
+- ✅ Daemon running with non-zero Salsa counters → routing is active, user gets ~35× speedup
+- ✅ Daemon running but Salsa counters are 0/0 → daemon is up but not routing commands (silent fallback to direct path). **Refer to `tldr-runtime` → "Session startup — verified launch sequence"** for the fix
+- ❌ Daemon not running → user is paying full cost on every command. **Refer to `tldr-runtime`** for the verified launch sequence
 
 ### Step 6 — How much has tldr saved? (telemetry)
 

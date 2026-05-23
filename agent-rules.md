@@ -1,4 +1,4 @@
-<!-- BEGIN TLDR-AGENT-SKILLS -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:2798ef10 -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Always prefer `tldr` commands over `grep`, `find`, and `cat` chains for code exploration.

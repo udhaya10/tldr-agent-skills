@@ -103,35 +103,60 @@ tldr stats
 - ✅ Non-trivial token-savings figure → tldr is paying off
 - ⚠️ Empty or zero stats → either the user never used tldr meaningfully, OR the daemon wasn't running during prior commands (telemetry only fires when daemon-routed). If the daemon was off, restart it (see `tldr-runtime`) and the next run will populate stats
 
-### Step 7 — Ensure AGENTS.md has tldr instructions
+### Step 7 — Ensure AGENTS.md has tldr instructions (hash-verified)
 
-This step bootstraps the project's `AGENTS.md` so that future agent sessions always know to use tldr. It runs once and is idempotent — safe to re-run.
+This step bootstraps or updates the project's `AGENTS.md` so that future agent sessions always know to use tldr. Hash-based: re-running is a true no-op when content is current; updates automatically when `agent-rules.md` changes on GitHub.
 
 ```bash
-MARKER="<!-- BEGIN TLDR-AGENT-SKILLS -->"
+MARKER_PREFIX="<!-- BEGIN TLDR-AGENT-SKILLS"
+END_MARKER="<!-- END TLDR-AGENT-SKILLS -->"
 AGENTS_FILE="AGENTS.md"
 RAW_URL="https://raw.githubusercontent.com/udhaya10/tldr-agent-skills/main/agent-rules.md"
 
-SNIPPET=$(curl -sf "$RAW_URL")
-if [ -z "$SNIPPET" ]; then
-  echo "⚠️  Could not fetch tldr agent rules (no network or URL changed). Skipping."
+# Fetch fresh content from GitHub
+FRESH=$(curl -sf "$RAW_URL")
+if [ -z "$FRESH" ]; then
+  echo "⚠️  Could not fetch tldr agent rules (no network). Skipping."
 else
-  if [ -f "$AGENTS_FILE" ] && grep -qF "$MARKER" "$AGENTS_FILE"; then
-    echo "✅ AGENTS.md already has tldr instructions — nothing to do."
+  # Read hash from fetched file's BEGIN marker (set by update_hash.py at publish time)
+  FRESH_HASH=$(echo "$FRESH" | grep -o 'hash:[a-f0-9]*' | cut -d: -f2)
+
+  if [ -f "$AGENTS_FILE" ] && grep -qF "$MARKER_PREFIX" "$AGENTS_FILE"; then
+    # Extract embedded hash from existing AGENTS.md
+    EXISTING_HASH=$(grep -o 'hash:[a-f0-9]*' "$AGENTS_FILE" | cut -d: -f2)
+
+    if [ "$FRESH_HASH" = "$EXISTING_HASH" ]; then
+      echo "✅ AGENTS.md tldr section is up to date (hash: $FRESH_HASH)"
+    else
+      # Replace old block with fresh content using awk
+      TMPFILE=$(mktemp)
+      printf "%s" "$FRESH" > "$TMPFILE"
+      awk -v tmpfile="$TMPFILE" '
+        /<!-- BEGIN TLDR-AGENT-SKILLS/ { skip=1; while ((getline line < tmpfile) > 0) print line; close(tmpfile); next }
+        skip && /<!-- END TLDR-AGENT-SKILLS -->/ { skip=0; next }
+        !skip { print }
+      ' "$AGENTS_FILE" > "$AGENTS_FILE.tmp" && mv -f "$AGENTS_FILE.tmp" "$AGENTS_FILE"
+      rm -f "$TMPFILE"
+      echo "✅ Updated tldr section in AGENTS.md ($EXISTING_HASH → $FRESH_HASH)"
+    fi
   else
+    # First install: create file if needed, then append
     if [ ! -f "$AGENTS_FILE" ]; then
       printf "# Agent Instructions\n\n" > "$AGENTS_FILE"
       echo "ℹ️  Created AGENTS.md"
     fi
-    printf "\n%s\n" "$SNIPPET" >> "$AGENTS_FILE"
-    echo "✅ Injected tldr agent instructions into AGENTS.md"
+    printf "\n%s\n" "$FRESH" >> "$AGENTS_FILE"
+    echo "✅ Injected tldr agent instructions into AGENTS.md (hash: $FRESH_HASH)"
   fi
 fi
 ```
 
-- ✅ "already has tldr instructions" → nothing to do, move on
-- ✅ "Injected tldr agent instructions" → done; future sessions will load this automatically
+- ✅ "up to date" → hashes match, nothing written, move on
+- ✅ "Updated … → …" → stale section replaced with fresh content
+- ✅ "Injected" → first install; future runs will use hash check
 - ⚠️ "Could not fetch" → no network; user can manually copy from [agent-rules.md](https://github.com/udhaya10/tldr-agent-skills/blob/main/agent-rules.md)
+
+**For maintainers**: after editing `agent-rules.md` body, run `python update_hash.py` to recompute and embed the hash before pushing.
 
 ## Underuse detection — symptoms and fixes
 

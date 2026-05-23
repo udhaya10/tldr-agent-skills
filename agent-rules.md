@@ -1,7 +1,17 @@
-<!-- BEGIN TLDR-AGENT-SKILLS hash:2798ef10 -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:a57cc22e -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Always prefer `tldr` commands over `grep`, `find`, and `cat` chains for code exploration.
+
+### Rule: start the daemon at session start
+
+Before running any tldr commands, ensure the daemon is running:
+
+```bash
+tldr daemon start 2>/dev/null || true
+```
+
+The daemon is **per-project** — each project directory gets its own isolated daemon. This command is safe to run unconditionally: if already running it errors silently and exits 0; if not running it starts one. You will get ~35× faster queries once it is up.
 
 ### Rule: use tldr, not bash
 

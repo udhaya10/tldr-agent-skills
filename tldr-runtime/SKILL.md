@@ -68,6 +68,22 @@ tldr daemon notify <FILE>
 
 **Killer detail**: Every subcommand has a different top-level schema — agents schema-validating output must branch on the subcommand name, not assume a single envelope.
 
+**Safe start pattern for scripts and automation**:
+
+`start` is NOT idempotent — it errors if a daemon is already running for the same project. Two safe approaches:
+
+```bash
+# Option 1 — conditional (explicit)
+tldr daemon status | grep -q '"not_running"' && tldr daemon start
+
+# Option 2 — unconditional (simpler, preferred)
+tldr daemon start 2>/dev/null || true
+```
+
+Option 2 is preferred: fewer moving parts, resilient to output format changes.
+
+**One daemon per project**: The daemon is bound to a project directory via a path hash in the socket name. Starting from a different directory starts a separate daemon for that project — they don't conflict. The error only fires when you try to start a second daemon for the **same** project.
+
 **Other footguns**:
 - `stop` is idempotent (exit 0 even when no daemon was running), so scripts can call it without state checks; `start` on an already-running daemon errors with the PID echoed for manual kill
 - `notify <FILE>` enforces a "file must be inside project root" security check (exit 1 otherwise) — prevents the daemon API from being used to probe arbitrary paths
@@ -185,7 +201,7 @@ tldr doctor [--install <LANG>]
 - **Reaching for `tldr cache clear` when you suspect stale cache.** Clear is unconditional, silent, and triggers a ~10× slowdown on every subsequent query while the on-disk store rebuilds. **The right move is `tldr daemon stop && tldr daemon start`** — the in-memory Salsa cache rebuilds without nuking the on-disk store, so the next query is fast instead of cold.
 - **Trusting `tldr cache clear`'s success message.** It returns exit 0 with `"No cache directory found"` on a bad `--project` path — a wrong directory looks identical to a successful wipe. Verify the project path before clearing.
 - **Calling `tldr warm` on a single file.** Warm needs a directory. A file path produces the misleading `"Read-only file system (os error 30)"` because the canonicalize fallback chains into a write attempt at `/`.
-- **Calling `tldr daemon start` twice.** Start on an already-running daemon errors with the PID echoed for manual kill. `stop` is idempotent (exit 0 even when nothing is running) — use `stop` freely in scripts, `start` only after a status check.
+- **Calling `tldr daemon start` twice.** Start on an already-running daemon errors with the PID echoed for manual kill. Use `tldr daemon start 2>/dev/null || true` for idempotent starts in scripts — it silences the error and exits 0 regardless. `stop` is already idempotent; only `start` needs this guard.
 - **Expecting Salsa hit/miss counters from `tldr cache stats` when the daemon is down.** Salsa counters only appear when the daemon is running; otherwise `cache stats` returns only file count and disk bytes. For live Salsa counters, use `tldr daemon status`.
 - **Assuming a single JSON envelope across `daemon` subcommands.** Every subcommand (start, stop, status, list, query, notify) returns a different top-level schema. Schema-validating consumers must branch on subcommand name.
 - **Reading an empty `tldr stats` as "I haven't used tldr much."** Stats only populates when the daemon was running during invocations. An empty payload after a heavy session means the daemon never came up — go fix that (`tldr daemon start`), not your usage habits.

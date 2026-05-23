@@ -47,6 +47,55 @@ The research that informed both the authoring and the ecosystem understanding li
 
 ---
 
+## AGENTS.md auto-distribution
+
+Installing skills via `npx skills add` does not clone the repo — it only delivers `SKILL.md` files. There is no standard mechanism for distributing `AGENTS.md` content the same way.
+
+This repo solves that differently: **`tldr-setup-check` bootstraps `AGENTS.md` at runtime**, the first time any agent invokes the skill in a project. On subsequent runs it detects whether the content is stale and updates automatically.
+
+### How it works
+
+`agent-rules.md` (at the root of this repo) contains the tldr-specific agent instructions wrapped in sentinel markers with an embedded hash:
+
+```
+<!-- BEGIN TLDR-AGENT-SKILLS hash:2798ef10 -->
+...instructions...
+<!-- END TLDR-AGENT-SKILLS -->
+```
+
+When `tldr-setup-check` reaches Step 7, it:
+1. `curl`s `agent-rules.md` from the raw GitHub URL
+2. Reads the hash from the fetched file's BEGIN marker
+3. Compares it against the hash already in the project's `AGENTS.md`
+4. **Hashes match** → no-op, nothing written
+5. **Hashes differ** → replaces only the managed block, surrounding content untouched
+6. **No marker yet** → creates `AGENTS.md` if missing, appends the block (first install)
+
+After the first run, every future agent session loads the tldr instructions automatically via `AGENTS.md` — the skill only needs to fire once.
+
+### Maintainer workflow
+
+When you edit the body of `agent-rules.md`, you must recompute the hash before pushing:
+
+```bash
+# 1. Edit the body between the markers
+vim agent-rules.md
+
+# 2. Recompute and stamp the hash
+python update_hash.py agent-rules.md
+# ✅  agent-rules.md
+#     hash: 2798ef10 → <new-hash>
+
+# 3. Push — the new hash is the source of truth on GitHub
+git add agent-rules.md && git commit -m "..." && git push
+```
+
+`update_hash.py` computes `SHA-256(body)[:4]` (first 4 bytes = 8 hex chars, same algorithm as beads) and stamps it into the BEGIN marker in place. The script takes an optional path argument; it defaults to `agent-rules.md` in the current directory.
+
+Next time any agent runs `tldr-setup-check` in any project, Step 7 will detect the hash mismatch and pull in the updated instructions.
+
+---
+
 ## The 14 Skills
 
 | Skill | Intent it triggers on | Key Commands |

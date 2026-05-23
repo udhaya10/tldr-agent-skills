@@ -170,7 +170,7 @@ tldr stats
 
 **Output**: When populated, JSON with `total_invocations`, `estimated_tokens_saved`, `raw_tokens_total`, `tldr_tokens_total`, and `savings_percent`. When empty, JSON with `message`, a `next_steps` array of exact commands to populate stats, and a `requires` array.
 
-**Killer detail**: Stats only populates when the daemon has been running during commands — without `tldr daemon start` first, the JSONL file at `~/.tldr/stats.jsonl` never gets written and `tldr stats` will return its empty-with-next-steps payload forever. **An empty `stats` after a heavy session is the signal your daemon never came up.**
+**Killer detail**: Stats only populates when commands are successfully routed through the daemon AND written to `~/.tldr/stats.jsonl` by that daemon. Two distinct failure modes produce an empty `stats`: (a) **daemon never started** — fix with `tldr daemon start`; (b) **daemon was running but commands fell back to the direct path** — `try_daemon_route` silently falls back when the socket isn't ready (e.g., race condition on a fresh start), which means commands complete without recording. **Diagnostic: run `tldr daemon status` after starting the daemon and after running analysis — if Salsa hit/miss counters are stuck at 0/0, routing is broken; fix with `tldr daemon stop && tldr daemon start && tldr warm`.**
 
 ---
 
@@ -207,6 +207,7 @@ tldr doctor [--install <LANG>]
 - **Expecting Salsa hit/miss counters from `tldr cache stats` when the daemon is down.** Salsa counters only appear when the daemon is running; otherwise `cache stats` returns only file count and disk bytes. For live Salsa counters, use `tldr daemon status`.
 - **Assuming a single JSON envelope across `daemon` subcommands.** Every subcommand (start, stop, status, list, query, notify) returns a different top-level schema. Schema-validating consumers must branch on subcommand name.
 - **Reading an empty `tldr stats` as "I haven't used tldr much."** Stats only populates when the daemon was running during invocations. An empty payload after a heavy session means the daemon never came up — go fix that (`tldr daemon start`), not your usage habits.
+- **Seeing empty `tldr stats` even with the daemon running and analysis commands already executed.** This means `try_daemon_route` silently fell back to the direct path — no IPC, no stats entry written. Most likely cause: the daemon socket wasn't ready yet (race condition immediately after `daemon start`). Diagnostic: `tldr daemon status` — if `hits` and `misses` are both 0 after running commands, routing never happened. Fix: `tldr daemon stop && tldr daemon start && tldr warm`, then wait for `daemon status` to confirm the socket is up before running analysis. The `warm` call itself does not count as a tracked invocation; only analysis commands do.
 - **Using `tldr doctor` to fix a per-call `diagnostics` failure.** When `tldr diagnostics` exits 60, it already prints the exact install hint for the missing tool. Read that hint first. Reach for `doctor` only when you want the full multi-language status board, or when you want `--install` to run the hint for you (and only for the 7 supported languages).
 - **Using this skill to analyze code.** This skill manages tldr's runtime. For code search, tracing, audit, etc., leave for the appropriate sibling skill.
 

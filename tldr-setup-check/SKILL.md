@@ -122,8 +122,8 @@ else
   FRESH_HASH=$(echo "$FRESH" | grep -o 'hash:[a-f0-9]*' | cut -d: -f2)
 
   if [ -f "$AGENTS_FILE" ] && grep -qF "$MARKER_PREFIX" "$AGENTS_FILE"; then
-    # Extract embedded hash from existing AGENTS.md
-    EXISTING_HASH=$(grep -o 'hash:[a-f0-9]*' "$AGENTS_FILE" | cut -d: -f2)
+    # Extract hash from the TLDR marker line specifically (not any other hash in the file)
+    EXISTING_HASH=$(grep "BEGIN TLDR-AGENT-SKILLS" "$AGENTS_FILE" | grep -o 'hash:[a-f0-9]*' | cut -d: -f2)
 
     if [ "$FRESH_HASH" = "$EXISTING_HASH" ]; then
       echo "✅ AGENTS.md tldr section is up to date (hash: $FRESH_HASH)"

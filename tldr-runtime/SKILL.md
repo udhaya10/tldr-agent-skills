@@ -40,7 +40,13 @@ The discriminator is **which lifecycle stage you're at**, not which output you w
 
 ## Session startup — verified launch sequence
 
-> **Known bug — v0.4.0**: Analysis commands (`search`, `semantic`, `impact`, etc.) bypass `try_daemon_route` entirely and run via the direct path. This means `tldr stats` will always be empty and Salsa counters will not increment after analysis commands. `tldr warm` is the exception — it goes through IPC and does increment counters. This is an upstream bug; track it at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
+> **Known bugs — v0.4.0 (empirically verified):**
+>
+> **Bug 1 — Partial routing.** Only these commands route through the daemon (increment Salsa counters): `tree`, `structure`, `extract`, `calls`, `impact`, `dead`, `imports`, `importers`. These bypass the daemon entirely: `smells`, `complexity`, `context`, `slice`, `search`, `semantic`, and most audit/metric commands.
+>
+> **Bug 2 — Stats recording broken.** Even when commands DO route through the daemon (Salsa counters increment), `~/.tldr/stats.jsonl` is never written. `tldr stats` will always return "No usage recorded yet" in v0.4.0 regardless of daemon state or routing. These are two independent bugs.
+>
+> Track both at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 **Step 1 — Start the daemon (idempotent)**
 ```bash
@@ -198,7 +204,7 @@ tldr stats
 
 **Output**: When populated, JSON with `total_invocations`, `estimated_tokens_saved`, `raw_tokens_total`, `tldr_tokens_total`, and `savings_percent`. When empty, JSON with `message`, a `next_steps` array of exact commands to populate stats, and a `requires` array.
 
-**Killer detail — known bug in v0.4.0**: `tldr stats` will always return empty. Analysis commands (`search`, `semantic`, `impact`, and others) bypass `try_daemon_route` entirely in v0.4.0 — they run via the direct path regardless of daemon state, so `~/.tldr/stats.jsonl` is never written. `tldr warm` is the only command confirmed to route via IPC in this version. **Do not use `tldr stats` as a health signal in v0.4.0 — it will always be empty and is not diagnostic.** Track the upstream fix at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
+**Killer detail — known bug in v0.4.0**: `tldr stats` will always return empty regardless of daemon state. This is a separate bug from routing: even commands that DO route through the daemon (`tree`, `structure`, `extract`, `calls`, `impact`, `dead`, `imports`, `importers` — all confirmed to increment Salsa counters) never write to `~/.tldr/stats.jsonl`. Additionally, `smells`, `complexity`, `context`, `slice`, `search`, `semantic` and most audit/metric commands bypass the daemon entirely (Salsa counters do not increment). **Do not use `tldr stats` as a health signal in v0.4.0 — it will always be empty. Use `tldr daemon status` Salsa counters instead.** Track both bugs at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 ---
 

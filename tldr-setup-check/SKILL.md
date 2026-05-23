@@ -104,7 +104,7 @@ tldr stats
 ```
 
 - ✅ Non-trivial token-savings figure → tldr is paying off
-- ⚠️ Empty stats → **in v0.4.0 this is expected and is a known upstream bug.** Analysis commands bypass `try_daemon_route` entirely — `~/.tldr/stats.jsonl` is never written regardless of daemon state. Do not troubleshoot empty stats in v0.4.0. Track the fix at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
+- ⚠️ Empty stats → **in v0.4.0 this is always expected — two confirmed upstream bugs.** (1) Most commands bypass the daemon (`smells`, `complexity`, `context`, `slice`, `search`, `semantic`, and all audit/metric commands). (2) Even the 8 commands that DO route through the daemon (`tree`, `structure`, `extract`, `calls`, `impact`, `dead`, `imports`, `importers`) never write to `~/.tldr/stats.jsonl`. Do not troubleshoot empty stats in v0.4.0. Use `tldr daemon status` Salsa counters as the routing health signal instead. Track both bugs at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 ### Step 7 — Ensure AGENTS.md has tldr instructions (hash-verified)
 

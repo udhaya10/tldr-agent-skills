@@ -104,7 +104,7 @@ tldr stats
 ```
 
 - ✅ Non-trivial token-savings figure → tldr is paying off
-- ⚠️ Empty or zero stats → two possible causes: (a) daemon was never started before commands ran — fix with `tldr daemon start` then re-run analysis; (b) daemon was running but `try_daemon_route` fell back to the direct path — commands completed without recording. **Distinguish with `tldr daemon status`: if Salsa `hits + misses` are 0 after running commands, routing is broken.** See `tldr-runtime` → Session startup — verified launch sequence for the full fix.
+- ⚠️ Empty stats → **in v0.4.0 this is expected and is a known upstream bug.** Analysis commands bypass `try_daemon_route` entirely — `~/.tldr/stats.jsonl` is never written regardless of daemon state. Do not troubleshoot empty stats in v0.4.0. Track the fix at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 ### Step 7 — Ensure AGENTS.md has tldr instructions (hash-verified)
 

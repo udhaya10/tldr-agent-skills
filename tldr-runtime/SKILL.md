@@ -40,7 +40,7 @@ The discriminator is **which lifecycle stage you're at**, not which output you w
 
 ## Session startup — verified launch sequence
 
-Always run this sequence at the start of a multi-query session. Do not skip the verification step — a daemon that appears up but has a broken socket silently falls back to the direct path, leaving stats empty and caches cold.
+> **Known bug — v0.4.0**: Analysis commands (`search`, `semantic`, `impact`, etc.) bypass `try_daemon_route` entirely and run via the direct path. This means `tldr stats` will always be empty and Salsa counters will not increment after analysis commands. `tldr warm` is the exception — it goes through IPC and does increment counters. This is an upstream bug; track it at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 **Step 1 — Start the daemon (idempotent)**
 ```bash
@@ -52,23 +52,19 @@ tldr daemon start 2>/dev/null || true
 tldr warm .
 ```
 
-**Step 3 — Run one real analysis command to exercise the route**
-```bash
-tldr search "main"
-```
-Use any quick analysis command. This is NOT optional — `tldr warm` itself does not count as a tracked invocation and does not prove routing works.
-
-**Step 4 — Verify routing succeeded**
+**Step 3 — Verify IPC is working (warm's misses are the signal)**
 ```bash
 tldr daemon status
 ```
-Inspect the Salsa counters. **If `hits + misses > 0`, routing is confirmed — proceed with your session.** If both are `0`, the daemon socket wasn't ready; run the recovery sequence below and repeat from Step 3.
+After warm, `misses` should be `> 0` (warm itself routes via IPC). **If `misses > 0`, the daemon socket is live and warm succeeded.** If `misses` is still `0`, the socket isn't ready — run the recovery below and repeat.
 
-**Recovery if Step 4 shows 0/0:**
+> Note: do NOT use analysis commands (e.g. `tldr search`) as the IPC probe — in v0.4.0 they bypass the daemon and will never increment counters regardless of socket state.
+
+**Recovery if Step 3 shows misses = 0:**
 ```bash
 tldr daemon stop && tldr daemon start 2>/dev/null || true && tldr warm .
 ```
-Then repeat Step 3 and Step 4 before continuing.
+Then re-run Step 3 before continuing.
 
 ## Tool reference
 
@@ -202,7 +198,7 @@ tldr stats
 
 **Output**: When populated, JSON with `total_invocations`, `estimated_tokens_saved`, `raw_tokens_total`, `tldr_tokens_total`, and `savings_percent`. When empty, JSON with `message`, a `next_steps` array of exact commands to populate stats, and a `requires` array.
 
-**Killer detail**: Stats only populates when commands are successfully routed through the daemon AND written to `~/.tldr/stats.jsonl` by that daemon. Two distinct failure modes produce an empty `stats`: (a) **daemon never started** — fix with `tldr daemon start`; (b) **daemon was running but commands fell back to the direct path** — `try_daemon_route` silently falls back when the socket isn't ready (e.g., race condition on a fresh start), which means commands complete without recording. **Diagnostic: run `tldr daemon status` after starting the daemon and after running analysis — if Salsa hit/miss counters are stuck at 0/0, routing is broken; fix with `tldr daemon stop && tldr daemon start && tldr warm`.**
+**Killer detail — known bug in v0.4.0**: `tldr stats` will always return empty. Analysis commands (`search`, `semantic`, `impact`, and others) bypass `try_daemon_route` entirely in v0.4.0 — they run via the direct path regardless of daemon state, so `~/.tldr/stats.jsonl` is never written. `tldr warm` is the only command confirmed to route via IPC in this version. **Do not use `tldr stats` as a health signal in v0.4.0 — it will always be empty and is not diagnostic.** Track the upstream fix at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 ---
 
@@ -238,8 +234,7 @@ tldr doctor [--install <LANG>]
 - **Calling `tldr daemon start` twice.** Start on an already-running daemon errors with the PID echoed for manual kill. Use `tldr daemon start 2>/dev/null || true` for idempotent starts in scripts — it silences the error and exits 0 regardless. `stop` is already idempotent; only `start` needs this guard.
 - **Expecting Salsa hit/miss counters from `tldr cache stats` when the daemon is down.** Salsa counters only appear when the daemon is running; otherwise `cache stats` returns only file count and disk bytes. For live Salsa counters, use `tldr daemon status`.
 - **Assuming a single JSON envelope across `daemon` subcommands.** Every subcommand (start, stop, status, list, query, notify) returns a different top-level schema. Schema-validating consumers must branch on subcommand name.
-- **Reading an empty `tldr stats` as "I haven't used tldr much."** Stats only populates when the daemon was running during invocations. An empty payload after a heavy session means the daemon never came up — go fix that (`tldr daemon start`), not your usage habits.
-- **Seeing empty `tldr stats` even with the daemon running and analysis commands already executed.** This means `try_daemon_route` silently fell back to the direct path — no IPC, no stats entry written. Most likely cause: the daemon socket wasn't ready yet (race condition immediately after `daemon start`). Diagnostic: `tldr daemon status` — if `hits` and `misses` are both 0 after running commands, routing never happened. Fix: `tldr daemon stop && tldr daemon start && tldr warm`, then wait for `daemon status` to confirm the socket is up before running analysis. The `warm` call itself does not count as a tracked invocation; only analysis commands do.
+- **Reading an empty `tldr stats` as a configuration problem in v0.4.0.** In v0.4.0, `tldr stats` always returns empty — analysis commands bypass `try_daemon_route` entirely and `stats.jsonl` is never written. This is an upstream bug, not a setup issue. Do not spend time troubleshooting empty stats in v0.4.0.
 - **Using `tldr doctor` to fix a per-call `diagnostics` failure.** When `tldr diagnostics` exits 60, it already prints the exact install hint for the missing tool. Read that hint first. Reach for `doctor` only when you want the full multi-language status board, or when you want `--install` to run the hint for you (and only for the 7 supported languages).
 - **Using this skill to analyze code.** This skill manages tldr's runtime. For code search, tracing, audit, etc., leave for the appropriate sibling skill.
 

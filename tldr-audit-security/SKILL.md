@@ -42,6 +42,8 @@ All three share the **same taint engine underneath** — a finding in `vuln` and
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr secure` — security dashboard, 6 sub-analyses, one JSON
 
 One-shot security dashboard that runs up to six structural analyses (taint, resources, bounds, contracts, behavioral, mutability) over a path and returns a single aggregated findings list with an 11-counter summary.

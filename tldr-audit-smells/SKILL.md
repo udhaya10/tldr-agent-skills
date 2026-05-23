@@ -43,6 +43,8 @@ These seven tools emit **seven genuinely different signals**, not seven views of
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr health` — one-shot multi-analyzer audit dashboard
 
 One-shot code-quality dashboard that runs six sub-analyzers (complexity, cohesion, dead_code, martin, coupling, similarity) concurrently and returns a unified summary.

@@ -52,6 +52,8 @@ If the question is narrower — "is THIS one named function unused?" — skip `d
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr calls` — project-wide forward call graph
 
 Project-wide function-to-function call graph in one shot — every cross-file edge, ready to pipe into Graphviz.

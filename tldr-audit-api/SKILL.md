@@ -47,6 +47,8 @@ This family is **intent-conditional** — there is no single default. The discri
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr api-check` — pattern-based API misuse scanner
 
 Catches classic API misuses — no-timeout HTTP, bare `except`, weak crypto, unclosed files — across 17 languages, each finding shipped with a `fix_suggestion`.

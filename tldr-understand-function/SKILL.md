@@ -48,6 +48,8 @@ The discriminator is **the cardinality of input → output**. That single dimens
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr definition` — go-to-definition for a single symbol
 
 Go-to-definition for a single symbol — by cursor position or by name — returning the binding's file, line, kind, and a builtin marker.

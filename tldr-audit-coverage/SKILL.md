@@ -43,6 +43,8 @@ The discriminator is **where the signal lives**.
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr verify` — constraint-coverage dashboard (meta-aggregator)
 
 Runs `contracts`, `specs`, and optionally `invariants` + `patterns` over a path and reports what percentage of constraint-relevant functions are actually specified.

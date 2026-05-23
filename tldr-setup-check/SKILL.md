@@ -40,6 +40,8 @@ Activate this skill when:
 
 ## Setup checklist — run in order
 
+> **Command guardrail**: Only invoke the exact commands shown in each step below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 Each step is a quick check with concrete interpretation. Stop at the first failure and follow the fix.
 
 ### Step 1 — Is tldr installed?

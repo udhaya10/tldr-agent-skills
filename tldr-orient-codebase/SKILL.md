@@ -60,6 +60,8 @@ What this misses: filesystem surprises (unusual layouts, build artifacts in sour
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr tree` — `.gitignore`-clean recursive file listing
 
 Recursive directory listing that respects `.gitignore` by default and returns structured JSON nodes — no AST, just files.

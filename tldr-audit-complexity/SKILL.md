@@ -42,6 +42,8 @@ The discriminator is **what you already have × which dimension you care about**
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr cognitive` — rank functions by SonarQube cognitive complexity
 
 SonarQube cognitive-complexity scorer that ranks every function in a path by how hard it is for a human to follow, with optional per-line breakdown of which constructs contributed to the score.

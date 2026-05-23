@@ -53,6 +53,8 @@ The discriminator is **the shape of the question**: how many criterion points yo
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr slice` — PDG-based program slice from one line
 
 PDG-based program slice from a single line — the exact set of lines that mathematically affect (backward) or are affected by (forward) the criterion.

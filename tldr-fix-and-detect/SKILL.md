@@ -61,6 +61,8 @@ The first cut is **which branch you're in**. Detection and Repair don't compose 
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr bugbot` — diff-driven bug detector for commit/PR gates
 
 Git-diff-driven bug detector that runs commodity linters (L1) and tldr's own analyses (L2) on uncommitted or staged changes, then gates the commit/CI on findings.

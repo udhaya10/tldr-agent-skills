@@ -71,6 +71,8 @@ For a fresh structural audit on an unfamiliar Python project, `tldr coupling <pr
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr structure` — function/class/import inventory across files
 
 Function, class, and import inventory of a file or directory — tree-sitter parsed, with line numbers, across every source file in the target.

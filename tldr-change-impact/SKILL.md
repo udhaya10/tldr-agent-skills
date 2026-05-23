@@ -48,6 +48,8 @@ The discriminator is **starting point × direction**, not what you want out.
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr change-impact` — git diff → affected tests
 
 Maps a git diff (or explicit file list) to the test files and functions affected by those changes, optionally emitting a runner-ready test command for direct CI integration.

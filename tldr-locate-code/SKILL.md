@@ -42,6 +42,8 @@ The discriminator is **what you already have going in**, not what you want out.
 
 ## Tool reference
 
+> **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.
+
 ### `tldr search` — BM25-ranked code search with function cards
 
 BM25-ranked code search that returns function cards with signatures, callers, callees, and code previews in one shot.

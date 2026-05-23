@@ -38,6 +38,38 @@ The discriminator is **which lifecycle stage you're at**, not which output you w
 
 **When in doubt about a slow query, run `tldr daemon status`** — it shows running state plus live Salsa hits/misses/invalidations/recomputations. That's the diagnostic, not `cache stats` (which only reports on-disk file count without the daemon up).
 
+## Session startup — verified launch sequence
+
+Always run this sequence at the start of a multi-query session. Do not skip the verification step — a daemon that appears up but has a broken socket silently falls back to the direct path, leaving stats empty and caches cold.
+
+**Step 1 — Start the daemon (idempotent)**
+```bash
+tldr daemon start 2>/dev/null || true
+```
+
+**Step 2 — Warm all four caches via IPC**
+```bash
+tldr warm .
+```
+
+**Step 3 — Run one real analysis command to exercise the route**
+```bash
+tldr search "main"
+```
+Use any quick analysis command. This is NOT optional — `tldr warm` itself does not count as a tracked invocation and does not prove routing works.
+
+**Step 4 — Verify routing succeeded**
+```bash
+tldr daemon status
+```
+Inspect the Salsa counters. **If `hits + misses > 0`, routing is confirmed — proceed with your session.** If both are `0`, the daemon socket wasn't ready; run the recovery sequence below and repeat from Step 3.
+
+**Recovery if Step 4 shows 0/0:**
+```bash
+tldr daemon stop && tldr daemon start 2>/dev/null || true && tldr warm .
+```
+Then repeat Step 3 and Step 4 before continuing.
+
 ## Tool reference
 
 > **Command guardrail**: Only invoke the exact subcommands documented below. Do **not** invent or guess command names. If uncertain whether a command exists, run `tldr --help` before proceeding.

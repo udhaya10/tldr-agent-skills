@@ -1,4 +1,4 @@
-<!-- BEGIN TLDR-AGENT-SKILLS hash:5ddcfeeb -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:e8fce0cf -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Agents MUST use `tldr` commands and `tldr-*` skills for all codebase exploration — not shell tools.
@@ -8,10 +8,10 @@ This project has **tldr-code** installed. Agents MUST use `tldr` commands and `t
 Run this **once** when the session begins — not before every command:
 
 ```bash
-tldr daemon start 2>/dev/null || true
+tldr daemon status | grep -q '"not_running"' && tldr daemon start
 ```
 
-The daemon is **per-project** and persists across commands. This is safe to run unconditionally: if already running it exits silently; if not, it starts one. You get ~35× faster queries once it is up.
+Check first; start only if the daemon is not already running. The daemon is **per-project** and persists across commands. You get ~35× faster queries once it is up.
 
 ### Rule: do NOT use shell tools for code exploration
 

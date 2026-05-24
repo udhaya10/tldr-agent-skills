@@ -1,5 +1,9 @@
 # tldr fix apply
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/fix/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Takes a source file and an error text, tries the deterministic-fix registry, and either writes the patched source or emits a structured diagnosis for LLM hand-off.
 
 **Why reach for it**
@@ -16,6 +20,13 @@
 **When NOT to use**
 - Just want the parsed diagnosis without attempting a fix — use `tldr fix diagnose` (exits 0 on Low confidence; apply exits 1)
 - Need to loop test→fix→retest — use `tldr fix check`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr fix apply [OPTIONS] --source <SOURCE>
+tldr fix apply -s <file> -e "NameError: name 'valeu' is not defined. Did you mean: 'value'?"
+tldr fix apply -s <file> --error-file <error.txt>
+```
 
 **Output in plain words**: Default emits a JSON diagnosis `{ language, error_code, message, location?, confidence }`. When a deterministic fix exists, also prints the patched source (or unified diff with `-d`); when it doesn't, stderr says `"No auto-fix available... Escalate to a model."` and exit is 1.
 

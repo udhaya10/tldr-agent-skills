@@ -1,5 +1,9 @@
 # tldr temporal
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Mines method-call sequences across a codebase and reports which methods are typically called before which — the implicit lifecycle protocol the code follows.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Need the call graph (who-calls-whom) rather than call ordering — that's `tldr calls`
 - Per-file resource leak detection — `tldr resources` does CFG-based leak analysis
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr temporal [OPTIONS] <PATH>
+```
+```
+tldr temporal backend/providers                   # PATH required (no default)
+tldr temporal backend/providers --source-lang auto   # default is "python" — pass auto for other languages
+tldr temporal backend/providers --query fetch_historical_data
+```
 
 **Output in plain words**: A `constraints` array of bigrams (each with `before`, `after`, `support`, `confidence`, examples), an optional `trigrams` array for 3-method sequences, and metadata reporting `files_analyzed` and `sequences_extracted`.
 

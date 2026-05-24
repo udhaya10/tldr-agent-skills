@@ -1,5 +1,9 @@
 # tldr stats
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Global usage summary that aggregates token savings across every daemon-tracked tldr invocation, regardless of which project they ran in.
 
 **Why reach for it**
@@ -16,6 +20,19 @@
 **When NOT to use**
 - Per-project or per-daemon cache size — use `tldr cache stats` (on-disk) or `tldr daemon status` (live Salsa counters)
 - Per-command latency breakdown — stats aggregates, it doesn't decompose
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr stats [OPTIONS]
+```
+```
+# P01 — global usage summary (always empty in v0.4.0)
+tldr stats
+# P02 — text format
+tldr stats -f text
+# P09 — json format
+tldr stats -f json
+```
 
 **Output in plain words**: When populated, JSON with `total_invocations`, `estimated_tokens_saved`, `raw_tokens_total`, `tldr_tokens_total`, and `savings_percent`. When empty, JSON with `message`, a `next_steps` array of exact commands to populate stats, and a `requires` array naming the prerequisites.
 

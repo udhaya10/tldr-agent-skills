@@ -1,5 +1,9 @@
 # tldr cohesion
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: LCOM4 analyzer that measures whether the methods inside a single class actually share state — and, when they don't, hands back the exact method groupings to split into.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Need module-level dependency analysis (between classes/files) — that's `tldr coupling`
 - Want generic anti-pattern detection across many smell types — `tldr smells --deep` includes cohesion
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr cohesion [OPTIONS] <PATH>
+```
+```
+tldr cohesion backend/providers/base.py            # single file (PATH required — no default)
+tldr cohesion backend/providers                    # directory
+tldr cohesion backend/providers --include-dunder   # include dunder methods
+```
 
 **Output in plain words**: A `classes[]` array — each entry has `lcom4`, `method_count`, `field_count`, `verdict` (`"cohesive"` or `"split_candidate"`), `components[]` with explicit method/field groupings, and an actionable `split_suggestion` string when applicable — plus a `summary` rollup.
 

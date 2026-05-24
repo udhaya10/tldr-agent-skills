@@ -1,5 +1,9 @@
 # tldr halstead
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Halstead software-science scorer that counts operators and operands per function and derives the classic vocabulary/length/volume/difficulty/effort/bugs/time measures.
 
 **Why reach for it**
@@ -16,6 +20,16 @@
 **When NOT to use**
 - Care about control-flow paths or nesting — use `tldr complexity` (cyclomatic) or `tldr cognitive` (SonarQube)
 - Need a single-function deep dive with daemon caching — `tldr complexity` is the cheap path
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr halstead [OPTIONS] [PATH]
+```
+```
+tldr halstead backend/providers/yahoo.py           # single file
+tldr halstead backend/providers                    # directory
+tldr halstead backend/providers/yahoo.py --function fetch_historical_data --show-operators
+```
 
 **Output in plain words**: JSON `{functions[], violations[], summary, warnings?}`. Each function carries a nested `metrics: {n1, n2, N1, N2, vocabulary, length, volume, difficulty, effort, time, bugs}` plus a `status` of `good`/`warning`/`bad`.
 

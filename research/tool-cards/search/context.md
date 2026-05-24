@@ -1,5 +1,9 @@
 # tldr context
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/search/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Packs an entry function plus its transitive callees into one LLM-ready markdown bundle, sized to drop into a prompt.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 **When NOT to use**
 - Just need raw caller/callee edges — use `tldr calls` and skip the per-node decoration
 - Want deep single-function analysis without the transitive walk — use `tldr explain`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr context [OPTIONS] <ENTRY> [PATH]
+tldr context _to_finite_float backend -l python
+tldr context _to_finite_float backend -l python -f compact
+```
 
 **Output in plain words**: A `RelevantContext` payload listing the entry plus every reachable function within depth, each with signature, file (relative to PATH), line, callees, and complexity. Text format renders the same data as markdown with code-block-wrapped signatures.
 

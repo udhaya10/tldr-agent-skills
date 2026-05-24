@@ -1,5 +1,9 @@
 # tldr semantic
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/search/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Natural-language code search backed by local Arctic embeddings — describe the concept, get the functions that implement it.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Searching by exact symbol, token, or regex — `tldr search` is faster and deterministic
 - Comparing two known fragments — use `tldr dice` (syntactic) or `tldr similar` (semantic, file-anchored)
 - First-time indexing on a huge repo when latency matters — the initial build is seconds-to-minutes
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr semantic [OPTIONS] <QUERY> [PATH]
+tldr semantic "database connection" backend/providers
+tldr semantic "database" backend/providers -n 3
+```
 
 **Output in plain words**: A ranked list of function-level result cards (file, class, function, score, line span, 5-line snippet) plus index metadata: `total_chunks`, `matches_above_threshold`, `cache_hit`, `latency_ms`.
 

@@ -1,5 +1,9 @@
 # tldr debt
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: SQALE technical-debt aggregator that converts every rule violation into estimated remediation minutes and rolls them up per file, per category, and project-wide.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Need per-finding anti-pattern names with line numbers — that's `tldr smells`
 - Want the *bug-risk* signal that combines complexity with how often code changes — `tldr hotspots`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr debt [OPTIONS] [PATH]
+```
+```
+tldr debt backend/providers                        # scan directory (PATH optional, defaults to .)
+tldr debt backend -k 1                             # top 1 item (top-N flag is -k N, not --top N)
+tldr debt backend --category security             # security category filter
+```
 
 **Output in plain words**: A `DebtReport` with per-violation `issues[]` (file, line, element, rule, message, category, debt_minutes), a `--top`-truncated `top_files[]` ranked by total minutes, and a `summary` with totals plus `by_category`, `by_rule`, `by_severity`, `debt_ratio`, `debt_density`.
 

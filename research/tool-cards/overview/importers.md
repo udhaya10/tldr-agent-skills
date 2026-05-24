@@ -1,5 +1,9 @@
 # tldr importers
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/overview/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Reverse module-lookup — finds every file in a path that imports a given module, with the verbatim import line and line number.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Need usages of a *symbol* rather than a *module* — use `tldr references`
 - Want the imports of one specific file — that's the mirror command `tldr imports`
 - Need a full directional dependency graph — use `tldr deps`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr importers [OPTIONS] <MODULE> [PATH]
+tldr importers pandas backend                  # find all files under backend/ that import pandas
+tldr importers pandas backend --limit 1        # cap results to first match
+```
 
 **Output in plain words**: The queried module name, an array of importing files each with their line number and the raw import statement, plus a `total` count that ignores `--limit` truncation.
 

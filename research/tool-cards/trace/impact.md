@@ -1,5 +1,9 @@
 # tldr impact
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/trace/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Recursive reverse call graph for one function — every caller, every caller-of-caller, up to `--depth`, with blast-radius totals.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Want a flat list of EVERY use site (calls, reads, writes, imports) — use `tldr references`
 - Don't know the function name yet — discover it via `tldr search` or `tldr hubs` first
 - The whole project's edges — `tldr calls` (forward) or `tldr hubs` (centrality summary)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr impact [OPTIONS] <FUNCTION> [PATH]
+tldr impact get_db_connection backend                      # P01 — happy path
+tldr impact get_db_connection backend -d 1                 # P08 — depth-limited traversal
+```
 
 **Output in plain words**: JSON `targets` map keyed by `"file:function"` (one symbol can resolve in multiple files), each with `caller_count` and a recursive `callers[]` tree carrying `note` fields that mark when results came from the references-enrichment fallback.
 

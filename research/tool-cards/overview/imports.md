@@ -1,5 +1,9 @@
 # tldr imports
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/overview/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Single-file import lister — returns the typed import statements of one source file.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Need to know *who* imports a module — that's `tldr importers`
 - Need line numbers for the import statements — `tldr imports` does NOT emit them; use `tldr importers <MODULE>` per module to recover locations
 - Need the full file inventory (functions, classes) — use `tldr extract`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr imports [OPTIONS] <FILE>
+tldr imports backend/providers/base.py                  # list imports of one file
+tldr imports backend/providers/base.py --legacy-array   # array output for jq consumers
+```
 
 **Output in plain words**: A wrapper object with the file path, detected language, and an array of imports where each entry carries the module name, optional imported names for `from X import Y` style, an `is_from` flag, and an optional alias.
 

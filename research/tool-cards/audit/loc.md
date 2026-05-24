@@ -1,5 +1,9 @@
 # tldr loc
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Language-aware line-of-code counter that separates code, comments, and blanks, broken down by language, file, or directory.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Need cyclomatic, Halstead, or cognitive complexity — those are dedicated commands, not `loc`
 - Counting just one file's structure — `tldr extract` returns functions+classes+line numbers in one pass
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr loc [OPTIONS] [PATH]
+```
+```
+tldr loc backend/providers/yahoo.py               # single file
+tldr loc backend                                  # directory (PATH defaults to .)
+tldr loc backend --by-file --by-dir               # per-file and per-directory breakdown
+```
 
 **Output in plain words**: A summary block with the eight counts (totals, code, comment, blank, and three percents), a `by_language` object keyed by language name, plus optional `files[]` (with `--by-file`) and `directories[]` (with `--by-dir`) arrays.
 

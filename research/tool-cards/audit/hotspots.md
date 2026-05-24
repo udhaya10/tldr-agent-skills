@@ -1,5 +1,9 @@
 # tldr hotspots
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Adam-Tornhill-style churn × complexity ranker that points to the files (or functions) where bugs cluster — the highest-payoff refactor targets.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Just want raw git frequency without complexity weighting — use `tldr churn`
 - Need the SQALE minutes rollup for cost reporting — use `tldr debt`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr hotspots [OPTIONS] [PATH]
+```
+```
+tldr hotspots                                      # current dir (PATH defaults to .)
+tldr hotspots backend --top 50                    # top 50 hotspots
+tldr hotspots --by-function --top 5               # function-level hotspots
+```
 
 **Output in plain words**: A ranked `hotspots[]` (each with `churn_score`, `complexity_score`, `hotspot_score`, `commit_count`, `complexity`, `knowledge_fragmentation`, `author_count`, `recommendation`), plus a `summary` of corpus stats and `metadata` echoing the `scoring_weights` and algorithm version.
 

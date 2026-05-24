@@ -1,5 +1,9 @@
 # tldr smells
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: AST-based code-smell detector that names the anti-pattern (god class, long method, deep nesting, etc.) with file, line, severity, and optional refactor suggestion.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Want the unwritten *conventions* the code follows rather than its anti-patterns — that's `tldr patterns`
 - Need a single monetizable "how much debt" number — `tldr debt` rolls smells into SQALE minutes
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr smells [OPTIONS] [PATH]
+```
+```
+tldr smells backend/providers                              # scan directory (PATH defaults to .)
+tldr smells backend/providers --deep -s low-cohesion      # low-cohesion requires --deep
+tldr smells backend/providers --suggest                   # include fix suggestions
+```
 
 **Output in plain words**: A `smells[]` array of findings (each with `smell_type` in snake_case, absolute `file` path, `name`, `line`, `reason`, `severity`), plus `by_file` counts keyed by absolute path, a `summary` rollup, and a `warnings[]` advisory nudging toward `--deep` when applicable.
 

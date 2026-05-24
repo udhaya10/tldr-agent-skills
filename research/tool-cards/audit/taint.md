@@ -1,5 +1,9 @@
 # tldr taint
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Per-function CFG/DFG taint-flow tracer that flags dangerous sinks (`sql_query`, `shell_exec`, `file_open`, `code_exec`) and tells the caller, per sink, whether external taint actually reaches them.
 
 **Why reach for it**
@@ -16,6 +20,16 @@
 **When NOT to use**
 - Scanning a project — `taint` is strictly one-FILE-one-FUNCTION; use `tldr vuln` or `tldr secure` for breadth
 - Looking for dangerous APIs regardless of flow — `tldr secure --quick` is the right tool
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr taint [OPTIONS] <FILE> <FUNCTION>
+```
+```
+tldr taint sinks.py vulnerable_sql                 # both FILE and FUNCTION required
+tldr taint sinks.py vulnerable_shell               # another function in same file
+tldr taint sinks.py vulnerable_sql --verbose       # verbose CFG-block output
+```
 
 **Output in plain words**: JSON with `function, tainted_vars (block-id → vars), sources[], sinks[] (each with a `tainted: bool`), flows[], sanitized_vars[]`. The actionable signal is `sinks[*].tainted == true`; treat false-tainted sinks as "API used, no traced flow".
 

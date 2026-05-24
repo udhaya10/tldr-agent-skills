@@ -1,5 +1,9 @@
 # tldr specs
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Mines pytest-style test files for explicit behavioral specifications — `assert ==` pairs, `pytest.raises` blocks, `@parametrize` cases — and groups them by the function under test.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Code patterns (asserts, guards) inside the function body are the source of truth — use `tldr contracts`
 - Numeric/range invariants from observed argument values — `tldr invariants`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr specs [OPTIONS] --from-tests <FROM_TESTS>
+```
+```
+tldr specs --from-tests test_src.py               # --from-tests is mandatory (no positional FILE)
+tldr specs --from-tests tests-dir/                # tests directory accepted
+tldr specs --from-tests test_src.py --function add
+```
 
 **Output in plain words**: A `functions` array, one entry per function-under-test, each with `input_output_specs`, `exception_specs`, and `property_specs`. Summary reports `total_specs`, a `by_type` breakdown, and how many test files/functions were scanned.
 

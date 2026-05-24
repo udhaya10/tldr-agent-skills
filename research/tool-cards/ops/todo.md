@@ -1,5 +1,9 @@
 # tldr todo
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Unified refactor checklist that runs four sub-analyses (dead code, complexity, cohesion, similar) and aggregates the findings into a single prioritized, scored `items[]` list.
 
 **Why reach for it**
@@ -18,6 +22,19 @@
 - Hunting a specific code smell — use `tldr smells`
 - Wanting a single health score — use `tldr health`
 - Wanting churn-weighted priorities — use `tldr hotspots`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr todo [OPTIONS] <PATH>
+```
+```
+# P01 — quick scan of a directory
+tldr todo backend/providers --quick
+# P02 — quick scan of a broader tree
+tldr todo backend --quick
+# P10 — drill into dead-code details
+tldr todo backend/providers --quick --detail dead
+```
 
 **Output in plain words**: JSON with `wrapper: "todo"`, the input `path`, an `items` array of `{category, priority, description, file, line, severity, score}` entries, a `summary` block aggregating sub-analysis counts, and `total_elapsed_ms`.
 

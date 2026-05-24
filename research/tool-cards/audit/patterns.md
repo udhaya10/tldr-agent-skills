@@ -1,5 +1,9 @@
 # tldr patterns
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Convention and design-pattern inferrer — extracts the implicit rules a codebase follows (naming style, error handling, API conventions) and emits them as LLM-ready constraint statements.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Looking for ANTI-patterns rather than conventions — `tldr smells` is the inverse counterpart
 - Want API misuse rules (no-timeout HTTP etc.) rather than codebase conventions — `tldr api-check`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr patterns [OPTIONS] [PATH]
+```
+```
+tldr patterns backend/providers                    # scan directory (PATH defaults to .)
+tldr patterns backend/providers --category naming  # naming patterns only
+tldr patterns backend/providers --min-confidence 0.5
+```
 
 **Output in plain words**: Always-present `{ metadata, conflicts, constraints, naming, import_patterns, type_coverage }` plus conditionally-present `{ error_handling?, api_conventions?, resource_management?, validation? }` blocks. Each conditional block has a `patterns[]` with `pattern_id`, `confidence`, and up to 3 `evidence` examples per pattern.
 

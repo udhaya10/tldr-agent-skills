@@ -1,5 +1,9 @@
 # tldr bugbot
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/fix/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Git-diff-driven bug detector that runs commodity linters (L1) and tldr's own analyses (L2) on uncommitted or staged changes, then gates the commit/CI on findings.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Whole-repo audit, not just the diff — reach for `tldr secure`, `tldr vuln`, or the per-analysis commands directly
 - Working tree isn't a git repo — bugbot shells out to `git diff` and exits 1 with `"Failed to list uncommitted changes"`
 - The goal is to actually FIX something — bugbot only reports; pair with `tldr fix diagnose`/`fix apply` afterward
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr bugbot check [OPTIONS] [PATH]
+tldr bugbot check . --no-tools
+tldr bugbot check . --no-tools --base-ref HEAD~1
+```
 
 **Output in plain words**: A JSON report with the diffed file list (absolute paths), every finding with severity and location, a summary that breaks down L1 vs L2 counts, and `notes: ["no_changes_detected"]` as the canonical "nothing to do" signal when the diff is empty.
 

@@ -1,5 +1,9 @@
 # tldr search
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/search/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: BM25-ranked code search that returns function cards with signatures, callers, callees, and code previews in one shot.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 **When NOT to use**
 - Searching by *meaning* rather than tokens — use `tldr semantic` instead
 - You already know the exact file path — just read the file
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr search [OPTIONS] <QUERY> [PATH]
+tldr search "database" backend
+tldr search "database" backend -k 3
+```
 
 **Output in plain words**: A ranked list of matched functions, each with its signature, file path, line number, who calls it, what it calls, and a code preview. Top-level `total_results` indicates how many matched; branch on this rather than exit code (empty results are exit 0).
 

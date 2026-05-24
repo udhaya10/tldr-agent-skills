@@ -1,5 +1,9 @@
 # tldr definition
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/overview/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Go-to-definition for a single symbol — by cursor position or by name — returning the binding's file, line, kind, and a builtin marker.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Need every function in the file — use `tldr extract`
 - Need depth (purity, complexity, callers) for a named function — use `tldr explain`
 - Looking for *usages* of a known declaration — that's `tldr references`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr definition [OPTIONS] [FILE] [LINE] [COLUMN]
+tldr definition backend/providers/yahoo.py 40 12          # positional: file, line, column
+tldr definition --symbol HistoricalDataProvider --file backend/providers/yahoo.py --project .  # named symbol
+```
 
 **Output in plain words**: A single record describing the symbol (name, kind, builtin flag) plus a definition location with file, line, and column — or no location at all when the symbol is a Python builtin.
 

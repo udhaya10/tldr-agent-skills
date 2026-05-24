@@ -1,5 +1,9 @@
 # tldr verify
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Constraint-coverage dashboard that runs `contracts`, `specs`, and optionally `invariants` + `patterns` over a path and reports what percentage of constraint-relevant functions are actually specified.
 
 **Why reach for it**
@@ -18,6 +22,16 @@
 - Need security findings — use `tldr secure` (security-focused) instead
 - Need general code-quality metrics (complexity, dead code) — that's `tldr health`, not `verify`
 - Need just one sub-analyzer's full detail — call it directly rather than parsing the aggregate
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr verify [OPTIONS] [PATH]
+```
+```
+tldr verify backend/providers --quick             # --quick strongly recommended
+tldr verify backend --quick                       # larger directory
+tldr verify backend/providers --quick --detail contracts
+```
 
 **Output in plain words**: A JSON dashboard with a KEYED `sub_results` object (`contracts`, `specs`, optionally `invariants` and `patterns`), a `summary` block with total spec/contract/invariant counts plus a `coverage` sub-object, and timing/file counts.
 

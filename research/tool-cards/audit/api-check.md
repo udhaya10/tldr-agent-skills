@@ -1,5 +1,9 @@
 # tldr api-check
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Pattern-based API-misuse scanner that catches the classic mistakes — no-timeout HTTP, bare except, weak crypto, unclosed files — across 17 languages, each finding shipped with a `fix_suggestion`.
 
 **Why reach for it**
@@ -18,6 +22,16 @@
 - Need CVE-level dependency vulnerability data — that's `tldr vuln`
 - Want broad taint/dataflow security analysis — `tldr secure` and `tldr taint` cover that ground
 - Want the API surface itself (signatures, classes) rather than misuse — `tldr interface`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr api-check [OPTIONS] <path>
+```
+```
+tldr api-check backend/providers/yahoo.py           # single file
+tldr api-check backend --category security          # security category
+tldr api-check backend/providers -f text            # text output format
+```
 
 **Output in plain words**: An `APICheckReport` with `findings[]` (each with `file`, `line`, `column`, `rule` (id/name/category/severity/description/correct_usage), `api_call`, `message`, `fix_suggestion`, `code_context`), a `summary` with `by_category`/`by_severity`, and top-level mirrors of `total_findings`/`files_scanned`.
 

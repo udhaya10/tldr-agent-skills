@@ -1,5 +1,9 @@
 # tldr resources
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: CFG-based resource lifecycle analyzer — finds leaks, double-closes, and use-after-close bugs in a single file by walking every control-flow path.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Want project-wide method-call sequencing (not just resource lifecycles) — that's `tldr temporal`
 - Looking for security findings (taint, injection) — that's `tldr secure`/`tldr taint`/`tldr vuln`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr resources [OPTIONS] <FILE> [FUNCTION]
+```
+```
+tldr resources backend/providers/yahoo.py                         # whole file (FILE required; do NOT pass a directory)
+tldr resources backend/providers/yahoo.py fetch_historical_data  # optional FUNCTION scopes analysis
+tldr resources backend/providers/yahoo.py --check-all            # all leak checks
+```
 
 **Output in plain words**: A JSON record with `resources[]` (each with `name`, `resource_type`, `line`, `closed`), `leaks[]`, `double_closes[]`, `use_after_closes[]`, plus optional `suggestions[]` and `constraints[]` arrays, and a summary count block.
 

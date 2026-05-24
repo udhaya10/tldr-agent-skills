@@ -1,5 +1,9 @@
 # tldr fix diagnose
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/fix/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Pure error-text parser — takes raw compiler, runtime, or test output and returns a structured `{ error_code, message, location?, confidence }` JSON diagnosis, without attempting any fix.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Want to actually attempt a registry fix — use `tldr fix apply`
 - Want a test → fix → retest loop — use `tldr fix check`
 - Have source files to lint or type-check, not error text — use `tldr diagnostics`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr fix diagnose [OPTIONS] --source <SOURCE>
+tldr fix diagnose -s <file> -e "NameError: name 'valeu' is not defined. Did you mean: 'value'?"
+tldr fix diagnose -s <file> --error-file <error.txt>
+```
 
 **Output in plain words**: A small JSON object naming the language, the parsed error code, a human-readable message with a suggested action, an optional `location: { file, line }` when the error text carries file:line metadata, and a confidence band of Low / Medium / High.
 

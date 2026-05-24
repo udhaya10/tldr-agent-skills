@@ -1,5 +1,9 @@
 # tldr extract
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/overview/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Full structural dump of a single file — every function, class, import, and the intra-file call graph — with line numbers.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Already know the function name and want depth — use `tldr explain`
 - Need cross-file call relationships — use `tldr calls` or `tldr impact`
 - Target is a directory — use `tldr structure` instead (extract rejects dirs with exit 11)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr extract [OPTIONS] <FILE>
+tldr extract backend/db.py                  # full structural dump of one file
+tldr extract backend/db.py -f compact       # compact format output
+```
 
 **Output in plain words**: A typed record per file with the function list (signatures and line numbers), class list with methods, import list, and a `caller → callee` map scoped to that file alone.
 

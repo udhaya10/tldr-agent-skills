@@ -1,5 +1,9 @@
 # tldr cognitive
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: SonarQube cognitive-complexity scorer that ranks every function in a path by how hard it is for a human to follow, with optional per-line breakdown of which constructs contributed to the score.
 
 **Why reach for it**
@@ -16,6 +20,16 @@
 **When NOT to use**
 - Need just the four metrics for ONE function already named — `tldr complexity` is the focused, daemon-cached path
 - Care about token vocabulary / predicted bug count — `tldr halstead` measures a different dimension
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr cognitive [OPTIONS] [PATH]
+```
+```
+tldr cognitive backend/providers/yahoo.py          # single file
+tldr cognitive backend/providers                   # directory
+tldr cognitive backend/providers/yahoo.py --function fetch_historical_data --show-contributors
+```
 
 **Output in plain words**: JSON `{functions[], violations[], summary, warnings?}`. Each function entry carries `cognitive, max_nesting, nesting_penalty, threshold_status` (and `cyclomatic`/`contributors[]` when their flags are set).
 

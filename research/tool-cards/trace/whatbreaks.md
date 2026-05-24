@@ -1,5 +1,9 @@
 # tldr whatbreaks
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/trace/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: One-shot blast-radius wrapper that auto-detects whether the target is a function, file, or module and dispatches to the right sub-analysis.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - You already know it's a function — call `tldr impact <fn>` directly and skip the wrapper overhead
 - You already know it's a module — call `tldr importers <module>` directly
 - Need per-caller detail in text form — text mode is just 4 summary lines; use JSON
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr whatbreaks [OPTIONS] <TARGET> [PATH]
+tldr whatbreaks fetch_historical_data backend -l python    # P01 — function target
+tldr whatbreaks backend/providers/base.py backend -l python --quick  # P15 — file target, quick mode
+```
 
 **Output in plain words**: JSON with `target_type`, `detection_reason`, a `sub_results` object (one entry per dispatched analysis, each in a `{success, data|error, elapsed_ms}` envelope), and a flat `summary` of aggregate counters.
 

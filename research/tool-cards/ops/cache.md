@@ -1,5 +1,9 @@
 # tldr cache
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Inspect or wipe the on-disk Salsa cache; a human-operator command suppressed from agent skills because clearing it triggers a ~10x slowdown on every subsequent query.
 
 **Why reach for it**
@@ -15,6 +19,19 @@
 **When NOT to use**
 - Agent suspects stale cache — restart the daemon instead (`tldr daemon stop && tldr daemon start`) so the Salsa in-memory cache rebuilds without nuking the on-disk store
 - Wanting in-memory Salsa hit/miss counters — those only appear when the daemon is running; otherwise `stats` returns just the disk-file count
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr cache [OPTIONS] <COMMAND>
+```
+```
+# P01 — basic stats
+tldr cache stats
+# P02 — stats scoped to a project path
+tldr cache stats --project .
+# P10 — clear cache for a specific project
+tldr cache clear --project /tmp/test-cache-dir
+```
 
 **Output in plain words**: `stats` reports file count, total bytes, and a human-readable size (plus Salsa hit/miss/invalidation counters only when the daemon is up). `clear` reports files removed and bytes freed, then exits.
 

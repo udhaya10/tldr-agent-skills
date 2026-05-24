@@ -1,5 +1,9 @@
 # tldr available
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/deep/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Available-expressions dataflow — which expressions (e.g., `a + b`, `len(x)`) are already computed and still valid at every program point, with redundant-computation candidates surfaced for CSE.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Question is about variable origins, not expression availability — use `tldr reaching-defs`
 - Working in Python — the AST extractor is conservative on dynamic-typed code; expect mostly empty results
 - Need wasted-assignment detection — use `tldr dead-stores`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr available <file> <function>                         # full per-block availability report
+tldr available <file> <function> --check '<expr>'        # check if specific expression is available
+tldr available <file> <function> --at-line <N>           # filter availability sets to one line
+```
 
 **Output in plain words**: A JSON report with per-block availability sets, the full expression list, a `redundant_computations` array of CSE candidates, or — under a modal flag — a slim envelope shape specific to the query.
 

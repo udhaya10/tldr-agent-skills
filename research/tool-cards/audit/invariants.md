@@ -1,5 +1,9 @@
 # tldr invariants
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Daikon-lite inferencer that watches argument and return values across a test suite and emits the type/range/relation invariants those tests actually establish.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - The codebase has no real test suite, or tests use only generated/random inputs (inferences will be thin or misleading)
 - Need function pre/post inferred from CODE rather than test data — that's `tldr contracts`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr invariants [OPTIONS] --from-tests <FROM_TESTS> <FILE>
+```
+```
+tldr invariants src.py --from-tests test_src.py           # --from-tests is required flag; FILE is required positional
+tldr invariants src.py --from-tests test_src.py --function clamp
+tldr invariants src.py --from-tests tests-dir/            # tests dir accepted
+```
 
 **Output in plain words**: Per-function blocks listing preconditions and postconditions as `Invariant` records with positional variable names (`arg0`, `arg1`, ..., `result`), an `expression` string, `kind` (`type`, `range`, `relation`, etc.), and an observation count. Summary reports total observations and how many test files/functions were scanned.
 

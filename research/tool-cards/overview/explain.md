@@ -1,5 +1,9 @@
 # tldr explain
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/overview/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Deep-dive on one named function — signature, purity, complexity, callers, and callees — consolidated into one report.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Don't know the function name yet — start with `tldr extract` to get the roster
 - Only need the declaration site — `tldr definition` is cheaper
 - Need a single numeric metric — `tldr complexity` is leaner
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr explain [OPTIONS] <FILE> <FUNCTION>
+tldr explain backend/providers/yahoo.py _to_finite_float            # bare function name
+tldr explain backend/providers/yahoo.py YahooProvider.fetch_historical_data  # qualified Class.method
+```
 
 **Output in plain words**: A typed report with the function's location range, signature, purity verdict with effects, complexity numbers, and merged caller/callee lists (external callees marked with a `<external>` sentinel file).
 

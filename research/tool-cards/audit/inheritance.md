@@ -1,5 +1,9 @@
 # tldr inheritance
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Class-hierarchy extractor that maps every parent→child edge — with ABC/Protocol/mixin/diamond detection and a first-class DOT visualization path.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Want intra-class cohesion (do methods share state?) — that's `tldr cohesion`
 - Want generic per-file structural dump including non-class symbols — `tldr structure` or `tldr extract`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr inheritance [OPTIONS] [PATH]
+```
+```
+tldr inheritance backend/providers                 # scan directory
+tldr inheritance backend/providers -f dot          # DOT output (inheritance-specific; pipe to dot -Tsvg)
+tldr inheritance backend/providers --class YahooProvider --depth 1
+```
 
 **Output in plain words**: An `InheritanceReport` with `edges[]` (each `child`, `parent`, file/line refs, `kind`, `external`, `resolution`), `nodes[]`, `roots[]`, `leaves[]`, `count`, and the resolved `languages[]`. With `-f dot`, a `digraph inheritance { rankdir=BT; ... }` with abstract classes styled in lightyellow and external nodes as dashed lightblue ellipses.
 

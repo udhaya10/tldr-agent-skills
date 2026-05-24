@@ -1,5 +1,9 @@
 # tldr similar
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/search/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Embedding-based "find code that does what this code does" search across a project, ranked per destination file by default.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Have a specific candidate pair already — `tldr dice` is the cheaper two-target comparison
 - Need exhaustive project-wide clone enumeration — `tldr clones` is the right unit of inquiry
 - Searching by exact token or name — `tldr search` is deterministic and faster
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr similar [OPTIONS] <FILE>
+tldr similar backend/providers/base.py -p /path/to/project/backend/providers
+tldr similar backend/providers/yahoo.py -F fetch_historical_data -p /path/to/project/backend/providers
+```
 
 **Output in plain words**: By default, a ranked list of destination files with `total_score`, `avg_score`, and `matched_chunks`. With `--function` or `--by-chunk`, a per-chunk report whose `source` block embeds the full query function content.
 

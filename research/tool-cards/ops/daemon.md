@@ -1,5 +1,9 @@
 # tldr daemon
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Lifecycle manager for the background Salsa-cache process that serves daemon-routed analysis commands; six subcommands (start, stop, status, list, query, notify) hidden behind one umbrella.
 
 **Why reach for it**
@@ -16,6 +20,19 @@
 **When NOT to use**
 - Just running a single one-shot analysis — let the analysis command spawn the daemon itself
 - Inspecting on-disk cache size (use `tldr cache stats`, not `daemon status`)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr daemon [OPTIONS] <COMMAND>
+```
+```
+# P01 — check running state
+tldr daemon status
+# P02 — full lifecycle: start, confirm, stop
+tldr daemon start && tldr daemon status && tldr daemon stop
+# P11 — list all running daemons
+tldr daemon list
+```
 
 **Output in plain words**: Each subcommand returns its own JSON shape — `start` emits `pid + socket + message`, `status` emits running-state plus uptime and Salsa counters, `list` emits an array of registered daemons, `notify` reports dirty-file accumulation against a 20-file reindex threshold.
 

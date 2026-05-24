@@ -1,5 +1,9 @@
 # tldr hubs
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/trace/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Top-N most-central functions in the call graph, ranked by a composite of in-degree, out-degree, PageRank, and betweenness.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - You already have a function name and want its neighborhood — use `tldr impact <fn>`
 - Need the full edge list for visualization — use `tldr calls -f dot`
 - Ranking by code complexity, not network position — use `tldr complexity`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr hubs [OPTIONS] [PATH]
+tldr hubs backend/providers -l python                      # P01 — happy path
+tldr hubs backend -l python --algorithm pagerank           # P12 — pagerank centrality
+```
 
 **Output in plain words**: JSON with `hubs[]` (each entry has function ref, composite score, per-algorithm metrics, risk level), `total_nodes`, `measures_used`, and `pagerank_info` when applicable.
 

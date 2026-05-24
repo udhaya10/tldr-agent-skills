@@ -1,5 +1,9 @@
 # tldr vuln
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Project-wide taint-driven vulnerability scanner that categorizes findings into 13 vuln types and 5 severity levels, with first-class SARIF 2.1.0 output for CI code-scanning platforms.
 
 **Why reach for it**
@@ -16,6 +20,16 @@
 **When NOT to use**
 - Need the raw CFG/DFG flow data for a single function — use `tldr taint`
 - Want a unified dashboard across taint + resources + bounds + behavioral + mutability — use `tldr secure`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr vuln [OPTIONS] <PATH>
+```
+```
+tldr vuln backend/providers                       # PATH required (no default)
+tldr vuln sinks.py -f sarif                       # sarif output (vuln-specific)
+tldr vuln backend/providers --severity high       # severity filter
+```
 
 **Output in plain words**: JSON with `findings[]`, a `summary` block of `{total_findings, by_severity, by_type, files_with_vulns}`, plus `scan_duration_ms` and `files_scanned`. Switch to `-f sarif` for the standard schema with `tool.driver.name: "tldr-vuln"`.
 

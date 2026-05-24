@@ -1,5 +1,9 @@
 # tldr contracts
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Pulls implicit pre/post-conditions out of a single function — type hints, isinstance checks, assert statements, raise guards — and tags each with a confidence level.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Need loop or class-level invariants project-wide — that's `tldr invariants`, not function pre/post
 - Want behavioral specs from the test suite — `tldr specs` extracts assert-based input/output pairs
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr contracts [OPTIONS] <FILE> <FUNCTION>
+```
+```
+tldr contracts backend/providers/yahoo.py _to_finite_float            # both FILE and FUNCTION required
+tldr contracts backend/providers/yahoo.py fetch_historical_data       # another function in same file
+tldr contracts backend/providers/yahoo.py fetch_historical_data --limit 1
+```
 
 **Output in plain words**: A JSON record with `preconditions`, `postconditions`, and `invariants` arrays. Each condition carries the variable name (`"return"` for the return value), a human-readable constraint string, the source line, and a confidence string (`"low"`, `"medium"`, `"high"`).
 

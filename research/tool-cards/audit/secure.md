@@ -1,5 +1,9 @@
 # tldr secure
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: One-shot security dashboard that runs up to six structural analyses (taint, resources, bounds, contracts, behavioral, mutability) over a path and returns a single aggregated findings list with an 11-counter summary.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Need per-function flow tracing — use `tldr taint`
 - Need categorized findings by vuln class with SARIF output for code-scanning platforms — use `tldr vuln`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr secure [OPTIONS] <PATH>
+```
+```
+tldr secure backend/providers --quick             # PATH required; --quick strongly recommended
+tldr secure backend/providers --quick -f sarif    # sarif output (secure-specific)
+tldr secure backend/providers --quick --detail taint
+```
 
 **Output in plain words**: JSON with `findings[]` (each `{category, severity, description, file, line}`) and a fixed-shape `summary` block of 11 counters spanning every sub-analysis. Text format renders the same data as a human-readable report.
 

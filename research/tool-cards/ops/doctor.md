@@ -1,5 +1,9 @@
 # tldr doctor
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Environment check for whether the type-checkers and linters that back `tldr diagnostics` are installed on the local system — a human-operator setup command suppressed from agent skills.
 
 **Why reach for it**
@@ -15,6 +19,19 @@
 **When NOT to use**
 - An agent that just hit a `diagnostics` failure — read the exit 60 hint that's already in `tldr diagnostics` output instead
 - Checking whether a specific package is installed — use `which` directly
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr doctor [OPTIONS]
+```
+```
+# P01 — full environment check
+tldr doctor
+# P02 — machine-readable output, quiet
+tldr doctor -f json -q
+# P11 — filter to a specific language
+tldr doctor -l python
+```
 
 **Output in plain words**: JSON object keyed by language name (~15 languages), each with `type_checker` and `linter` sub-objects reporting `installed`, the absolute path when present, and an `install` hint string when missing.
 

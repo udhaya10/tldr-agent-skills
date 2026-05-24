@@ -1,5 +1,9 @@
 # tldr diff
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: AST-aware structural diff between two files (or two directories at file/module/architecture granularity) — understands functions, classes, imports, and architectural layers, not just text.
 
 **Why reach for it**
@@ -17,6 +21,19 @@
 **When NOT to use**
 - Diffing git refs against working tree — use `git diff` or feed change-detection through `tldr change-impact`
 - Finding similar code across one tree — use `tldr clones`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr diff [OPTIONS] <FILE_A> <FILE_B>
+```
+```
+# P01 — function-level diff (default granularity)
+tldr diff backend/providers/yahoo.py backend/providers/dhan.py
+# P02 — directory diff at file granularity
+tldr diff backend/providers backend --granularity file
+# P17 — semantic-only, strips formatting noise
+tldr diff backend/providers/yahoo.py backend/providers/dhan.py --semantic-only
+```
 
 **Output in plain words**: JSON with `file_a`, `file_b`, `identical`, a `changes` array tagging each as insert/delete/update/move/rename/format/extract, a `summary` block of per-type counts, and the `granularity` echoed back. L6/L7/L8 extend the schema with file/module/arch-specific sections.
 

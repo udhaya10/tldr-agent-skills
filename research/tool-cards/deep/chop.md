@@ -1,5 +1,9 @@
 # tldr chop
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/deep/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Two-point program chop — the intersection of `forward_slice(source_line)` and `backward_slice(target_line)`, giving every line on the dependency path from A to B.
 
 **Why reach for it**
@@ -16,6 +20,12 @@
 **When NOT to use**
 - Only have one criterion line — use `tldr slice` (chop with one endpoint is just a slice)
 - Want every use of a variable across the function — `tldr reaching-defs` is variable-centric
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr chop <file> <function> <source_line> <target_line>              # basic chop
+tldr chop <file> <function> <source_line> <target_line> -f text      # text format output
+```
 
 **Output in plain words**: A small JSON record with `lines` (the chop), `path_exists`, `source_line`, `target_line`, the input function name, and an `explanation` string that always carries either a success summary or the failure reason.
 

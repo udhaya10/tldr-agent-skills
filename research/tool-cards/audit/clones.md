@@ -1,5 +1,9 @@
 # tldr clones
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Token-based all-vs-all duplication detector that finds copy-pasted code grep can't catch — different identifiers, different literals, same structure.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Comparing two specific files or functions — `tldr dice` is the pair-target sibling
 - Semantic similarity (different shape, same intent) — `tldr similar` uses embeddings instead of tokens
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr clones [OPTIONS] [PATH]
+```
+```
+tldr clones backend/providers                       # scan directory
+tldr clones backend/providers -f sarif             # sarif output (clones-specific; not available in other audit commands)
+tldr clones backend/providers --threshold 0.5      # lower similarity threshold
+```
 
 **Output in plain words**: A `CloneDetectionReport` with `clone_pairs[]` (each `id`, `clone_type`, `similarity`, two `Fragment`s with file/lines/preview, and `interpretation`), plus `stats`, `config` echo, and triple-mirrored top-level `total_clones`/`files_analyzed` for jq convenience.
 

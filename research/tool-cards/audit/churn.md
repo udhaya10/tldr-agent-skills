@@ -1,5 +1,9 @@
 # tldr churn
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Git-history file-frequency analyzer that returns a structured top-N of the files changing most often over a time window, with line-delta and author rollups.
 
 **Why reach for it**
@@ -17,6 +21,16 @@
 **When NOT to use**
 - Picking refactor targets — `tldr hotspots` multiplies churn by complexity, which is the actual signal you want
 - Need co-change patterns (which files change *together*) — that's `tldr temporal`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr churn [OPTIONS] [PATH]
+```
+```
+tldr churn                                          # current dir (PATH defaults to .)
+tldr churn . --days 1000 --top 50                  # last 1000 days, top 50 files
+tldr churn --authors                               # include author breakdown
+```
 
 **Output in plain words**: A `ChurnReport` with `files[]` ranked descending by `commit_count` (each with `lines_added/deleted/changed`, `first_commit`, `last_commit`, per-file `authors[]`), an optional top-level `authors[]` aggregation, a `summary` of totals, and an `is_shallow` flag.
 

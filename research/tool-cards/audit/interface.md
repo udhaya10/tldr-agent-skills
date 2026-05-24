@@ -1,5 +1,9 @@
 # tldr interface
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Public-API surface extractor — pulls every top-level class, function, method, decorator, and docstring out of a file or directory across 18 languages.
 
 **Why reach for it**
@@ -18,6 +22,16 @@
 - Comparing the surface against a baseline to flag breakage — that's the dedicated job of `tldr api-check` (misuse) plus the surface diff workflow built on this command
 - Need every function including private ones with their full call graph — use `tldr extract`
 - Want the class hierarchy specifically (parents, children, DOT visualization) — `tldr inheritance`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr interface [OPTIONS] <PATH>
+```
+```
+tldr interface backend/providers/base.py           # single file (PATH required — no default)
+tldr interface backend/providers                   # directory
+tldr interface backend/providers -f text           # text output format
+```
 
 **Output in plain words**: For a single file, an OBJECT `{ file, all_exports, functions, classes }` where each class has `name, lineno, bases, methods` and each function carries its signature + docstring. For a directory, an ARRAY of those file-objects. Empty directory returns `[]`.
 

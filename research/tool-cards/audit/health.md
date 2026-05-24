@@ -1,5 +1,9 @@
 # tldr health
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/audit/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: One-shot code-quality dashboard that runs six sub-analyzers (complexity, cohesion, dead_code, martin, coupling, similarity) concurrently and returns a unified summary.
 
 **Why reach for it**
@@ -18,6 +22,16 @@
 - Already know the dimension (just complexity, just cohesion, just dead code) — call the specific tool; health adds latency for analyses you'll ignore
 - Need security findings — health doesn't cover `tldr secure`/`tldr vuln`/`tldr taint`
 - Need constraint/spec coverage — use `tldr verify`, which aggregates a different set (contracts + specs + invariants + patterns)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr health [OPTIONS] [PATH]
+```
+```
+tldr health backend/providers --quick --summary    # recommended: quick mode with summary
+tldr health backend --quick --summary              # larger directory
+tldr health backend/providers --quick --detail complexity
+```
 
 **Output in plain words**: A summary block with files/functions/classes analyzed, average cyclomatic, hotspot counts, dead-code percentage, and (in full mode) coupling/similarity pair counts. `--detail <name>` swaps the summary for one sub-analyzer's full per-item output.
 

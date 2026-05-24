@@ -1,5 +1,9 @@
 # tldr fix check
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/fix/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: End-to-end test → diagnose → apply → retest loop, bounded by `--max-attempts`, returning a structured log of each attempt and whether the test eventually passed.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - The error pattern isn't in the deterministic registry — the loop bails after 1 unparseable attempt regardless of `--max-attempts`
 - One-shot diagnosis is enough — use `tldr fix diagnose` (no test execution)
 - Just trying to detect findings in a diff — use `tldr bugbot` (no test loop, no fix attempts)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr fix check [OPTIONS] --file <FILE> --test-cmd <TEST_CMD>
+tldr fix check --file <buggy.py> --test-cmd 'python -c "import buggy; buggy.compute(5)"'
+tldr fix check --file <buggy.py> -t 'true'
+```
 
 **Output in plain words**: A JSON report with the source file (absolute), the test command verbatim, an `attempts[]` array (each entry has iteration, parsed error code, message, whether a fix was applied, and what it was), a `final_pass` boolean, and the total `iterations` count.
 

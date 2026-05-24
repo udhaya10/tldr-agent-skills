@@ -1,5 +1,9 @@
 # tldr diagnostics
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/fix/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Runs the project's installed type checkers and linters (pyright, ruff, tsc, eslint, clippy, etc.) on a path and normalizes their output into one unified JSON schema.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 - Want to scope to git-changed files only — use `tldr bugbot` (diff-driven) instead
 - Want to PARSE error text a runtime already produced — use `tldr fix diagnose` (text parser, no tool execution)
 - Need taint or vulnerability analysis — use `tldr secure` / `tldr vuln`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr diagnostics [OPTIONS] [PATH]
+tldr diagnostics backend/providers/yahoo.py --timeout 10
+tldr diagnostics backend/providers/yahoo.py --tools ruff --output sarif --timeout 10
+```
 
 **Output in plain words**: A JSON record with the full list of normalized diagnostics (file, line, severity, code, source tool, message, doc URL), a summary by severity, and a `tools_run[]` array showing each tool's name, version, success, duration, and finding count.
 

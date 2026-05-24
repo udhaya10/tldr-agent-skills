@@ -1,5 +1,9 @@
 # tldr warm
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Pre-builds the call graph cache so subsequent analysis commands hit warm caches instead of paying cold-build cost on the first query.
 
 **Why reach for it**
@@ -17,6 +21,19 @@
 - Running a single one-shot query — the underlying command will build only what it needs
 - Wanting to see cache size after warming — use `tldr cache stats`
 - Pointing at a single file — warm needs a directory (it produces a raw OS error for files)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr warm [OPTIONS] [PATH]
+```
+```
+# P01 — warm project root
+tldr warm
+# P02 — warm a specific subdirectory
+tldr warm backend
+# P09 — return immediately, cache builds in background
+tldr warm --background
+```
 
 **Output in plain words**: Three different JSON shapes depending on mode. Cold (no daemon): files, edges, languages, and the relative cache path. `--background`: just a status and "warming in background" message, with the work spawned to a child. Daemon-running: an IPC status message naming the four caches that were warmed.
 

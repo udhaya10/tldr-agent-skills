@@ -109,4 +109,17 @@ The canonical operational rulebook is [`04_PROBE_PROTOCOL.md`](./04_PROBE_PROTOC
 
 Historical journals 01, 02, 03 record how this protocol evolved. Journal 03 establishes the *principle* ("Zero Trust in Documentation"); Journal 04 is the enforceable rulebook.
 
-Templates live in [`_TEMPLATES/`](./_TEMPLATES/) — `dossier.md` (the scaffold to copy), `probe.sh` (regeneratable probe script), `audit.sh` (mechanical compliance check).
+Templates live in [`_TEMPLATES/`](./_TEMPLATES/) — `dossier.md` (the scaffold to copy), `probe.sh` (regeneratable probe script), `audit.sh` (mechanical compliance check), `tool-card.md` (the card scaffold, includes Usage-block guardrail).
+
+## From Dossiers to Skills — the downstream pipeline
+
+Once dossiers exist, [`06_CARDS_AND_COMBINATORICS_PROTOCOL.md`](./06_CARDS_AND_COMBINATORICS_PROTOCOL.md) describes the next two layers:
+
+| Layer | Location | Purpose |
+|-------|----------|---------|
+| **Tool cards** | `tool-cards/<group>/<cmd>.md` | One per command — agent-relevant prose, killer detail, Usage block |
+| **verified-invocations.md** | `tool-cards/<group>/verified-invocations.md` | Per-group canonical `--help` Usage lines + full probe table. **Single source of truth for CLI syntax.** |
+| **Tool combinatorics** | `tool-combinatorics/<lens>.md` | Cross-tool reasoning — when to chain, compare, or choose between sibling tools |
+| **SKILL.md** | `../<skill-name>/SKILL.md` | The live agent skill, authored from cards + combinatorics + verified-invocations |
+
+**Critical authoring rule (discovered 2026-05-24):** Before writing any `Usage:` block in a tool card or SKILL.md, copy the syntax verbatim from the group's `verified-invocations.md`. Never reconstruct from prose — that is how hallucinated flags get introduced. See §16 of [`agent-skills-authoring/02_KEY_INSIGHTS.md`](./agent-skills-authoring/02_KEY_INSIGHTS.md).

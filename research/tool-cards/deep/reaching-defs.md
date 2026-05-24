@@ -1,5 +1,9 @@
 # tldr reaching-defs
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/deep/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Classical reaching-definitions dataflow — for every USE of a variable, the set of DEFs that could be its source, plus per-block GEN/KILL/IN/OUT and a list of potentially uninitialized uses.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 **When NOT to use**
 - Question is about expressions (e.g., is `a + b` already computed?) — use `tldr available` (expression-centric, not variable-centric)
 - Question is "which assignments are wasted?" — use `tldr dead-stores` (the inverse question)
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr reaching-defs <file> <function>                        # full def-use/use-def chains
+tldr reaching-defs <file> <function> --var <name>           # filter to one variable
+tldr reaching-defs <file> <function> --params 'a,b,c'       # suppress false positives on params
+```
 
 **Output in plain words**: A typed report with per-block `gen`/`kill`/`in`/`out` arrays, `def_use_chains` and `use_def_chains` linking definitions to use sites, an `uninitialized` list, and a `statistics` summary.
 

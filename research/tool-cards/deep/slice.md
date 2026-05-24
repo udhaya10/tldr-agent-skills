@@ -1,5 +1,9 @@
 # tldr slice
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/deep/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: PDG-based program slice from a single line — the exact set of lines that mathematically affect (backward) or are affected by (forward) the criterion.
 
 **Why reach for it**
@@ -17,6 +21,13 @@
 **When NOT to use**
 - Want lines BETWEEN two specific points — that's `tldr chop` (intersection of two slices)
 - Question is variable-origin across all uses, not a single line — `tldr reaching-defs` is variable-centric
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```bash
+tldr slice <file> <function> <line>              # backward slice (default)
+tldr slice <file> <function> <line> -d forward   # forward slice
+tldr slice <file> <function> <line> --variable <name>  # narrow to one variable
+```
 
 **Output in plain words**: A list of line numbers in the slice plus a `slice_lines` array with code, definitions, and uses per line; `edges` carries data/control dependency links when the direct-compute path runs.
 

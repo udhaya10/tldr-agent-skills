@@ -1,5 +1,9 @@
 # tldr references
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/trace/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Every use-site of a symbol across the codebase, AST-verified and classified as call/read/write/import/type.
 
 **Why reach for it**
@@ -18,6 +22,13 @@
 - Want recursive callers-of-callers — use `tldr impact <fn>` (this is flat, level-1 only)
 - Want the whole-project edge list — use `tldr calls`
 - Just looking up where a name is declared — use `tldr definition`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr references [OPTIONS] <SYMBOL> [PATH]
+tldr references _to_finite_float backend -l python         # P01 — happy path
+tldr references _to_finite_float backend -l python --kinds call  # P12 — call sites only
+```
 
 **Output in plain words**: JSON with `definitions[]` (all matches), `references[]` (each with `kind`, `confidence`, single-line `context`), `total_references` vs `shown_references`, and a `search_scope` that reports the ACTUAL scope used.
 

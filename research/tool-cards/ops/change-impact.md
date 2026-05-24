@@ -1,5 +1,9 @@
 # tldr change-impact
 
+> **Before writing the Usage block**: check `verified-invocations.md` in this group's
+> `tool-cards/ops/` directory and copy the canonical syntax verbatim.
+> Do NOT reconstruct syntax from prose — that is how hallucinated flags get introduced.
+
 **Pitch**: Maps a git diff (or explicit file list) to the test files and functions affected by those changes, optionally emitting a runner-ready test command for direct CI integration.
 
 **Why reach for it**
@@ -17,6 +21,19 @@
 - Tracing blast radius from a single function — use `tldr impact` (per-symbol, no git involved)
 - Need the test-affected list with full mapping back to which change caused which test — use `tldr whatbreaks`
 - Comparing two specific files structurally — use `tldr diff`
+
+**Usage (copy from `verified-invocations.md` — do not reconstruct)**:
+```
+tldr change-impact [OPTIONS] [PATH]
+```
+```
+# P01 — unstaged changes in current dir
+tldr change-impact
+# P02 — explicit file list
+tldr change-impact -F backend/providers/yahoo.py,backend/providers/dhan.py
+# P09 — diff against a remote branch
+tldr change-impact --base origin/main
+```
 
 **Output in plain words**: JSON with `changed_files`, `affected_tests`, `affected_test_functions`, `affected_functions`, a `detection_method` tag, call-graph metadata, and a status block. With `--runner X` the JSON is replaced by a single runner-formatted command string (empty when nothing is affected).
 

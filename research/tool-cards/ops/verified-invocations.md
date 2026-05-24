@@ -322,6 +322,41 @@ tldr todo [OPTIONS] <PATH>
 
 ---
 
+## `tldr embed`
+
+**Canonical syntax (from `tldr embed --help`):**
+```
+tldr embed [OPTIONS] <PATH>
+```
+
+> **Note**: PATH is required. Generates embeddings used by `tldr semantic` and `tldr similar`.
+> The `--langs` flag accepts file extensions only (e.g., `rs,py`) — NOT language names like `python`.
+> `--langs` is distinct from the global `-l/--lang` flag due to a clap TypeId collision.
+
+| # | Command | Type |
+|---|---------|------|
+| P01 | `tldr embed backend/providers` | happy — directory |
+| P02 | `tldr embed .` | happy-scale — project root |
+| P03 | `tldr embed` | failure — missing path arg |
+| P04 | `tldr embed /no/such/dir` | failure — bad path |
+| P05 | `tldr embed backend/providers -f sarif` | failure — format rejected |
+| P06 | `tldr embed backend/providers -f text` | happy — text format |
+| P07 | `tldr embed backend/providers -f compact` | happy — compact format |
+| P08 | `tldr embed backend/providers -g function` | happy — function granularity (default) |
+| P09 | `tldr embed backend/providers -g file` | happy — file granularity |
+| P10 | `tldr embed backend/providers -g wat` | failure — bad granularity |
+| P11 | `tldr embed backend/providers -m arctic-xs` | happy — small model |
+| P12 | `tldr embed backend/providers -m arctic-m` | happy — default model |
+| P13 | `tldr embed backend/providers -m bogus-model` | failure — invalid model |
+| P14 | `tldr embed backend/providers --langs py` | happy — filter by extension |
+| P15 | `tldr embed backend/providers --langs python` | failure — lang names rejected (use extensions) |
+| P16 | `tldr embed backend/providers --include-vectors` | happy — include raw vectors in output |
+| P17 | `tldr embed backend/providers --no-cache` | happy — bypass embedding cache |
+| P18 | `tldr embed backend/providers -o /tmp/embeddings.json` | happy — output to file |
+| P19 | `tldr embed backend/providers -q` | happy — quiet |
+
+---
+
 ## `tldr warm`
 
 **Canonical syntax (from `tldr warm --help`):**

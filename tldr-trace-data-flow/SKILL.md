@@ -73,7 +73,7 @@ PDG-based program slice from a single line — the exact set of lines that mathe
 
 **Usage**:
 ```bash
-tldr slice -F <file> -F <function> -L <line> [-d backward|forward] [--variable <name>]
+tldr slice <file> <function> <line> [-d backward|forward] [--variable <name>]
 ```
 
 **Output**: A list of line numbers in the slice plus a `slice_lines` array with code, definitions, and uses per line; `edges` carries data/control dependency links when the direct-compute path runs.
@@ -99,7 +99,7 @@ Two-point program chop — the intersection of `forward_slice(source_line)` and 
 
 **Usage**:
 ```bash
-tldr chop -F <file> -F <function> --source-line <A> --target-line <B>
+tldr chop <file> <function> <source_line> <target_line>
 ```
 
 **Output**: A small JSON record with `lines` (the chop), `path_exists`, `source_line`, `target_line`, the input function name, and an `explanation` string that always carries either a success summary or the failure reason.
@@ -130,7 +130,7 @@ Classical reaching-definitions dataflow — for every USE of a variable, the set
 
 **Usage**:
 ```bash
-tldr reaching-defs -F <file> -F <function> [--var <name>] [--line <N>] [--params 'self,a,b']
+tldr reaching-defs <file> <function> [--var <name>] [--line <N>] [--params 'self,a,b']
 ```
 
 **Output**: A typed report with per-block `gen`/`kill`/`in`/`out` arrays, `def_use_chains` and `use_def_chains` linking definitions to use sites, an `uninitialized` list, and a `statistics` summary.
@@ -161,7 +161,7 @@ Available-expressions dataflow — which expressions (e.g., `a + b`, `len(x)`) a
 
 **Usage**:
 ```bash
-tldr available -F <file> -F <function> [--check <expr>] [--at-line <N>] [--killed-by <expr>]
+tldr available <file> <function> [--check <expr>] [--at-line <N>] [--killed-by <expr>]
 ```
 
 **Output**: A JSON report with per-block availability sets, the full expression list, a `redundant_computations` array of CSE candidates, or — under a modal flag — a slim envelope shape specific to the query.
@@ -190,7 +190,7 @@ SSA-based dead-store detector — assignments to variables whose values are neve
 
 **Usage**:
 ```bash
-tldr dead-stores -F <file> -F <function> [--compare]
+tldr dead-stores <file> <function> [--compare]
 ```
 
 **Output**: A report with `dead_stores_ssa` (always populated) and `dead_stores_live_vars` (only when `--compare` is set, otherwise null), each entry naming the variable, its SSA-renamed form, line, and CFG block.

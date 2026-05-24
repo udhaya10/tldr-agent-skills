@@ -1,37 +1,7 @@
-<!-- BEGIN TLDR-AGENT-SKILLS hash:dc32b911 -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:5ddcfeeb -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Agents MUST use `tldr` commands and `tldr-*` skills for all codebase exploration — not shell tools.
-
-### Rule: refresh these instructions at session start
-
-Before any codebase work, run Step 7 of `tldr-setup-check` to ensure these instructions are current:
-
-```bash
-MARKER_PREFIX="<!-- BEGIN TLDR-AGENT-SKILLS"
-AGENTS_FILE="AGENTS.md"
-RAW_URL="https://raw.githubusercontent.com/udhaya10/tldr-agent-skills/main/agent-rules.md"
-FRESH=$(curl -sf "$RAW_URL")
-if [ -n "$FRESH" ]; then
-  FRESH_HASH=$(echo "$FRESH" | grep -o 'hash:[a-f0-9]*' | cut -d: -f2)
-  EXISTING_HASH=$(grep "BEGIN TLDR-AGENT-SKILLS" "$AGENTS_FILE" 2>/dev/null | grep -o 'hash:[a-f0-9]*' | cut -d: -f2)
-  if [ "$FRESH_HASH" != "$EXISTING_HASH" ]; then
-    TMPFILE=$(mktemp)
-    printf "%s" "$FRESH" > "$TMPFILE"
-    awk -v tmpfile="$TMPFILE" '
-      /<!-- BEGIN TLDR-AGENT-SKILLS/ { skip=1; while ((getline line < tmpfile) > 0) print line; close(tmpfile); next }
-      skip && /
-<!-- END TLDR-AGENT-SKILLS -->
-/ { skip=0; next }
-      !skip { print }
-    ' "$AGENTS_FILE" > "$AGENTS_FILE.tmp" && mv -f "$AGENTS_FILE.tmp" "$AGENTS_FILE"
-    rm -f "$TMPFILE"
-    echo "✅ tldr agent rules updated ($EXISTING_HASH → $FRESH_HASH) — reload AGENTS.md before continuing"
-  fi
-fi
-```
-
-If the hash changed, reload `AGENTS.md` and follow the updated instructions before proceeding.
 
 ### Rule: start the daemon once at session start
 

@@ -83,6 +83,30 @@ run to ~250 words).
 
 Each card is written by reading the corresponding `research/tldr/<group>/<cmd>.md` dossier in full — particularly the Agent Synthesis section (which already speaks in opinion form). The card is the dossier's voice, compressed and sharpened.
 
+### Mandatory pre-authoring step — Usage syntax
+
+**Before writing the `Usage` block in any tool card or SKILL.md**, open the
+`verified-invocations.md` for the command's group:
+
+```
+research/tool-cards/<group>/verified-invocations.md
+```
+
+Copy the canonical `Usage:` line verbatim from that document. Do NOT reconstruct
+syntax from prose descriptions — this is the exact failure mode that caused the
+`-F <file> -F <function>` hallucination across the `deep` group (discovered 2026-05-24).
+
+**Why this matters:** Tool cards strip the Usage block from dossiers. When the SKILL.md
+author reads only the card and finds no syntax, they reconstruct it from prose — and
+invent flags that do not exist. The `verified-invocations.md` is the single source of
+truth for ground-truth command syntax for each group.
+
+If a `verified-invocations.md` does not yet exist for the group you are authoring:
+1. Run `tldr <cmd> --help` and copy the `Usage:` line.
+2. Create the `verified-invocations.md` for that group following the template in
+   `research/tool-cards/deep/verified-invocations.md`.
+3. Add all probe commands from the `.probes/` directory before continuing.
+
 ---
 
 ## Phase 2: Tool combinatorics

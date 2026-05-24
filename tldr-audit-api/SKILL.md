@@ -40,7 +40,7 @@ This family is **intent-conditional** — there is no single default. The discri
 **Intent-specific defaults**:
 
 - "Detect API misuse / CI gating" → `tldr api-check --severity high --category crypto,security`
-- "Extract the API surface of a project file/dir for refactor or docs" → `tldr interface`
+- "Extract the API surface of a project file/dir for refactor or docs" → `tldr interface <path>`
 - "Extract the API surface of an installed package" → `tldr surface <package>`
 - "Map the class hierarchy" → `tldr inheritance --class <NAME> -f dot | dot -Tsvg`
 - "Extract codebase conventions for LLM onboarding" → `tldr patterns` (feed `constraints[]` into the system prompt)

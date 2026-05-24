@@ -34,7 +34,7 @@ Two flows share the same toolset. Pick the lens by **how much time the orientati
 
 The textbook progressive-zoom flow: **forest → tree → branch → leaf**. Each step's output feeds the next. Don't skip steps under this lens.
 
-1. **`tldr tree -e <lang>`** — get the file inventory, scoped to one language. Reveals directory layout, `.gitignore`-clean. Confirms what kind of project this is (monorepo, single service, library).
+1. **`tldr tree --ext <lang>`** — get the file inventory, scoped to one language. Reveals directory layout, `.gitignore`-clean. Confirms what kind of project this is (monorepo, single service, library).
 2. **`tldr structure <dir>`** — get the function/class roster across the files identified in step 1. Per-file definition lists with line numbers. This is where the API surface becomes visible.
 3. **`tldr extract <file>`** — for the 3–5 files that look most important from structure (high definition density, or located in `core/`, `lib/`, `services/`, `domain/` paths), get the full intra-file picture including the local call graph.
 4. **`tldr importers <module>` and `tldr imports <file>`** — for the modules that look load-bearing, see the dependency direction. `importers` reveals who depends on this (blast radius if changed); `imports` reveals what it depends on (its own surface area).

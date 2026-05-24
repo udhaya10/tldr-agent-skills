@@ -159,6 +159,42 @@ Provide input → output pairs.
 
 ---
 
+## CLI Syntax Integrity — verified-invocations protocol
+
+### 16. Never reconstruct CLI syntax from prose — use verified-invocations.md
+
+**Root cause of hallucinated flags**: When a tool card or SKILL.md describes what a command does in prose but omits the exact `--help` Usage line, an LLM author will reconstruct the syntax from the description. This produces plausible-looking but wrong invocations — flags that don't exist, wrong argument ordering, or wrong subcommand forms.
+
+**Example failure**: The deep group's `tldr slice -F <file> -F <function>` was invented from prose. The real Usage is `tldr slice [OPTIONS] <FILE> <FUNCTION>` (positional arguments, no `-F` flag).
+
+**The fix**: Per-group `verified-invocations.md` files live at:
+```
+research/tool-cards/<group>/verified-invocations.md
+```
+Each file records:
+1. The canonical `--help` Usage line (copied verbatim from the CLI)
+2. A full probe table: every tested invocation, marked `happy` (verified) or `failure` (documented error case)
+
+**Rule**: Before writing any `Usage:` block in a tool card or SKILL.md, open the group's `verified-invocations.md` and **copy the syntax verbatim**. Do NOT reconstruct from prose.
+
+**Groups and their verified-invocations files**:
+
+| Group | File |
+|-------|------|
+| deep | `research/tool-cards/deep/verified-invocations.md` |
+| overview | `research/tool-cards/overview/verified-invocations.md` |
+| search | `research/tool-cards/search/verified-invocations.md` |
+| trace | `research/tool-cards/trace/verified-invocations.md` |
+| fix | `research/tool-cards/fix/verified-invocations.md` |
+| ops | `research/tool-cards/ops/verified-invocations.md` |
+| audit | `research/tool-cards/audit/verified-invocations.md` |
+
+**Watch-out**: `tldr similar -F` is NOT hallucinated — `-F` is the real `--function` short flag in that command. Check the verified file before flagging a false positive.
+
+**Value to us: 🟢 HIGH (critical).** This is the single most important authoring guard we have. Hallucinated flags cause silent failures or wrong results at runtime. Every SKILL.md Usage block must trace back to a verified probe.
+
+---
+
 ## Development methodology
 
 ### 16. Build evaluations FIRST

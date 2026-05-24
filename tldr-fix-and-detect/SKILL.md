@@ -80,7 +80,7 @@ Git-diff-driven bug detector that runs commodity linters (L1) and tldr's own ana
 
 **Usage**:
 ```bash
-tldr bugbot [check] [--base-ref <ref>] [--staged] [--output json|sarif] [path]
+tldr bugbot check [--base-ref <ref>] [--staged] [-f text|compact] [path]
 ```
 
 **Output**: A JSON report with the diffed file list (absolute paths), every finding with severity and location, a summary that breaks down L1 vs L2 counts, and `notes: ["no_changes_detected"]` as the canonical "nothing to do" signal when the diff is empty.
@@ -192,7 +192,7 @@ End-to-end test → diagnose → apply → retest loop, bounded by `--max-attemp
 
 **Usage**:
 ```bash
-tldr fix check --file <source> --test "<shell-command>" [--max-attempts <N>] [--format compact|json]
+tldr fix check --file <source> --test-cmd "<shell-command>" [--max-attempts <N>] [--format compact]
 ```
 
 **Output**: A JSON report with the source file (absolute), the test command verbatim, an `attempts[]` array (each entry has iteration, parsed error code, message, whether a fix was applied, and what it was), a `final_pass` boolean, and the total `iterations` count.

@@ -63,7 +63,7 @@ Runs `contracts`, `specs`, and optionally `invariants` + `patterns` over a path 
 
 **Usage**:
 ```bash
-tldr verify <path> [-l <lang>] [--quick] [--include-invariants] [--include-patterns]
+tldr verify <path> [-l <lang>] [--quick]
 ```
 
 **Output**: A JSON dashboard with a keyed `sub_results` object (`contracts`, `specs`, optionally `invariants` and `patterns`), a `summary` block with total spec/contract/invariant counts plus a `coverage` sub-object, and timing/file counts.
@@ -121,7 +121,7 @@ Pulls implicit pre/post-conditions out of a single function — type hints, isin
 
 **Usage**:
 ```bash
-tldr contracts <file> [--function <name>] [--limit <N>] [--min-confidence low|medium|high]
+tldr contracts <file> <function> [--limit <N>] [--min-confidence low|medium|high]
 ```
 
 **Output**: A JSON record with `preconditions`, `postconditions`, and `invariants` arrays. Each condition carries the variable name (`"return"` for the return value), a human-readable constraint string, the source line, and a confidence string (`"low"`, `"medium"`, `"high"`).
@@ -175,7 +175,7 @@ Watches argument and return values across a test suite and emits the type/range/
 
 **Usage**:
 ```bash
-tldr invariants --from-tests <test-dir> --source <src-file> [--function <name>]
+tldr invariants <file> --from-tests <test-dir-or-file> [--function <name>]
 ```
 
 **Output**: Per-function blocks listing preconditions and postconditions as `Invariant` records with positional variable names (`arg0`, `arg1`, ..., `result`), an `expression` string, `kind` (`type`, `range`, `relation`, etc.), and an observation count. Summary reports total observations and how many test files/functions were scanned.

@@ -88,7 +88,7 @@ Natural-language code search backed by local Arctic embeddings — describe the 
 
 **Usage**:
 ```bash
-tldr semantic "<natural language query>" [path] [--langs py,rs,ts] [-k <max>] [-t <threshold>]
+tldr semantic "<natural language query>" [path] [--langs py,rs,ts] [-n <max>] [-t <threshold>]
 ```
 
 **Output**: A ranked list of function-level result cards (file, class, function, score, line span, 5-line snippet) plus index metadata (`total_chunks`, `matches_above_threshold`, `cache_hit`, `latency_ms`).
@@ -168,7 +168,7 @@ Packs an entry function plus its transitive callees into one LLM-ready markdown 
 
 **Usage**:
 ```bash
-tldr context <entry-function> [path] [-l <lang>] [-d <depth>] [--include-docstrings] [-f text|json|compact]
+tldr context <entry-function> [path] [-l <lang>] [-d <depth>] [--include-docstrings] [-f text|compact]
 ```
 
 **Output**: A `RelevantContext` payload listing the entry plus every reachable function within depth, each with signature, file (relative to PATH), line, callees, and complexity. Text format renders the same data as markdown with code-block-wrapped signatures.

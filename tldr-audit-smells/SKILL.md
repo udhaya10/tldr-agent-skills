@@ -130,7 +130,7 @@ SQALE technical-debt aggregator that converts every rule violation into estimate
 
 **Usage**:
 ```bash
-tldr debt <directory> [--category <cat>] [--hourly-rate <N>] [--top <N>]
+tldr debt [path] [--category <cat>] [--hourly-rate <N>] [-k <N>]
 ```
 
 **Output**: A `DebtReport` with per-violation `issues[]` (file, line, element, rule, message, category, debt_minutes), a `--top`-truncated `top_files[]` ranked by total minutes, and a `summary` with totals plus `by_category`, `by_rule`, `by_severity`, `debt_ratio`, `debt_density`.

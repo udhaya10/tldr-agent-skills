@@ -75,6 +75,8 @@ After the first run, every future agent session loads the tldr instructions auto
 
 ### Maintainer workflow
 
+> Full pipeline documented in [MAINTAINER_WORKFLOW.md](MAINTAINER_WORKFLOW.md).
+
 When you edit the body of `agent-rules.md`, you must recompute the hash before pushing:
 
 ```bash

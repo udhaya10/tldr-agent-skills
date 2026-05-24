@@ -220,6 +220,11 @@ __marimo__/
 # Conversations (local only)
 conversations/
 
+# tldr runtime cache (machine-local, changes on every query)
+.tldr/cache/
+.DS_Store
+.firecrawl/
+
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db

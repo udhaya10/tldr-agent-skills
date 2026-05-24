@@ -96,7 +96,7 @@ bd close <id>         # Complete work
 - If push fails, resolve and retry until it succeeds
 <!-- END BEADS INTEGRATION -->
 
-<!-- BEGIN TLDR-AGENT-SKILLS hash:f39b7c01 -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:5ddcfeeb -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Agents MUST use `tldr` commands and `tldr-*` skills for all codebase exploration — not shell tools.
@@ -129,6 +129,18 @@ The daemon is **per-project** and persists across commands. This is safe to run 
 
 **Why**: tldr is AST-based (not regex), token-efficient (replaces 3–10 file reads with one query), and ~35× faster when the daemon is warm.
 
+### Required routing — intent to skill
+
+When the user's request matches any of these intents, load the corresponding skill first:
+
+| User intent | Load this skill |
+|---|---|
+| "Explore the repo" / "orient me" / "give me a tour" | `tldr-orient-codebase` |
+| "Find where X is" / "locate this feature/symbol/concept" | `tldr-locate-code` |
+| "Explain this function/file" / "understand X" | `tldr-understand-function` |
+| "Map the architecture" / "show dependencies/coupling" | `tldr-architecture` |
+| "Who calls X?" / "show callers/usages/relationships" | `tldr-trace-relationships` |
+
 ### Allowed exceptions
 
 Shell tools are permitted **only** when:
@@ -137,6 +149,8 @@ Shell tools are permitted **only** when:
 2. Running validation commands — tests, lint, typecheck, build.
 3. `tldr` is unavailable or a `tldr` command fails — say so explicitly before falling back.
 4. Applying or verifying an edit in a single already-identified file.
+
+If using an exception, keep it narrow. Do not use shell tools for broad exploration.
 
 ### Available skills — pick by intent
 

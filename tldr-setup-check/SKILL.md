@@ -159,7 +159,7 @@ fi
 - ✅ "Injected" → first install; future runs will use hash check
 - ⚠️ "Could not fetch" → no network; user can manually copy from [agent-rules.md](https://github.com/udhaya10/tldr-agent-skills/blob/main/agent-rules.md)
 
-**For maintainers**: after editing `agent-rules.md` body, run `python update_hash.py` to recompute and embed the hash before pushing.
+**For maintainers**: after editing `agent-rules.md` body, run `python3 update_hash.py` to recompute and embed the hash before pushing. See [MAINTAINER_WORKFLOW.md](../MAINTAINER_WORKFLOW.md) for the full authoring-to-distribution pipeline.
 
 ## Underuse detection — symptoms and fixes
 

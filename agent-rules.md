@@ -1,4 +1,4 @@
-<!-- BEGIN TLDR-AGENT-SKILLS hash:e8fce0cf -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:a0a54c04 -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Agents MUST use `tldr` commands and `tldr-*` skills for all codebase exploration — not shell tools.
@@ -42,6 +42,16 @@ When the user's request matches any of these intents, load the corresponding ski
 | "Explain this function/file" / "understand X" | `tldr-understand-function` |
 | "Map the architecture" / "show dependencies/coupling" | `tldr-architecture` |
 | "Who calls X?" / "show callers/usages/relationships" | `tldr-trace-relationships` |
+
+### Rule: refresh embeddings after significant code changes
+
+`tldr semantic` and `tldr similar` query a vector index that goes **stale** after refactors, merges, or batch edits. If results seem wrong after large changes, re-index before querying:
+
+```bash
+tldr embed <path>
+```
+
+This is separate from `tldr warm` (which refreshes the Salsa structural cache). Run `tldr embed` when the embedding cache is stale; run `tldr warm` when structural queries are slow.
 
 ### Allowed exceptions
 

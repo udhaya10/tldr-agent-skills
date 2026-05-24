@@ -9,7 +9,7 @@ metadata:
   repository: "udhaya10/tldr-agent-skills"
   tldr.cli-version: "0.4.0"
   tldr.research-commit: "a025973"
-  tldr.commands-wrapped: "search, semantic, similar, dice, context"
+  tldr.commands-wrapped: "search, semantic, similar, dice, context, embed"
 ---
 
 # tldr-locate-code
@@ -37,6 +37,7 @@ The discriminator is **what you already have going in**, not what you want out.
 | One example function or file | Other functions/files that are like it | `tldr similar` |
 | Two specific functions or files | A single number scoring how alike they are | `tldr dice` |
 | A function name + its callees as one bundle | An LLM-ready markdown pack to hand to another model | `tldr context` |
+| Stale or cold vector index before semantic/similar | Pre-generate embeddings so queries return current results | `tldr embed` |
 
 **Default: `tldr search` first, always — if you have any token to anchor on.** It's the cheapest, fastest, most deterministic. Sub-second on most repos, no model inference, no embedding cache to warm. Escalate only when search returns empty AND you genuinely have no shared vocabulary with the codebase.
 
@@ -126,6 +127,41 @@ tldr similar <file> [-F <function>] [-n <top>] [-t <threshold>] [-p <ABSOLUTE_PA
 
 ---
 
+### `tldr embed` — refresh the vector embedding cache
+
+Pre-generates and caches code embeddings for a path — warming the vector index that `tldr semantic` and `tldr similar` query at runtime.
+
+**Why reach for it**:
+- `tldr semantic` and `tldr similar` embed on demand the first time, but those embeddings go **stale** after significant code changes — refactors, merges, or generated-code updates
+- Re-running `tldr embed <path>` after changes is the only way to keep semantic/similar results accurate; they will otherwise keep returning results based on the pre-change snapshot
+- `--include-vectors` exports raw float32 vectors for external tooling (custom search, clustering)
+- Granularity knob (`-g file|function`) controls embedding unit; `function` (default) gives more precise similar/semantic results
+
+**When to use**:
+- After a significant refactor, merge, or batch of file changes — before running `tldr semantic` or `tldr similar` on affected paths
+- Cold-starting a new repo or CI pipeline where no embedding cache exists yet
+- Exporting vectors for external tooling (`--include-vectors -o embeddings.json`)
+
+**When NOT to use**:
+- About to run a single one-off semantic/similar query — those embed on demand; the overhead is only painful at scale
+- Looking for code by keyword, token, or regex — use `tldr search` which needs no embeddings
+- Warming the Salsa structural cache (used by tree, structure, calls, etc.) — that's `tldr warm` in `tldr-runtime`
+
+> **Two caches, two commands**: `tldr warm` handles the Salsa structural cache. `tldr embed` handles the vector embedding cache. They are completely independent — running one does NOT warm the other.
+
+**Usage**:
+```bash
+tldr embed <path>                                         # function granularity, arctic-m (defaults)
+tldr embed <path> -g file -m arctic-xs                   # file chunks, smaller model
+tldr embed <path> --include-vectors -o embeddings.json   # export raw vectors
+```
+
+**Output**: A JSON report with chunk count, model used, granularity, and cache status. With `--include-vectors`, each chunk carries its float vector.
+
+**Killer detail**: `--langs` accepts comma-separated file **extensions** (`py,rs,ts`), NOT language names — passing `--langs python` silently drops the filter and embeds all files. Always verify with `--langs py` style.
+
+---
+
 ### `tldr dice` — pairwise similarity score
 
 One-shot syntactic similarity score between two code fragments, returning a Dice coefficient and a clone-type bucket.
@@ -181,6 +217,7 @@ tldr context <entry-function> [path] [-l <lang>] [-d <depth>] [--include-docstri
 
 ## Common mistakes
 
+- **Running `tldr semantic` or `tldr similar` on a heavily-edited codebase without re-embedding first.** The vector cache is built once and goes stale after refactors or merges. Unexpected results ("why didn't it find X?") after large code changes almost always trace to a stale embedding index — run `tldr embed <path>` before querying. This is distinct from `tldr warm`, which refreshes the Salsa structural cache, not the vector cache.
 - **Reaching for `tldr semantic` first because it sounds smarter.** Semantic is slower, less deterministic, and worse than search whenever any shared vocabulary exists. Use semantic only when query terms genuinely don't appear in the codebase ("billing logic" might map to `ChargeProcessor.run`).
 - **Reaching for the wrong skill entirely.** If you ALREADY have a function name (not just an intent), `tldr-understand-function` is usually the right skill — running search/semantic to find code you already know about wastes the call. If you have a known symbol and want every USE site, `tldr-trace-relationships` is the right skill (search returns ranked function cards, not a flat use-site list).
 - **Using `tldr similar` with relative `-p`.** Always pass absolute paths or omit `-p` entirely. The smart-path fallback only kicks in for the literal default `.`; any other relative path returns "no indexed chunks found."

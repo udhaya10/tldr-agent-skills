@@ -1,28 +1,44 @@
-<!-- BEGIN TLDR-AGENT-SKILLS hash:a57cc22e -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:f39b7c01 -->
 ## tldr-code — Code Exploration Rules
 
-This project has **tldr-code** installed. Always prefer `tldr` commands over `grep`, `find`, and `cat` chains for code exploration.
+This project has **tldr-code** installed. Agents MUST use `tldr` commands and `tldr-*` skills for all codebase exploration — not shell tools.
 
-### Rule: start the daemon at session start
+### Rule: start the daemon once at session start
 
-Before running any tldr commands, ensure the daemon is running:
+Run this **once** when the session begins — not before every command:
 
 ```bash
 tldr daemon start 2>/dev/null || true
 ```
 
-The daemon is **per-project** — each project directory gets its own isolated daemon. This command is safe to run unconditionally: if already running it errors silently and exits 0; if not running it starts one. You will get ~35× faster queries once it is up.
+The daemon is **per-project** and persists across commands. This is safe to run unconditionally: if already running it exits silently; if not, it starts one. You get ~35× faster queries once it is up.
 
-### Rule: use tldr, not bash
+### Rule: do NOT use shell tools for code exploration
 
-| Instead of this | Use this |
+**Do not use** `rg`, `grep`, `find`, `cat`, `sed`, `awk`, or `ls -R` to explore the repository when a `tldr` command or `tldr-*` skill can answer the question.
+
+| Goal | Use |
 |---|---|
+| "Explore the repo structure" | `tldr-orient-codebase` skill |
+| "Find where X is handled" | `tldr-locate-code` skill |
+| "Understand this function/file" | `tldr-understand-function` skill |
+| "Search for code by concept" | `tldr search "concept"` |
+| "Map dependencies or coupling" | `tldr-architecture` skill |
+| "Find callers or usages" | `tldr-trace-relationships` skill |
 | `grep -r "pattern" src/` | `tldr search "pattern"` |
-| Reading multiple files to find a function | `tldr-locate-code` skill |
-| `cat file.rs` to understand a function | `tldr-understand-function` skill |
 | `find . -name "*.rs" \| xargs grep "X"` | `tldr find X` |
+| `rg --files` | `tldr structure .` |
 
 **Why**: tldr is AST-based (not regex), token-efficient (replaces 3–10 file reads with one query), and ~35× faster when the daemon is warm.
+
+### Allowed exceptions
+
+Shell tools are permitted **only** when:
+
+1. Reading `AGENTS.md` itself or other non-code files (markdown docs, configs) explicitly named by the user.
+2. Running validation commands — tests, lint, typecheck, build.
+3. `tldr` is unavailable or a `tldr` command fails — say so explicitly before falling back.
+4. Applying or verifying an edit in a single already-identified file.
 
 ### Available skills — pick by intent
 

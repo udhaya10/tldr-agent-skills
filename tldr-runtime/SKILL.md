@@ -30,6 +30,7 @@ The discriminator is **which lifecycle stage you're at**, not which output you w
 |----------------|-------|-----------|
 | Start, stop, or check the background process | RUN | `tldr daemon` |
 | Pre-populate analysis caches before a query batch | FILL | `tldr warm` |
+| Build or refresh the vector index for semantic/similar search | EMBED | `tldr embed` |
 | See how much disk the cache uses, or wipe it | INSPECT / CLEAR (on-disk) | `tldr cache` |
 | See aggregate token savings across all sessions | TELEMETRY | `tldr stats` |
 | Check whether language toolchains for `diagnostics` are installed | ENVIRONMENT | `tldr doctor` |
@@ -157,6 +158,44 @@ tldr warm [path] [--background]
 
 ---
 
+### `tldr embed` — BUILD the vector index for semantic/similar search
+
+Pre-generates and caches code embeddings for a path, warming the vector index that `tldr semantic` and `tldr similar` query at runtime. **This is a mandatory prerequisite before the first `tldr semantic` or `tldr similar` call on any cold codebase.**
+
+**Why reach for it**:
+- Amortises the full embedding cost up front — the first `tldr semantic` or `tldr similar` query runs at cached (sub-second) speed instead of paying the inline cold-build penalty (minutes + gigabytes of RAM on large repos)
+- Separates the slow build step from the fast search step — after one `tldr embed`, all subsequent semantic queries are instant
+- `--include-vectors` exports raw float32 vectors for external tooling (custom search, clustering, visualisation)
+- Granularity knob (`-g file|function`) controls chunk size; default is function-level
+
+**When to use**:
+- **Before the first `tldr semantic` or `tldr similar` call in any session where the cache is cold** — check with `ls ~/.tldr/embeddings/ 2>/dev/null || echo cold`
+- After a large refactor or merge where the index may be stale
+- When switching to a different model (`-m arctic-xs` vs `-m arctic-m`) and want to pre-build the new model's cache
+- In CI to pre-warm the cache before a semantic search step
+
+**When NOT to use**:
+- The cache already exists and the codebase hasn't changed — `tldr semantic` will hit it directly
+- Searching by exact keyword, token, or regex — that's `tldr search`, which needs no embeddings
+
+**Usage**:
+```bash
+tldr embed .                              # function granularity, arctic-m model (defaults)
+tldr embed <path> -g file -m arctic-xs   # file chunks, smaller/faster model
+tldr embed <path> --include-vectors -o embeddings.json  # export raw vectors
+```
+
+**Output**: JSON with `chunk_count`, `model`, `granularity`, and `cache_status`. With `--include-vectors`, each chunk includes its float vector.
+
+**Killer detail**: `--langs` accepts comma-separated file **extensions** (`py,rs,ts`) — NOT language names. Passing `--langs python` silently drops the filter entirely, causing embeddings to be generated for all files. Verify `chunk_count` in the output to confirm the filter worked.
+
+**Critical footguns**:
+- **Never run `tldr semantic` without `tldr embed` on a cold large codebase.** `tldr semantic` embeds on demand if no cache exists, but this is slow (minutes), memory-heavy (gigabytes), and — if the agent retries the command — will spawn multiple parallel index-build processes that each do the full work independently.
+- **Never spawn multiple `tldr embed` or `tldr semantic` processes for the same path concurrently.** Each builds the full index from scratch with no coordination. Kill all but one and wait.
+- `tldr embed` is separate from `tldr warm`. `tldr warm` refreshes the Salsa structural cache (used by `tree`, `calls`, `impact`, etc.). `tldr embed` refreshes the vector embedding cache (used by `semantic`, `similar`). Both may need to be run; they are independent.
+
+---
+
 ### `tldr cache` — INSPECT or CLEAR the on-disk Salsa store
 
 Inspect or wipe the on-disk Salsa cache. **Mostly a human-operator command** — `stats` is informational, `clear` is destructive and triggers a ~10× slowdown on every subsequent query while the on-disk store rebuilds from scratch.
@@ -233,6 +272,8 @@ tldr doctor [--install <LANG>]
 
 ## Common mistakes
 
+- **Running `tldr semantic` without first running `tldr embed`.** On a cold large codebase, `tldr semantic` builds the entire vector index inline — minutes of CPU time and gigabytes of RAM. If the agent retries, multiple parallel index-build processes spawn, each doing the full work independently. The fix: run `tldr embed .` once, wait for completion, then call `tldr semantic`.
+- **Spawning multiple `tldr embed` or `tldr semantic` processes for the same path.** They don't coordinate — each builds the full index from scratch. Kill all but one (`pkill -f "tldr embed"`) and wait.
 - **Running `tldr warm` without first starting the daemon.** Cold warm only populates one cache (call_graph) out of four. The daemon-routed path is strictly better; always pair them: `tldr daemon start && tldr warm`.
 - **Reaching for `tldr cache clear` when you suspect stale cache.** Clear is unconditional, silent, and triggers a ~10× slowdown on every subsequent query while the on-disk store rebuilds. **The right move is `tldr daemon stop && tldr daemon start`** — the in-memory Salsa cache rebuilds without nuking the on-disk store, so the next query is fast instead of cold.
 - **Trusting `tldr cache clear`'s success message.** It returns exit 0 with `"No cache directory found"` on a bad `--project` path — a wrong directory looks identical to a successful wipe. Verify the project path before clearing.

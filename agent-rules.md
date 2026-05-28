@@ -43,15 +43,30 @@ When the user's request matches any of these intents, load the corresponding ski
 | "Map the architecture" / "show dependencies/coupling" | `tldr-architecture` |
 | "Who calls X?" / "show callers/usages/relationships" | `tldr-trace-relationships` |
 
-### Rule: refresh embeddings after significant code changes
+### Rule: run `tldr embed` before `tldr semantic` — always
 
-`tldr semantic` and `tldr similar` query a vector index that goes **stale** after refactors, merges, or batch edits. If results seem wrong after large changes, re-index before querying:
+`tldr embed` and `tldr semantic` are **two separate commands** with distinct jobs:
+
+- `tldr embed <path>` — builds and caches the vector index (one-time cost, persists to disk)
+- `tldr semantic "<query>" <path>` — searches the pre-built index (sub-second when cache exists)
+
+**Before calling `tldr semantic` or `tldr similar` for the first time in a session, check that the embedding cache exists:**
+
+```bash
+ls ~/.tldr/embeddings/ 2>/dev/null | head -3 || echo "cold — run tldr embed first"
+```
+
+If the cache is cold, build it first:
 
 ```bash
 tldr embed <path>
 ```
 
-This is separate from `tldr warm` (which refreshes the Salsa structural cache). Run `tldr embed` when the embedding cache is stale; run `tldr warm` when structural queries are slow.
+Wait for it to finish before running `tldr semantic`. On large codebases this takes minutes — running `tldr semantic` without a warm cache forces it to build the index inline, burning excessive CPU and RAM. **Never spawn multiple `tldr semantic` or `tldr embed` processes for the same path concurrently.**
+
+`tldr semantic` and `tldr similar` also go **stale** after refactors, merges, or batch edits. If results seem wrong after large changes, re-run `tldr embed <path>` to refresh the index.
+
+This is separate from `tldr warm` (which refreshes the Salsa structural cache). Run `tldr embed` when the embedding cache is cold or stale; run `tldr warm` when structural queries (`tree`, `calls`, `impact`, etc.) are slow.
 
 ### Allowed exceptions
 

@@ -33,4 +33,16 @@ tldr embed <path> --include-vectors -o embeddings.json  # export raw vectors
 
 **Killer detail**: `--langs` accepts comma-separated file **extensions** (`py,rs,ts`) — NOT language names. Passing `--langs python` silently drops the filter entirely because `python` doesn't match any known extension, leaving embeddings generated for all files.
 
-**Source**: `research/tool-cards/ops/verified-invocations.md` (embed section)
+**Verified benchmark** (Stock-Monitor @ `7542871`, Apple Silicon ARM64, 2026-05-28):
+
+| Scope | Files | LOC | Chunks | Model | First-run time |
+|---|---|---|---|---|---|
+| `.` (full repo, incl. dist) | ~16,606 | — | 17,188 | arctic-m | **36.46 min** |
+| `backend/` | 56 | 45,406 | 1,397 | arctic-m | ~3 min (est.) |
+| `webui/src/` | 305 | 130,953 | ~2,000 | arctic-m | ~4 min (est.) |
+
+> Note: full-repo chunk count is inflated by `webui/dist/` minified JS bundles. Use `--langs py,ts,tsx` or scope to source dirs to avoid embedding build artifacts.
+
+**Second-run time**: ~2.5 seconds for 1,397 chunks when all are cached. Subsequent `tldr semantic` queries against a warm index complete in **~260 ms**.
+
+**Source**: `research/tldr/ops/embed.md` (full dossier with benchmarks and behavioral observations)

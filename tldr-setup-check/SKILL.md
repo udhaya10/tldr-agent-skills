@@ -98,6 +98,18 @@ Let it run to completion (it embeds every function in the repo — this is a one
 
 **Never spawn multiple `tldr semantic` or `tldr embed` processes for the same path concurrently** — each will independently build the full index, multiplying CPU and RAM usage with no benefit.
 
+**Verified first-run times** (Stock-Monitor, 373 meaningful source files / ~176K LOC, Apple Silicon ARM64):
+
+| Scope | Chunks | Model | First-run time |
+|---|---|---|---|
+| `.` (full repo incl. dist artifacts) | 17,188 | arctic-m | **36.46 min** |
+| `backend/` only | 1,397 | arctic-m | ~3 min (est.) |
+| `webui/src/` only | ~2,000 | arctic-m | ~4 min (est.) |
+
+After the index is built, subsequent `tldr semantic` queries complete in **~260 ms**. Re-running `tldr embed` on an unchanged path completes in **~2.5 seconds** (all cache hits).
+
+**Recommendation**: embed `backend/` first to get a working index fast, then extend to the full repo later. The wider run reuses all prior work from cache.
+
 ### Step 4 — Are language analyzers installed for the user's stack?
 
 ```bash

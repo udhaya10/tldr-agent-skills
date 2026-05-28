@@ -185,9 +185,25 @@ tldr embed <path> -g file -m arctic-xs   # file chunks, smaller/faster model
 tldr embed <path> --include-vectors -o embeddings.json  # export raw vectors
 ```
 
-**Output**: JSON with `chunk_count`, `model`, `granularity`, and `cache_status`. With `--include-vectors`, each chunk includes its float vector.
+**Output**: JSON with `chunks_embedded`, `chunks_cached`, `model`, `granularity`, and `latency_ms`. With `--include-vectors`, each chunk includes its float vector.
 
-**Killer detail**: `--langs` accepts comma-separated file **extensions** (`py,rs,ts`) — NOT language names. Passing `--langs python` silently drops the filter entirely, causing embeddings to be generated for all files. Verify `chunk_count` in the output to confirm the filter worked.
+**Killer detail**: `--langs` accepts comma-separated file **extensions** (`py,rs,ts`) — NOT language names. Passing `--langs python` silently drops the filter entirely, causing embeddings to be generated for all files. Verify `chunks_embedded` in the output to confirm the filter worked.
+
+**Verified first-run benchmarks** (Stock-Monitor, Apple Silicon ARM64, arctic-m):
+
+| Scope | Files | LOC | Chunks | First-run time |
+|---|---|---|---|---|
+| `.` (full repo incl. dist) | ~16,606 | — | 17,188 | **36.46 min** |
+| `backend/` | 56 | 45,406 | 1,397 | ~3 min (est.) |
+| `webui/src/` | 305 | 130,953 | ~2,000 | ~4 min (est.) |
+
+After the first run, all chunks are cached. Re-running on the same path completes in **~2.5 seconds** (cache hits only). Individual `tldr semantic` queries complete in **~260 ms**.
+
+**Scope tip**: Running `tldr embed .` on a repo with a `webui/dist/` folder inflates chunk count from ~373 source files to 17,188 because minified JS bundles are parsed. Avoid by scoping or filtering:
+```bash
+tldr embed backend/ webui/src/          # explicit source dirs
+tldr embed . --langs py,ts,tsx          # skip .js dist bundles
+```
 
 **Critical footguns**:
 - **Never run `tldr semantic` without `tldr embed` on a cold large codebase.** `tldr semantic` embeds on demand if no cache exists, but this is slow (minutes), memory-heavy (gigabytes), and — if the agent retries the command — will spawn multiple parallel index-build processes that each do the full work independently.

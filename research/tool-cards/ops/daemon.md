@@ -14,7 +14,7 @@
 
 **When to use**
 - Kicking off a batch of analyses and want predictable warm-cache performance (`tldr daemon start && tldr warm`)
-- Debugging "why is my query slow" — `tldr daemon status` shows whether the daemon is even running and what its Salsa stats look like
+- Debugging "why is my query slow" — `tldr daemon status -p "$(pwd)"` shows whether the daemon is even running and what its Salsa stats look like (bare `status` and `--project .` fail when >1 daemon exists)
 - Cleaning up after a multi-project session (`tldr daemon stop --all`)
 
 **When NOT to use**
@@ -26,8 +26,8 @@
 tldr daemon [OPTIONS] <COMMAND>
 ```
 ```
-# P01 — check running state
-tldr daemon status
+# P01 — check running state (use absolute path for multi-daemon safety)
+tldr daemon status -p "$(pwd)"
 # P02 — full lifecycle: start, confirm, stop
 tldr daemon start && tldr daemon status && tldr daemon stop
 # P11 — list all running daemons

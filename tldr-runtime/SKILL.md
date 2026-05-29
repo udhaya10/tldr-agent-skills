@@ -37,7 +37,7 @@ The discriminator is **which lifecycle stage you're at**, not which output you w
 
 **The canonical opener: `tldr daemon start && tldr warm`.** That order matters. `tldr warm` warms **four** caches (call_graph, structure, file_tree, semantic_index) when it goes through the daemon's IPC route, but only **one** (call_graph) when run cold without a daemon. Skipping `daemon start` quietly leaves three cold caches you'll pay for on the first hit of each.
 
-**When in doubt about a slow query, run `tldr daemon status`** — it shows running state plus live Salsa hits/misses/invalidations/recomputations. That's the diagnostic, not `cache stats` (which only reports on-disk file count without the daemon up).
+**When in doubt about a slow query, run `tldr daemon status -p "$(pwd)"`** — it shows running state plus live Salsa hits/misses/invalidations/recomputations. That's the diagnostic, not `cache stats` (which only reports on-disk file count without the daemon up). **Multi-daemon caveat:** bare `tldr daemon status` and `--project .` fail with "multiple daemons running" when >1 daemon exists in the registry — always pass an absolute path.
 
 ## Session startup — verified launch sequence
 
@@ -61,9 +61,11 @@ tldr warm .
 
 **Step 3 — Verify IPC is working (warm's misses are the signal)**
 ```bash
-tldr daemon status
+tldr daemon status -p "$(pwd)"
 ```
 After warm, `misses` should be `> 0` (warm itself routes via IPC). **If `misses > 0`, the daemon socket is live and warm succeeded.** If `misses` is still `0`, the socket isn't ready — run the recovery below and repeat.
+
+> **Multi-daemon caveat:** bare `tldr daemon status` and `--project .` fail with "multiple daemons running" when >1 daemon exists in the registry. Always use `-p "$(pwd)"` (absolute path). This only affects `status` — `start`, `stop`, `warm`, and `notify` all canonicalize `.` correctly.
 
 > Note: do NOT use analysis commands (e.g. `tldr search`) as the IPC probe — in v0.4.0 they bypass the daemon and will never increment counters regardless of socket state.
 
@@ -71,7 +73,7 @@ After warm, `misses` should be `> 0` (warm itself routes via IPC). **If `misses 
 ```bash
 tldr daemon stop && tldr daemon start 2>/dev/null || true && tldr warm .
 ```
-Then re-run Step 3 before continuing.
+Then re-run Step 3 (`tldr daemon status -p "$(pwd)"`) before continuing.
 
 ## Tool reference
 
@@ -89,7 +91,7 @@ Lifecycle manager for the background Salsa-cache process that serves daemon-rout
 
 **When to use**:
 - Kicking off a batch of analyses and want predictable warm-cache performance (`tldr daemon start && tldr warm`)
-- Debugging "why is my query slow" — `tldr daemon status` shows whether the daemon is even running and what its Salsa stats look like
+- Debugging "why is my query slow" — `tldr daemon status -p "$(pwd)"` shows whether the daemon is even running and what its Salsa stats look like
 - Cleaning up after a multi-project session (`tldr daemon stop --all`)
 
 **Usage**:
@@ -97,7 +99,7 @@ Lifecycle manager for the background Salsa-cache process that serves daemon-rout
 tldr daemon <start|stop|status|list|query|notify> [args...]
 tldr daemon start [--project <path>]
 tldr daemon stop [--all]
-tldr daemon status
+tldr daemon status -p "$(pwd)"
 tldr daemon notify <FILE>
 ```
 
@@ -110,8 +112,8 @@ tldr daemon notify <FILE>
 `start` is NOT idempotent — it errors if a daemon is already running for the same project. Two safe approaches:
 
 ```bash
-# Option 1 — conditional (explicit)
-tldr daemon status | grep -q '"not_running"' && tldr daemon start
+# Option 1 — conditional (explicit; use absolute path for multi-daemon safety)
+tldr daemon status -p "$(pwd)" | grep -q '"not_running"' && tldr daemon start
 
 # Option 2 — unconditional (simpler, preferred)
 tldr daemon start 2>/dev/null || true
@@ -317,7 +319,8 @@ tldr doctor [--install <LANG>]
 - **Trusting `tldr cache clear`'s success message.** It returns exit 0 with `"No cache directory found"` on a bad `--project` path — a wrong directory looks identical to a successful wipe. Verify the project path before clearing.
 - **Calling `tldr warm` on a single file.** Warm needs a directory. A file path produces the misleading `"Read-only file system (os error 30)"` because the canonicalize fallback chains into a write attempt at `/`.
 - **Calling `tldr daemon start` twice.** Start on an already-running daemon errors with the PID echoed for manual kill. Use `tldr daemon start 2>/dev/null || true` for idempotent starts in scripts — it silences the error and exits 0 regardless. `stop` is already idempotent; only `start` needs this guard.
-- **Expecting Salsa hit/miss counters from `tldr cache stats` when the daemon is down.** Salsa counters only appear when the daemon is running; otherwise `cache stats` returns only file count and disk bytes. For live Salsa counters, use `tldr daemon status`.
+- **Using bare `tldr daemon status` or `--project .` when multiple daemons are running.** With >1 daemon in the registry, both fail with "multiple daemons running (N); use --project <abs-path>." This only affects `status` — `start`, `stop`, `warm`, and `notify` all canonicalize `.` correctly. Always use `tldr daemon status -p "$(pwd)"`.
+- **Expecting Salsa hit/miss counters from `tldr cache stats` when the daemon is down.** Salsa counters only appear when the daemon is running; otherwise `cache stats` returns only file count and disk bytes. For live Salsa counters, use `tldr daemon status -p "$(pwd)"`.
 - **Assuming a single JSON envelope across `daemon` subcommands.** Every subcommand (start, stop, status, list, query, notify) returns a different top-level schema. Schema-validating consumers must branch on subcommand name.
 - **Reading an empty `tldr stats` as a configuration problem in v0.4.0.** In v0.4.0, `tldr stats` always returns empty — analysis commands bypass `try_daemon_route` entirely and `stats.jsonl` is never written. This is an upstream bug, not a setup issue. Do not spend time troubleshooting empty stats in v0.4.0.
 - **Using `tldr doctor` to fix a per-call `diagnostics` failure.** When `tldr diagnostics` exits 60, it already prints the exact install hint for the missing tool. Read that hint first. Reach for `doctor` only when you want the full multi-language status board, or when you want `--install` to run the hint for you (and only for the 7 supported languages).

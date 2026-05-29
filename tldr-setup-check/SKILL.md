@@ -123,8 +123,10 @@ tldr doctor
 ### Step 5 — Is the daemon running? (performance check)
 
 ```bash
-tldr daemon status
+tldr daemon status -p "$(pwd)"
 ```
+
+> **Multi-daemon caveat:** bare `tldr daemon status` and `--project .` fail with "multiple daemons running" when >1 daemon exists in the registry. Always use `-p "$(pwd)"` (absolute path).
 
 - ✅ Daemon running with non-zero Salsa counters → routing is active, user gets ~35× speedup
 - ✅ Daemon running but Salsa counters are 0/0 → daemon is up but not routing commands (silent fallback to direct path). **Refer to `tldr-runtime` → "Session startup — verified launch sequence"** for the fix
@@ -137,7 +139,7 @@ tldr stats
 ```
 
 - ✅ Non-trivial token-savings figure → tldr is paying off
-- ⚠️ Empty stats → **in v0.4.0 this is always expected — two confirmed upstream bugs.** (1) Most commands bypass the daemon (`smells`, `complexity`, `context`, `slice`, `search`, `semantic`, and all audit/metric commands). (2) Even the 8 commands that DO route through the daemon (`tree`, `structure`, `extract`, `calls`, `impact`, `dead`, `imports`, `importers`) never write to `~/.tldr/stats.jsonl`. Do not troubleshoot empty stats in v0.4.0. Use `tldr daemon status` Salsa counters as the routing health signal instead. Track both bugs at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
+- ⚠️ Empty stats → **in v0.4.0 this is always expected — two confirmed upstream bugs.** (1) Most commands bypass the daemon (`smells`, `complexity`, `context`, `slice`, `search`, `semantic`, and all audit/metric commands). (2) Even the 8 commands that DO route through the daemon (`tree`, `structure`, `extract`, `calls`, `impact`, `dead`, `imports`, `importers`) never write to `~/.tldr/stats.jsonl`. Do not troubleshoot empty stats in v0.4.0. Use `tldr daemon status -p "$(pwd)"` Salsa counters as the routing health signal instead. Track both bugs at [parcadei/tldr-code](https://github.com/parcadei/tldr-code).
 
 ### Step 7 — Ensure AGENTS.md has tldr instructions (hash-verified)
 
@@ -200,8 +202,8 @@ When the user is technically working but not getting tldr's full value:
 
 | Symptom | What's wrong | Where to fix |
 |---------|--------------|--------------|
-| `tldr daemon status` says not running | Cold daemon; paying ~35× cost per call | `tldr-runtime` → `daemon start && warm` |
-| Daemon running but `tldr stats` empty | `try_daemon_route` fell back to direct path; commands ran without IPC — check `tldr daemon status` Salsa counters | `tldr-runtime` → Session startup — verified launch sequence |
+| `tldr daemon status -p "$(pwd)"` says not running | Cold daemon; paying ~35× cost per call | `tldr-runtime` → `daemon start && warm` |
+| Daemon running but `tldr stats` empty | `try_daemon_route` fell back to direct path; commands ran without IPC — check `tldr daemon status -p "$(pwd)"` Salsa counters | `tldr-runtime` → Session startup — verified launch sequence |
 | `tldr semantic --help` says unrecognized | Semantic search not compiled in | Reinstall with `--features semantic` |
 | `tldr semantic` hangs or burns CPU for minutes | Embedding cache is cold — `tldr semantic` is building the index inline instead of querying it | Run `tldr embed .` first to build the index; then `tldr semantic` will be sub-second |
 | Multiple `tldr semantic` processes running simultaneously | Agent spawned duplicate index-build jobs | Kill duplicates (`pkill -f "tldr semantic"`), run `tldr embed .` once, wait for it to finish |
@@ -215,7 +217,7 @@ When the user is technically working but not getting tldr's full value:
 - **No semantic search** — rebuild with `--features semantic`
 - **`tldr semantic` is slow / hangs / burns CPU** — the embedding cache is cold. Kill any running `tldr semantic` processes, then run `tldr embed .` once and let it finish. **Do not run `tldr semantic` before `tldr embed` on a large codebase.**
 - **Daemon is slow** — do `tldr daemon stop && tldr daemon start` (NOT `tldr cache clear` — that triggers a ~10× rebuild penalty). See `tldr-runtime`.
-- **`tldr stats` is empty** — either daemon was never started, or it was running but `try_daemon_route` fell back (Salsa `hits + misses = 0`). Run `tldr daemon stop && tldr daemon start && tldr warm .`, verify with `tldr search "main" && tldr daemon status`, then confirm `hits + misses > 0` before continuing
+- **`tldr stats` is empty** — either daemon was never started, or it was running but `try_daemon_route` fell back (Salsa `hits + misses = 0`). Run `tldr daemon stop && tldr daemon start && tldr warm .`, verify with `tldr search "main" && tldr daemon status -p "$(pwd)"`, then confirm `hits + misses > 0` before continuing
 - **Permission errors on `~/.tldr/`** — check directory ownership; tldr writes daemon socket, cache, and stats here
 - **Curl fails on the version-check step** — no network; tell the user to manually visit [releases](https://github.com/parcadei/tldr-code/releases)
 

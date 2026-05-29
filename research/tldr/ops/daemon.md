@@ -143,7 +143,7 @@ Variable per `<CMD>`. `query ping` → `{ status: "ok", message: "pong" }`. `que
 - **P01** — No daemon running: `{ "status": "not_running", "message": "Daemon not running" }`. Exit 0.
 - **P02** — Full cycle: start → status → stop. 23 lines combined.
 - **P03** — Prints help to stderr + exit `2`. Same pattern as bugbot, cache.
-- **P04** — **`--project /no/such/dir` for status returns exit 0** with "not_running" message — falls back to active daemon's recorded project (per source comment `daemon status` `-p` help: "When omitted, falls back to the active daemon's project path recorded by `daemon start`"). Bad explicit `--project` doesn't fail.
+- **P04** — **`--project /no/such/dir` for status returns exit 0** with "not_running" message — falls back to active daemon's recorded project (per source comment `daemon status` `-p` help: "When omitted, falls back to the active daemon's project path recorded by `daemon start`"). Bad explicit `--project` doesn't fail. **Multi-daemon caveat (verified 2026-05-30):** with >1 daemon in the registry, bare `tldr daemon status` and `--project .` BOTH fail with exit 1: `"multiple daemons running (N); use --project <abs-path>"`. The cwd/`.` fallback becomes ambiguous. Fix: always pass `-p "$(pwd)"`. This only affects `status` — `start`, `stop`, `warm`, and `notify` canonicalize `.` correctly.
 - **P05** — stderr `"Error: --format sarif not supported by daemon status. Use --format json. SARIF is only emitted by: vuln, clones."`, exit `1`. Note message says `"by daemon status"` (the full path).
 - **P06** — Text format: 1 line `"Daemon not running"`. Minimal.
 - **P07** — Single-line minified JSON.
@@ -217,7 +217,7 @@ Source enforces that the notified file is inside the daemon's project root — p
   - To diagnose cache misses: `tldr daemon status` shows `salsa_stats`.
   - To clean up multiple project daemons: `tldr daemon stop --all`.
 - **Prerequisites (composition):**
-  - `--project` defaults to `.`. For multi-project workflows, pass explicit `--project`.
+  - `--project` defaults to `.`. For multi-project workflows, pass explicit `--project`. **For `status` specifically:** bare and `--project .` fail when >1 daemon exists — always use `-p "$(pwd)"`.
   - `notify <FILE>` requires FILE to be inside the daemon's project root.
   - `query <CMD>` requires daemon running.
 
@@ -234,7 +234,7 @@ Source enforces that the notified file is inside the daemon's project root — p
 > - **`stop --all` cleans up the v0.3.0 multi-daemon registry** (P21). One-shot for "kill all my daemons across all projects."
 > - **`notify <FILE>` enforces files-inside-project-root** (P18: file outside → exit 1 `"File is outside project root"`). Security check prevents arbitrary path probing via the daemon API.
 > - **`notify` uses threshold-based reindexing** (P17: `threshold: 20`, `dirty_count: 1, reindex_triggered: false`). Accumulates dirty file changes; triggers reindex only after the threshold is reached. To force immediate reindex: stop + start the daemon.
-> - **`status --project /bad/path` is SILENT** (P04: exit 0 with "not_running"). Per source: falls back to active daemon's recorded project when no daemon matches the supplied path. **Distinct from most commands' upfront path validation.**
+> - **`status --project /bad/path` is SILENT** (P04: exit 0 with "not_running"). Per source: falls back to active daemon's recorded project when no daemon matches the supplied path. **Distinct from most commands' upfront path validation.** **Multi-daemon exception:** with >1 daemon, bare `status` and `--project .` fail with exit 1 "multiple daemons running" — always use `-p "$(pwd)"` for status.
 > - **`start` emits PID and SOCKET path** (P09). The socket is `/var/folders/.../tldr-<hash>.sock` (macOS tmpdir). Use the PID to manually kill if `stop` fails.
 > - **`start` when already running returns exit 1 with PID** (P10: `"Daemon already running (PID: 78918)"`). Use this PID for `kill` or `tldr daemon stop --all`.
 > - **`query <CMD>` requires daemon running.** P14 confirms: exit 1 `"Daemon not running"` when daemon stopped. To query, always `start` first.

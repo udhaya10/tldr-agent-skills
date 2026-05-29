@@ -68,6 +68,20 @@ Wait for it to finish before running `tldr semantic`. On large codebases this ta
 
 This is separate from `tldr warm` (which refreshes the Salsa structural cache). Run `tldr embed` when the embedding cache is cold or stale; run `tldr warm` when structural queries (`tree`, `calls`, `impact`, etc.) are slow.
 
+### Rule: understand the three performance worlds before choosing a command
+
+tldr-code has three independent performance worlds. `tldr warm` only helps World 1:
+
+| World | Commands | Cache built by | Warm helps? |
+|-------|----------|---------------|-------------|
+| **Graph traversal (Salsa)** | `calls`, `dead`, `hubs`, `impact`, `whatbreaks`, `slice`, `tree`, `structure` | `tldr warm` | ✅ Yes — 10-100× faster |
+| **BM25 text search** | `search` | None — rescans all files at query time | ❌ No — scales with file count |
+| **Vector semantic search** | `semantic`, `similar` | `tldr embed` | ❌ No — flat ~4.3s model cold-start |
+
+**Warm health check**: `tldr dead .` — if this returns fast (25ms on a small project, ~1s on a large one), the Salsa cache is live. Do NOT use `tldr search` as a warm health check — it bypasses Salsa entirely.
+
+**If `search` is slow** (e.g. ~5s on a 171-file repo), the fix is to scope to a subdirectory — warm will not help. If `semantic` is slow, ensure `tldr embed` has been run, but expect ~4.3s per call regardless.
+
 ### Allowed exceptions
 
 Shell tools are permitted **only** when:

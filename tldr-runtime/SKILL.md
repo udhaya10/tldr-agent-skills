@@ -4,7 +4,7 @@ description: Manage tldr's own infrastructure — the background daemon, on-disk
 allowed-tools: [Bash]
 compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux."
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   author: "udhaya10"
   repository: "udhaya10/tldr-agent-skills"
   tldr.cli-version: "0.4.0"
@@ -132,13 +132,34 @@ Option 2 is preferred: fewer moving parts, resilient to output format changes.
 Pre-builds the call graph cache so subsequent analysis commands hit warm caches instead of paying cold-build cost on the first query.
 
 **Why reach for it**:
-- One-shot prep that makes a batch of `search` / `semantic` / `impact` queries 10-100× faster
+- One-shot prep that makes graph-traversal commands (`calls`, `impact`, `dead`, `hubs`, `whatbreaks`) 10-100× faster — `search` and `semantic` are NOT powered by warm (see Two Worlds below)
 - `--background` returns instantly while the cache builds in a subprocess — drop it into CI alongside other prep steps
 - When the daemon is running, warm goes through IPC and populates four caches in one call, not just the call graph
 - The canonical pairing for "I'm about to run many analyses": `tldr daemon start && tldr warm`
 
+**Two worlds — what warm does and does NOT speed up:**
+
+`tldr warm` builds the Salsa call graph cache. It powers graph-traversal commands only:
+
+| World | Commands | Cache built by |
+|-------|----------|---------------|
+| **Graph traversal** | `calls`, `dead`, `hubs`, `impact`, `whatbreaks`, `slice`, `tree`, `structure` | `tldr warm` → Salsa |
+| **Search (BM25)** | `search` | None — BM25 rescans ALL files at query time; latency scales with file count regardless of warm state |
+| **Semantic/vector** | `semantic`, `similar` | `tldr embed` → vector index (flat ~4.3s model cold-start per call; independent of warm) |
+
+**Warm health test** — use `tldr dead .` (not `tldr search`):
+
+```bash
+# Verify warm is active — purely graph-traversal, works on any project, no args needed
+tldr dead .
+# Warm: ~25ms on a 9-file project, ~1s on a 171-file project
+# Cold or broken: 10× slower or hangs
+```
+
+`tldr search` bypasses Salsa entirely — using it as a warm test will always "pass" regardless of warm state.
+
 **When to use**:
-- Starting a multi-query analysis session and want predictable performance
+- Starting a multi-query analysis session of graph commands (`calls`, `impact`, `dead`, `hubs`) — warm makes them 10-100× faster
 - CI prep: `tldr warm --background` runs while linters and tests start in parallel
 - After a large refactor when you want the call graph rebuilt fresh before exploring
 
@@ -291,6 +312,7 @@ tldr doctor [--install <LANG>]
 - **Running `tldr semantic` without first running `tldr embed`.** On a cold large codebase, `tldr semantic` builds the entire vector index inline — minutes of CPU time and gigabytes of RAM. If the agent retries, multiple parallel index-build processes spawn, each doing the full work independently. The fix: run `tldr embed .` once, wait for completion, then call `tldr semantic`.
 - **Spawning multiple `tldr embed` or `tldr semantic` processes for the same path.** They don't coordinate — each builds the full index from scratch. Kill all but one (`pkill -f "tldr embed"`) and wait.
 - **Running `tldr warm` without first starting the daemon.** Cold warm only populates one cache (call_graph) out of four. The daemon-routed path is strictly better; always pair them: `tldr daemon start && tldr warm`.
+- **Expecting `tldr warm` to speed up `search` or `semantic`.** Warm builds the Salsa call graph cache, which powers ONLY graph-traversal commands (`calls`, `dead`, `hubs`, `impact`, `whatbreaks`, `slice`). `search` runs BM25 over all files at query time — latency scales with file count (e.g. ~5s for 171 files), and warm has zero effect on it. `semantic` pays a flat ~4.3s model cold-start per call regardless of warm state — to speed up semantic, run `tldr embed` (vector index). If `search` is slow, the fix is to scope to a subdirectory, not to warm more aggressively. (Empirical data: search=141ms@9 files, 920ms@45 files, 4972ms@171 files — fully warmed daemon, all three.)
 - **Reaching for `tldr cache clear` when you suspect stale cache.** Clear is unconditional, silent, and triggers a ~10× slowdown on every subsequent query while the on-disk store rebuilds. **The right move is `tldr daemon stop && tldr daemon start`** — the in-memory Salsa cache rebuilds without nuking the on-disk store, so the next query is fast instead of cold.
 - **Trusting `tldr cache clear`'s success message.** It returns exit 0 with `"No cache directory found"` on a bad `--project` path — a wrong directory looks identical to a successful wipe. Verify the project path before clearing.
 - **Calling `tldr warm` on a single file.** Warm needs a directory. A file path produces the misleading `"Read-only file system (os error 30)"` because the canonicalize fallback chains into a write attempt at `/`.

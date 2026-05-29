@@ -7,15 +7,13 @@
 **Pitch**: Lifecycle manager for the background Salsa-cache process that serves daemon-routed analysis commands; six subcommands (start, stop, status, list, query, notify) hidden behind one umbrella.
 
 **Why reach for it**
-- Manually start the daemon before a batch of analyses to guarantee the 10-100x cache speedup on every subsequent call
 - `status` exposes Salsa `hits / misses / invalidations / recomputations` for diagnosing why a query is slower than expected
 - `list` and `stop --all` handle the v0.3.0 multi-project registry — one daemon per project, all visible at once
-- Most analysis commands auto-spawn the daemon via `try_daemon_route`, so explicit invocation is the exception, not the rule
+- The supervisor daemon (`tldr-cli-demon`) manages start/warm/embed automatically — agents should only use `daemon status` and `daemon list` for diagnostics
 
 **When to use**
-- Kicking off a batch of analyses and want predictable warm-cache performance (`tldr daemon start && tldr warm`)
 - Debugging "why is my query slow" — `tldr daemon status -p "$(pwd)"` shows whether the daemon is even running and what its Salsa stats look like (bare `status` and `--project .` fail when >1 daemon exists)
-- Cleaning up after a multi-project session (`tldr daemon stop --all`)
+- Checking which projects have active daemons (`tldr daemon list`)
 
 **When NOT to use**
 - Just running a single one-shot analysis — let the analysis command spawn the daemon itself

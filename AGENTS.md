@@ -96,20 +96,22 @@ bd close <id>         # Complete work
 - If push fails, resolve and retry until it succeeds
 <!-- END BEADS INTEGRATION -->
 
-<!-- BEGIN TLDR-AGENT-SKILLS hash:5ddcfeeb -->
+<!-- BEGIN TLDR-AGENT-SKILLS hash:4d8951d0 -->
 ## tldr-code — Code Exploration Rules
 
 This project has **tldr-code** installed. Agents MUST use `tldr` commands and `tldr-*` skills for all codebase exploration — not shell tools.
 
-### Rule: start the daemon once at session start
+### Rule: the supervisor daemon is NOT your responsibility
 
-Run this **once** when the session begins — not before every command:
+A separate supervisor (`tldr-cli-demon`) manages the daemon lifecycle — start, warm, and embed are all automatic. **Do NOT start, stop, warm, or embed from skills or agent sessions.** If the daemon is not running, the project has not been registered with the supervisor. Tell the user:
+
+> "The tldr daemon is not running for this project. Register it with the supervisor: `cd <project-root> && tldr-ctl init`"
+
+To **check** whether the daemon is running (read-only, always safe):
 
 ```bash
-tldr daemon start 2>/dev/null || true
+tldr daemon status -p "$(pwd)"
 ```
-
-The daemon is **per-project** and persists across commands. This is safe to run unconditionally: if already running it exits silently; if not, it starts one. You get ~35× faster queries once it is up.
 
 ### Rule: do NOT use shell tools for code exploration
 
@@ -141,6 +143,20 @@ When the user's request matches any of these intents, load the corresponding ski
 | "Map the architecture" / "show dependencies/coupling" | `tldr-architecture` |
 | "Who calls X?" / "show callers/usages/relationships" | `tldr-trace-relationships` |
 
+### Rule: understand the three performance worlds before choosing a command
+
+tldr-code has three independent performance worlds. The supervisor daemon manages caches for Worlds 1 and 3 automatically:
+
+| World | Commands | Cache | Managed by |
+|-------|----------|-------|------------|
+| **Graph traversal (Salsa)** | `calls`, `dead`, `hubs`, `impact`, `whatbreaks`, `slice`, `tree`, `structure` | Salsa cache (`tldr warm`) | Supervisor — auto-warms on file changes |
+| **BM25 text search** | `search` | None — rescans all files at query time | N/A — scales with file count |
+| **Vector semantic search** | `semantic`, `similar` | Vector index (`tldr embed`) | Supervisor — periodic embed refresh |
+
+**Warm health check**: `tldr dead .` — if this returns fast (25ms on a small project, ~1s on a large one), the Salsa cache is live. Do NOT use `tldr search` as a warm health check — it bypasses Salsa entirely.
+
+**If `search` is slow** (e.g. ~5s on a 171-file repo), the fix is to scope to a subdirectory — warm will not help. If `semantic` is slow and the project is registered with the supervisor, the embed cache may still be building — check `tldr-ctl status`.
+
 ### Allowed exceptions
 
 Shell tools are permitted **only** when:
@@ -161,7 +177,7 @@ If using an exception, keep it narrow. Do not use shell tools for broad explorat
 - `tldr-trace-data-flow` — trace how data moves through the system
 - `tldr-change-impact` — blast radius of a proposed change
 - `tldr-architecture` — high-level architecture and module boundaries
-- `tldr-runtime` — start/stop daemon, warm caches, view live stats
+- `tldr-runtime` — diagnose daemon state, inspect caches, view live stats
 - `tldr-fix-and-detect` — find bugs, anti-patterns, and duplicates
 - `tldr-audit-security` — security vulnerability review
 - `tldr-audit-complexity` — complexity hotspots

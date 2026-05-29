@@ -1,6 +1,6 @@
 ---
 name: tldr-setup-check
-description: Diagnose tldr-code installation and surface underuse. Checks installed version against latest GitHub release, semantic-search availability, daemon state, language analyzer support, and cumulative token savings. Also serves as orientation for LLMs unfamiliar with tldr-code. Triggers on "tldr is not working", "is tldr installed", "what version of tldr do I have", "tldr is slow", "is semantic search available", "how much has tldr saved me", "is my tldr setup right", "tldr doesn't seem to work", or any context where the LLM/user is encountering tldr for the first time. For ACTUAL daemon/cache management (start, stop, warm, clear), refer to tldr-runtime.
+description: Diagnose tldr-code installation and surface underuse. Checks installed version against latest GitHub release, semantic-search availability, daemon state, language analyzer support, and cumulative token savings. Also serves as orientation for LLMs unfamiliar with tldr-code. Triggers on "tldr is not working", "is tldr installed", "what version of tldr do I have", "tldr is slow", "is semantic search available", "how much has tldr saved me", "is my tldr setup right", "tldr doesn't seem to work", or any context where the LLM/user is encountering tldr for the first time. For daemon/cache health diagnostics, refer to tldr-runtime. The supervisor daemon (tldr-cli-demon) owns the full lifecycle — start, stop, warm, embed.
 allowed-tools: [Bash]
 compatibility: "Requires tldr-code CLI v0.4.0+. Tested on darwin and linux. Version-check step needs curl + network."
 metadata:
@@ -23,7 +23,7 @@ Activate this skill when:
 - **Verifying a fresh install** — user just installed tldr and wants to confirm everything's wired up
 - **Underuse detection** — the LLM notices the user is doing things tldr could do better (e.g., reading many files to find code, instead of `tldr search`)
 
-**This skill diagnoses; it does NOT manage.** For starting/stopping the daemon, warming caches, or clearing state, refer to the **`tldr-runtime`** skill.
+**This skill diagnoses; it does NOT manage.** The supervisor daemon (`tldr-cli-demon`) owns the full lifecycle — start, stop, warm, embed. For daemon/cache health diagnostics, refer to the **`tldr-runtime`** skill.
 
 ## What `tldr` is — orientation for LLMs
 
@@ -79,7 +79,7 @@ tldr semantic --help 2>&1 | head -1
 
 ### Step 3b — Is the embedding index warm? (semantic pre-flight)
 
-> **Critical**: `tldr embed` and `tldr semantic` are two separate commands. `embed` builds and caches the vector index; `semantic` queries it. Running `tldr semantic` on a cold index forces it to build the index inline — on large codebases this takes minutes and burns gigabytes of RAM. **Always run `tldr embed` first.**
+> **Note**: The supervisor daemon (`tldr-cli-demon`) manages `tldr embed` automatically. This step checks whether the cache is ready, not whether you should build it yourself.
 
 Check whether the embedding cache already exists for this project:
 
@@ -87,16 +87,8 @@ Check whether the embedding cache already exists for this project:
 ls ~/.tldr/embeddings/ 2>/dev/null | head -5 || echo "no embedding cache found"
 ```
 
-- ✅ Cache files exist → index is likely warm. You can run `tldr semantic` directly.
-- ❌ "no embedding cache found" or empty → **build the index now before any `tldr semantic` call**:
-
-```bash
-tldr embed .
-```
-
-Let it run to completion (it embeds every function in the repo — this is a one-time cost). After this, all `tldr semantic` and `tldr similar` queries are sub-second.
-
-**Never spawn multiple `tldr semantic` or `tldr embed` processes for the same path concurrently** — each will independently build the full index, multiplying CPU and RAM usage with no benefit.
+- ✅ Cache files exist → index is warm. You can run `tldr semantic` directly.
+- ❌ "no embedding cache found" or empty → the supervisor has not yet built the index. If the project is registered with the supervisor (`tldr-ctl init`), the embed will happen automatically. Check `tldr-ctl status` for progress. If the project is NOT registered, tell the user: `cd <project-root> && tldr-ctl init`
 
 **Verified first-run times** (Stock-Monitor, 373 meaningful source files / ~176K LOC, Apple Silicon ARM64):
 
@@ -107,8 +99,6 @@ Let it run to completion (it embeds every function in the repo — this is a one
 | `webui/src/` only | ~2,000 | arctic-m | ~4 min (est.) |
 
 After the index is built, subsequent `tldr semantic` queries complete in **~260 ms**. Re-running `tldr embed` on an unchanged path completes in **~2.5 seconds** (all cache hits).
-
-**Recommendation**: embed `backend/` first to get a working index fast, then extend to the full repo later. The wider run reuses all prior work from cache.
 
 ### Step 4 — Are language analyzers installed for the user's stack?
 
@@ -129,8 +119,8 @@ tldr daemon status -p "$(pwd)"
 > **Multi-daemon caveat:** bare `tldr daemon status` and `--project .` fail with "multiple daemons running" when >1 daemon exists in the registry. Always use `-p "$(pwd)"` (absolute path).
 
 - ✅ Daemon running with non-zero Salsa counters → routing is active, user gets ~35× speedup
-- ✅ Daemon running but Salsa counters are 0/0 → daemon is up but not routing commands (silent fallback to direct path). **Refer to `tldr-runtime` → "Session startup — verified launch sequence"** for the fix
-- ❌ Daemon not running → user is paying full cost on every command. **Refer to `tldr-runtime`** for the verified launch sequence
+- ✅ Daemon running but Salsa counters are 0/0 → daemon is up but no commands have routed through it yet. Run `tldr dead .` to generate traffic and re-check. See `tldr-runtime` for diagnostics
+- ❌ Daemon not running → the project is not registered with the supervisor. Tell the user: `cd <project-root> && tldr-ctl init`
 
 ### Step 6 — How much has tldr saved? (telemetry)
 
@@ -202,11 +192,11 @@ When the user is technically working but not getting tldr's full value:
 
 | Symptom | What's wrong | Where to fix |
 |---------|--------------|--------------|
-| `tldr daemon status -p "$(pwd)"` says not running | Cold daemon; paying ~35× cost per call | `tldr-runtime` → `daemon start && warm` |
-| Daemon running but `tldr stats` empty | `try_daemon_route` fell back to direct path; commands ran without IPC — check `tldr daemon status -p "$(pwd)"` Salsa counters | `tldr-runtime` → Session startup — verified launch sequence |
+| `tldr daemon status -p "$(pwd)"` says not running | Project not registered with supervisor; paying ~35× cost per call | Register with supervisor: `tldr-ctl init` |
+| Daemon running but `tldr stats` empty | `try_daemon_route` fell back to direct path; commands ran without IPC — check `tldr daemon status -p "$(pwd)"` Salsa counters | `tldr-runtime` → check Salsa counters; run `tldr dead .` to generate traffic |
 | `tldr semantic --help` says unrecognized | Semantic search not compiled in | Reinstall with `--features semantic` |
-| `tldr semantic` hangs or burns CPU for minutes | Embedding cache is cold — `tldr semantic` is building the index inline instead of querying it | Run `tldr embed .` first to build the index; then `tldr semantic` will be sub-second |
-| Multiple `tldr semantic` processes running simultaneously | Agent spawned duplicate index-build jobs | Kill duplicates (`pkill -f "tldr semantic"`), run `tldr embed .` once, wait for it to finish |
+| `tldr semantic` hangs or burns CPU for minutes | Embedding cache is cold — supervisor hasn't finished building the index yet | Check `tldr-ctl status` for embed progress. If not registered: `tldr-ctl init` |
+| Multiple `tldr semantic` processes running simultaneously | Agent spawned duplicate index-build jobs | Kill duplicates (`pkill -f "tldr semantic"`) — the supervisor will handle embedding |
 | `tldr --version` shows behind by 2+ releases | Outdated; missing recent commands and bug fixes | Upgrade per [parcadei/tldr-code](https://github.com/parcadei/tldr-code) |
 | `tldr doctor` shows the user's language missing | No analyzer installed | Run `tldr doctor --install <lang>` if supported; otherwise check upstream |
 | User keeps doing `grep + cat` chains | They don't know tldr can do this in one call | Direct them at `tldr-locate-code` or another sibling skill matching their intent |
@@ -215,15 +205,16 @@ When the user is technically working but not getting tldr's full value:
 
 - **`command not found: tldr`** — install per [parcadei/tldr-code](https://github.com/parcadei/tldr-code)
 - **No semantic search** — rebuild with `--features semantic`
-- **`tldr semantic` is slow / hangs / burns CPU** — the embedding cache is cold. Kill any running `tldr semantic` processes, then run `tldr embed .` once and let it finish. **Do not run `tldr semantic` before `tldr embed` on a large codebase.**
-- **Daemon is slow** — do `tldr daemon stop && tldr daemon start` (NOT `tldr cache clear` — that triggers a ~10× rebuild penalty). See `tldr-runtime`.
-- **`tldr stats` is empty** — either daemon was never started, or it was running but `try_daemon_route` fell back (Salsa `hits + misses = 0`). Run `tldr daemon stop && tldr daemon start && tldr warm .`, verify with `tldr search "main" && tldr daemon status -p "$(pwd)"`, then confirm `hits + misses > 0` before continuing
+- **`tldr semantic` is slow / hangs / burns CPU** — the embedding cache is cold. The supervisor builds it automatically after `tldr-ctl init`. Check `tldr-ctl status` for progress. Kill any rogue `tldr semantic` processes: `pkill -f "tldr semantic"`.
+- **Daemon is not running** — the project is not registered with the supervisor. Register: `cd <project-root> && tldr-ctl init`. The supervisor handles start, warm, and embed automatically.
+- **`tldr stats` is empty** — in v0.4.0 this is always expected (known upstream bug). Use `tldr daemon status -p "$(pwd)"` Salsa counters as the health signal instead.
 - **Permission errors on `~/.tldr/`** — check directory ownership; tldr writes daemon socket, cache, and stats here
 - **Curl fails on the version-check step** — no network; tell the user to manually visit [releases](https://github.com/parcadei/tldr-code/releases)
 
 ## See also
 
-- **`tldr-runtime`** — for starting/stopping the daemon, warming caches, clearing state, and viewing live stats. This skill (`tldr-setup-check`) diagnoses; `tldr-runtime` fixes.
+- **`tldr-runtime`** — for diagnosing daemon health, inspecting Salsa counters, and checking cache state. This skill (`tldr-setup-check`) checks the full installation; `tldr-runtime` checks daemon and cache health.
+- **`tldr-cli-demon`** — the supervisor that manages daemon start/stop, warm, and embed automatically. See [tldr-cli-demon](https://github.com/udhaya10/tldr-cli-demon).
 - The 13 other tldr-* skills — what to USE tldr for once setup is verified (locate code, trace impact, audit security, etc.)
 - [parcadei/tldr-code](https://github.com/parcadei/tldr-code) — the underlying CLI (install, releases, source)
 - [udhaya10/tldr-agent-skills](https://github.com/udhaya10/tldr-agent-skills) — this skill set

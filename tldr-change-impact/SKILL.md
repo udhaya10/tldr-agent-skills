@@ -196,6 +196,6 @@ tldr diff <file_a|dir_a> <file_b|dir_b> [-g token|line|statement|function|class|
 
 - `tldr-trace-relationships` — for the broader "trace relationships" intent when there's no change involved (callers, references, dead code). The `impact` tool lives there too because it's load-bearing for both intents.
 - `tldr-fix-and-detect` — when the question is "what bugs did my change introduce" rather than "what will my change affect"
-- `tldr-runtime` — for warming the daemon (`tldr warm`, `tldr cache`) before running impact-heavy queries on a cold cache
+- `tldr-runtime` — for diagnosing daemon health and cache state before running impact-heavy queries. The supervisor daemon (`tldr-cli-demon`) handles warming automatically
 - `tldr-orient-codebase` — `tldr importers` answers the reverse-from-a-file question (who imports this file?) that `impact` can't
 - `tldr-architecture` — `tldr hubs` ranks the whole project by centrality, complementing per-target impact analysis
